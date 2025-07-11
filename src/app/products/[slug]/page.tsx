@@ -54,15 +54,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   // Get product data
   const productData = comprehensiveProducts.find((p) => p.slug === resolvedParams.slug) as Product | undefined;
 
-  if (!productData) {
-    notFound();
-    return null; // This ensures TypeScript knows we exit here
-  }
-
   const { addItem } = useCart();
 
-  // State hooks
-  const [selectedColor, setSelectedColor] = useState(productData.colors[0]);
+  // State hooks - Always call these regardless of productData
+  const [selectedColor, setSelectedColor] = useState(productData?.colors[0] || null);
   const [selectedSize, setSelectedSize] = useState('');
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [sizeUnit, setSizeUnit] = useState<'inches' | 'cm'>('inches');
@@ -102,9 +97,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   // Create comprehensive image gallery for selected color
   const currentImages = useMemo(() => {
     const images = [];
-    if (selectedColor.images.main) images.push({ url: selectedColor.images.main, type: 'main' });
-    if (selectedColor.images.back) images.push({ url: selectedColor.images.back, type: 'back' });
-    if (selectedColor.images.lifestyle) {
+    if (selectedColor?.images?.main) images.push({ url: selectedColor.images.main, type: 'main' });
+    if (selectedColor?.images?.back) images.push({ url: selectedColor.images.back, type: 'back' });
+    if (selectedColor?.images?.lifestyle) {
       selectedColor.images.lifestyle.forEach((img: string, index: number) => {
         images.push({ url: img, type: `lifestyle-${index}` });
       });
@@ -280,7 +275,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       }, 150);
     }
     // Extract background color for main image
-    if (selectedColor.images.main && !imageBackgroundColors[selectedColor.images.main]) {
+    if (selectedColor?.images?.main && !imageBackgroundColors[selectedColor.images.main]) {
       setTimeout(() => {
         extractBackgroundColor(selectedColor.images.main, (color: string) => {
           setImageBackgroundColors((prev: { [key: string]: string }) => ({ ...prev, [selectedColor.images.main]: color }));
@@ -293,7 +288,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   useEffect(() => {
     if (!productData || !productData.colors) return;
     console.log('Starting color extraction for', productData.colors.length, 'colors');
-    productData.colors.forEach((color: any, index: number) => {
+    productData.colors.forEach((color: ProductColor, index: number) => {
       if (color.images.main && !extractedProductColors[color.name]) {
         console.log(`Extracting color for ${color.name} from ${color.images.main}`);
         // Add a small delay to avoid overwhelming the browser
@@ -309,10 +304,29 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
   // Reset image index when color changes
   useEffect(() => {
-    console.log('Selected color changed to:', selectedColor.name);
-    console.log('Current images for this color:', currentImages);
-    setSelectedImageIndex(0);
-  }, [selectedColor.name, currentImages]);
+    if (selectedColor) {
+      console.log('Selected color changed to:', selectedColor.name);
+      console.log('Current images for this color:', currentImages);
+      setSelectedImageIndex(0);
+    }
+  }, [selectedColor?.name, currentImages]);
+
+  // Early return after all hooks are called
+  if (!productData) {
+    notFound();
+    return null;
+  }
+
+  // Ensure selectedColor is set if it's null
+  if (!selectedColor && productData.colors.length > 0) {
+    setSelectedColor(productData.colors[0]);
+    return null; // Return null to prevent render until selectedColor is set
+  }
+
+  // If selectedColor is still null, something went wrong
+  if (!selectedColor) {
+    return null;
+  }
 
   return (
     <div className="text-black font-montserrat" style={{ backgroundColor: '#f0edec' }}>
@@ -336,7 +350,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               className="w-full h-full"
             >
               <Image
-                src={currentImages[selectedImageIndex]?.url || selectedColor.images.main}
+                src={currentImages[selectedImageIndex]?.url || selectedColor?.images?.main || '/images/placeholder.jpg'}
                 alt={`${productData.name} - ${selectedColor.name}`}
                 fill
                 sizes="100vw"
@@ -541,12 +555,12 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 style={{ 
                   opacity: columnImageOpacity,
                   scale: columnImageScale,
-                  backgroundColor: imageBackgroundColors[currentImages[selectedImageIndex]?.url] || imageBackgroundColors[selectedColor.images.main] || 'rgb(255, 255, 255)',
+                  backgroundColor: imageBackgroundColors[currentImages[selectedImageIndex]?.url] || imageBackgroundColors[selectedColor?.images?.main || ''] || 'rgb(255, 255, 255)',
                 }}
               >
                 <div className="relative h-96">
                   <Image
-                    src={currentImages[selectedImageIndex]?.url || selectedColor.images.main}
+                    src={currentImages[selectedImageIndex]?.url || selectedColor?.images?.main || '/images/placeholder.jpg'}
                     alt={`${productData.name} - ${selectedColor.name}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -800,7 +814,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         id: `${productData.slug}-${selectedColor.name}-${selectedSize}`,
                         name: productData.name,
                         price: productData.price,
-                        image: selectedColor.images.main,
+                        image: selectedColor?.images?.main || '/images/placeholder.jpg',
                         color: selectedColor.name,
                         size: selectedSize
                       });

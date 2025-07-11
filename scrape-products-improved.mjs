@@ -6,18 +6,6 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Product URLs to scrape
-const productUrls = [
-  'https://modernarabapparel.com/products/modern-arab-faded-tee-black-print',
-  'https://modernarabapparel.com/products/modern-arab-hoodie',
-  'https://modernarabapparel.com/products/modern-arab-joggers',
-  'https://modernarabapparel.com/products/modern-arab-cap',
-  'https://modernarabapparel.com/products/modern-arab-bucket-hat',
-  'https://modernarabapparel.com/products/modern-arab-sweatpants',
-  'https://modernarabapparel.com/products/modernarab-crewneck',
-  'https://modernarabapparel.com/products/modernarab-cropped-hoodie'
-];
-
 // Helper function to create directories if they don't exist
 function ensureDirectoryExists(dirPath) {
   if (!fs.existsSync(dirPath)) {
@@ -32,6 +20,10 @@ function sanitizeFilename(filename) {
 
 // Helper function to download image
 async function downloadImage(imageUrl, savePath) {
+  if (fs.existsSync(savePath)) {
+    console.log(`Skipping download, file already exists: ${path.basename(savePath)}`);
+    return;
+  }
   try {
     const response = await axios({
       method: 'GET',
@@ -263,15 +255,9 @@ function extractSpecifications(description) {
   return specs;
 }
 
-// Main scraping function
-async function scrapeProduct(productUrl) {
+// Main processing function for a single product's data
+async function processProduct(productData) {
   try {
-    console.log(`Scraping product: ${productUrl}`);
-    
-    // Get product JSON data from Shopify API
-    const jsonUrl = productUrl + '.json';
-    const response = await axios.get(jsonUrl);
-    const productData = response.data.product;
     
     console.log(`Found product: ${productData.title}`);
     
@@ -325,71 +311,68 @@ async function scrapeProduct(productUrl) {
       product.pricing = pricingMap;
     }
     
-    // Group variants by color
+    // Create a map of image IDs to image URLs for efficient lookup
+    const imageMap = {};
+    productData.images.forEach(img => {
+      imageMap[img.id] = img.src;
+    });
+
+    // Group variants by color and collect their associated images using the image_id
     const colorGroups = {};
-    
     productData.variants.forEach(variant => {
-      const colorOption = variant.option1; // Color is usually option1
-      
+      const colorOption = variant.option1; // Assuming color is option1
       if (!colorGroups[colorOption]) {
         colorGroups[colorOption] = {
-          variants: [],
-          images: []
+          name: colorOption,
+          imageUrls: new Set() // Use a Set to store unique image URLs
         };
       }
-      
-      colorGroups[colorOption].variants.push(variant);
+      if (variant.image_id && imageMap[variant.image_id]) {
+        colorGroups[colorOption].imageUrls.add(imageMap[variant.image_id]);
+      }
     });
-    
-    // Process images for each color
+
+    // Process each color group to download images and structure the data
     const imageDir = path.join(__dirname, 'public', 'images', product.slug);
     ensureDirectoryExists(imageDir);
-    
-    for (const [colorName, colorData] of Object.entries(colorGroups)) {
+
+    for (const colorName in colorGroups) {
+      const colorGroup = colorGroups[colorName];
       const colorInfo = extractColorInfo(colorName);
-      
-      // Find images for this color variant
+      const allImages = Array.from(colorGroup.imageUrls);
+
       const colorImages = {
         main: '',
         back: '',
         lifestyle: []
       };
-      
-      // Get variant-specific images
-      const variantImages = colorData.variants
-        .filter(v => v.featured_image)
-        .map(v => v.featured_image.src);
-      
 
-      
-      // Use only variant-specific images to avoid mismatches
-      const allImages = [...new Set(variantImages)];
-      
-      // Download images and organize them
-      for (let i = 0; i < Math.min(allImages.length, 10); i++) { // Limit to 10 images per color
+      // Download up to 10 images per color
+      for (let i = 0; i < Math.min(allImages.length, 10); i++) {
         const imageUrl = allImages[i];
         const imageExtension = path.extname(imageUrl).split('?')[0] || '.jpg';
         const imageName = `${sanitizeFilename(colorName)}-${i + 1}${imageExtension}`;
         const imagePath = path.join(imageDir, imageName);
-        
+
         try {
           await downloadImage(imageUrl, imagePath);
           console.log(`Downloaded: ${imageName}`);
-          
-          // Assign to appropriate category
+          const localImagePath = `/images/${product.slug}/${imageName}`;
+
+          // Assign images to main, back, and lifestyle categories
           if (i === 0) {
-            colorImages.main = `/images/${product.slug}/${imageName}`;
+            colorImages.main = localImagePath;
           } else if (i === 1) {
-            colorImages.back = `/images/${product.slug}/${imageName}`;
+            colorImages.back = localImagePath;
           } else {
-            colorImages.lifestyle.push(`/images/${product.slug}/${imageName}`);
+            colorImages.lifestyle.push(localImagePath);
           }
         } catch (error) {
           console.error(`Failed to download image ${imageUrl}:`, error.message);
         }
       }
-      
-      // Add color to product
+
+      // Add the processed color data to the product
       product.colors.push({
         name: colorInfo.name,
         swatch: colorInfo.swatch,
@@ -401,31 +384,40 @@ async function scrapeProduct(productUrl) {
     return product;
     
   } catch (error) {
-    console.error(`Error scraping product ${productUrl}:`, error.message);
+    console.error(`Error scraping product ${productData.title}:`, error.message);
     throw error;
   }
 }
 
 // Main execution function
 async function main() {
+  // Clean up existing images directory for a fresh start
+  const imageDir = path.join(__dirname, 'public', 'images');
+  console.log(`Cleaning up directory: ${imageDir}`);
+  if (fs.existsSync(imageDir)) {
+    fs.rmSync(imageDir, { recursive: true, force: true });
+  }
+  ensureDirectoryExists(imageDir);
+
   const scrapedProducts = [];
   
-  console.log('Starting improved product scraping...');
+  console.log('Starting improved product scraping from products.json...');
   
-  // Ensure images directory exists
-  ensureDirectoryExists(path.join(__dirname, 'public', 'images'));
-  
-  // Scrape each product
-  for (const productUrl of productUrls) {
-    try {
-      const product = await scrapeProduct(productUrl);
-      scrapedProducts.push(product);
-      
-      // Add delay to be respectful to the server
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-    } catch (error) {
-      console.error(`Failed to scrape ${productUrl}:`, error.message);
+  try {
+    // Fetch all products from the single JSON endpoint
+    const response = await axios.get('https://modernarabapparel.com/products.json');
+    const allProductsData = response.data.products;
+
+    // Process all products
+    for (const productData of allProductsData) {
+      try {
+        const product = await processProduct(productData);
+        if (product) {
+          scrapedProducts.push(product);
+        }
+      } catch (error) {
+        console.error(`Skipping product due to error: ${productData.title}`);
+      }
     }
   }
   

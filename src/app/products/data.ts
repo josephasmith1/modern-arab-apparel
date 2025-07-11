@@ -110,7 +110,7 @@ export const products: Product[] = [
         "swatch": "bg-stone-200",
         "hex": "#E8E4E0",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-faded-tee/faded-bone-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -120,7 +120,7 @@ export const products: Product[] = [
         "swatch": "bg-teal-800",
         "hex": "#A4B5A0",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-faded-tee/faded-green-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -130,7 +130,7 @@ export const products: Product[] = [
         "swatch": "bg-stone-500",
         "hex": "#C4A575",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-faded-tee/faded--khaki-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -140,7 +140,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-faded-tee/faded-black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -238,7 +238,7 @@ export const products: Product[] = [
         "swatch": "bg-stone-200",
         "hex": "#E8E4E0",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-hoodie/bone-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -248,7 +248,7 @@ export const products: Product[] = [
         "swatch": "bg-blue-400",
         "hex": "#87CEEB",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-hoodie/blue-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -338,7 +338,7 @@ export const products: Product[] = [
         "swatch": "bg-green-800",
         "hex": "#556B2F",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-joggers/olive-green-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -348,7 +348,7 @@ export const products: Product[] = [
         "swatch": "bg-red-900",
         "hex": "#800000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-joggers/maroon-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -358,7 +358,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-joggers/black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -368,7 +368,7 @@ export const products: Product[] = [
         "swatch": "bg-white",
         "hex": "#FFFFFF",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-joggers/white-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -456,7 +456,7 @@ export const products: Product[] = [
         "swatch": "bg-stone-500",
         "hex": "#C4A575",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-cap/khaki-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -466,7 +466,7 @@ export const products: Product[] = [
         "swatch": "bg-blue-400",
         "hex": "#87CEEB",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-cap/blue-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -476,7 +476,7 @@ export const products: Product[] = [
         "swatch": "bg-teal-800",
         "hex": "#A4B5A0",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-cap/green-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -486,7 +486,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-cap/black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -575,7 +575,7 @@ export const products: Product[] = [
         "swatch": "bg-green-800",
         "hex": "#556B2F",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-bucket-hat/olive-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -585,7 +585,7 @@ export const products: Product[] = [
         "swatch": "bg-blue-400",
         "hex": "#87CEEB",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-bucket-hat/blue-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -595,7 +595,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-bucket-hat/black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -605,7 +605,7 @@ export const products: Product[] = [
         "swatch": "bg-stone-500",
         "hex": "#C4A575",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-bucket-hat/khaki-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -694,7 +694,7 @@ export const products: Product[] = [
         "swatch": "bg-green-800",
         "hex": "#556B2F",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-sweatpants/light-green-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -704,7 +704,7 @@ export const products: Product[] = [
         "swatch": "bg-blue-500",
         "hex": "#4F81BD",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-sweatpants/light-blue-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -714,7 +714,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-sweatpants/light-black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -724,7 +724,7 @@ export const products: Product[] = [
         "swatch": "bg-blue-500",
         "hex": "#4F81BD",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-sweatpants/dark-blue-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -806,7 +806,7 @@ export const products: Product[] = [
         "swatch": "bg-teal-800",
         "hex": "#A4B5A0",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-crewneck/green-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -816,7 +816,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-crewneck/vintage-black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -826,7 +826,7 @@ export const products: Product[] = [
         "swatch": "bg-white",
         "hex": "#FFFFFF",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-crewneck/white-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -836,7 +836,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-crewneck/black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -926,7 +926,7 @@ export const products: Product[] = [
         "swatch": "bg-black",
         "hex": "#000000",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-cropped-hoodie/black-1.jpg",
           "back": "",
           "lifestyle": []
         }
@@ -936,7 +936,7 @@ export const products: Product[] = [
         "swatch": "bg-green-800",
         "hex": "#556B2F",
         "images": {
-          "main": "",
+          "main": "/images/modern-arab-cropped-hoodie/olive-green-1.jpg",
           "back": "",
           "lifestyle": []
         }
