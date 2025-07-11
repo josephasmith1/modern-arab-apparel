@@ -1,70 +1,67 @@
 "use client";
 
 import Image from 'next/image';
-import { useState, use, useEffect } from 'react';
+import { useState, use, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { products } from '../data';
-import productsJson from '../../../../data/products.json';
+import { Shirt, Feather, MapPin, Sparkles, PackageCheck, Droplets, Tag, Square, UserCircle } from "lucide-react";
+import ColorThief from 'colorthief';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Footer';
+import { useCart } from '@/context/CartContext';
+import AddToCartButton from '@/components/cart/AddToCartButton';
+import comprehensiveProducts from '../../../../data/comprehensive-products.json';
+
+interface ProductColor {
+  name: string;
+  hex: string;
+  images: {
+    main: string;
+    back: string;
+    lifestyle: string[];
+  };
+}
+
+interface Product {
+  slug: string;
+  name: string;
+  price: string;
+  description: string;
+  fullDescription: string;
+  category: string;
+  colors: ProductColor[];
+  sizes: string[];
+  features: string[];
+  specifications: {
+    material: string;
+    weight: string;
+    fit: string;
+    origin: string;
+  };
+  sizeGuide: {
+    size: string;
+    length: string;
+    chest: string;
+    sleeve: string;
+    lengthCm: string;
+    chestCm: string;
+    sleeveCm: string;
+  }[];
+}
 
 export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
   
-  // First try to find in detailed products data
-  let productData = products.find(p => p.slug === resolvedParams.slug);
-  
-  // If still not found, try simple products.json
-  if (!productData) {
-    const simpleProduct = productsJson.find(p => p.slug === resolvedParams.slug);
-    if (simpleProduct) {
-      // Create a basic product structure for simple products
-      productData = {
-        slug: simpleProduct.slug,
-        name: simpleProduct.name,
-        price: simpleProduct.price,
-        originalPrice: simpleProduct.price,
-        description: simpleProduct.description || "A statement piece that combines cultural heritage with modern streetwear.",
-        fullDescription: "This premium piece represents modern Arabic culture with authentic design elements. Made from high-quality materials with attention to detail.",
-        features: [
-          "Unisex fit",
-          "Premium materials",
-          "Modern Arabic branding",
-          "Designed in Los Angeles",
-          "Comfortable daily wear"
-        ],
-        specifications: {
-          material: "Premium cotton blend",
-          weight: "Medium weight",
-          fit: "Relaxed unisex fit",
-          origin: "Designed in Los Angeles, USA"
-        },
-        sizeGuide: [
-          { size: "S", length: "27\"", chest: "39\"", sleeve: "9\"", lengthCm: "68.6", chestCm: "99", sleeveCm: "23" },
-          { size: "M", length: "29\"", chest: "43\"", sleeve: "9.5\"", lengthCm: "73.7", chestCm: "109", sleeveCm: "24" },
-          { size: "L", length: "30\"", chest: "47\"", sleeve: "10\"", lengthCm: "76.2", chestCm: "119", sleeveCm: "25" },
-          { size: "XL", length: "32\"", chest: "51\"", sleeve: "10.5\"", lengthCm: "81.3", chestCm: "130", sleeveCm: "27" }
-        ],
-        colors: [
-          {
-            name: "Default",
-            swatch: "bg-gray-800",
-            hex: "#374151",
-            images: {
-              main: simpleProduct.image || '/images/modern-arab-faded-tee-faded-khaki-front.jpg',
-              back: '/images/modern-arab-faded-tee-faded-khaki-back.jpg',
-              lifestyle: []
-            }
-          }
-        ]
-      };
-    }
-  }
+  // Get product data
+  const productData = comprehensiveProducts.find((p) => p.slug === resolvedParams.slug) as Product | undefined;
 
   if (!productData) {
     notFound();
+    return null; // This ensures TypeScript knows we exit here
   }
 
+  const { addItem } = useCart();
+
+  // State hooks
   const [selectedColor, setSelectedColor] = useState(productData.colors[0]);
   const [selectedSize, setSelectedSize] = useState('');
   const [showSizeGuide, setShowSizeGuide] = useState(false);
@@ -72,13 +69,25 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showColorOptions, setShowColorOptions] = useState(false);
+  const [imageBackgroundColors, setImageBackgroundColors] = useState<{ [key: string]: string }>({});
+  const [extractedProductColors, setExtractedProductColors] = useState<{ [key: string]: string }>({});
   
   // Scroll tracking
   const { scrollY } = useScroll();
-  const heroScale = useTransform(scrollY, [0, 500], [1, 0.8]);
-  const heroOpacity = useTransform(scrollY, [0, 300], [1, 0.7]);
   const contentY = useTransform(scrollY, [0, 500], [0, -50]);
   
+  // Genie effect - hero image transforms and fades as column image fades in
+  const heroOpacity = useTransform(scrollY, [300, 800], [1, 0]);
+  const heroScale = useTransform(scrollY, [300, 600], [1, 0.6]);
+  const heroX = useTransform(scrollY, [300, 600], [0, 200]);
+  const columnImageOpacity = useTransform(scrollY, [500, 700], [0, 1]);
+  const columnImageScale = useTransform(scrollY, [500, 700], [0.8, 1]);
+  
+  // Color selector overlay opacity
+  const colorSelectorOpacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const colorSelectorY = useTransform(scrollY, [0, 300], [0, 50]);
+
   useEffect(() => {
     const updateScrollState = () => {
       setIsScrolled(window.scrollY > 100);
@@ -91,48 +100,235 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   }, []);
 
   // Create comprehensive image gallery for selected color
-  const getCurrentImages = () => {
+  const currentImages = useMemo(() => {
     const images = [];
     if (selectedColor.images.main) images.push({ url: selectedColor.images.main, type: 'main' });
     if (selectedColor.images.back) images.push({ url: selectedColor.images.back, type: 'back' });
     if (selectedColor.images.lifestyle) {
-      selectedColor.images.lifestyle.forEach((img, index) => {
+      selectedColor.images.lifestyle.forEach((img: string, index: number) => {
         images.push({ url: img, type: `lifestyle-${index}` });
       });
     }
     return images;
-  };
-
-  const currentImages = getCurrentImages();
+  }, [selectedColor]);
 
   const nextImage = () => {
-    setSelectedImageIndex((prevIndex) => 
+    setSelectedImageIndex((prevIndex: number) => 
       prevIndex === currentImages.length - 1 ? 0 : prevIndex + 1
     );
   };
 
   const prevImage = () => {
-    setSelectedImageIndex((prevIndex) => 
+    setSelectedImageIndex((prevIndex: number) => 
       prevIndex === 0 ? currentImages.length - 1 : prevIndex - 1
     );
   };
 
+  // Extract background color from image edges (not garment)
+  const extractBackgroundColor = (imageSrc: string, callback: (color: string) => void) => {
+    const img = document.createElement('img');
+    // Remove crossOrigin for local images to avoid CORS issues
+    // img.crossOrigin = 'anonymous';
+    
+    // Set a timeout to prevent hanging
+    const timeout = setTimeout(() => {
+      callback('rgb(240, 237, 236)'); // fallback to page background color
+    }, 5000);
+    
+    img.onload = () => {
+      clearTimeout(timeout);
+      try {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        if (!ctx) {
+          callback('rgb(240, 237, 236)');
+          return;
+        }
+        
+        // Scale down for performance
+        const scale = Math.min(50 / img.width, 50 / img.height);
+        canvas.width = img.width * scale;
+        canvas.height = img.height * scale;
+        
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        
+        // Get the exact background color from corners (most likely to be pure background)
+        const corners = [
+          { x: 0, y: 0 }, // top-left
+          { x: canvas.width - 1, y: 0 }, // top-right
+          { x: 0, y: canvas.height - 1 }, // bottom-left
+          { x: canvas.width - 1, y: canvas.height - 1 }, // bottom-right
+        ];
+        
+        // Get the most common color from corners
+        const cornerColors = corners.map(({ x, y }) => {
+          const index = (y * canvas.width + x) * 4;
+          return {
+            r: data[index],
+            g: data[index + 1],
+            b: data[index + 2]
+          };
+        });
+        
+        // Use the first corner's color as it's most likely to be the pure background
+        const { r, g, b } = cornerColors[0];
+        
+        const rgbColor = `rgb(${r}, ${g}, ${b})`;
+        callback(rgbColor);
+      } catch (error) {
+        console.error('Error extracting background color:', error);
+        callback('rgb(240, 237, 236)'); // fallback to page background color
+      }
+    };
+    img.onerror = () => {
+      clearTimeout(timeout);
+      // Silently fail and use page background color
+      callback('rgb(240, 237, 236)'); // fallback to page background color
+    };
+    img.src = imageSrc;
+  };
+
+  // Extract dominant garment color from image using ColorThief
+  const extractImageColor = (imageSrc: string, callback: (color: string) => void) => {
+    const img = document.createElement('img');
+    const colorThief = new ColorThief();
+    
+    // Set a timeout to prevent hanging
+    const timeout = setTimeout(() => {
+      callback('rgb(120, 120, 120)'); // fallback to gray
+    }, 5000);
+    
+    img.onload = () => {
+      clearTimeout(timeout);
+      try {
+        // Extract the dominant color
+        const dominantColor = colorThief.getColor(img);
+        const rgbColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
+        console.log(`Extracted color for ${imageSrc}:`, rgbColor);
+        callback(rgbColor);
+      } catch (error) {
+        console.error('Error extracting color with ColorThief:', error);
+        // Try to get palette as fallback
+        try {
+          const palette = colorThief.getPalette(img, 5);
+          if (palette && palette.length > 0) {
+            // Find the most saturated color from palette (likely the garment color)
+            let bestColor = palette[0];
+            let maxSaturation = 0;
+            
+            for (const color of palette) {
+              const [r, g, b] = color;
+              const max = Math.max(r, g, b);
+              const min = Math.min(r, g, b);
+              const saturation = max === 0 ? 0 : (max - min) / max;
+              
+              if (saturation > maxSaturation) {
+                maxSaturation = saturation;
+                bestColor = color;
+              }
+            }
+            
+            const rgbColor = `rgb(${bestColor[0]}, ${bestColor[1]}, ${bestColor[2]})`;
+            console.log(`Extracted color from palette for ${imageSrc}:`, rgbColor);
+            callback(rgbColor);
+          } else {
+            callback('rgb(120, 120, 120)'); // fallback to gray
+          }
+        } catch (paletteError) {
+          console.error('Error extracting color from palette:', paletteError);
+          callback('rgb(120, 120, 120)'); // fallback to gray
+        }
+      }
+    };
+    
+    img.onerror = () => {
+      clearTimeout(timeout);
+      console.error('Error loading image for color extraction');
+      callback('rgb(120, 120, 120)'); // fallback to gray
+    };
+    
+    // Set crossOrigin for better compatibility
+    img.crossOrigin = 'anonymous';
+    img.src = imageSrc;
+  };
+
+  // Extract background colors for all lifestyle images and back image
+  useEffect(() => {
+    if (!selectedColor || !selectedColor.images) return;
+    // Extract background colors for lifestyle images
+    if (selectedColor.images.lifestyle && selectedColor.images.lifestyle.length > 0) {
+      selectedColor.images.lifestyle.forEach((image: string, index: number) => {
+        if (!imageBackgroundColors[image]) {
+          setTimeout(() => {
+            extractBackgroundColor(image, (color: string) => {
+              setImageBackgroundColors((prev: { [key: string]: string }) => ({ ...prev, [image]: color }));
+            });
+          }, 200 + index * 100); // Stagger the requests
+        }
+      });
+    }
+    // Extract background color for back image
+    if (selectedColor.images.back && !imageBackgroundColors[selectedColor.images.back]) {
+      setTimeout(() => {
+        extractBackgroundColor(selectedColor.images.back, (color: string) => {
+          setImageBackgroundColors((prev: { [key: string]: string }) => ({ ...prev, [selectedColor.images.back]: color }));
+        });
+      }, 150);
+    }
+    // Extract background color for main image
+    if (selectedColor.images.main && !imageBackgroundColors[selectedColor.images.main]) {
+      setTimeout(() => {
+        extractBackgroundColor(selectedColor.images.main, (color: string) => {
+          setImageBackgroundColors((prev: { [key: string]: string }) => ({ ...prev, [selectedColor.images.main]: color }));
+        });
+      }, 100);
+    }
+  }, [selectedColor, imageBackgroundColors]);
+
+  // Extract colors from main product images for accurate color swatches
+  useEffect(() => {
+    if (!productData || !productData.colors) return;
+    console.log('Starting color extraction for', productData.colors.length, 'colors');
+    productData.colors.forEach((color: any, index: number) => {
+      if (color.images.main && !extractedProductColors[color.name]) {
+        console.log(`Extracting color for ${color.name} from ${color.images.main}`);
+        // Add a small delay to avoid overwhelming the browser
+        setTimeout(() => {
+          extractImageColor(color.images.main, (extractedColor: string) => {
+            console.log(`Color extracted for ${color.name}:`, extractedColor);
+            setExtractedProductColors((prev: { [key: string]: string }) => ({ ...prev, [color.name]: extractedColor }));
+          });
+        }, 100 + index * 200);
+      }
+    });
+  }, [productData, extractedProductColors]);
+
+  // Reset image index when color changes
+  useEffect(() => {
+    console.log('Selected color changed to:', selectedColor.name);
+    console.log('Current images for this color:', currentImages);
+    setSelectedImageIndex(0);
+  }, [selectedColor.name, currentImages]);
 
   return (
-    <div className="text-black" style={{ backgroundColor: '#f0edec' }}>
-      {/* Sticky Hero Section */}
-      <motion.section 
-        className="fixed top-0 left-0 w-full h-screen z-0"
+    <div className="text-black font-montserrat" style={{ backgroundColor: '#f0edec' }}>
+      {/* Hero Image */}
+      <motion.div 
+        className="fixed top-0 left-0 w-full h-screen z-5 overflow-hidden"
         style={{ 
-          scale: heroScale, 
           opacity: heroOpacity,
-          transformOrigin: 'center center'
+          scale: heroScale,
+          x: heroX,
         }}
       >
-        <div className="absolute inset-0">
+        <div className="relative w-full h-full">
           <AnimatePresence mode="wait">
             <motion.div
-              key={selectedImageIndex}
+              key={`${selectedColor.name}-${selectedImageIndex}`}
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
@@ -143,12 +339,13 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 src={currentImages[selectedImageIndex]?.url || selectedColor.images.main}
                 alt={`${productData.name} - ${selectedColor.name}`}
                 fill
+                sizes="100vw"
                 className="object-cover object-center"
                 priority
               />
             </motion.div>
           </AnimatePresence>
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
 
         {/* Navigation Arrows */}
@@ -156,7 +353,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           <>
             <motion.button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-20"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -166,7 +363,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             </motion.button>
             <motion.button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-10"
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all z-20"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -179,71 +376,104 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
         {/* Image Counter */}
         {currentImages.length > 1 && (
-          <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-10">
+          <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
             {selectedImageIndex + 1} / {currentImages.length}
           </div>
         )}
+      </motion.div>
 
-        {/* Thumbnail Navigation */}
-        {currentImages.length > 1 && (
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-            {currentImages.map((image, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedImageIndex(index)}
-                className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                  selectedImageIndex === index 
-                    ? 'border-white shadow-lg' 
+      {/* Color Selector Overlay - Fixed on Hero */}
+      <motion.div 
+        className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-20"
+        style={{ 
+          opacity: colorSelectorOpacity,
+          y: colorSelectorY 
+        }}
+      >
+        <div className="bg-black/70 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+          <div className="text-center mb-4">
+            <h3 className="text-white font-semibold text-lg">Choose Your Color</h3>
+            <p className="text-gray-200 text-sm">{selectedColor.name}</p>
+          </div>
+          
+          <div className="flex justify-center space-x-4">
+            {productData.colors.map((color) => (
+              <motion.button
+                key={color.name}
+                onClick={() => {
+                  console.log('Color swatch clicked:', color.name);
+                  setSelectedColor(color);
+                  setSelectedImageIndex(0); // Always reset to first image for new color
+                  // Extract color if not already done
+                  if (!extractedProductColors[color.name]) {
+                    extractImageColor(color.images.main, (extractedColor) => {
+                      setExtractedProductColors(prev => ({ ...prev, [color.name]: extractedColor }));
+                    });
+                  }
+                }}
+                className={`relative w-12 h-12 rounded-full border-4 transition-all ${
+                  selectedColor.name === color.name 
+                    ? 'border-white shadow-lg scale-110' 
                     : 'border-gray-400 hover:border-gray-200'
                 }`}
+                whileHover={{ scale: selectedColor.name === color.name ? 1.1 : 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <Image
-                  src={image.url}
-                  alt={`${productData.name} thumbnail ${index + 1}`}
-                  width={64}
-                  height={64}
-                  className="object-cover object-center"
+                <span 
+                  className="absolute inset-1 rounded-full"
+                  style={{ backgroundColor: extractedProductColors[color.name] || color.hex }}
+                  title={`${color.name}: ${extractedProductColors[color.name] || color.hex}`}
                 />
-              </button>
+                {/* Loading indicator for color extraction */}
+                {!extractedProductColors[color.name] && (
+                  <span className="absolute inset-1 rounded-full bg-gray-300 animate-pulse" />
+                )}
+                <span className="sr-only">{color.name}</span>
+              </motion.button>
             ))}
           </div>
-        )}
+        </div>
+      </motion.div>
         
-        <motion.div 
-          className="absolute inset-0 flex items-center justify-center"
-          style={{ y: contentY }}
-        >
-          <div className="text-center max-w-4xl px-6">
-            <motion.h1 
-              className="text-6xl md:text-8xl font-light mb-4 text-white drop-shadow-2xl font-bodoni"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
-            >
-              {productData.name}
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-200 mb-8 drop-shadow-lg"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.7 }}
-            >
-              {productData.price}
-            </motion.p>
-            <motion.button 
-              className="bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 shadow-2xl"
-              onClick={() => document.getElementById('product-info')?.scrollIntoView({ behavior: 'smooth' })}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.9 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              DISCOVER
-            </motion.button>
-          </div>
-        </motion.div>
-      </motion.section>
+      {/* Hero Text Overlay - Fixed Position */}
+      <motion.div 
+        className="fixed inset-0 flex items-center justify-center pointer-events-none"
+        style={{ 
+          opacity: colorSelectorOpacity,
+          y: contentY,
+          zIndex: 15
+        }}
+      >
+        <div className="text-center max-w-4xl px-6">
+          <motion.h1 
+            className="text-6xl md:text-8xl font-light mb-4 text-white drop-shadow-2xl font-bodoni"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            {productData.name}
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl text-gray-200 mb-8 drop-shadow-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.7 }}
+          >
+            {productData.price}
+          </motion.p>
+          <motion.button 
+            className="bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 shadow-2xl pointer-events-auto"
+            onClick={() => document.getElementById('product-info')?.scrollIntoView({ behavior: 'smooth' })}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            DISCOVER
+          </motion.button>
+        </div>
+      </motion.div>
 
       {/* Spacer for scroll */}
       <div className="h-screen"></div>
@@ -260,30 +490,30 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           >
             {/* Left Column - Product Details */}
             <motion.div 
-              className="space-y-8"
+              className={`space-y-8 ${isScrolled ? 'lg:sticky lg:top-24' : ''}`}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div>
-                <h2 className="text-4xl md:text-5xl font-light mb-6 text-black font-bodoni">
+              <div className="space-y-10">
+                <h2 className="text-2xl md:text-3xl font-normal mb-6 text-gray-900 font-bodoni">
                   A Statement of Heritage
                 </h2>
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-xl leading-relaxed mb-6 text-black">{productData.description}</p>
-                  <p className="text-lg text-gray-700 leading-relaxed">{productData.fullDescription}</p>
+                <div className="space-y-8 text-gray-700">
+                  <p className="text-lg md:text-xl leading-loose font-normal font-barlow-condensed">{productData.description}</p>
+                  <p className="text-base md:text-lg leading-loose font-normal text-gray-600 font-barlow-condensed">{productData.fullDescription}</p>
                 </div>
               </div>
               
               {/* Features List */}
-              <div className="space-y-4">
-                <h3 className="text-2xl font-bold text-black font-bodoni">Key Features</h3>
+              <div className="space-y-8 mt-16">
+                <h3 className="text-lg font-normal text-gray-900 font-bodoni">Key Features</h3>
                 <ul className="space-y-3">
                   {productData.features.map((feature, index) => (
                     <motion.li 
                       key={index}
-                      className="flex items-center text-gray-700"
+                      className="flex items-center text-gray-700 font-barlow-condensed"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -299,79 +529,182 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
             {/* Right Column - Product Selection */}
             <motion.div 
-              className={`space-y-8 ${isScrolled ? 'lg:sticky lg:top-8' : ''}`}
+              className={`space-y-8 ${isScrolled ? 'lg:sticky lg:top-24' : ''}`}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div className="bg-white rounded-lg shadow-xl p-8">
-                <h3 className="text-2xl font-bold mb-6 text-black font-bodoni">Customize Your Order</h3>
-                
-                {/* Product Selection */}
-                <div className="space-y-8">
-                  {/* Color Selection */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 text-black">Choose Your Color</h4>
-                      <p className="text-gray-600 text-sm">{selectedColor.name}</p>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-4">
-                      {productData.colors.map((color) => (
-                        <motion.button
-                          key={color.name}
-                          onClick={() => {
-                            setSelectedColor(color);
-                            setSelectedImageIndex(0);
-                          }}
-                          className={`relative w-16 h-16 rounded-full border-4 transition-all ${
-                            selectedColor.name === color.name 
-                              ? 'border-black shadow-lg scale-110' 
-                              : 'border-gray-400 hover:border-gray-600'
-                          }`}
-                          whileHover={{ scale: selectedColor.name === color.name ? 1.1 : 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <span 
-                            className="absolute inset-2 rounded-full"
-                            style={{ backgroundColor: color.hex }}
-                          />
-                          <span className="sr-only">{color.name}</span>
-                        </motion.button>
-                      ))}
-                    </div>
-                  </div>
+              {/* Product Image in Column */}
+              <motion.div 
+                className="rounded-lg shadow-xl overflow-hidden"
+                style={{ 
+                  opacity: columnImageOpacity,
+                  scale: columnImageScale,
+                  backgroundColor: imageBackgroundColors[currentImages[selectedImageIndex]?.url] || imageBackgroundColors[selectedColor.images.main] || 'rgb(255, 255, 255)',
+                }}
+              >
+                <div className="relative h-96">
+                  <Image
+                    src={currentImages[selectedImageIndex]?.url || selectedColor.images.main}
+                    alt={`${productData.name} - ${selectedColor.name}`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain object-center"
+                  />
+                </div>
+              </motion.div>
 
-                  {/* Size Selection */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2 text-black">Select Your Size</h4>
-                      <button 
-                        onClick={() => setShowSizeGuide(!showSizeGuide)}
-                        className="text-gray-600 hover:text-black underline text-sm"
+              {/* Thumbnail Gallery */}
+              {currentImages.length > 1 && (
+                <div className="flex justify-center gap-2 overflow-x-auto">
+                  {currentImages.map((image, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => setSelectedImageIndex(index)}
+                      className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                        selectedImageIndex === index 
+                          ? 'border-black' 
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Image
+                        src={image.url}
+                        alt={`${productData.name} - View ${index + 1}`}
+                        fill
+                        sizes="64px"
+                        className="object-cover object-center"
+                      />
+                    </motion.button>
+                  ))}
+                </div>
+              )}
+              
+              <div className="bg-white rounded-lg shadow-xl p-4">
+                <h3 className="text-lg font-bold mb-3 text-black font-bodoni">Customize Order</h3>
+                
+                {/* Selected Color - Clickable */}
+                <div className="mb-3 relative">
+                  <motion.div 
+                    className="flex items-center justify-between cursor-pointer hover:bg-gray-50 rounded p-1 -m-1"
+                    onClick={() => setShowColorOptions(!showColorOptions)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <span className="text-xs font-medium text-gray-600">Color</span>
+                    <div className="flex items-center space-x-1">
+                      <div 
+                        className="w-4 h-4 rounded-full border border-gray-300 relative"
+                        style={{ backgroundColor: extractedProductColors[selectedColor.name] || selectedColor.hex }}
                       >
-                        View Size Guide
-                      </button>
+                        {/* Loading indicator */}
+                        {!extractedProductColors[selectedColor.name] && (
+                          <div className="absolute inset-0 rounded-full bg-gray-300 animate-pulse" />
+                        )}
+                      </div>
+                      <span className="text-xs text-gray-700">{selectedColor.name}</span>
+                      <motion.svg 
+                        className="w-3 h-3 text-gray-400 ml-1"
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                        animate={{ rotate: showColorOptions ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </motion.svg>
                     </div>
-                    
-                    <div className="grid grid-cols-2 gap-3">
-                      {productData.sizeGuide.map((sizeInfo) => (
-                        <motion.button
-                          key={sizeInfo.size}
-                          onClick={() => setSelectedSize(sizeInfo.size)}
-                          className={`py-3 px-4 border-2 rounded-lg text-center font-medium transition-all ${
-                            selectedSize === sizeInfo.size
-                              ? 'border-black bg-black text-white'
-                              : 'border-gray-400 hover:border-gray-600 text-black'
-                          }`}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          {sizeInfo.size}
-                        </motion.button>
-                      ))}
-                    </div>
+                  </motion.div>
+
+                  {/* Color Options - Side Popup */}
+                  <AnimatePresence>
+                    {showColorOptions && (
+                      <motion.div
+                        className="absolute left-full ml-2 top-0 p-2 bg-white rounded-lg shadow-lg border z-50"
+                        initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, x: -20 }}
+                        transition={{ 
+                          type: "spring", 
+                          duration: 0.4, 
+                          bounce: 0.3 
+                        }}
+                      >
+                        <div className="flex gap-1">
+                          {productData.colors.map((color, index) => (
+                            <motion.button
+                              key={color.name}
+                              onClick={() => {
+                                console.log('Side color swatch clicked:', color.name);
+                                setSelectedColor(color);
+                                setShowColorOptions(false);
+                                // Extract color if not already done
+                                if (!extractedProductColors[color.name]) {
+                                  extractImageColor(color.images.main, (extractedColor) => {
+                                    setExtractedProductColors(prev => ({ ...prev, [color.name]: extractedColor }));
+                                  });
+                                }
+                              }}
+                              className={`w-7 h-7 rounded-full border-2 transition-all relative ${
+                                selectedColor.name === color.name 
+                                  ? 'border-black' 
+                                  : 'border-gray-300 hover:border-gray-500'
+                              }`}
+                              style={{ backgroundColor: extractedProductColors[color.name] || color.hex }}
+                              initial={{ scale: 0, rotate: -180 }}
+                              animate={{ scale: 1, rotate: 0 }}
+                              transition={{ 
+                                delay: index * 0.05,
+                                type: "spring",
+                                duration: 0.3,
+                                bounce: 0.4
+                              }}
+                              whileHover={{ scale: 1.1, y: -2 }}
+                              whileTap={{ scale: 0.9 }}
+                              title={color.name}
+                            >
+                              {/* Loading indicator */}
+                              {!extractedProductColors[color.name] && (
+                                <div className="absolute inset-0 rounded-full bg-gray-300 animate-pulse" />
+                              )}
+                            </motion.button>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Size Selection - Compact */}
+                <div className="mb-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-medium text-gray-600">Size</span>
+                    <button 
+                      onClick={() => setShowSizeGuide(!showSizeGuide)}
+                      className="text-gray-400 hover:text-black text-xs"
+                    >
+                      Guide
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap gap-1">
+                    {productData.sizeGuide.map((sizeInfo) => (
+                      <motion.button
+                        key={sizeInfo.size}
+                        onClick={() => setSelectedSize(sizeInfo.size)}
+                        className={`w-8 h-8 rounded-full border text-xs font-medium transition-all flex items-center justify-center ${
+                          selectedSize === sizeInfo.size
+                            ? 'border-black bg-black text-white'
+                            : 'border-gray-300 bg-white text-black hover:border-gray-400'
+                        }`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {sizeInfo.size}
+                      </motion.button>
+                    ))}
+                  </div>
 
                     <AnimatePresence>
                       {showSizeGuide && (
@@ -436,244 +769,341 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     </AnimatePresence>
                   </div>
 
-                  {/* Quantity & Add to Cart */}
-                  <div className="space-y-6">
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-semibold text-black">Quantity:</span>
-                      <div className="flex items-center border border-gray-400 rounded-lg">
-                        <motion.button 
-                          onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                          className="px-4 py-2 hover:bg-gray-100 transition-colors text-black"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          -
-                        </motion.button>
-                        <span className="px-6 py-2 border-x border-gray-400 min-w-[3rem] text-center text-black">{quantity}</span>
-                        <motion.button 
-                          onClick={() => setQuantity(quantity + 1)}
-                          className="px-4 py-2 hover:bg-gray-100 transition-colors text-black"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          +
-                        </motion.button>
-                      </div>
-                    </div>
-
+                {/* Quantity - Inline */}
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-medium text-gray-600">Qty</span>
+                  <div className="flex items-center border border-gray-300 rounded">
                     <motion.button 
-                      className="w-full bg-black text-white py-4 text-lg font-semibold hover:bg-gray-800 transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                      disabled={!selectedSize}
-                      whileHover={{ scale: selectedSize ? 1.02 : 1 }}
-                      whileTap={{ scale: selectedSize ? 0.98 : 1 }}
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="px-2 py-1 hover:bg-gray-100 transition-colors text-black text-xs"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      ADD TO CART - {productData.price}
+                      -
                     </motion.button>
-
-                    {!selectedSize && (
-                      <motion.p 
-                        className="text-red-600 text-sm text-center"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        Please select a size
-                      </motion.p>
-                    )}
+                    <span className="px-3 py-1 border-x border-gray-300 text-center text-black text-xs min-w-[2rem]">{quantity}</span>
+                    <motion.button 
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="px-2 py-1 hover:bg-gray-100 transition-colors text-black text-xs"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      +
+                    </motion.button>
                   </div>
                 </div>
+
+                <AddToCartButton
+                  onAddToCart={() => {
+                    if (selectedSize) {
+                      addItem({
+                        id: `${productData.slug}-${selectedColor.name}-${selectedSize}`,
+                        name: productData.name,
+                        price: productData.price,
+                        image: selectedColor.images.main,
+                        color: selectedColor.name,
+                        size: selectedSize
+                      });
+                    }
+                  }}
+                  disabled={!selectedSize}
+                  price={productData.price}
+                  className="rounded"
+                />
+
+                {!selectedSize && (
+                  <motion.p 
+                    className="text-red-500 text-xs text-center mt-1"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    Please select a size
+                  </motion.p>
+                )}
               </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Full-Width Back Design Section */}
-      <section className="relative h-screen">
+      {/* Magazine-Style Back Design Section */}
+      <section className="relative h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={selectedColor.images.back}
             alt={`${productData.name} - Back Design`}
             fill
-            className="object-cover object-center"
+            sizes="100vw"
+            className="object-contain object-left"
+            style={{ backgroundColor: imageBackgroundColors[selectedColor.images.back] || 'rgb(0, 0, 0)' }}
           />
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: imageBackgroundColors[selectedColor.images.back] 
+                ? (() => {
+                    const color = imageBackgroundColors[selectedColor.images.back];
+                    const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+                    if (!rgbMatch) return 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, transparent 50%, rgba(0,0,0,0.6) 100%)';
+                    
+                    const [, r, g, b] = rgbMatch;
+                    return `linear-gradient(to right, 
+                      rgba(${r}, ${g}, ${b}, 0.1) 0%, 
+                      rgba(${r}, ${g}, ${b}, 0.3) 30%, 
+                      transparent 50%, 
+                      rgba(${r}, ${g}, ${b}, 0.4) 70%, 
+                      rgba(${r}, ${g}, ${b}, 0.8) 100%)`;
+                  })()
+                : 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, transparent 50%, rgba(0,0,0,0.6) 100%)'
+            }}
+          ></div>
         </div>
         
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center max-w-4xl px-6">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl">
+        {/* Magazine-style text block in lower right */}
+        <div className="absolute bottom-16 right-8 md:bottom-20 md:right-16 max-w-md md:max-w-lg">
+          <div className="bg-white/95 backdrop-blur-sm p-8 md:p-10 shadow-2xl border-l-4 border-black">
+            <div className="mb-4">
+              <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">FEATURED DESIGN</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-light mb-4 text-black font-bodoni leading-tight">
               The Message
             </h2>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 drop-shadow-lg max-w-3xl mx-auto">
-&quot;ألآ تخافون من الله&quot; - A powerful rhetorical question that transcends fear, 
-              inspiring reflection and spiritual accountability through authentic Arabic calligraphy.
+            <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+              &quot;ألآ تخافون من الله&quot; - A powerful rhetorical question that transcends fear, inspiring reflection and spiritual accountability through authentic Arabic calligraphy.
             </p>
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-0.5 bg-black"></div>
+              <span className="text-xs font-medium text-gray-600 tracking-wide">AUTHENTIC ARABIC</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Lifestyle Photography Sections */}
+      {/* Magazine-Style Lifestyle Photography Sections */}
       {selectedColor.images.lifestyle.length > 0 && (
         <>
-          {selectedColor.images.lifestyle.map((image, imageIndex) => (
-            <section key={imageIndex} className="relative h-screen">
-              <div className="absolute inset-0">
-                <Image
-                  src={image}
-                  alt={`${productData.name} - Lifestyle ${imageIndex + 1}`}
-                  fill
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-black/20"></div>
-              </div>
+          {selectedColor.images.lifestyle.map((image, imageIndex) => {
+            const contentData = [
+              {
+                category: "DESIGN PHILOSOPHY",
+                title: "Modern Heritage",
+                text: "Where tradition meets contemporary style. Designed in Los Angeles, rooted in authentic Arabic culture.",
+                accent: "LOS ANGELES"
+              },
+              {
+                category: "CRAFTSMANSHIP",
+                title: "Crafted with Purpose",
+                text: "Premium heavyweight carded cotton with a boxy, oversized fit. Garment-dyed and pre-shrunk for lasting comfort.",
+                accent: "PREMIUM COTTON"
+              },
+              {
+                category: "AUTHENTICITY",
+                title: "Authentic Expression",
+                text: "Arabic calligraphy designed by first-generation and native speakers. Every detail honors the language and culture.",
+                accent: "CULTURAL RESPECT"
+              },
+              {
+                category: "MISSION",
+                title: "Reclaiming the Narrative",
+                text: "Arabs are not what the world thinks they are—they are better. This design bridges heritage with hometown identity.",
+                accent: "BREAKING STEREOTYPES"
+              }
+            ];
+            
+            const content = contentData[imageIndex] || contentData[0];
+            const isEven = imageIndex % 2 === 0;
+            
+            // Get the background color for this image
+            const backgroundColor = imageBackgroundColors[image] || 'rgb(0, 0, 0)';
+            
+            // Create gradient styles based on extracted background color
+            const createGradientStyle = (color: string, isEven: boolean) => {
+              // Parse RGB values
+              const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+              if (!rgbMatch) return {};
               
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center max-w-4xl px-6">
-                  {imageIndex === 0 && (
-                    <>
-                      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl">
-                        Modern Heritage
-                      </h2>
-                      <p className="text-xl md:text-2xl text-gray-200 drop-shadow-lg max-w-3xl mx-auto">
-                        Where tradition meets contemporary style. Designed in Los Angeles, 
-                        rooted in authentic Arabic culture.
-                      </p>
-                    </>
-                  )}
-                  {imageIndex === 1 && (
-                    <>
-                      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl">
-                        Crafted with Purpose
-                      </h2>
-                      <p className="text-xl md:text-2xl text-gray-200 drop-shadow-lg max-w-3xl mx-auto">
-                        Premium heavyweight carded cotton with a boxy, oversized fit. 
-                        Garment-dyed and pre-shrunk for lasting comfort.
-                      </p>
-                    </>
-                  )}
-                  {imageIndex === 2 && (
-                    <>
-                      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl">
-                        Authentic Expression
-                      </h2>
-                      <p className="text-xl md:text-2xl text-gray-200 drop-shadow-lg max-w-3xl mx-auto">
-                        Arabic calligraphy designed by first-generation and native speakers. 
-                        Every detail honors the language and culture.
-                      </p>
-                    </>
-                  )}
-                  {imageIndex === 3 && (
-                    <>
-                      <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white drop-shadow-2xl">
-                        Reclaiming the Narrative
-                      </h2>
-                      <p className="text-xl md:text-2xl text-gray-200 drop-shadow-lg max-w-3xl mx-auto">
-                        Arabs are not what the world thinks they are—they are better. 
-                        This design bridges heritage with hometown identity.
-                      </p>
-                    </>
-                  )}
+              const [, r, g, b] = rgbMatch;
+              const direction = isEven ? 'to right' : 'to left';
+              
+              return {
+                background: `linear-gradient(${direction}, 
+                  rgba(${r}, ${g}, ${b}, 0.1) 0%, 
+                  rgba(${r}, ${g}, ${b}, 0.3) 30%, 
+                  transparent 50%, 
+                  rgba(${r}, ${g}, ${b}, 0.4) 70%, 
+                  rgba(${r}, ${g}, ${b}, 0.8) 100%)`
+              };
+            };
+            
+            return (
+              <section key={imageIndex} className="relative h-screen overflow-hidden">
+                <div className="absolute inset-0">
+                  <Image
+                    src={image}
+                    alt={`${productData.name} - Lifestyle ${imageIndex + 1}`}
+                    fill
+                    sizes="100vw"
+                    className={`object-contain ${isEven ? 'object-left' : 'object-right'}`}
+                    style={{ backgroundColor: backgroundColor }}
+                  />
+                  <div 
+                    className="absolute inset-0"
+                    style={createGradientStyle(backgroundColor, isEven)}
+                  ></div>
                 </div>
-              </div>
-            </section>
-          ))}
+                
+                {/* Alternating magazine-style text blocks */}
+                <div className={`absolute bottom-16 ${isEven ? 'right-8 md:right-16' : 'left-8 md:left-16'} max-w-md md:max-w-lg`}>
+                  <motion.div 
+                    className="bg-white/95 backdrop-blur-sm p-8 md:p-10 shadow-2xl border-l-4 border-black"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="mb-4">
+                      <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">{content.category}</span>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-light mb-4 text-black font-bodoni leading-tight">
+                      {content.title}
+                    </h2>
+                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+                      {content.text}
+                    </p>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-0.5 bg-black"></div>
+                      <span className="text-xs font-medium text-gray-600 tracking-wide">{content.accent}</span>
+                    </div>
+                  </motion.div>
+                </div>
+                
+                {/* Page number indicator */}
+                <div className={`absolute top-8 ${isEven ? 'left-8' : 'right-8'}`}>
+                  <div className="bg-black/70 text-white px-3 py-1 rounded text-sm font-medium">
+                    0{imageIndex + 1}
+                  </div>
+                </div>
+              </section>
+            );
+          })}
         </>
       )}
 
       {/* Product Features Section */}
-      <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-black font-bodoni">Craftsmanship Details</h2>
+      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#f0edec' }}>
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
+            backgroundSize: '20px 20px'
+          }}></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black font-bodoni">Craftsmanship Details</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Every piece is thoughtfully designed with attention to detail and authentic cultural elements
+            </p>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productData.features.map((feature, index) => {
               const getIcon = (featureText: string) => {
                 const lowerFeature = featureText.toLowerCase();
                 
-                // Unisex fit - Modern gender neutral person icon
+                // Unisex fit - UserCircle for all-gender wear
                 if (lowerFeature.includes('unisex')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                    </svg>
-                  );
+                  return <UserCircle className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Cotton/Material - Cotton plant flower icon
-                if (lowerFeature.includes('cotton') || lowerFeature.includes('fabric')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2c2.21 0 4 1.79 4 4 0 .89-.29 1.71-.78 2.38C16.33 8.75 17 9.8 17 11c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.2.67-2.25 1.78-2.62C10.29 7.71 10 6.89 10 6c0-2.21 1.79-4 2-4zm-5.5 7c1.93 0 3.5 1.57 3.5 3.5S8.43 16 6.5 16 3 14.43 3 12.5 4.57 9 6.5 9zm11 0c1.93 0 3.5 1.57 3.5 3.5S19.43 16 17.5 16 14 14.43 14 12.5 15.57 9 17.5 9zM12 16c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4z"/>
-                    </svg>
-                  );
+                // 100% premium carded cotton - Sparkles for premium cotton quality
+                if (lowerFeature.includes('100%') || lowerFeature.includes('premium') || lowerFeature.includes('carded') || lowerFeature.includes('cotton')) {
+                  return <Sparkles className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Arabic calligraphy/Cultural - Feather quill pen icon
-                if (lowerFeature.includes('arabic') || lowerFeature.includes('calligraphy')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75"/>
-                    </svg>
-                  );
+                // Arabic calligraphy by native speakers - Feather for calligraphy/language
+                if (lowerFeature.includes('arabic') || lowerFeature.includes('calligraphy') || lowerFeature.includes('first-generation') || lowerFeature.includes('native') || lowerFeature.includes('speakers')) {
+                  return <Feather className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Los Angeles/Location - City buildings skyline
+                // Designed in Los Angeles - MapPin for location/origin
                 if (lowerFeature.includes('los angeles') || lowerFeature.includes('designed')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V7h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
-                    </svg>
-                  );
+                  return <MapPin className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Garment-dyed/Process - Fabric with water droplet processing
-                if (lowerFeature.includes('garment') || lowerFeature.includes('dyed') || lowerFeature.includes('shrunk')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2l3.09 6.26L22 9l-5.91 6.34L18 22l-6-3.27L6 22l1.91-6.66L2 9l6.91-.74L12 2z"/>
-                      <circle cx="6" cy="6" r="2" opacity="0.7"/>
-                      <circle cx="18" cy="6" r="2" opacity="0.7"/>
-                      <circle cx="6" cy="18" r="2" opacity="0.7"/>
-                      <circle cx="18" cy="18" r="2" opacity="0.7"/>
-                    </svg>
-                  );
+                // Garment-dyed, pre-shrunk fabric - Droplets for dyeing process
+                if (lowerFeature.includes('garment') || lowerFeature.includes('dyed') || lowerFeature.includes('shrunk') || lowerFeature.includes('fabric')) {
+                  return <Droplets className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Fit/Style - Modern t-shirt silhouette
-                if (lowerFeature.includes('fit') || lowerFeature.includes('oversized') || lowerFeature.includes('boxy') || 
-                    lowerFeature.includes('shoulders') || lowerFeature.includes('neck') || lowerFeature.includes('ribbing')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M16 4h1.5C18.33 4 19 4.67 19 5.5S18.33 7 17.5 7H16v13H8V7H6.5C5.67 7 5 6.33 5 5.5S5.67 4 6.5 4H8c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2z"/>
-                    </svg>
-                  );
+                // Boxy, oversized fit - Square for geometric wide fit
+                if (lowerFeature.includes('boxy') || lowerFeature.includes('oversized')) {
+                  return <Square className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Label/Tag features - Enhanced tag icon
-                if (lowerFeature.includes('label') || lowerFeature.includes('tear')) {
-                  return (
-                    <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
-                    </svg>
-                  );
+                // Dropped shoulders - Shirt for garment structure
+                if (lowerFeature.includes('dropped') || lowerFeature.includes('shoulders')) {
+                  return <Shirt className="w-8 h-8" strokeWidth={1} />;
                 }
                 
-                // Default - star for premium quality
-                return (
-                  <svg className="w-8 h-8 text-black" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                );
+                // Wide neck ribbing - Shirt for neckline/garment edge
+                if (lowerFeature.includes('wide') || lowerFeature.includes('neck') || lowerFeature.includes('ribbing')) {
+                  return <Shirt className="w-8 h-8" strokeWidth={1} />;
+                }
+                
+                // Tear-away label - Tag for removable clothing tag
+                if (lowerFeature.includes('tear') || lowerFeature.includes('label')) {
+                  return <Tag className="w-8 h-8" strokeWidth={1} />;
+                }
+                
+                // Default - PackageCheck for quality
+                return <PackageCheck className="w-8 h-8" strokeWidth={1} />;
               };
               
+              
               return (
-                <div key={index} className="text-center p-6 bg-white rounded-lg border border-gray-200 shadow-lg">
-                  <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                    {getIcon(feature)}
+                <motion.div 
+                  key={index} 
+                  className="group relative"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -2 }}
+                >
+                  <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 text-left h-full relative">
+                    {/* Icon container - minimalist */}
+                    <div className="relative z-10 mb-6">
+                      <motion.div 
+                        className="w-16 h-16 border border-gray-300 group-hover:border-black rounded-full flex items-center justify-center transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      >
+                        <div className="text-black group-hover:text-black transition-colors duration-300">
+                          {getIcon(feature)}
+                        </div>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <h3 className="text-lg font-medium text-black group-hover:text-black transition-colors duration-300">
+                        {feature}
+                      </h3>
+                      
+                      {/* Accent line */}
+                      <div className="w-8 h-px bg-gray-300 group-hover:bg-black mt-3 transition-all duration-300"></div>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-black">{feature}</h3>
-                </div>
+                </motion.div>
               );
             })}
           </div>

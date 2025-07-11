@@ -18,7 +18,7 @@ export default function DataSharingOptOutPage() {
     <div className="min-h-screen text-black" style={{ backgroundColor: '#f0edec' }}>
       <div className="max-w-4xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-black mb-6 text-black">
+          <h1 className="text-5xl md:text-6xl font-light font-bodoni mb-6 text-black">
             Data Sharing Opt-Out
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -27,7 +27,7 @@ export default function DataSharingOptOutPage() {
         </div>
 
         <div className="bg-white rounded-lg shadow-xl p-8 mb-12">
-          <h2 className="text-3xl font-black mb-6 text-black">Understanding Data Sharing</h2>
+          <h2 className="text-3xl font-light font-bodoni mb-6 text-black">Understanding Data Sharing</h2>
           
           <div className="prose prose-lg max-w-none mb-8">
             <p className="text-gray-700 mb-4">
@@ -102,7 +102,7 @@ export default function DataSharingOptOutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white rounded-lg shadow-xl p-8">
-            <h3 className="text-2xl font-black mb-4 text-black">Your Rights</h3>
+            <h3 className="text-2xl font-light font-bodoni mb-4 text-black">Your Rights</h3>
             <div className="space-y-3 text-gray-700">
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-black rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -124,7 +124,7 @@ export default function DataSharingOptOutPage() {
           </div>
 
           <div className="bg-white rounded-lg shadow-xl p-8">
-            <h3 className="text-2xl font-black mb-4 text-black">Contact Us</h3>
+            <h3 className="text-2xl font-light font-bodoni mb-4 text-black">Contact Us</h3>
             <p className="text-gray-700 mb-4">
               Have questions about our privacy practices or need help with your opt-out request?
             </p>
@@ -148,7 +148,7 @@ export default function DataSharingOptOutPage() {
 
         <div className="mt-12 text-center">
           <div className="bg-black text-white rounded-lg p-8">
-            <h3 className="text-2xl font-black mb-4">Privacy Notice</h3>
+            <h3 className="text-2xl font-light font-bodoni mb-4">Privacy Notice</h3>
             <p className="text-gray-300 leading-relaxed">
               This opt-out applies to data sharing with third parties for marketing and analytics purposes. 
               Essential data sharing for payment processing, order fulfillment, and customer service will continue 

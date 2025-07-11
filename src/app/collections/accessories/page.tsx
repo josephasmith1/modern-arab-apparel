@@ -1,18 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../products/data';
+import comprehensiveProducts from '../../../../data/comprehensive-products.json';
 import Footer from '@/components/Footer';
 
 export default function AccessoriesPage() {
   // Filter for Accessories only
-  const accessoryProducts = [
-    ...products.filter(p => 
-      p.name.toLowerCase().includes('cap') || 
-      p.name.toLowerCase().includes('hat') || 
-      p.name.toLowerCase().includes('beanie') ||
-      p.name.toLowerCase().includes('bucket')
-    )
-  ];
+  const accessoryProducts = comprehensiveProducts.filter(p => 
+    p.name.toLowerCase().includes('cap') || 
+    p.name.toLowerCase().includes('hat') || 
+    p.name.toLowerCase().includes('beanie') ||
+    p.name.toLowerCase().includes('bucket')
+  );
 
   return (
     <div className="min-h-screen text-black" style={{ backgroundColor: '#f0edec' }}>
@@ -52,6 +50,7 @@ export default function AccessoriesPage() {
                     src={product.colors ? product.colors[0].images.main : '/images/placeholder.jpg'}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>

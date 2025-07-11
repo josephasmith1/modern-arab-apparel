@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronDown, Mail, Package, RotateCcw, Info, Heart, Globe, Shirt } from 'lucide-react';
 import Footer from '@/components/Footer';
 
 interface FAQItem {
@@ -99,145 +101,284 @@ export default function FAQsPage() {
     setOpenFAQ(openFAQ === id ? null : id);
   };
 
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Cultural': return <Heart className="w-4 h-4" />;
+      case 'Product': return <Shirt className="w-4 h-4" />;
+      case 'Shipping': return <Package className="w-4 h-4" />;
+      case 'Returns': return <RotateCcw className="w-4 h-4" />;
+      case 'Care': return <Info className="w-4 h-4" />;
+      case 'Ethics': return <Globe className="w-4 h-4" />;
+      case 'Brand': return <Heart className="w-4 h-4" />;
+      default: return <Info className="w-4 h-4" />;
+    }
+  };
+
   return (
     <div className="min-h-screen text-black" style={{ backgroundColor: '#f0edec' }}>
-      <div className="max-w-6xl mx-auto px-6 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-black mb-6 text-black">
-            Frequently Asked Questions
+      <div className="max-w-7xl mx-auto px-8 py-20">
+        {/* Hero Section - Magazine Style */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="mb-6">
+            <span className="text-xs font-bold tracking-widest text-gray-500 uppercase font-barlow-condensed">
+              Support & Information
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-light font-bodoni mb-8 text-black leading-none">
+            FAQs
           </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Find answers to common questions about our products, shipping, and cultural significance.
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-barlow-condensed">
+            Find answers to common questions about our products, shipping, and cultural significance. 
+            Everything you need to know about Modern Arab Apparel.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Category Filter */}
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-colors duration-200 ${
-                  activeCategory === category
-                    ? 'bg-black text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* FAQ List */}
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {filteredFAQs.map((faq) => (
-              <div key={faq.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-                <button
-                  onClick={() => toggleFAQ(faq.id)}
-                  className="w-full px-6 py-5 text-left hover:bg-gray-50 transition-colors duration-200"
+        {/* Category Filter - Magazine Style */}
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="bg-white p-8 rounded shadow-sm max-w-4xl mx-auto">
+            <div className="mb-6">
+              <h3 className="text-lg font-light font-bodoni text-black mb-2">Browse by Category</h3>
+              <p className="text-sm text-gray-600 font-barlow-condensed">Filter questions by topic to find what you're looking for</p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {categories.map((category, index) => (
+                <motion.button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-300 font-barlow-condensed ${
+                    activeCategory === category
+                      ? 'bg-black text-white'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 border border-gray-200'
+                  }`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-black pr-4">
-                      {faq.question}
-                    </h3>
-                    <div className="flex items-center space-x-3">
-                      <span className="text-xs font-medium text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                        {faq.category}
-                      </span>
-                      <svg
-                        className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-                          openFAQ === faq.id ? 'transform rotate-180' : ''
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                  {category !== 'All' && (
+                    <span className={activeCategory === category ? 'text-white' : 'text-gray-500'}>
+                      {getCategoryIcon(category)}
+                    </span>
+                  )}
+                  <span>{category}</span>
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* FAQ List - Magazine Style */}
+        <div className="max-w-5xl mx-auto">
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {filteredFAQs.map((faq, index) => (
+              <motion.div
+                key={faq.id}
+                className="bg-white shadow-sm border border-gray-200 hover:border-black transition-all duration-300 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ y: -2 }}
+              >
+                <motion.button
+                  onClick={() => toggleFAQ(faq.id)}
+                  className="w-full px-8 py-6 text-left hover:bg-gray-50 transition-colors duration-200"
+                  whileHover={{ backgroundColor: '#f9fafb' }}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1 pr-6">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <span className="flex items-center space-x-1 text-xs font-medium px-3 py-1 rounded-full font-barlow-condensed bg-gray-100 text-gray-700">
+                          {getCategoryIcon(faq.category)}
+                          <span>{faq.category}</span>
+                        </span>
+                      </div>
+                      <h3 className="text-lg md:text-xl font-light text-black font-bodoni leading-tight">
+                        {faq.question}
+                      </h3>
                     </div>
+                    <motion.div
+                      animate={{ rotate: openFAQ === faq.id ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex-shrink-0 ml-4"
+                    >
+                      <ChevronDown className="w-5 h-5 text-gray-500" />
+                    </motion.div>
                   </div>
-                </button>
-                {openFAQ === faq.id && (
-                  <div className="px-6 pb-5">
-                    <div className="border-t border-gray-200 pt-4">
-                      <p className="text-gray-700 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
-                )}
-              </div>
+                </motion.button>
+                
+                <AnimatePresence>
+                  {openFAQ === faq.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-8 pb-6">
+                        <div className="border-t border-gray-200 pt-6">
+                          <p className="text-gray-700 leading-relaxed text-lg font-barlow-condensed">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Contact Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-lg shadow-xl p-8 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-black mb-4 text-black">Still Have Questions?</h2>
-            <p className="text-gray-700 mb-6">
-              Can&apos;t find the answer you&apos;re looking for? Our team is here to help.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="bg-black text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200"
-              >
-                Contact Us
-              </a>
-              <a
-                href="mailto:hello@modernarabapparel.com"
-                className="border border-black text-black px-8 py-3 rounded-lg font-semibold hover:bg-black hover:text-white transition-colors duration-200"
-              >
-                Email Support
-              </a>
+        {/* Contact Section - Magazine Style */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="bg-black text-white p-12 lg:p-16 relative overflow-hidden">
+            <div className="relative z-10 text-center max-w-3xl mx-auto">
+              <div className="mb-6">
+                <span className="text-xs font-bold tracking-widest text-gray-400 uppercase font-barlow-condensed">
+                  Get in Touch
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-light font-bodoni mb-6 text-white">Still Have Questions?</h2>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed font-barlow-condensed">
+                Can't find the answer you're looking for? Our team is here to help with any 
+                questions about our products, culture, or brand story.
+              </p>
+              <div className="flex flex-col lg:flex-row gap-6 justify-center max-w-md mx-auto lg:max-w-none">
+                <motion.a
+                  href="/contact"
+                  className="flex items-center justify-center space-x-2 bg-white text-black px-8 py-4 font-semibold hover:bg-gray-100 transition-colors duration-300 font-barlow-condensed tracking-wide"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>CONTACT US</span>
+                </motion.a>
+                <motion.a
+                  href="mailto:hello@modernarabapparel.com"
+                  className="flex items-center justify-center space-x-2 border border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-black transition-colors duration-300 font-barlow-condensed tracking-wide"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Mail className="w-4 h-4" />
+                  <span>EMAIL SUPPORT</span>
+                </motion.a>
+              </div>
+            </div>
+            
+            {/* Background pattern */}
+            <div className="absolute top-0 right-0 w-40 h-40 opacity-5">
+              <div className="text-8xl font-bodoni text-white transform rotate-12">
+                ?
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Quick Links */}
-        <div className="mt-16">
+        {/* Quick Links - Magazine Grid */}
+        <motion.div
+          className="mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <div className="mb-4">
+              <span className="text-xs font-bold tracking-widest text-gray-500 uppercase font-barlow-condensed">
+                Quick Access
+              </span>
+            </div>
+            <h3 className="text-3xl md:text-4xl font-light font-bodoni text-black mb-4">Related Information</h3>
+            <p className="text-lg text-gray-600 font-barlow-condensed">Essential information about our policies and services</p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Shipping Information</h3>
-              <p className="text-gray-600 text-sm">
-                Learn about our shipping methods, times, and costs.
+            <motion.div 
+              className="group bg-white hover:bg-black transition-all duration-500 p-8 text-center shadow-sm border border-gray-200 hover:border-black"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <motion.div 
+                className="w-16 h-16 bg-black group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Package className="w-8 h-8 text-white group-hover:text-black transition-colors" />
+              </motion.div>
+              <h3 className="text-xl font-light font-bodoni mb-3 text-black group-hover:text-white transition-colors">Shipping Information</h3>
+              <p className="text-gray-600 group-hover:text-gray-300 transition-colors font-barlow-condensed">
+                Learn about our shipping methods, times, and costs for domestic and international orders.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Returns & Exchanges</h3>
-              <p className="text-gray-600 text-sm">
-                30-day return policy with easy exchange process.
+            <motion.div 
+              className="group bg-white hover:bg-black transition-all duration-500 p-8 text-center shadow-sm border border-gray-200 hover:border-black"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <motion.div 
+                className="w-16 h-16 bg-black group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <RotateCcw className="w-8 h-8 text-white group-hover:text-black transition-colors" />
+              </motion.div>
+              <h3 className="text-xl font-light font-bodoni mb-3 text-black group-hover:text-white transition-colors">Returns & Exchanges</h3>
+              <p className="text-gray-600 group-hover:text-gray-300 transition-colors font-barlow-condensed">
+                30-day return policy with easy exchange process. Quality guaranteed.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-2">Size Guide</h3>
-              <p className="text-gray-600 text-sm">
-                Find your perfect fit with our detailed size charts.
+            <motion.div 
+              className="group bg-white hover:bg-black transition-all duration-500 p-8 text-center shadow-sm border border-gray-200 hover:border-black"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <motion.div 
+                className="w-16 h-16 bg-black group-hover:bg-white rounded-full flex items-center justify-center mx-auto mb-6"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Info className="w-8 h-8 text-white group-hover:text-black transition-colors" />
+              </motion.div>
+              <h3 className="text-xl font-light font-bodoni mb-3 text-black group-hover:text-white transition-colors">Size Guide</h3>
+              <p className="text-gray-600 group-hover:text-gray-300 transition-colors font-barlow-condensed">
+                Find your perfect fit with our detailed size charts and fitting tips.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <Footer />

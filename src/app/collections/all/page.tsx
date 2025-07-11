@@ -1,22 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../products/data';
+import comprehensiveProducts from '../../../../data/comprehensive-products.json';
 import productsJson from '../../../../data/products.json';
 import Footer from '@/components/Footer';
 
 export default function AllProductsPage() {
-  // Combine all product sources, prioritizing detailed products
-  const allProducts = [
-    ...products,
-    ...productsJson.filter(p => !products.find(pp => pp.slug === p.slug))
-      .map(p => ({
-        slug: p.slug,
-        name: p.name,
-        price: p.price,
-        image: p.image,
-        isSimple: true
-      }))
-  ];
+  // Use comprehensive products data
+  const allProducts = comprehensiveProducts.map(product => ({
+    slug: product.slug,
+    name: product.name,
+    price: product.price,
+    image: product.colors?.[0]?.images?.main || '/images/modern-arab-faded-tee-faded-khaki-1.jpg',
+    colors: product.colors
+  }));
 
   // Remove duplicates based on slug
   const uniqueProducts = allProducts.filter((product, index, self) => 
@@ -61,6 +57,7 @@ export default function AllProductsPage() {
                     src={('image' in product && product.image) || ('colors' in product && product.colors ? product.colors[0].images.main : '/images/placeholder.jpg')}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>

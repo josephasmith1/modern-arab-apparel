@@ -35,6 +35,8 @@ export default function CollectionsPage() {
                         src={collection.image}
                         alt={collection.name}
                         fill
+                        sizes="100vw"
+                        priority
                         className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -65,6 +67,7 @@ export default function CollectionsPage() {
                       src={collection.image}
                       alt={collection.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -111,6 +114,7 @@ export default function CollectionsPage() {
                       src={collection.image}
                       alt={collection.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -158,6 +162,7 @@ export default function CollectionsPage() {
                         src={collection.image}
                         alt={collection.name}
                         fill
+                        sizes="100vw"
                         className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -191,6 +196,8 @@ export default function CollectionsPage() {
                 src="/images/modern-arab-faded-tee-faded-khaki-1.jpg"
                 alt="Faded Khaki"
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                priority
                 className="object-cover"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
@@ -202,6 +209,7 @@ export default function CollectionsPage() {
                 src="/images/modern-arab-faded-tee-faded-black-1.jpg"
                 alt="Faded Black"
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
@@ -213,6 +221,7 @@ export default function CollectionsPage() {
                 src="/images/modern-arab-faded-tee-faded-bone-1.jpg"
                 alt="Faded Bone"
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
@@ -224,6 +233,7 @@ export default function CollectionsPage() {
                 src="/images/modern-arab-faded-tee-faded-eucalyptus-1.jpg"
                 alt="Faded Eucalyptus"
                 fill
+                sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">

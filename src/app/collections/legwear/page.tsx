@@ -1,17 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { products } from '../../products/data';
+import comprehensiveProducts from '../../../../data/comprehensive-products.json';
 import Footer from '@/components/Footer';
 
 export default function LegwearPage() {
   // Filter for Bottoms/Legwear only
-  const legwearProducts = [
-    ...products.filter(p => 
-      p.name.toLowerCase().includes('joggers') || 
-      p.name.toLowerCase().includes('sweatpants') || 
-      p.name.toLowerCase().includes('pants')
-    )
-  ];
+  const legwearProducts = comprehensiveProducts.filter(p => 
+    p.category === "Bottoms" || 
+    p.name.toLowerCase().includes('jogger') || 
+    p.name.toLowerCase().includes('sweatpants') || 
+    p.name.toLowerCase().includes('pants')
+  );
 
   return (
     <div className="min-h-screen text-black" style={{ backgroundColor: '#f0edec' }}>
@@ -36,6 +35,7 @@ export default function LegwearPage() {
                     src={('colors' in product && product.colors && product.colors[0]?.images?.main) || '/images/placeholder-product.jpg'}
                     alt={product.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>

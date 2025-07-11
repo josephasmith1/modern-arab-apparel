@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -15,6 +16,8 @@
   --font-playfair-display: var(--font-playfair-display);
   --font-barlow-condensed: var(--font-barlow-condensed);
   --font-bodoni: var(--font-bodoni);
+  --font-montserrat: var(--font-montserrat);
+  --font-arabic: 'Amiri', 'Scheherazade New', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,4 +46,8 @@ body {
   text-shadow: 1px 4px 4px #555;
   -webkit-background-clip: text;
   background-clip: text;
+}
+
+.font-arabic {
+  font-family: 'Amiri', 'Scheherazade New', serif;
 }

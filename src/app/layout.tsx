@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, My_Soul, WindSong, Playfair_Display, Barlow_Condensed, Noto_Naskh_Arabic } from "next/font/google";
+import { Geist, Geist_Mono, My_Soul, WindSong, Playfair_Display, Barlow_Condensed, Noto_Naskh_Arabic, Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import { bodoni } from "./fonts/fonts";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,6 +45,12 @@ const notoNaskhArabic = Noto_Naskh_Arabic({
   weight: ["400", "700"],
 });
 
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "Modern Arab Apparel",
   description: "High-quality, modern apparel with cultural heritage.",
@@ -57,10 +64,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${mySoul.variable} ${windSong.variable} ${playfairDisplay.variable} ${barlowCondensed.variable} ${notoNaskhArabic.variable} ${bodoni.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${mySoul.variable} ${windSong.variable} ${playfairDisplay.variable} ${barlowCondensed.variable} ${notoNaskhArabic.variable} ${bodoni.variable} ${montserrat.variable} antialiased`}
       >
-        <Header />
-        {children}
+        <CartProvider>
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
