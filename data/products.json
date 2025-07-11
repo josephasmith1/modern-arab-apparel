@@ -1,0 +1,66 @@
+[
+  {
+    "name": "Modern Arab Faded Tee",
+    "price": "$45.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modernarab-tee",
+    "image": "/images/modern-arab-faded-tee-faded-khaki-front.jpg",
+    "slug": "modern-arab-faded-tee"
+  },
+  {
+    "name": "Modern Arab Premium Tee (Faded Green)",
+    "price": "$45.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modern-arab-premium-tee-faded-eucalyptus",
+    "image": "/images/modern-arab-faded-tee-faded-eucalyptus-front.jpg",
+    "slug": "modern-arab-premium-tee-faded-eucalyptus"
+  },
+  {
+    "name": "Modern Arab Tee (White)",
+    "price": "$40.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modernarab-tee-white",
+    "image": "/images/modern-arab-faded-tee-faded-bone-front.jpg",
+    "slug": "modernarab-tee-white"
+  },
+  {
+    "name": "Modern Arab Premium Tee",
+    "price": "$45.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modern-arab-premium-tee-1",
+    "image": "/images/modern-arab-faded-tee-faded-khaki-front.jpg",
+    "slug": "modern-arab-premium-tee-1"
+  },
+  {
+    "name": "Modern Arab Tee (Black)",
+    "price": "$40.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modernarab-tee-black",
+    "image": "/images/modern-arab-faded-tee-faded-black-front.jpg",
+    "slug": "modernarab-tee-black"
+  },
+  {
+    "name": "Modern Arab Premium Tee (Faded Khaki)",
+    "price": "$45.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modern-arab-premium-tee-faded-khaki",
+    "image": "/images/modern-arab-faded-tee-faded-khaki-front.jpg",
+    "slug": "modern-arab-premium-tee-faded-khaki"
+  },
+  {
+    "name": "Modern Arab Premium Tee",
+    "price": "$45.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modern-arab-premium-tee",
+    "image": "/images/modern-arab-faded-tee-faded-khaki-front.jpg",
+    "slug": "modern-arab-premium-tee"
+  },
+  {
+    "name": "Modern Arab Faded Tee (Black Print)",
+    "price": "$45.00",
+    "description": "",
+    "url": "https://modernarabapparel.com/collections/all/products/modern-arab-faded-tee-black-print",
+    "image": "/images/modern-arab-faded-tee-faded-black-front.jpg",
+    "slug": "modern-arab-faded-tee-black-print"
+  }
+]

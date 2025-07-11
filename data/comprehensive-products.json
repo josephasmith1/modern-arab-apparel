@@ -1,0 +1,538 @@
+[
+  {
+    "slug": "modern-arab-faded-tee",
+    "name": "Modern Arab Faded Tee",
+    "price": "$45.00",
+    "description": "Rooted in meaning and made for movement, the Modern Arab Tee features the Arabic phrase \"ألآ تخافون من الله\" (Don't you fear God?) across the back—a powerful rhetorical question meant to inspire reflection, not fear.",
+    "fullDescription": "This design challenges harmful stereotypes, reminding the world: Arabs are not what the world thinks they are—they are better. It reclaims the narrative through language, pride, and presence. Balanced by the clean \"Modern Arab\" and \"Los Angeles\" type, the design bridges heritage with hometown identity.",
+    "category": "T-Shirts",
+    "colors": [
+      {
+        "name": "Faded Khaki",
+        "hex": "#C4A575",
+        "images": {
+          "main": "/images/modern-arab-faded-tee-faded-khaki-1.jpg",
+          "back": "/images/modern-arab-faded-tee-faded-khaki-2.jpg",
+          "lifestyle": []
+        }
+      },
+      {
+        "name": "Faded Black",
+        "hex": "#4A4A4A",
+        "images": {
+          "main": "/images/modern-arab-faded-tee-faded-black-1.jpg",
+          "back": "/images/modern-arab-faded-tee-faded-black-2.jpg",
+          "lifestyle": []
+        }
+      },
+      {
+        "name": "Faded Bone",
+        "hex": "#E8E4E0",
+        "images": {
+          "main": "/images/modern-arab-faded-tee-faded-bone-1.jpg",
+          "back": "/images/modern-arab-faded-tee-faded-bone-2.jpg",
+          "lifestyle": []
+        }
+      },
+      {
+        "name": "Faded Eucalyptus",
+        "hex": "#A4B5A0",
+        "images": {
+          "main": "/images/modern-arab-faded-tee-faded-eucalyptus-1.jpg",
+          "back": "/images/modern-arab-faded-tee-faded-eucalyptus-2.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL",
+      "3XL"
+    ],
+    "features": [
+      "Unisex fit",
+      "100% premium carded cotton",
+      "Arabic calligraphy designed by first-generation and native speakers",
+      "Designed in Los Angeles",
+      "Garment-dyed, pre-shrunk fabric"
+    ],
+    "image": "/images/modern-arab-faded-tee-faded-khaki-1.jpg",
+    "specifications": {
+      "material": "100% premium cotton",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "S",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "M",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "L",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "2XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "3XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  },
+  {
+    "slug": "modern-arab-hoodie",
+    "name": "Modern Arab Hoodie",
+    "price": "$60.00",
+    "description": "A statement piece that combines cultural heritage with modern streetwear. This premium hoodie features clean \"Modern Arab\" branding.",
+    "fullDescription": "Crafted for comfort and designed for impact, this hoodie represents a movement of cultural reclamation. Made from premium materials with attention to detail.",
+    "category": "Hoodies",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "images": {
+          "main": "/images/modern-arab-hoodie-black-1.jpg",
+          "back": "/images/modern-arab-hoodie-black-2.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "features": [
+      "Unisex fit",
+      "Premium fleece material",
+      "Modern Arabic branding",
+      "Designed in Los Angeles",
+      "Comfortable drawstring hood"
+    ],
+    "image": "/images/modern-arab-hoodie-black-1.jpg",
+    "specifications": {
+      "material": "100% premium cotton",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "S",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "M",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "L",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "2XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  },
+  {
+    "slug": "modern-arab-cap",
+    "name": "Modern Arab Cap",
+    "price": "$30.00",
+    "description": "A classic cap featuring Modern Arab branding. Clean design meets cultural expression in this versatile headwear piece.",
+    "fullDescription": "This premium cap combines timeless style with modern cultural expression. Featuring quality construction and comfortable fit.",
+    "category": "Accessories",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "images": {
+          "main": "/images/modern-arab-cap-black-1.jpg",
+          "back": "/images/modern-arab-cap-black-1.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "features": [
+      "Unisex fit",
+      "Adjustable strap",
+      "Modern Arab embroidered logo",
+      "Structured crown",
+      "Premium cotton construction"
+    ],
+    "image": "/images/modern-arab-cap-black-1.jpg",
+    "specifications": {
+      "material": "Premium materials",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "One Size",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  },
+  {
+    "slug": "modern-arab-bucket-hat",
+    "name": "Modern Arab Bucket Hat",
+    "price": "$30.00",
+    "description": "A modern take on the classic bucket hat, featuring clean Modern Arab branding. Combines street style with cultural pride.",
+    "fullDescription": "This premium bucket hat is designed for those who want to make a statement while staying stylish. Perfect for outdoor activities or urban adventures.",
+    "category": "Accessories",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "images": {
+          "main": "/images/modern-arab-bucket-hat-black-1.jpg",
+          "back": "/images/modern-arab-bucket-hat-black-1.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "S/M",
+      "L/XL"
+    ],
+    "features": [
+      "Unisex fit",
+      "Durable cotton canvas",
+      "Modern Arab embroidered logo",
+      "Wide brim for sun protection",
+      "Classic bucket hat style"
+    ],
+    "image": "/images/modern-arab-bucket-hat-black-1.jpg",
+    "specifications": {
+      "material": "Premium materials",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "S/M",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "L/XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  },
+  {
+    "slug": "modern-arab-beanie",
+    "name": "Modern Arab Beanie",
+    "price": "$25.00",
+    "description": "A clean, minimalist beanie featuring subtle Modern Arab branding. Perfect for everyday wear while representing cultural pride.",
+    "fullDescription": "This premium fisherman beanie combines comfort with cultural expression. Made from soft, durable materials that provide warmth and style.",
+    "category": "Accessories",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "images": {
+          "main": "/images/modern-arab-beanie-black-1.jpg",
+          "back": "/images/modern-arab-beanie-black-1.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "One Size"
+    ],
+    "features": [
+      "Unisex fit",
+      "Soft knit material",
+      "Subtle Modern Arab branding",
+      "Fisherman beanie style",
+      "One size fits most"
+    ],
+    "image": "/images/modern-arab-beanie-black-1.jpg",
+    "specifications": {
+      "material": "Premium materials",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "One Size",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  },
+  {
+    "slug": "modern-arab-sweatpants",
+    "name": "Modern Arab Sweatpants",
+    "price": "$60.00",
+    "description": "Premium sweatpants designed for comfort and style. Features clean Modern Arab branding and a relaxed fit perfect for everyday wear.",
+    "fullDescription": "Crafted from premium materials for ultimate comfort, these sweatpants represent the perfect blend of streetwear aesthetics and cultural pride.",
+    "category": "Bottoms",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "images": {
+          "main": "/images/modern-arab-sweatpants-black-1.jpg",
+          "back": "/images/modern-arab-sweatpants-black-1.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "features": [
+      "Unisex fit",
+      "Premium fleece material",
+      "Elastic waistband with drawstring",
+      "Modern Arab branding",
+      "Tapered fit"
+    ],
+    "image": "/images/modern-arab-sweatpants-black-1.jpg",
+    "specifications": {
+      "material": "100% premium cotton",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "S",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "M",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "L",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "2XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  },
+  {
+    "slug": "modern-arab-crewneck",
+    "name": "Modern Arab Crewneck",
+    "price": "$55.00",
+    "description": "A classic crewneck sweatshirt featuring Modern Arab branding. Perfect for layering and everyday comfort.",
+    "fullDescription": "This premium crewneck combines timeless style with modern cultural expression. Made from high-quality materials for lasting comfort.",
+    "category": "Sweatshirts",
+    "colors": [
+      {
+        "name": "Black",
+        "hex": "#000000",
+        "images": {
+          "main": "/images/modern-arab-crewneck-black-1.jpg",
+          "back": "/images/modern-arab-crewneck-black-1.jpg",
+          "lifestyle": []
+        }
+      }
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "2XL"
+    ],
+    "features": [
+      "Unisex fit",
+      "Premium cotton blend",
+      "Modern Arab branding",
+      "Designed in Los Angeles",
+      "Comfortable crew neck"
+    ],
+    "image": "/images/modern-arab-crewneck-black-1.jpg",
+    "specifications": {
+      "material": "100% premium cotton",
+      "weight": "Medium weight",
+      "fit": "Relaxed unisex fit",
+      "origin": "Designed in Los Angeles, USA"
+    },
+    "sizeGuide": [
+      {
+        "size": "S",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "M",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "L",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      },
+      {
+        "size": "2XL",
+        "length": "28\"",
+        "chest": "42\"",
+        "sleeve": "9\"",
+        "lengthCm": "71",
+        "chestCm": "107",
+        "sleeveCm": "23"
+      }
+    ]
+  }
+]
