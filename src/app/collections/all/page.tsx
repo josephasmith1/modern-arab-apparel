@@ -10,7 +10,7 @@ export default function AllProductsPage() {
     slug: product.slug,
     name: product.name,
     price: product.price,
-    image: product.colors?.[0]?.images?.main || '/images/modern-arab-faded-tee-faded-khaki-1.jpg',
+    image: product.colors?.[0]?.images?.main || '/images/modern-arab-faded-tee/faded-khaki-1.jpg',
     colors: product.colors
   }));
 

@@ -11,8 +11,8 @@
         "name": "Faded Khaki",
         "hex": "#C4A575",
         "images": {
-          "main": "/images/modern-arab-faded-tee-faded-khaki-1.jpg",
-          "back": "/images/modern-arab-faded-tee-faded-khaki-2.jpg",
+          "main": "/images/modern-arab-faded-tee/faded-khaki-1.jpg",
+          "back": "/images/modern-arab-faded-tee/faded-khaki-2.jpg",
           "lifestyle": []
         }
       },
@@ -20,8 +20,8 @@
         "name": "Faded Black",
         "hex": "#4A4A4A",
         "images": {
-          "main": "/images/modern-arab-faded-tee-faded-black-1.jpg",
-          "back": "/images/modern-arab-faded-tee-faded-black-2.jpg",
+          "main": "/images/modern-arab-faded-tee/faded-black-1.jpg",
+          "back": "/images/modern-arab-faded-tee/faded-black-2.jpg",
           "lifestyle": []
         }
       },
@@ -29,17 +29,17 @@
         "name": "Faded Bone",
         "hex": "#E8E4E0",
         "images": {
-          "main": "/images/modern-arab-faded-tee-faded-bone-1.jpg",
-          "back": "/images/modern-arab-faded-tee-faded-bone-2.jpg",
+          "main": "/images/modern-arab-faded-tee/faded-bone-1.jpg",
+          "back": "/images/modern-arab-faded-tee/faded-bone-2.jpg",
           "lifestyle": []
         }
       },
       {
-        "name": "Faded Eucalyptus",
+        "name": "Faded Green",
         "hex": "#A4B5A0",
         "images": {
-          "main": "/images/modern-arab-faded-tee-faded-eucalyptus-1.jpg",
-          "back": "/images/modern-arab-faded-tee-faded-eucalyptus-2.jpg",
+          "main": "/images/modern-arab-faded-tee/faded-green-1.jpg",
+          "back": "/images/modern-arab-faded-tee/faded-green-2.jpg",
           "lifestyle": []
         }
       }
@@ -59,7 +59,7 @@
       "Designed in Los Angeles",
       "Garment-dyed, pre-shrunk fabric"
     ],
-    "image": "/images/modern-arab-faded-tee-faded-khaki-1.jpg",
+    "image": "/images/modern-arab-faded-tee/faded-khaki-1.jpg",
     "specifications": {
       "material": "100% premium cotton",
       "weight": "Medium weight",
@@ -135,8 +135,8 @@
         "name": "Black",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-hoodie-black-1.jpg",
-          "back": "/images/modern-arab-hoodie-black-2.jpg",
+          "main": "/images/modern-arab-hoodie/black-1.jpg",
+          "back": "/images/modern-arab-hoodie/black-2.jpg",
           "lifestyle": []
         }
       }
@@ -155,7 +155,7 @@
       "Designed in Los Angeles",
       "Comfortable drawstring hood"
     ],
-    "image": "/images/modern-arab-hoodie-black-1.jpg",
+    "image": "/images/modern-arab-hoodie/black-1.jpg",
     "specifications": {
       "material": "100% premium cotton",
       "weight": "Medium weight",
@@ -222,8 +222,8 @@
         "name": "Black",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-cap-black-1.jpg",
-          "back": "/images/modern-arab-cap-black-1.jpg",
+          "main": "/images/modern-arab-cap/black-1.jpg",
+          "back": "/images/modern-arab-cap/black-1.jpg",
           "lifestyle": []
         }
       }
@@ -238,7 +238,7 @@
       "Structured crown",
       "Premium cotton construction"
     ],
-    "image": "/images/modern-arab-cap-black-1.jpg",
+    "image": "/images/modern-arab-cap/black-1.jpg",
     "specifications": {
       "material": "Premium materials",
       "weight": "Medium weight",
@@ -269,8 +269,8 @@
         "name": "Black",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-bucket-hat-black-1.jpg",
-          "back": "/images/modern-arab-bucket-hat-black-1.jpg",
+          "main": "/images/modern-arab-bucket-hat/black-1.jpg",
+          "back": "/images/modern-arab-bucket-hat/black-1.jpg",
           "lifestyle": []
         }
       }
@@ -286,7 +286,7 @@
       "Wide brim for sun protection",
       "Classic bucket hat style"
     ],
-    "image": "/images/modern-arab-bucket-hat-black-1.jpg",
+    "image": "/images/modern-arab-bucket-hat/black-1.jpg",
     "specifications": {
       "material": "Premium materials",
       "weight": "Medium weight",
@@ -326,8 +326,8 @@
         "name": "Black",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-beanie-black-1.jpg",
-          "back": "/images/modern-arab-beanie-black-1.jpg",
+          "main": "/images/modern-arab-beanie/black-1.jpg",
+          "back": "/images/modern-arab-beanie/black-1.jpg",
           "lifestyle": []
         }
       }
@@ -342,7 +342,7 @@
       "Fisherman beanie style",
       "One size fits most"
     ],
-    "image": "/images/modern-arab-beanie-black-1.jpg",
+    "image": "/images/modern-arab-beanie/black-1.jpg",
     "specifications": {
       "material": "Premium materials",
       "weight": "Medium weight",
@@ -373,8 +373,8 @@
         "name": "Black",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-sweatpants-black-1.jpg",
-          "back": "/images/modern-arab-sweatpants-black-1.jpg",
+          "main": "/images/modern-arab-sweatpants/light-black-1.jpg",
+          "back": "/images/modern-arab-sweatpants/light-black-1.jpg",
           "lifestyle": []
         }
       }
@@ -393,7 +393,7 @@
       "Modern Arab branding",
       "Tapered fit"
     ],
-    "image": "/images/modern-arab-sweatpants-black-1.jpg",
+    "image": "/images/modern-arab-sweatpants/light-black-1.jpg",
     "specifications": {
       "material": "100% premium cotton",
       "weight": "Medium weight",
@@ -460,8 +460,8 @@
         "name": "Black",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-crewneck-black-1.jpg",
-          "back": "/images/modern-arab-crewneck-black-1.jpg",
+          "main": "/images/modern-arab-crewneck/black-1.jpg",
+          "back": "/images/modern-arab-crewneck/black-1.jpg",
           "lifestyle": []
         }
       }
@@ -480,7 +480,7 @@
       "Designed in Los Angeles",
       "Comfortable crew neck"
     ],
-    "image": "/images/modern-arab-crewneck-black-1.jpg",
+    "image": "/images/modern-arab-crewneck/black-1.jpg",
     "specifications": {
       "material": "100% premium cotton",
       "weight": "Medium weight",

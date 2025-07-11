@@ -32,18 +32,18 @@ const Header = () => {
     <div className="flex items-center space-x-6">
       <nav className="hidden md:flex items-center space-x-6">
         <div className="relative group">
-          <Link href="/products" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul flex items-center" style={{ fontSize: '30px' }}>
-            Products
+          <Link href="/collections" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul flex items-center" style={{ fontSize: '30px' }}>
+            Collections
             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </Link>
           <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <Link href="/products" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>All Products</Link>
-            <Link href="/products?category=tees" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>T-Shirts</Link>
-            <Link href="/products?category=hoodies" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Hoodies</Link>
-            <Link href="/products?category=headwear" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Headwear</Link>
-            <Link href="/products?category=bottoms" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Bottoms</Link>
+            <Link href="/collections/all" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>All Products</Link>
+            <Link href="/collections/do-not-fear-god-tee" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Tops</Link>
+            <Link href="/collections/dont-fear-the-name-allah-premium-oversized-crewneck" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Layers</Link>
+            <Link href="/collections/modern-arab-cap" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Headwear</Link>
+            <Link href="/collections/legwear" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Bottoms</Link>
           </div>
         </div>
         <Link href="/about" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul" style={{ fontSize: '30px' }}>About</Link>

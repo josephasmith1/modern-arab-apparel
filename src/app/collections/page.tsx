@@ -193,7 +193,7 @@ export default function CollectionsPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative h-40 rounded-lg overflow-hidden">
               <Image
-                src="/images/modern-arab-faded-tee-faded-khaki-1.jpg"
+                src="/images/modern-arab-faded-tee/faded-khaki-1.jpg"
                 alt="Faded Khaki"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -206,7 +206,7 @@ export default function CollectionsPage() {
             </div>
             <div className="relative h-40 rounded-lg overflow-hidden">
               <Image
-                src="/images/modern-arab-faded-tee-faded-black-1.jpg"
+                src="/images/modern-arab-faded-tee/faded-black-1.jpg"
                 alt="Faded Black"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -218,7 +218,7 @@ export default function CollectionsPage() {
             </div>
             <div className="relative h-40 rounded-lg overflow-hidden">
               <Image
-                src="/images/modern-arab-faded-tee-faded-bone-1.jpg"
+                src="/images/modern-arab-faded-tee/faded-bone-1.jpg"
                 alt="Faded Bone"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
@@ -230,14 +230,14 @@ export default function CollectionsPage() {
             </div>
             <div className="relative h-40 rounded-lg overflow-hidden">
               <Image
-                src="/images/modern-arab-faded-tee-faded-eucalyptus-1.jpg"
-                alt="Faded Eucalyptus"
+                src="/images/modern-arab-faded-tee/faded-green-1.jpg"
+                alt="Faded Green"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="object-cover"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
-                Faded Eucalyptus
+                Faded Green
               </div>
             </div>
           </div>

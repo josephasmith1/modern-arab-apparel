@@ -27,7 +27,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       slug: product.slug || '',
       name: product.name || '',
       price: product.price || '$0.00',
-      image: product.colors?.[0]?.images?.main || '/images/modern-arab-faded-tee-faded-khaki-1.jpg',
+      image: product.colors?.[0]?.images?.main || '/images/modern-arab-faded-tee/faded-khaki-1.jpg',
       colors: product.colors || undefined,
       description: product.description || '',
     }));
@@ -37,18 +37,19 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       const lowerName = product.name?.toLowerCase() || '';
       const lowerCollectionName = collection.name.toLowerCase();
       const collectionSlug = collection.slug.toLowerCase();
+      const productCategory = product.category?.toLowerCase() || '';
       
-      // Match based on collection type
-      if (lowerCollectionName.includes('top') && (lowerName.includes('tee') || lowerName.includes('t-shirt'))) return true;
-      if (lowerCollectionName.includes('layer') && (lowerName.includes('hoodie') || lowerName.includes('sweatshirt') || lowerName.includes('crewneck'))) return true;
-      if (lowerCollectionName.includes('headwear') && (lowerName.includes('cap') || lowerName.includes('beanie') || lowerName.includes('hat'))) return true;
-      if (lowerCollectionName.includes('bottom') && (lowerName.includes('jogger') || lowerName.includes('sweatpants') || lowerName.includes('pants'))) return true;
+      // Match based on collection type using category
+      if (lowerCollectionName.includes('top') && (productCategory.includes('shirt') || productCategory.includes('t-shirt'))) return true;
+      if (lowerCollectionName.includes('layer') && (productCategory.includes('hoodie') || productCategory.includes('sweatshirt') || productCategory.includes('crewneck'))) return true;
+      if (lowerCollectionName.includes('headwear') && productCategory.includes('accessories')) return true;
+      if (lowerCollectionName.includes('bottom') && productCategory.includes('bottom')) return true;
       
       // Specific slug matching for known collections
-      if (collectionSlug === 'do-not-fear-god-tee' && lowerName.includes('tee')) return true;
-      if (collectionSlug === 'dont-fear-the-name-allah-premium-oversized-crewneck' && (lowerName.includes('hoodie') || lowerName.includes('crewneck'))) return true;
-      if (collectionSlug === 'modern-arab-cap' && lowerName.includes('cap')) return true;
-      if (collectionSlug === 'legwear' && (lowerName.includes('jogger') || lowerName.includes('pants'))) return true;
+      if (collectionSlug === 'do-not-fear-god-tee' && productCategory.includes('shirt')) return true;
+      if (collectionSlug === 'dont-fear-the-name-allah-premium-oversized-crewneck' && (productCategory.includes('hoodie') || productCategory.includes('sweatshirt'))) return true;
+      if (collectionSlug === 'modern-arab-cap' && productCategory.includes('accessories')) return true;
+      if (collectionSlug === 'legwear' && productCategory.includes('bottom')) return true;
       
       // Fallback: if it's frontpage/featured, show all
       if (collection.slug === 'frontpage' || collection.category === 'featured') return true;
