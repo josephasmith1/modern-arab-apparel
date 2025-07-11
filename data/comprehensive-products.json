@@ -12,7 +12,7 @@
         "hex": "#C4A575",
         "images": {
           "main": "/images/modern-arab-faded-tee/faded-khaki-1.jpg",
-          "back": "/images/modern-arab-faded-tee/faded-khaki-2.jpg",
+          "back": "",
           "lifestyle": []
         }
       },
@@ -21,7 +21,7 @@
         "hex": "#4A4A4A",
         "images": {
           "main": "/images/modern-arab-faded-tee/faded-black-1.jpg",
-          "back": "/images/modern-arab-faded-tee/faded-black-2.jpg",
+          "back": "",
           "lifestyle": []
         }
       },
@@ -30,7 +30,7 @@
         "hex": "#E8E4E0",
         "images": {
           "main": "/images/modern-arab-faded-tee/faded-bone-1.jpg",
-          "back": "/images/modern-arab-faded-tee/faded-bone-2.jpg",
+          "back": "",
           "lifestyle": []
         }
       },
@@ -39,7 +39,7 @@
         "hex": "#A4B5A0",
         "images": {
           "main": "/images/modern-arab-faded-tee/faded-green-1.jpg",
-          "back": "/images/modern-arab-faded-tee/faded-green-2.jpg",
+          "back": "",
           "lifestyle": []
         }
       }

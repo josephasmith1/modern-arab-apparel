@@ -29,7 +29,7 @@ export default function CollectionsPage() {
             <div className="grid grid-cols-1 gap-8">
               {featuredCollections.map((collection) => (
                 <div key={collection.slug} className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-                  <Link href={collection.url}>
+                  <Link href={`/collections/${collection.slug}`}>
                     <div className="relative h-96 overflow-hidden">
                       <Image
                         src={collection.image}
@@ -37,7 +37,7 @@ export default function CollectionsPage() {
                         fill
                         sizes="100vw"
                         priority
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -61,14 +61,14 @@ export default function CollectionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {apparelCollections.map((collection) => (
               <div key={collection.slug} className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-                <Link href={collection.url}>
+                <Link href={`/collections/${collection.slug}`}>
                   <div className="relative h-64 overflow-hidden">
                     <Image
                       src={collection.image}
                       alt={collection.name}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -108,14 +108,14 @@ export default function CollectionsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {accessoryCollections.map((collection) => (
               <div key={collection.slug} className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-                <Link href={collection.url}>
+                <Link href={`/collections/${collection.slug}`}>
                   <div className="relative h-64 overflow-hidden">
                     <Image
                       src={collection.image}
                       alt={collection.name}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -156,14 +156,14 @@ export default function CollectionsPage() {
             <div className="grid grid-cols-1 gap-8">
               {upcomingCollections.map((collection) => (
                 <div key={collection.slug} className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
-                  <Link href={collection.url}>
+                  <Link href={`/collections/${collection.slug}`}>
                     <div className="relative h-64 overflow-hidden">
                       <Image
                         src={collection.image}
                         alt={collection.name}
                         fill
                         sizes="100vw"
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -198,7 +198,7 @@ export default function CollectionsPage() {
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
                 priority
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
                 Faded Khaki
@@ -210,7 +210,7 @@ export default function CollectionsPage() {
                 alt="Faded Black"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
                 Faded Black
@@ -222,7 +222,7 @@ export default function CollectionsPage() {
                 alt="Faded Bone"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
                 Faded Bone
@@ -234,7 +234,7 @@ export default function CollectionsPage() {
                 alt="Faded Green"
                 fill
                 sizes="(max-width: 768px) 50vw, 25vw"
-                className="object-cover"
+                className="object-contain"
               />
               <div className="absolute bottom-2 left-2 bg-white/90 px-2 py-1 rounded text-xs font-medium">
                 Faded Green

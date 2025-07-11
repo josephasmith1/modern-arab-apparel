@@ -44,7 +44,7 @@ const Footer = () => {
                   ألآ تخافون من الله
                 </div>
                 <p className="text-sm text-stone-600 font-barlow-condensed mt-1">
-                  "Don't you fear God?" - Our flagship message
+                  &quot;Don&apos;t you fear God?&quot; - Our flagship message
                 </p>
               </div>
             </div>
@@ -55,11 +55,10 @@ const Footer = () => {
                 <h4 className="text-lg font-light text-stone-800 font-bodoni">Shop</h4>
                 <div className="space-y-2">
                   <Link href="/collections" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">All Collections</Link>
-                  <Link href="/collections/all" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">All Products</Link>
-                  <Link href="/collections/do-not-fear-god-tee" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Tops & Tees</Link>
-                  <Link href="/collections/dont-fear-the-name-allah-premium-oversized-crewneck" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Layers</Link>
-                  <Link href="/collections/modern-arab-cap" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Headwear</Link>
-                  <Link href="/collections/legwear" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Bottoms</Link>
+                  <Link href="/collections/upperwear" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Tops & Tees</Link>
+                  <Link href="/collections/layers" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Layers</Link>
+                  <Link href="/collections/headwear" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Headwear</Link>
+                  <Link href="/collections/bottoms" className="block text-stone-700 hover:text-stone-900 transition-colors font-barlow-condensed">Bottoms</Link>
                 </div>
               </div>
 

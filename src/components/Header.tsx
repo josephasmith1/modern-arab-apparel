@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="h-16 px-8 flex items-center justify-between backdrop-blur-sm shadow-2xl border-b border-gray-300 sticky top-0 z-50 relative" style={{ backgroundColor: 'rgba(240, 237, 236, 0.95)' }}>
+      <header className="h-16 px-8 flex items-center justify-between backdrop-blur-sm shadow-2xl border-b border-gray-300 sticky top-0 z-50" style={{ backgroundColor: 'rgba(240, 237, 236, 0.95)' }}>
     <div className="flex items-center">
       <span className="text-lg text-gray-700 font-normal font-arabic">
         ألآ تخافون من الله
@@ -39,11 +39,10 @@ const Header = () => {
             </svg>
           </Link>
           <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <Link href="/collections/all" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>All Products</Link>
-            <Link href="/collections/do-not-fear-god-tee" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Tops</Link>
-            <Link href="/collections/dont-fear-the-name-allah-premium-oversized-crewneck" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Layers</Link>
-            <Link href="/collections/modern-arab-cap" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Headwear</Link>
-            <Link href="/collections/legwear" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Bottoms</Link>
+            <Link href="/collections/upperwear" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Tops</Link>
+            <Link href="/collections/layers" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Layers</Link>
+            <Link href="/collections/headwear" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Headwear</Link>
+            <Link href="/collections/bottoms" className="block px-4 py-2 text-black hover:bg-gray-100 transition-colors font-my-soul" style={{ fontSize: '25px' }}>Bottoms</Link>
           </div>
         </div>
         <Link href="/about" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul" style={{ fontSize: '30px' }}>About</Link>

@@ -2,16 +2,16 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useState, useEffect, useMemo } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Footer from '@/components/Footer';
 
 export default function About() {
   const [imageBackgroundColors, setImageBackgroundColors] = useState<{ [key: string]: string }>({});
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, -100]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, 100]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0.3]);
+  const y1 = useTransform(scrollY, [0, 800], [0, -150]);
+  const y2 = useTransform(scrollY, [0, 800], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 200], [1, 0.3]);
   
   // Extract exact background color from image corners
   const extractExactBackgroundColor = (imageSrc: string, callback: (color: string) => void) => {
@@ -79,7 +79,7 @@ export default function About() {
   };
 
   // Extract background colors from all images used in the page
-  const aboutImages = [
+  const aboutImages = useMemo(() => [
     '/about-images/IMG_3487_085f7aae-632c-4e09-9321-1c5aad742324_750x.webp',
     '/about-images/91E379F9-711A-4065-AE1F-92F98E3362E7-2_750x.webp',
     '/about-images/9D0D7091-2A2E-4DFE-932A-2B0524728C37-2_750x.webp',
@@ -92,7 +92,7 @@ export default function About() {
     '/about-images/IMG_3498_750x.webp',
     '/about-images/MG_0889_750x.webp',
     '/about-images/MG_0941_750x.webp'
-  ];
+  ], []);
 
   useEffect(() => {
     aboutImages.forEach((image) => {
@@ -102,7 +102,7 @@ export default function About() {
         });
       }
     });
-  }, [imageBackgroundColors]);
+  }, [imageBackgroundColors, aboutImages]);
 
   return (
     <div className="text-black font-barlow-condensed overflow-hidden scroll-smooth" style={{ backgroundColor: '#f0edec' }}>
@@ -133,14 +133,14 @@ export default function About() {
           className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="text-center max-w-4xl px-6">
             <motion.h1 
               className="text-7xl md:text-9xl font-extralight mb-8 text-white drop-shadow-2xl font-bodoni uppercase tracking-widest"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             >
               The Story
             </motion.h1>
@@ -148,7 +148,7 @@ export default function About() {
               className="text-2xl md:text-3xl font-light text-gray-200 mb-12 drop-shadow-lg font-my-soul tracking-wide"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             >
               We are Modern Arab, and this is the narrative.
             </motion.p>
@@ -162,7 +162,7 @@ export default function About() {
         style={{ backgroundColor: '#f0edec' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.4 }}
         viewport={{ once: true }}
       >
         {/* Background Decorative Elements */}
@@ -175,7 +175,7 @@ export default function About() {
             className="text-5xl md:text-6xl font-extralight mb-12 text-center font-bodoni uppercase text-black tracking-widest"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
             viewport={{ once: true }}
           >
             About Modern Arab
@@ -213,7 +213,7 @@ export default function About() {
               style={{ backgroundColor: imageBackgroundColors['/about-images/91E379F9-711A-4065-AE1F-92F98E3362E7-2_750x.webp'] || 'rgb(240, 237, 236)' }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, rotateY: 2 }}
             >
@@ -231,7 +231,7 @@ export default function About() {
             className="text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             viewport={{ once: true }}
           >
             <p className="text-xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto tracking-wide">
@@ -247,7 +247,7 @@ export default function About() {
         style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
         <div className="max-w-6xl mx-auto px-6">
@@ -260,7 +260,7 @@ export default function About() {
               }}
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, rotateY: 5 }}
             >
@@ -302,7 +302,7 @@ export default function About() {
                 className="text-xl font-medium leading-relaxed mb-6 text-black"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
                 viewport={{ once: true }}
               >
                 By blending style with purpose, we reveal the true essence of Arab identity—one of peace, faith, and cultural richness—while breaking harmful stereotypes along the way.
@@ -311,7 +311,7 @@ export default function About() {
                 className="text-xl font-medium leading-relaxed text-black"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
                 viewport={{ once: true }}
               >
                 Our mission is simple yet powerful: to redefine Arab representation through premium, trendsetting apparel. Every piece we design is crafted to celebrate inclusivity, individuality, and the beauty of a multicultural world.
@@ -516,7 +516,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 1 }}
                 viewport={{ once: true }}
               >
-                "Don't you fear God?"
+                &quot;Don&apos;t you fear God?&quot;
               </motion.p>
             </motion.div>
           </motion.div>
@@ -535,7 +535,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 viewport={{ once: true }}
               >
-                Our flagship piece features this powerful Arabic phrase - a rhetorical question that transcends fear and inspires spiritual reflection. This isn't just a design; it's a conversation starter about faith, conscience, and cultural identity.
+                Our flagship piece features this powerful Arabic phrase - a rhetorical question that transcends fear and inspires spiritual reflection. This isn&apos;t just a design; it&apos;s a conversation starter about faith, conscience, and cultural identity.
               </motion.p>
               <motion.p 
                 className="text-lg font-light text-gray-700 mb-8 italic tracking-wide"
@@ -544,7 +544,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.8 }}
                 viewport={{ once: true }}
               >
-                "More than words, it's a call to conscience."
+                &quot;More than words, it&apos;s a call to conscience.&quot;
               </motion.p>
               <motion.div 
                 className="bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 border border-white/20"

@@ -1,33 +1,42 @@
 "use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { useState, Dispatch, SetStateAction } from 'react';
+import { motion, AnimatePresence, MotionValue } from 'framer-motion';
 import AddToCartButton from '@/components/cart/AddToCartButton';
-import { type Product, type ProductColor } from '@/app/products/data';
+import { type Product, type ProductColor, type CartItem } from '@/app/products/data';
 
 
 
 interface ProductMobileUIProps {
   product: Product;
   selectedColor: ProductColor;
-  handleColorSelect: (color: ProductColor) => void;
+  onColorSelect: (color: ProductColor) => void;
   extractedProductColors: { [key: string]: string };
   isScrolled: boolean;
+  selectedSize: string;
+  onSizeSelect: Dispatch<SetStateAction<string>>;
+  quantity: number;
+  onQuantityChange: Dispatch<SetStateAction<number>>;
+  addItemToCart: (item: Omit<CartItem, 'id'>) => void;
+  mobileColorSelectorOpacity: MotionValue<number>;
+  mobileColorSelectorY: MotionValue<number>;
 }
 
 export default function ProductMobileUI({ 
   product, 
   selectedColor, 
-  handleColorSelect, 
+  onColorSelect, 
   extractedProductColors,
-  isScrolled
+  isScrolled,
+  selectedSize,
+  onSizeSelect,
+  quantity,
+  onQuantityChange,
+  addItemToCart,
+  mobileColorSelectorOpacity,
+  mobileColorSelectorY
 }: ProductMobileUIProps) {
-  const [selectedSize, setSelectedSize] = useState(selectedColor.variants[0]?.size || '');
-  const [quantity, setQuantity] = useState(1);
   const [showColorOptions, setShowColorOptions] = useState(false);
-  const { scrollY } = useScroll();
-  const colorSelectorOpacity = useTransform(scrollY, [0, 300], [1, 0]);
-  const colorSelectorY = useTransform(scrollY, [0, 300], [0, 50]);
 
   return (
     <>
@@ -35,8 +44,8 @@ export default function ProductMobileUI({
       <motion.div
         className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-md p-4 border-t border-gray-200 z-20 lg:hidden"
         style={{
-          opacity: colorSelectorOpacity,
-          y: colorSelectorY,
+          opacity: mobileColorSelectorOpacity,
+          y: mobileColorSelectorY,
           display: isScrolled ? 'none' : 'block'
         }}
       >
@@ -66,12 +75,12 @@ export default function ProductMobileUI({
               {product.colors.map((color) => (
                 <button
                   key={color.name}
-                  onClick={() => { handleColorSelect(color); setShowColorOptions(false); }}
+                  onClick={() => { onColorSelect(color); setShowColorOptions(false); }}
                   className="text-center"
                 >
                   <div
                     className={`w-16 h-16 rounded-full mx-auto border-2 ${selectedColor.name === color.name ? 'border-black' : 'border-gray-300'}`}
-                    style={{ backgroundColor: extractedProductColors[color.name] || color.hex || '#ccc' }}
+                    style={{ backgroundColor: (extractedProductColors && extractedProductColors[color.name]) || color.hex || '#ccc' }}
                   ></div>
                   <p className={`mt-2 text-xs ${selectedColor.name === color.name ? 'font-semibold' : ''}`}>{color.name}</p>
                 </button>
@@ -95,7 +104,7 @@ export default function ProductMobileUI({
               {selectedColor.variants.map((variant) => (
                 <button
                   key={variant.size}
-                  onClick={() => setSelectedSize(variant.size)}
+                  onClick={() => onSizeSelect(variant.size)}
                   disabled={!variant.available}
                   className={`px-4 py-2 text-sm rounded-lg border transition-colors ${
                     selectedSize === variant.size
@@ -114,19 +123,26 @@ export default function ProductMobileUI({
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center border border-gray-300 rounded-lg">
-              <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="px-4 py-2 text-gray-600 hover:bg-gray-100">-</button>
+              <button onClick={() => onQuantityChange(q => Math.max(1, q - 1))} className="px-4 py-2 text-gray-600 hover:bg-gray-100">-</button>
               <span className="px-4 py-2 font-medium">{quantity}</span>
-              <button onClick={() => setQuantity(q => q + 1)} className="px-4 py-2 text-gray-600 hover:bg-gray-100">+</button>
+              <button onClick={() => onQuantityChange(q => q + 1)} className="px-4 py-2 text-gray-600 hover:bg-gray-100">+</button>
             </div>
             <AddToCartButton
-              onAddToCart={() => console.log('Add to cart:', { 
-                slug: product.slug, 
-                name: product.name, 
-                price: selectedColor.variants.find(v => v.size === selectedSize)?.price || product.price, 
-                color: selectedColor.name, 
-                size: selectedSize, 
-                quantity 
-              })}
+              onAddToCart={() => {
+                if (selectedSize) {
+                  const variant = selectedColor.variants.find(v => v.size === selectedSize);
+                  addItemToCart({
+                    name: product.name,
+                    vendor: product.vendor,
+                    tags: product.tags,
+                    price: variant ? variant.price : 0,
+                    image: selectedColor.images.main,
+                    color: selectedColor.name,
+                    size: selectedSize,
+                    quantity: quantity,
+                  });
+                }
+              }}
               price={`$${(selectedColor.variants.find(v => v.size === selectedSize)?.price || 0).toFixed(2)}`}
               disabled={!selectedSize || !selectedColor.variants.find(v => v.size === selectedSize)?.available}
             />

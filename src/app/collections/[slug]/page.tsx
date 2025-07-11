@@ -2,9 +2,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
-import { getCollectionBySlug } from '@/data/collections';
-import comprehensiveProducts from '../../../../data/comprehensive-products.json';
-import productsJson from '../../../../data/products.json';
+import { getCollectionBySlug, collections } from '@/data/collections';
+import { products } from '@/app/products/data';
 
 interface CollectionPageProps {
   params: Promise<{
@@ -20,60 +19,9 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
     notFound();
   }
 
-  // Function to get products for this collection
-  function getCollectionProducts() {
-    // Use comprehensive products data
-    const allProducts = comprehensiveProducts.map(product => ({
-      slug: product.slug || '',
-      name: product.name || '',
-      price: product.price || '$0.00',
-      image: product.colors?.[0]?.images?.main || '/images/modern-arab-faded-tee/faded-khaki-1.jpg',
-      colors: product.colors || undefined,
-      description: product.description || '',
-    }));
-
-    // Filter products based on collection
-    const collectionProducts = allProducts.filter(product => {
-      const lowerName = product.name?.toLowerCase() || '';
-      const lowerCollectionName = collection.name.toLowerCase();
-      const collectionSlug = collection.slug.toLowerCase();
-      const productCategory = product.category?.toLowerCase() || '';
-      
-      // Match based on collection type using category
-      if (lowerCollectionName.includes('top') && (productCategory.includes('shirt') || productCategory.includes('t-shirt'))) return true;
-      if (lowerCollectionName.includes('layer') && (productCategory.includes('hoodie') || productCategory.includes('sweatshirt') || productCategory.includes('crewneck'))) return true;
-      if (lowerCollectionName.includes('headwear') && productCategory.includes('accessories')) return true;
-      if (lowerCollectionName.includes('bottom') && productCategory.includes('bottom')) return true;
-      
-      // Specific slug matching for known collections
-      if (collectionSlug === 'do-not-fear-god-tee' && productCategory.includes('shirt')) return true;
-      if (collectionSlug === 'dont-fear-the-name-allah-premium-oversized-crewneck' && (productCategory.includes('hoodie') || productCategory.includes('sweatshirt'))) return true;
-      if (collectionSlug === 'modern-arab-cap' && productCategory.includes('accessories')) return true;
-      if (collectionSlug === 'legwear' && productCategory.includes('bottom')) return true;
-      
-      // Fallback: if it's frontpage/featured, show all
-      if (collection.slug === 'frontpage' || collection.category === 'featured') return true;
-      
-      return false;
-    });
-
-    // If only 1 product with multiple colors, expand each color as separate item
-    if (collectionProducts.length === 1 && 'colors' in collectionProducts[0] && collectionProducts[0].colors && collectionProducts[0].colors.length > 1) {
-      const product = collectionProducts[0];
-      return product.colors.map(color => ({
-        ...product,
-        id: `${product.slug}-${color.name}`,
-        displayName: `${product.name} - ${color.name}`,
-        selectedColor: color,
-        image: color.images.main,
-        colors: [color] // Show only this color
-      }));
-    }
-
-    return collectionProducts;
-  }
-
-  const collectionProducts = getCollectionProducts();
+  const collectionProducts = products.filter(
+    (product) => product.collection.toLowerCase() === collection.slug.toLowerCase()
+  );
 
   return (
     <div className="min-h-screen text-black" style={{ backgroundColor: '#f0edec' }}>
@@ -125,7 +73,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
               fill
               sizes="100vw"
               priority
-              className="object-cover object-center"
+              className="object-contain object-center"
             />
             <div className="absolute inset-0 bg-black/30"></div>
             <div className="absolute inset-0 flex items-center justify-center">
@@ -180,13 +128,13 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         {/* Products Grid */}
         {collectionProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {collectionProducts.map((product, index) => (
-              <div key={product.id || `${product.slug}-${index}`} className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
+            {collectionProducts.map((product) => (
+              <div key={product.slug} className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
                 <Link href={`/products/${product.slug}`}>
-                  <div className="relative h-80 overflow-hidden">
+                  <div className="relative h-96 overflow-hidden">
                     <Image
-                      src={product.image || (product.selectedColor?.images.main) || (('colors' in product && product.colors) ? product.colors[0].images.main : '/images/modern-arab-faded-tee-faded-khaki-1.jpg')}
-                      alt={product.displayName || product.name || 'Product image'}
+                      src={product.colors[0].images.main || '/images/placeholder.jpg'}
+                      alt={product.name}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
@@ -196,49 +144,35 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
                   
                   <div className="p-6">
                     <h3 className="text-xl font-light mb-2 text-black group-hover:text-gray-700 transition-colors font-bodoni">
-                      {product.displayName ? (
-                        <>
-                          {product.name}
-                          {product.selectedColor && (
-                            <span className="block text-lg text-gray-600 font-barlow-condensed font-normal">
-                              in {product.selectedColor.name}
-                            </span>
-                          )}
-                        </>
-                      ) : (
-                        product.name
-                      )}
+                      {product.name}
                     </h3>
+                    <div className="flex items-center mt-2 mb-2">
+                      <div className="flex space-x-2">
+                        {product.colors.slice(0, 5).map((color) => (
+                          <span
+                            key={color.name}
+                            className="block w-5 h-5 rounded-full border border-gray-300"
+                            style={{ backgroundColor: color.hex }}
+                            title={color.name}
+                          />
+                        ))}
+                        {product.colors.length > 5 && (
+                          <span className="text-xs text-gray-500">+{product.colors.length - 5}</span>
+                        )}
+                      </div>
+                    </div>
                     <p className="text-gray-600 mb-4 text-sm line-clamp-3 font-barlow-condensed">
-                      {product.description || "A statement piece that combines cultural heritage with modern streetwear."}
+                      {product.description || "Premium apparel featuring Modern Arab branding and quality construction."}
                     </p>
                     
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <span className="text-2xl font-bold text-black">{product.price}</span>
-                        {('originalPrice' in product && product.originalPrice && product.originalPrice !== product.price) && (
-                          <span className="text-lg text-gray-500 line-through">{product.originalPrice}</span>
+                        <span className="text-2xl font-bold text-black font-barlow-condensed">{product.price}</span>
+                        {(product.originalPrice && product.originalPrice !== product.price) && (
+                          <span className="text-lg text-gray-500 line-through font-barlow-condensed">{product.originalPrice}</span>
                         )}
                       </div>
-                      {product.selectedColor && (
-                        <div className="flex space-x-2">
-                          <div
-                            className="w-6 h-6 rounded-full border-2 border-gray-300"
-                            style={{ backgroundColor: product.selectedColor.hex }}
-                            title={product.selectedColor.name}
-                          />
-                        </div>
-                      )}
                     </div>
-                    
-                    {('specifications' in product && product.specifications) && (
-                      <div className="mt-4 pt-4 border-t border-gray-200">
-                        <div className="flex items-center justify-between text-sm text-gray-600">
-                          <span>{product.specifications.material}</span>
-                          <span>{product.specifications.fit}</span>
-                        </div>
-                      </div>
-                    )}
                   </div>
                 </Link>
               </div>
@@ -297,12 +231,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
 }
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'frontpage' },
-    { slug: 'do-not-fear-god-tee' },
-    { slug: 'dont-fear-the-name-allah-premium-oversized-crewneck' },
-    { slug: 'modern-arab-cap' },
-    { slug: 'coming-soon' },
-    { slug: 'legwear' },
-  ];
+  return collections.map((collection) => ({
+    slug: collection.slug,
+  }));
 }

@@ -3,6 +3,8 @@
 import { Dispatch, SetStateAction, useEffect } from 'react';
 import { type Product, type ProductColor, type CartItem } from '@/app/products/data';
 import AddToCartButton from '@/components/cart/AddToCartButton';
+import { AnimatePresence, motion } from 'framer-motion';
+import { X } from 'lucide-react';
 
 interface ProductInfoProps {
   product: Product;
@@ -70,7 +72,7 @@ export default function ProductInfo({
               key={color.name}
               onClick={() => onColorSelect(color)}
               className={`w-10 h-10 rounded-full border-2 transition-transform transform hover:scale-110 ${selectedColor.name === color.name ? 'border-black' : 'border-gray-300'}`}
-              style={{ backgroundColor: extractedProductColors[color.name] || color.hex || '#ccc' }}
+              style={{ backgroundColor: (extractedProductColors && extractedProductColors[color.name]) || color.hex || '#ccc' }}
             >
               {selectedColor.name === color.name && (
                 <div className="w-full h-full rounded-full border-2 border-white"></div>
@@ -118,11 +120,12 @@ export default function ProductInfo({
         <AddToCartButton
           onAddToCart={() => {
             if (selectedSize) {
+              const variant = selectedColor.variants.find(v => v.size === selectedSize);
               addItemToCart({
                 name: product.name,
                 vendor: product.vendor,
                 tags: product.tags,
-                price: parseFloat(selectedColor.variants.find(v => v.size === selectedSize)?.price || product.price),
+                price: variant ? variant.price : 0,
                 image: selectedColor.images.main,
                 color: selectedColor.name,
                 size: selectedSize,
@@ -130,12 +133,70 @@ export default function ProductInfo({
               });
             }
           }}
-          price={parseFloat(selectedColor.variants.find(v => v.size === selectedSize)?.price || product.price)}
+          price={`$${(selectedColor.variants.find(v => v.size === selectedSize)?.price || 0).toFixed(2)}`}
           disabled={!selectedSize || !selectedColor.variants.find(v => v.size === selectedSize)?.available}
         />
       </div>
 
-
+      <AnimatePresence>
+        {showSizeGuide && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-50 z-40 flex items-center justify-center"
+            onClick={() => onShowSizeGuideChange(false)}
+          >
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+              className="bg-white rounded-lg shadow-xl w-full max-w-lg p-8 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={() => onShowSizeGuideChange(false)} className="absolute top-4 right-4 text-gray-400 hover:text-gray-800">
+                <X size={24} />
+              </button>
+              <h2 className="text-2xl font-bold mb-4">Size Guide</h2>
+              <div className="flex justify-center mb-4 border border-gray-200 rounded-full p-1">
+                <button onClick={() => onSizeUnitChange('inches')} className={`px-4 py-1 rounded-full text-sm ${sizeUnit === 'inches' ? 'bg-black text-white' : ''}`}>Inches</button>
+                <button onClick={() => onSizeUnitChange('cm')} className={`px-4 py-1 rounded-full text-sm ${sizeUnit === 'cm' ? 'bg-black text-white' : ''}`}>CM</button>
+              </div>
+              <table className="w-full text-left">
+                <thead>
+                  <tr>
+                    <th className="py-2 font-semibold">Size</th>
+                    <th className="py-2 font-semibold">Chest</th>
+                    <th className="py-2 font-semibold">Length</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {['S', 'M', 'L', 'XL', '2XL'].map(size => {
+                    const measurements: { [key: string]: { chest: number, length: number } } = {
+                      S: { chest: 38, length: 28 },
+                      M: { chest: 41, length: 29 },
+                      L: { chest: 44, length: 30 },
+                      XL: { chest: 48, length: 31 },
+                      '2XL': { chest: 52, length: 32 },
+                    };
+                    const { chest, length } = measurements[size];
+                    const displayChest = sizeUnit === 'cm' ? (chest * 2.54).toFixed(1) : chest;
+                    const displayLength = sizeUnit === 'cm' ? (length * 2.54).toFixed(1) : length;
+                    return (
+                      <tr key={size} className="border-t border-gray-200">
+                        <td className="py-2">{size}</td>
+                        <td className="py-2">{displayChest} {sizeUnit}</td>
+                        <td className="py-2">{displayLength} {sizeUnit}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

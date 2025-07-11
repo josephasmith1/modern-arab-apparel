@@ -18,22 +18,113 @@ function sanitizeFilename(filename) {
   return filename.replace(/[^a-z0-9._-]/gi, '-').toLowerCase();
 }
 
-async function downloadImage(imageUrl, savePath) {
-  if (fs.existsSync(savePath)) {
-    console.log(`  - Skipping, already exists: ${path.basename(savePath)}`);
-    return;
-  }
+async function downloadImage(imageUrl, saveDir, baseName) {
   try {
-    const response = await axios({ method: 'GET', url: imageUrl, responseType: 'stream' });
-    const writer = fs.createWriteStream(savePath);
-    response.data.pipe(writer);
-    return new Promise((resolve, reject) => {
-      writer.on('finish', resolve);
-      writer.on('error', reject);
+    const response = await axios({
+      method: 'GET',
+      url: imageUrl,
+      responseType: 'arraybuffer',
     });
+    const fileBuffer = Buffer.from(response.data, 'binary');
+
+    // Clean the image URL to get proper extension
+    const cleanUrl = imageUrl.split('?')[0]; // Remove query parameters
+    const extension = path.extname(cleanUrl) || '.jpg'; // Default to .jpg if no extension
+
+    const finalImageName = `${baseName}${extension}`;
+    const finalPath = path.join(saveDir, finalImageName);
+
+    if (fs.existsSync(finalPath)) {
+      console.log(`  - Skipping, already exists: ${finalImageName}`);
+    } else {
+      fs.writeFileSync(finalPath, fileBuffer);
+      console.log(`  - Downloaded: ${finalImageName}`);
+    }
+    return finalImageName;
   } catch (error) {
     console.error(`  - ERROR downloading ${imageUrl}: ${error.message}`);
+    return null;
   }
+}
+
+function getColorHex(colorName) {
+  const lowerColor = colorName.toLowerCase();
+  const colorMap = {
+    'black': '#000000',
+    'white': '#FFFFFF',
+    'bone': '#E3DED8',
+    'sand': '#C2B280',
+    'khaki': '#C3B091',
+    'green': '#228B22',
+    'olive': '#556B2F',
+    'blue': '#0000FF',
+    'maroon': '#800000',
+    'beige': '#F5F5DC',
+    'gray': '#808080',
+    'grey': '#808080',
+    'vintage black': '#2c2c2c',
+    'light green': '#90EE90',
+    'light blue': '#ADD8E6',
+    'dark blue': '#00008B',
+  };
+
+  for (const key in colorMap) {
+    if (lowerColor.includes(key)) {
+      return colorMap[key];
+    }
+  }
+
+  return '#CCCCCC'; // Default gray
+}
+
+function findImagesByColor(productData, colorName) {
+  const lowerColorName = colorName.toLowerCase();
+  const associatedImageIds = new Set();
+
+  // Step 1: Get all variant IDs for the given color.
+  const colorOption = productData.options.find(opt => opt.name.toLowerCase() === 'color');
+  if (!colorOption) return [];
+
+  const variantIdsForColor = productData.variants
+    .filter(variant => {
+      const variantColor = variant[`option${colorOption.position}`];
+      return variantColor && variantColor.toLowerCase() === lowerColorName;
+    })
+    .map(variant => variant.id);
+
+  // Step 2: Collect images using the explicit `variant_ids` array on each image.
+  productData.images.forEach(image => {
+    if (image.variant_ids.some(vid => variantIdsForColor.includes(vid))) {
+      associatedImageIds.add(image.id);
+    }
+  });
+
+  // Step 3: Collect images using the `image_id` on each variant.
+  productData.variants.forEach(variant => {
+    const variantColor = variant[`option${colorOption.position}`];
+    if (variantColor && variantColor.toLowerCase() === lowerColorName && variant.image_id) {
+      associatedImageIds.add(variant.image_id);
+    }
+  });
+
+  // Step 4: Fallback to text matching if no images are found via explicit linking.
+  if (associatedImageIds.size === 0) {
+    console.warn(`  - WARNING: No images found for color '${colorName}' via explicit linking. Falling back to text matching.`);
+    productData.images.forEach(image => {
+      const altText = (image.alt || '').toLowerCase();
+      if (altText.includes(lowerColorName)) {
+        associatedImageIds.add(image.id);
+      }
+    });
+  }
+
+  // Step 5: Map IDs to image objects and sort by position.
+  const colorImages = [...associatedImageIds]
+    .map(id => productData.images.find(img => img.id === id))
+    .filter(Boolean) // Remove any nulls if an image ID wasn't found
+    .sort((a, b) => a.position - b.position);
+
+  return colorImages;
 }
 
 function generateSlug(title) {
@@ -64,7 +155,6 @@ const extractSection = (html, title) => {
 async function processProduct(productData) {
   console.log(`Processing: ${productData.title}`);
 
-  // Basic product info
   const slug = generateSlug(productData.title);
   const prices = productData.variants.map(v => parseFloat(v.price));
   const priceDisplay = prices.length > 1 && Math.min(...prices) !== Math.max(...prices)
@@ -83,74 +173,94 @@ async function processProduct(productData) {
     fullDescription: productData.body_html || '',
     features: extractSection(productData.body_html, 'Features'),
     specifications: extractSection(productData.body_html, 'Specifications'),
-    origin: extractSection(productData.body_html, 'Origin'),
+    origin: extractSection(productData.body_html, 'Source'),
     careInstructions: extractSection(productData.body_html, 'Care Instructions'),
-    sizes: [...new Set(productData.variants.map(v => v.option2).filter(Boolean))],
+    sizes: productData.options.find(opt => opt.name.toLowerCase() === 'size')?.values || [],
     colors: [],
   };
 
-  // Map images by ID for easy lookup
-  const imageMap = productData.images.reduce((acc, img) => {
-    acc[img.id] = img.src;
+  const imageDir = path.join(__dirname, 'public', 'images');
+  ensureDirectoryExists(imageDir);
+
+  const variantsByColor = productData.variants.reduce((acc, variant) => {
+    const colorOption = productData.options.find(opt => opt.name.toLowerCase() === 'color');
+    const sizeOption = productData.options.find(opt => opt.name.toLowerCase() === 'size');
+
+    if (!colorOption) return acc; // Skip if no color option
+
+    const colorValue = variant[`option${colorOption.position}`];
+    const sizeValue = sizeOption ? variant[`option${sizeOption.position}`] : null;
+
+    if (!acc[colorValue]) {
+      acc[colorValue] = { variants: [] };
+    }
+
+    acc[colorValue].variants.push({
+      size: sizeValue,
+      price: parseFloat(variant.price),
+      sku: variant.sku,
+      available: variant.available,
+    });
+
     return acc;
   }, {});
 
-  // Group variants by color to gather images
-  // Group variants by color to gather images and variant details
-  const colorGroups = {};
-  productData.variants.forEach(variant => {
-    const color = variant.option1 || 'Default';
-    if (!colorGroups[color]) {
-      colorGroups[color] = { image_ids: new Set(), variants: [] };
-    }
-    if (variant.image_id) {
-      colorGroups[color].image_ids.add(variant.image_id);
-    }
-    colorGroups[color].variants.push({
-      size: variant.option2 || '',
-      price: parseFloat(variant.price) || 0,
-      sku: variant.sku || '',
-      available: variant.available || false,
-    });
-  });
-
-  // Process each color group
-  const imageDir = path.join(__dirname, 'public', 'images', slug);
-  ensureDirectoryExists(imageDir);
-
-  for (const colorName in colorGroups) {
-    const group = colorGroups[colorName];
-    const imageIds = Array.from(group.image_ids);
-
-    // Fallback to first product image if a color group has no specific images
-    if (imageIds.length === 0 && productData.images.length > 0) {
-      imageIds.push(productData.images[0].id);
+  for (const colorName in variantsByColor) {
+    const group = variantsByColor[colorName];
+    
+    // Use enhanced image discovery
+    const colorImages = findImagesByColor(productData, colorName);
+    const uniqueImageUrls = [...new Set(colorImages.map(img => img.src))].filter(Boolean);
+    
+    if (uniqueImageUrls.length === 0) {
+      console.warn(`  - WARNING: No images found for color '${colorName}' in product '${productData.title}'`);
     }
 
-    const colorImages = { main: '', back: '', lifestyle: [] };
     const downloadedImagePaths = [];
+    const imageDirForSlug = path.join(imageDir, slug);
+    ensureDirectoryExists(imageDirForSlug);
 
-    for (const [index, imageId] of imageIds.entries()) {
-      const imageUrl = imageMap[imageId];
-      if (!imageUrl) continue;
-
-      const imageName = `${sanitizeFilename(colorName)}-${index + 1}${path.extname(imageUrl).split('?')[0]}`;
-      const savePath = path.join(imageDir, imageName);
-
-      await downloadImage(imageUrl, savePath);
-      console.log(`  - Downloaded: ${imageName}`);
-      downloadedImagePaths.push(`/images/${slug}/${imageName}`);
+    for (let i = 0; i < uniqueImageUrls.length; i++) {
+      const imageUrl = uniqueImageUrls[i];
+      const baseName = sanitizeFilename(`${colorName}-${i + 1}`);
+      const finalImageName = await downloadImage(imageUrl, imageDirForSlug, baseName);
+      if (finalImageName) {
+        // Store clean path without query parameters
+        downloadedImagePaths.push(`/images/${slug}/${finalImageName}`);
+      }
     }
 
-    if (downloadedImagePaths.length > 0) colorImages.main = downloadedImagePaths[0];
-    if (downloadedImagePaths.length > 1) colorImages.back = downloadedImagePaths[1];
-    if (downloadedImagePaths.length > 2) colorImages.lifestyle = downloadedImagePaths.slice(2);
+    // If no images were downloaded, try to find a fallback
+    if (downloadedImagePaths.length === 0 && productData.images.length > 0) {
+      console.warn(`  - WARNING: Using fallback image for color '${colorName}'`);
+      const fallbackImage = productData.images[0];
+      const baseName = sanitizeFilename(`${colorName}-fallback`);
+      const finalImageName = await downloadImage(fallbackImage.src, imageDirForSlug, baseName);
+      if (finalImageName) {
+        // Store clean path without query parameters
+        downloadedImagePaths.push(`/images/${slug}/${finalImageName}`);
+      }
+    }
+
+    // Assign images based on their sorted position
+    const mainImage = downloadedImagePaths.find(p => p.includes('front') || p.includes('main')) || downloadedImagePaths[0] || '';
+    const backImage = downloadedImagePaths.find(p => p.includes('back')) || downloadedImagePaths[1] || '';
+    
+    const lifestyleImages = downloadedImagePaths.filter(
+      p => p !== mainImage && p !== backImage
+    );
+
+    const colorImageSet = {
+      main: mainImage,
+      back: backImage,
+      lifestyle: lifestyleImages,
+    };
 
     product.colors.push({
       name: colorName,
-      swatch: '', // Simplified
-      hex: '', // Simplified
-      images: colorImages,
+      swatch: '',
+      hex: getColorHex(colorName),
+      images: colorImageSet,
       variants: group.variants,
     });
   }
@@ -172,22 +282,54 @@ async function main() {
     console.log(`--- Starting New Product Scrape ---`);
     await cleanupOldImages();
 
-    const response = await axios.get('https://modernarabapparel.com/products.json?limit=250');
-    const productsData = response.data.products;
+    let page = 1;
+    let productsData = [];
+    let allProducts = [];
+
+    do {
+      const response = await axios.get(`https://modernarabapparel.com/products.json?limit=250&page=${page}`);
+      productsData = response.data.products;
+      allProducts = allProducts.concat(productsData);
+      page++;
+    } while (productsData.length > 0);
+
     const scrapedProducts = [];
 
-    for (const productData of productsData) {
+    for (const productSummary of allProducts) {
       try {
+        // Fetch the detailed product data using its handle
+        console.log(`Fetching details for: ${productSummary.handle}`);
+        const detailResponse = await axios.get(`https://modernarabapparel.com/products/${productSummary.handle}.json`);
+        const productData = detailResponse.data.product;
+
         const product = await processProduct(productData);
         if (product) {
           scrapedProducts.push(product);
         }
+        // Add a delay to be respectful to the API
+        await new Promise(resolve => setTimeout(resolve, 250));
       } catch (error) {
-        console.error(`\n--- ERROR processing product: ${productData.title} ---`);
+        console.error(`\n--- ERROR processing product: ${productSummary.title} ---`);
         console.error(error.message);
-        console.log('Product Data:', JSON.stringify(productData, null, 2));
+        console.log('Product Summary:', JSON.stringify(productSummary, null, 2));
         console.log('--- Continuing to next product ---\n');
       }
+    }
+
+    // Ensure all slugs are unique before writing to file
+    const uniqueProducts = [];
+    const slugCounts = {};
+
+    for (const product of scrapedProducts) {
+      let newSlug = product.slug;
+      if (slugCounts[newSlug]) {
+        slugCounts[newSlug]++;
+        newSlug = `${newSlug}-${slugCounts[newSlug]}`;
+      } else {
+        slugCounts[newSlug] = 1;
+      }
+      product.slug = newSlug;
+      uniqueProducts.push(product);
     }
 
     const dataFilePath = path.join(__dirname, 'src', 'app', 'products', 'data.ts');
@@ -228,7 +370,7 @@ export interface Product {
   colors: ProductColor[];
 }
 
-export const products: Product[] = ${JSON.stringify(scrapedProducts, null, 2)};`;
+export const products: Product[] = ${JSON.stringify(uniqueProducts, null, 2)};`;
     fs.writeFileSync(dataFilePath, dataFileContent);
 
     console.log(`\n--- SCRAPE COMPLETE ---`);
