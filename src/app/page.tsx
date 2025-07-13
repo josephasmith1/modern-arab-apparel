@@ -422,7 +422,7 @@ export default function Home() {
             >
               <div className="absolute top-0 left-0 w-full h-full rounded">
                 <Image
-                  src="/images/tee-no-background.png"
+                  src="/images/modernarab-tee/faded-bone-main.jpg"
                   alt="Modern Arab Faded Tee"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -482,7 +482,7 @@ export default function Home() {
             >
               <div className="relative h-96 lg:h-[500px]">
                 <Image
-                  src="/images/tee-no-background.png"
+                  src="/images/modernarab-tee/faded-bone-main.jpg"
                   alt="Modern Arab Faded Tee"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

@@ -149,25 +149,32 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
           </h3>
           <div className="flex items-center mt-2 mb-2">
             <div className="flex space-x-2">
-              {product.colors.length === 1 ? (
-                <span className="text-sm text-gray-600 font-barlow-condensed">
-                  {product.colors[0].name}
-                </span>
-              ) : (
-                <>
-                  {product.colors.slice(0, 5).map((color: any) => (
-                    <span
-                      key={color.name}
-                      className="block w-5 h-5 rounded-full border border-gray-300"
-                      style={{ backgroundColor: color.hex }}
-                      title={color.name}
-                    />
-                  ))}
-                  {product.colors.length > 5 && (
-                    <span className="text-xs text-gray-500">+{product.colors.length - 5}</span>
-                  )}
-                </>
-              )}
+              {(() => {
+                // Filter out duplicate colors by hex value
+                const uniqueColors = product.colors.filter((color: any, index: number, self: any[]) => 
+                  self.findIndex(c => c.hex === color.hex) === index
+                );
+                
+                return uniqueColors.length === 1 ? (
+                  <span className="text-sm text-gray-600 font-barlow-condensed">
+                    {uniqueColors[0].name}
+                  </span>
+                ) : (
+                  <>
+                    {uniqueColors.slice(0, 5).map((color: any) => (
+                      <span
+                        key={color.hex}
+                        className="block w-5 h-5 rounded-full border border-gray-300"
+                        style={{ backgroundColor: color.hex }}
+                        title={color.name}
+                      />
+                    ))}
+                    {uniqueColors.length > 5 && (
+                      <span className="text-xs text-gray-500">+{uniqueColors.length - 5}</span>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
           <p className="text-gray-600 mb-4 text-sm line-clamp-3 font-barlow-condensed">
