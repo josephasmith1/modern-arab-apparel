@@ -1,0 +1,58 @@
+{
+  "collections": [
+    {
+      "id": "upperwear",
+      "handle": "upperwear",
+      "title": "Upperwear",
+      "body_html": "",
+      "products": [
+        "modern-arab-faded-tee-black-print",
+        "modern-arab-premium-tee-faded-khaki",
+        "modern-arab-premium-tee-faded-eucalyptus",
+        "modern-arab-premium-tee-1",
+        "modern-arab-premium-tee",
+        "modernarab-tee",
+        "modernarab-tee-white",
+        "modernarab-tee-black"
+      ]
+    },
+    {
+      "id": "headwear",
+      "handle": "headwear",
+      "title": "Headwear",
+      "body_html": "",
+      "products": [
+        "fisherman-beanie",
+        "modern-arab-beanie-1",
+        "modern-arab-bucket-hat-1",
+        "modern-arab-cap-1",
+        "modern-arab-cap",
+        "modern-arab-bucket-hat",
+        "modernarab-beanie"
+      ]
+    },
+    {
+      "id": "legwear",
+      "handle": "legwear",
+      "title": "Legwear",
+      "body_html": "",
+      "products": [
+        "modern-arab-sweatpants",
+        "modern-arab-joggers"
+      ]
+    },
+    {
+      "id": "layers",
+      "handle": "layers",
+      "title": "Layers",
+      "body_html": "",
+      "products": [
+        "modern-arab-hoodie",
+        "modernarab-crewneck",
+        "modernarab-crewneck-sand",
+        "modernarab-hoodie",
+        "modernarab-cropped-hoodie"
+      ]
+    }
+  ]
+}

@@ -127,8 +127,11 @@ export const products: Product[] = [
         "hex": "#228B22",
         "images": {
           "main": "/images/modern-arab-faded-tee/faded-green-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "back": "/images/modern-arab-faded-tee/faded-green-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-faded-tee/faded-green-lifestyle-2.jpg",
+            "/images/modern-arab-faded-tee/faded-green-lifestyle-3.jpg"
+          ]
         },
         "variants": [
           {
@@ -211,8 +214,10 @@ export const products: Product[] = [
         "hex": "#000000",
         "images": {
           "main": "/images/modern-arab-faded-tee/faded-black-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "back": "/images/modern-arab-faded-tee/faded-black-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-faded-tee/faded-black-lifestyle-2.jpg"
+          ]
         },
         "variants": [
           {
@@ -369,7 +374,21 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-premium-tee/faded-bone-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-8.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-9.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-10.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-11.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-12.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-13.jpg",
+            "/images/modern-arab-premium-tee/faded-bone-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -411,7 +430,21 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-premium-tee/faded-green-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-8.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-9.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-10.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-11.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-12.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-13.jpg",
+            "/images/modern-arab-premium-tee/faded-green-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -453,7 +486,21 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-premium-tee/faded-sand-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-8.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-9.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-10.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-11.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-12.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-13.jpg",
+            "/images/modern-arab-premium-tee/faded-sand-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -495,7 +542,15 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-premium-tee/faded-black-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee/faded-black-lifestyle-8.jpg"
+          ]
         },
         "variants": [
           {
@@ -533,7 +588,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-premium-tee-2",
+    "slug": "modern-arab-premium-tee-1",
     "name": "Modern Arab Premium Tee",
     "price": "$45.00 - $55.00",
     "originalPrice": "$45.00 - $55.00",
@@ -576,9 +631,23 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-premium-tee/faded-black-1.jpg",
+          "main": "/images/modern-arab-premium-tee-1/faded-black-lifestyle-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-8.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-9.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-10.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-11.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-12.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-13.jpg",
+            "/images/modern-arab-premium-tee-1/faded-black-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -618,9 +687,23 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#C2B280",
         "images": {
-          "main": "/images/modern-arab-premium-tee/faded-sand-1.jpg",
+          "main": "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-8.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-9.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-10.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-11.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-12.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-13.jpg",
+            "/images/modern-arab-premium-tee-1/faded-sand-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -660,9 +743,23 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#228B22",
         "images": {
-          "main": "/images/modern-arab-premium-tee/faded-green-1.jpg",
+          "main": "/images/modern-arab-premium-tee-1/faded-green-lifestyle-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-8.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-9.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-10.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-11.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-12.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-13.jpg",
+            "/images/modern-arab-premium-tee-1/faded-green-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -702,9 +799,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#E3DED8",
         "images": {
-          "main": "/images/modern-arab-premium-tee/faded-bone-1.jpg",
+          "main": "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-2.jpg",
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-3.jpg",
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-4.jpg",
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-5.jpg",
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-6.jpg",
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-7.jpg",
+            "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-8.jpg"
+          ]
         },
         "variants": [
           {
@@ -812,7 +917,30 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-sweatpants/light-green-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-sweatpants/light-green-lifestyle-2.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-3.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-4.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-5.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-6.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-7.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-8.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-9.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-10.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-11.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-12.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-13.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-14.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-15.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-16.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-17.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-18.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-19.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-20.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-21.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-22.jpg",
+            "/images/modern-arab-sweatpants/light-green-lifestyle-23.jpg"
+          ]
         },
         "variants": [
           {
@@ -847,9 +975,49 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#0000FF",
         "images": {
-          "main": "/images/modern-arab-sweatpants/light-blue-1.jpg",
+          "main": "/images/modern-arab-sweatpants/dark-blue-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-2.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-2.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-3.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-3.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-4.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-4.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-5.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-5.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-6.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-6.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-7.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-7.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-8.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-8.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-9.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-9.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-10.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-10.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-11.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-11.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-12.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-12.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-13.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-13.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-14.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-14.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-15.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-15.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-16.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-16.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-17.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-17.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-18.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-18.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-19.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-20.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-21.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-22.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-23.jpg"
+          ]
         },
         "variants": [
           {
@@ -886,7 +1054,30 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-sweatpants/light-black-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-sweatpants/light-black-lifestyle-2.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-3.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-4.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-5.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-6.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-7.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-8.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-9.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-10.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-11.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-12.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-13.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-14.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-15.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-16.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-17.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-18.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-19.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-20.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-21.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-22.jpg",
+            "/images/modern-arab-sweatpants/light-black-lifestyle-23.jpg"
+          ]
         },
         "variants": [
           {
@@ -923,7 +1114,47 @@ export const products: Product[] = [
         "images": {
           "main": "/images/modern-arab-sweatpants/dark-blue-1.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-2.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-2.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-3.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-3.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-4.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-4.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-5.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-5.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-6.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-6.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-7.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-7.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-8.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-8.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-9.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-9.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-10.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-10.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-11.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-11.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-12.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-12.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-13.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-13.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-14.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-14.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-15.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-15.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-16.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-16.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-17.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-17.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-18.jpg",
+            "/images/modern-arab-sweatpants/light-blue-lifestyle-18.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-19.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-20.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-21.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-22.jpg",
+            "/images/modern-arab-sweatpants/dark-blue-lifestyle-23.jpg"
+          ]
         },
         "variants": [
           {
@@ -956,7 +1187,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-beanie-2",
+    "slug": "modern-arab-beanie-1",
     "name": "Modern Arab Beanie",
     "price": "$25.00",
     "originalPrice": "$25.00",
@@ -1099,8 +1330,22 @@ export const products: Product[] = [
         "hex": "#E3DED8",
         "images": {
           "main": "/images/modern-arab-hoodie/bone-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "back": "/images/modern-arab-hoodie/bone-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-hoodie/bone-lifestyle-2.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-3.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-4.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-5.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-6.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-7.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-8.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-9.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-10.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-11.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-12.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-13.jpg",
+            "/images/modern-arab-hoodie/bone-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -1141,8 +1386,22 @@ export const products: Product[] = [
         "hex": "#0000FF",
         "images": {
           "main": "/images/modern-arab-hoodie/blue-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "back": "/images/modern-arab-hoodie/blue-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-hoodie/blue-lifestyle-2.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-3.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-4.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-5.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-6.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-7.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-8.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-9.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-10.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-11.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-12.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-13.jpg",
+            "/images/modern-arab-hoodie/blue-lifestyle-14.jpg"
+          ]
         },
         "variants": [
           {
@@ -1180,7 +1439,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-faded-tee-2",
+    "slug": "modern-arab-faded-tee-black-print",
     "name": "Modern Arab Faded Tee",
     "price": "$45.00 - $55.00",
     "originalPrice": "$45.00 - $55.00",
@@ -1224,9 +1483,25 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#E3DED8",
         "images": {
-          "main": "/images/modern-arab-faded-tee/faded-bone-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "main": "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-1.jpg",
+          "back": "/images/modern-arab-faded-tee-black-print/faded-bone-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-2.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-3.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-4.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-5.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-6.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-7.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-8.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-9.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-10.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-11.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-12.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-13.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-14.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-15.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-16.jpg"
+          ]
         },
         "variants": [
           {
@@ -1266,9 +1541,25 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#228B22",
         "images": {
-          "main": "/images/modern-arab-faded-tee/faded-green-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "main": "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-1.jpg",
+          "back": "/images/modern-arab-faded-tee-black-print/faded-green-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-2.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-3.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-4.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-5.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-6.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-7.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-8.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-9.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-10.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-11.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-12.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-13.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-14.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-15.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-16.jpg"
+          ]
         },
         "variants": [
           {
@@ -1308,9 +1599,25 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#C3B091",
         "images": {
-          "main": "/images/modern-arab-faded-tee/faded-khaki-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "main": "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-1.jpg",
+          "back": "/images/modern-arab-faded-tee-black-print/faded-khaki-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-2.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-3.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-4.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-5.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-6.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-7.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-8.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-9.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-10.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-11.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-12.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-13.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-14.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-15.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-16.jpg"
+          ]
         },
         "variants": [
           {
@@ -1350,9 +1657,25 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-faded-tee/faded-black-1.jpg",
-          "back": "",
-          "lifestyle": []
+          "main": "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-1.jpg",
+          "back": "/images/modern-arab-faded-tee-black-print/faded-black-back.jpg",
+          "lifestyle": [
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-2.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-3.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-4.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-5.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-6.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-7.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-8.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-9.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-10.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-11.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-12.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-13.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-14.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-15.jpg",
+            "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-16.jpg"
+          ]
         },
         "variants": [
           {
@@ -1390,7 +1713,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-tee",
+    "slug": "modernarab-tee",
     "name": "Modern Arab Tee",
     "price": "$40.00 - $50.00",
     "originalPrice": "$40.00 - $50.00",
@@ -1419,7 +1742,7 @@ export const products: Product[] = [
     "colors": []
   },
   {
-    "slug": "modern-arab-tee-2",
+    "slug": "modernarab-tee-white",
     "name": "Modern Arab Tee",
     "price": "$40.00 - $50.00",
     "originalPrice": "$40.00 - $50.00",
@@ -1527,7 +1850,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-crewneck/vintage-black-1.jpg",
+          "main": "/images/modern-arab-crewneck/black-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -1651,7 +1974,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-crewneck-2",
+    "slug": "modernarab-crewneck",
     "name": "Modern Arab Crewneck",
     "price": "$45.00 - $60.00",
     "originalPrice": "$45.00 - $60.00",
@@ -1680,7 +2003,7 @@ export const products: Product[] = [
     "colors": []
   },
   {
-    "slug": "modern-arab-cap-2",
+    "slug": "modern-arab-cap-1",
     "name": "Modern Arab Cap",
     "price": "$30.00",
     "originalPrice": "$30.00",
@@ -1713,9 +2036,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#C3B091",
         "images": {
-          "main": "/images/modern-arab-cap/khaki-1.jpg",
+          "main": "/images/modern-arab-cap-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-cap-1/1.jpg",
+            "/images/modern-arab-cap-1/2.jpg",
+            "/images/modern-arab-cap-1/3.jpg",
+            "/images/modern-arab-cap-1/4.jpg",
+            "/images/modern-arab-cap-1/5.jpg",
+            "/images/modern-arab-cap-1/6.jpg",
+            "/images/modern-arab-cap-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1730,9 +2061,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#0000FF",
         "images": {
-          "main": "/images/modern-arab-cap/blue-1.jpg",
+          "main": "/images/modern-arab-cap-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-cap-1/1.jpg",
+            "/images/modern-arab-cap-1/2.jpg",
+            "/images/modern-arab-cap-1/3.jpg",
+            "/images/modern-arab-cap-1/4.jpg",
+            "/images/modern-arab-cap-1/5.jpg",
+            "/images/modern-arab-cap-1/6.jpg",
+            "/images/modern-arab-cap-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1747,9 +2086,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#228B22",
         "images": {
-          "main": "/images/modern-arab-cap/green-1.jpg",
+          "main": "/images/modern-arab-cap-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-cap-1/1.jpg",
+            "/images/modern-arab-cap-1/2.jpg",
+            "/images/modern-arab-cap-1/3.jpg",
+            "/images/modern-arab-cap-1/4.jpg",
+            "/images/modern-arab-cap-1/5.jpg",
+            "/images/modern-arab-cap-1/6.jpg",
+            "/images/modern-arab-cap-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1764,9 +2111,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-cap/black-1.jpg",
+          "main": "/images/modern-arab-cap-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-cap-1/1.jpg",
+            "/images/modern-arab-cap-1/2.jpg",
+            "/images/modern-arab-cap-1/3.jpg",
+            "/images/modern-arab-cap-1/4.jpg",
+            "/images/modern-arab-cap-1/5.jpg",
+            "/images/modern-arab-cap-1/6.jpg",
+            "/images/modern-arab-cap-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1779,7 +2134,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-bucket-hat-2",
+    "slug": "modern-arab-bucket-hat-1",
     "name": "Modern Arab Bucket Hat",
     "price": "$30.00",
     "originalPrice": "$30.00",
@@ -1812,9 +2167,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#556B2F",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/olive-1.jpg",
+          "main": "/images/modern-arab-bucket-hat-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-bucket-hat-1/1.jpg",
+            "/images/modern-arab-bucket-hat-1/2.jpg",
+            "/images/modern-arab-bucket-hat-1/3.jpg",
+            "/images/modern-arab-bucket-hat-1/4.jpg",
+            "/images/modern-arab-bucket-hat-1/5.jpg",
+            "/images/modern-arab-bucket-hat-1/6.jpg",
+            "/images/modern-arab-bucket-hat-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1829,9 +2192,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#0000FF",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/blue-1.jpg",
+          "main": "/images/modern-arab-bucket-hat-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-bucket-hat-1/1.jpg",
+            "/images/modern-arab-bucket-hat-1/2.jpg",
+            "/images/modern-arab-bucket-hat-1/3.jpg",
+            "/images/modern-arab-bucket-hat-1/4.jpg",
+            "/images/modern-arab-bucket-hat-1/5.jpg",
+            "/images/modern-arab-bucket-hat-1/6.jpg",
+            "/images/modern-arab-bucket-hat-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1846,9 +2217,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/black-1.jpg",
+          "main": "/images/modern-arab-bucket-hat-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-bucket-hat-1/1.jpg",
+            "/images/modern-arab-bucket-hat-1/2.jpg",
+            "/images/modern-arab-bucket-hat-1/3.jpg",
+            "/images/modern-arab-bucket-hat-1/4.jpg",
+            "/images/modern-arab-bucket-hat-1/5.jpg",
+            "/images/modern-arab-bucket-hat-1/6.jpg",
+            "/images/modern-arab-bucket-hat-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1863,9 +2242,17 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#C3B091",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/khaki-1.jpg",
+          "main": "/images/modern-arab-bucket-hat-1/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/modern-arab-bucket-hat-1/1.jpg",
+            "/images/modern-arab-bucket-hat-1/2.jpg",
+            "/images/modern-arab-bucket-hat-1/3.jpg",
+            "/images/modern-arab-bucket-hat-1/4.jpg",
+            "/images/modern-arab-bucket-hat-1/5.jpg",
+            "/images/modern-arab-bucket-hat-1/6.jpg",
+            "/images/modern-arab-bucket-hat-1/7.jpg"
+          ]
         },
         "variants": [
           {
@@ -1878,7 +2265,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-beanie-3",
+    "slug": "fisherman-beanie",
     "name": "Modern Arab Beanie",
     "price": "$25.00",
     "originalPrice": "$25.00",
@@ -1910,9 +2297,14 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#556B2F",
         "images": {
-          "main": "/images/modern-arab-beanie/olive-1.jpg",
+          "main": "/images/fisherman-beanie/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/fisherman-beanie/1.jpg",
+            "/images/fisherman-beanie/2.jpg",
+            "/images/fisherman-beanie/3.jpg",
+            "/images/fisherman-beanie/4.jpg"
+          ]
         },
         "variants": [
           {
@@ -1927,9 +2319,14 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-beanie/black-1.jpg",
+          "main": "/images/fisherman-beanie/0.jpg",
           "back": "",
-          "lifestyle": []
+          "lifestyle": [
+            "/images/fisherman-beanie/1.jpg",
+            "/images/fisherman-beanie/2.jpg",
+            "/images/fisherman-beanie/3.jpg",
+            "/images/fisherman-beanie/4.jpg"
+          ]
         },
         "variants": [
           {
@@ -1942,7 +2339,7 @@ export const products: Product[] = [
     ]
   },
   {
-    "slug": "modern-arab-hoodie-2",
+    "slug": "modern-arab-hoodie",
     "name": "Modern Arab Hoodie",
     "price": "$60.00 - $70.00",
     "originalPrice": "$60.00 - $70.00",
@@ -2022,7 +2419,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#228B22",
         "images": {
-          "main": "/images/modern-arab-hoodie/olive-green-1.jpg",
+          "main": "/images/modern-arab-hoodie/green-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2190,7 +2587,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-hoodie/vintage-black-1.jpg",
+          "main": "/images/modern-arab-hoodie/black-1.jpg",
           "back": "",
           "lifestyle": []
         },

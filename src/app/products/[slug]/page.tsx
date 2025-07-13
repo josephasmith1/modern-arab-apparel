@@ -7,12 +7,14 @@ import { Shirt, Feather, MapPin, Sparkles, PackageCheck, Droplets, Tag, Square, 
 import ColorThief from 'colorthief';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Footer';
+import ProductDetailsSection from '@/components/product/ProductDetailsSection';
+import ProductSpecifications from '@/components/product/ProductSpecifications';
 import { useCart } from '@/context/CartContext';
 import AddToCartButton from '@/components/cart/AddToCartButton';
 import { products, ProductColor } from '../data';
 
-// Additional interfaces for size guide
-interface SizeGuide {
+// Size guide interface used with compatibleProduct.sizeGuide
+interface SizeGuideItem {
   size: string;
   length: string;
   chest: string;
@@ -46,12 +48,28 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   };
 
   // Create compatibility layer for missing fields - handle case when productData is null
-  const compatibleProduct = productData ? {
+  // Use useMemo to prevent unnecessary re-renders
+  const compatibleProduct = useMemo(() => productData ? {
     ...productData,
     colors: productData.colors.map(color => ({
       ...color,
       hex: color.hex || getFallbackColor(color.name) // Use fallback if hex is empty
     })),
+    description: productData.description && typeof productData.description === 'object' ? {
+      short: (productData.description as any).short || "",
+      inspiration: (productData.description as any).inspiration || "Crafted to embody Modern Arab's vision of redefining Arabic fashion.",
+      features: (productData.description as any).features || [],
+      perfectFor: (productData.description as any).perfectFor || [],
+      additionalSpecs: (productData.description as any).additionalSpecs || [],
+      fullDescription: (productData.description as any).fullDescription || ""
+    } : {
+      short: productData.description || "",
+      inspiration: "Crafted to embody Modern Arab's vision of redefining Arabic fashion.",
+      features: [],
+      perfectFor: [],
+      additionalSpecs: [],
+      fullDescription: productData.description || ""
+    },
     sizeGuide: [
       { size: "S", length: "27¾\"", chest: "39\"", sleeve: "9\"", lengthCm: "70.5", chestCm: "99", sleeveCm: "23" },
       { size: "M", length: "29⅛\"", chest: "43\"", sleeve: "9½\"", lengthCm: "74", chestCm: "109.2", sleeveCm: "24" },
@@ -59,18 +77,23 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       { size: "XL", length: "31⅞\"", chest: "51\"", sleeve: "10¼\"", lengthCm: "81", chestCm: "129.5", sleeveCm: "26" },
       { size: "2XL", length: "33¼\"", chest: "55\"", sleeve: "10⅝\"", lengthCm: "84.5", chestCm: "139.7", sleeveCm: "27" },
       { size: "3XL", length: "34\"", chest: "59\"", sleeve: "11\"", lengthCm: "86.5", chestCm: "149.9", sleeveCm: "28" }
-    ],
-    specifications: {
+    ] as SizeGuideItem[],
+    specifications: productData.specifications && typeof productData.specifications === 'object' ? {
+      material: (productData.specifications as any).material || "100% premium cotton",
+      weight: (productData.specifications as any).weight || "Medium weight",
+      fit: (productData.specifications as any).fit || "Relaxed unisex fit",
+      origin: (productData.specifications as any).origin || "Designed in Los Angeles, USA"
+    } : {
       material: "100% premium cotton",
       weight: "Medium weight",
       fit: "Relaxed unisex fit",
       origin: "Designed in Los Angeles, USA"
     }
-  } : null;
+  } : null, [productData]);
 
   // State hooks
-  const [selectedColor, setSelectedColor] = useState(compatibleProduct?.colors[0] || null);
-  const [selectedSize, setSelectedSize] = useState('');
+  const [selectedColor, setSelectedColor] = useState<ProductColor | null>(compatibleProduct?.colors[0] || null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [sizeUnit, setSizeUnit] = useState<'inches' | 'cm'>('inches');
   const [quantity, setQuantity] = useState(1);
@@ -84,7 +107,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const currentImages = useMemo(() => {
     if (!selectedColor || !selectedColor.images) return [];
     const { main, back, lifestyle } = selectedColor.images;
-    return [main, back, ...lifestyle].filter(Boolean); // Filter out any empty strings
+    const images = [main];
+    if (back) images.push(back);
+    if (lifestyle && lifestyle.length > 0) images.push(...lifestyle);
+    return images.filter(Boolean); // Filter out any empty strings
   }, [selectedColor]);
 
   
@@ -97,10 +123,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const heroScale = useTransform(scrollY, [300, 600], [1, 0.6]);
   const heroX = useTransform(scrollY, [300, 600], [0, 200]);
 
-  // If product is not found, render notFound page. This also resolves TS errors about potential nulls.
-  if (!compatibleProduct || !selectedColor) {
-    return notFound();
-  }
   const columnImageOpacity = useTransform(scrollY, [500, 700], [0, 1]);
   const columnImageScale = useTransform(scrollY, [500, 700], [0.8, 1]);
   
@@ -118,25 +140,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     
     return () => window.removeEventListener('scroll', updateScrollState);
   }, []);
-
-  // Create comprehensive image gallery for selected color
-  const currentImages = useMemo(() => {
-    const images = [];
-    if (selectedColor?.images.main && selectedColor.images.main.trim() !== '') {
-      images.push({ url: selectedColor.images.main, type: 'main' });
-    }
-    if (selectedColor?.images.back && selectedColor.images.back.trim() !== '') {
-      images.push({ url: selectedColor.images.back, type: 'back' });
-    }
-    if (selectedColor?.images.lifestyle && selectedColor.images.lifestyle.length > 0) {
-      selectedColor.images.lifestyle.forEach((img: string, index: number) => {
-        if (img && img.trim() !== '') {
-          images.push({ url: img, type: `lifestyle-${index}` });
-        }
-      });
-    }
-    return images;
-  }, [selectedColor]);
 
   const nextImage = () => {
     setSelectedImageIndex((prevIndex: number) => 
@@ -370,7 +373,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         }, delay);
       }
     });
-  }, [compatibleProduct?.colors, selectedColor?.name]); // Remove extractedProductColors from deps to avoid infinite loops
+  }, [compatibleProduct, extractedProductColors, selectedColor]); // Include all dependencies
 
   // Reset image index when color changes
   useEffect(() => {
@@ -379,12 +382,16 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       console.log('Current images for this color:', currentImages);
       setSelectedImageIndex(0);
     }
-  }, [selectedColor?.name, currentImages]);
+  }, [selectedColor, currentImages]);
 
   // Early return after all hooks are initialized
   if (!productData || !compatibleProduct) {
     notFound();
-    return null;
+  }
+
+  // Ensure we have a selected color
+  if (!selectedColor) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -401,7 +408,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         <div className="relative w-full h-full">
           <AnimatePresence mode="wait">
             <motion.div
-              key={`${selectedColor.name}-${selectedImageIndex}`}
+              key={`${selectedColor?.name || 'default'}-${selectedImageIndex}`}
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
@@ -409,7 +416,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               className="w-full h-full"
             >
               <Image
-                src={currentImages[selectedImageIndex]?.url || selectedColor.images.main}
+                src={currentImages[selectedImageIndex] || selectedColor?.images?.main || '/placeholder.jpg'}
                 alt={`${compatibleProduct.name} - ${selectedColor.name}`}
                 fill
                 sizes="100vw"
@@ -535,17 +542,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           >
             {compatibleProduct.price}
           </motion.p>
-          <motion.button 
-            className="bg-black text-white px-8 py-4 text-lg font-semibold hover:bg-gray-800 transition-all transform hover:scale-105 shadow-2xl pointer-events-auto"
-            onClick={() => document.getElementById('product-info')?.scrollIntoView({ behavior: 'smooth' })}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.9 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            DISCOVER
-          </motion.button>
         </div>
       </motion.div>
 
@@ -575,28 +571,97 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   A Statement of Heritage
                 </h2>
                 <div className="space-y-8 text-gray-700">
-                  <p className="text-lg md:text-xl leading-loose font-normal font-barlow-condensed">{compatibleProduct.description}</p>
-                  <p className="text-base md:text-lg leading-loose font-normal text-gray-600 font-barlow-condensed">{compatibleProduct.fullDescription}</p>
+                  <div className="text-lg md:text-xl leading-loose font-normal font-barlow-condensed">
+                  {(() => {
+                    // Extract just the main description paragraph from the HTML
+                    const htmlContent = compatibleProduct.fullDescription || compatibleProduct.description || '';
+                    
+                    // Use regex to extract the first paragraph that's not a special section
+                    const match = htmlContent.match(/<p>(?!.*<strong>)(?!.*•)(?!.*Disclaimer:)([^<]+(?:<[^>]+>[^<]+)*)<\/p>/);
+                    if (match && match[1]) {
+                      // Create a temporary element to strip HTML tags properly
+                      if (typeof window !== 'undefined') {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = match[1];
+                        return tempDiv.textContent || '';
+                      } else {
+                        // Server-side: strip basic HTML tags
+                        return match[1].replace(/<[^>]+>/g, '');
+                      }
+                    }
+                    
+                    // Fallback: use description if available
+                    return typeof compatibleProduct.description === 'string' 
+                      ? compatibleProduct.description.substring(0, 200) + '...'
+                      : 'Experience premium quality and cultural pride with this thoughtfully designed piece.';
+                  })()}
+                </div>
                 </div>
               </div>
               
-              {/* Features List */}
-              <div className="space-y-8 mt-16">
-                <h3 className="text-lg font-normal text-gray-900 font-bodoni">Key Features</h3>
+              {/* Quick Features - Extract from HTML */}
+              <div className="space-y-6 mt-16">
+                <h3 className="text-lg font-normal text-gray-900 font-bodoni">Quick Features</h3>
                 <ul className="space-y-3">
-                  {compatibleProduct.features.map((feature, index) => (
-                    <motion.li 
-                      key={index}
-                      className="flex items-center text-gray-700 font-barlow-condensed"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
-                      {feature}
-                    </motion.li>
-                  ))}
+                  {(() => {
+                    const htmlContent = compatibleProduct.fullDescription || '';
+                    const features: string[] = [];
+                    
+                    // Use regex to find the first UL element after Features section
+                    const ulMatch = htmlContent.match(/<ul>([^<]+(?:<li>[^<]+<\/li>[^<]+)*)<\/ul>/);
+                    if (ulMatch) {
+                      // Extract LI elements
+                      const liMatches = ulMatch[1].matchAll(/<li>([^<]+)<\/li>/g);
+                      for (const match of liMatches) {
+                        const text = match[1].trim();
+                        // Skip technical specs and size guides
+                        if (!text.includes('oz.') && !text.includes('cm') && !text.includes('inches') && 
+                            !text.includes('Blank product') && !text.includes('Model wears') && 
+                            text.length < 100) {
+                          features.push(text);
+                        }
+                      }
+                    }
+                    
+                    // If no UL found, try to extract from Features paragraph with bullet points
+                    if (features.length === 0) {
+                      const featuresMatch = htmlContent.match(/<strong>Features:<\/strong><br[^>]*>([^<]+(?:<br[^>]*>[^<]+)*)/);
+                      if (featuresMatch) {
+                        const items = featuresMatch[1].split(/•/).filter(item => item.trim());
+                        items.forEach(item => {
+                          const text = item.replace(/<[^>]+>/g, '').trim();
+                          if (text && text.length < 100) {
+                            features.push(text);
+                          }
+                        });
+                      }
+                    }
+                    
+                    // Limit to 5 features for quick view
+                    return features.length > 0 ? features.slice(0, 5).map((feature, index) => (
+                      <motion.li 
+                        key={index}
+                        className="flex items-center text-gray-700 font-barlow-condensed"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                        {feature}
+                      </motion.li>
+                    )) : (
+                      <motion.li 
+                        className="text-gray-600 italic font-barlow-condensed"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        See product details below for more information
+                      </motion.li>
+                    );
+                  })()}
                 </ul>
               </div>
             </motion.div>
@@ -611,16 +676,16 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             >
               {/* Product Image in Column */}
               <motion.div 
-                className="rounded-lg shadow-xl overflow-hidden"
+                className="rounded-lg shadow-xl overflow-hidden relative"
                 style={{ 
                   opacity: columnImageOpacity,
                   scale: columnImageScale,
-                  backgroundColor: imageBackgroundColors[currentImages[selectedImageIndex]?.url] || imageBackgroundColors[selectedColor.images.main] || 'rgb(255, 255, 255)',
+                  backgroundColor: imageBackgroundColors[currentImages[selectedImageIndex]] || imageBackgroundColors[selectedColor.images.main] || 'rgb(255, 255, 255)',
                 }}
               >
                 <div className="relative h-96">
                   <Image
-                    src={currentImages[selectedImageIndex]?.url || selectedColor.images.main}
+                    src={currentImages[selectedImageIndex] || selectedColor?.images?.main || '/placeholder.jpg'}
                     alt={`${compatibleProduct.name} - ${selectedColor.name}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -645,7 +710,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                       whileTap={{ scale: 0.95 }}
                     >
                       <Image
-                        src={image.url}
+                        src={image}
                         alt={`${compatibleProduct.name} - View ${index + 1}`}
                         fill
                         sizes="64px"
@@ -707,53 +772,59 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         }}
                       >
                         <div className="flex gap-1">
-                          {compatibleProduct.colors.map((color, index) => (
+                          {compatibleProduct.colors.map((color) => (
                             <motion.button
                               key={color.name}
                               onClick={() => {
-                              </button>
-                              <button
-                                onClick={() => setSizeUnit('cm')}
-                                className={`px-3 py-1 text-xs transition-colors ${
-                                  sizeUnit === 'cm' ? 'bg-black text-white' : 'text-gray-700 hover:text-black'
-                                }`}
-                              >
-                                CM
-                              </button>
-                            </div>
-                          </div>
-                          <div className="overflow-x-auto">
-                            <table className="w-full text-xs">
-                              <thead>
-                                <tr className="border-b border-gray-300">
-                                  <th className="text-left py-2 text-black">Size</th>
-                                  <th className="text-left py-2 text-black">Length</th>
-                                  <th className="text-left py-2 text-black">Chest</th>
-                                  <th className="text-left py-2 text-black">Sleeve</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {compatibleProduct.sizeGuide.map((size) => (
-                                  <tr key={size.size} className="border-b border-gray-200">
-                                    <td className="py-2 font-medium text-black">{size.size}</td>
-                                    <td className="py-2 text-gray-700">
-                                      {sizeUnit === 'inches' ? size.length : `${size.lengthCm} cm`}
-                                    </td>
-                                    <td className="py-2 text-gray-700">
-                                      {sizeUnit === 'inches' ? size.chest : `${size.chestCm} cm`}
-                                    </td>
-                                    <td className="py-2 text-gray-700">
-                                      {sizeUnit === 'inches' ? size.sleeve : `${size.sleeveCm} cm`}
-                                    </td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        </motion.div>
+                                setSelectedColor(color);
+                                setShowColorOptions(false);
+                              }}
+                              className={`w-8 h-8 rounded-full border-2 transition-all ${
+                                selectedColor?.name === color.name 
+                                  ? 'border-black scale-110' 
+                                  : 'border-gray-300 hover:border-gray-500'
+                              }`}
+                              whileHover={{ scale: 1.1 }}
+                              whileTap={{ scale: 0.95 }}
+                              style={{ backgroundColor: extractedProductColors[color.name] || color.hex || getFallbackColor(color.name) }}
+                              title={color.name}
+                            />
+                          ))}
+                        </div>
+                      </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
+
+                {/* Size Selection */}
+                <div className="mb-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs font-medium text-gray-600">Size</span>
+                    <button 
+                      onClick={() => setShowSizeGuide(true)}
+                      className="text-xs text-gray-500 hover:text-black underline"
+                    >
+                      Size Guide
+                    </button>
+                  </div>
+                  <div className="flex gap-2">
+                    {compatibleProduct?.sizes?.map((size) => (
+                      <motion.button
+                        key={size}
+                        onClick={() => setSelectedSize(size)}
+                        className={`w-10 h-10 rounded-full text-xs font-medium border transition-all ${
+                          selectedSize === size 
+                            ? 'border-black bg-white text-black shadow-md' 
+                            : 'border-gray-300 hover:border-gray-500 bg-white text-black'
+                        }`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {size}
+                      </motion.button>
+                    ))}
+                  </div>
+                </div>
 
                 {/* Quantity - Inline */}
                 <div className="flex items-center justify-between mb-3">
@@ -781,19 +852,21 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
 
                 <AddToCartButton
                   onAddToCart={() => {
-                    if (selectedSize) {
-                      addItem({
-                        id: `${compatibleProduct.slug}-${selectedColor.name}-${selectedSize}`,
-                        name: compatibleProduct.name,
-                        price: compatibleProduct.price,
-                        image: selectedColor.images.main,
-                        color: selectedColor.name,
-                        size: selectedSize
-                      });
+                    if (selectedSize && selectedColor && compatibleProduct) {
+                      for (let i = 0; i < quantity; i++) {
+                        addItem({
+                          id: `${compatibleProduct.slug}-${selectedColor.name}-${selectedSize}`,
+                          name: compatibleProduct.name,
+                          price: compatibleProduct.price,
+                          image: selectedColor.images.main,
+                          color: selectedColor.name,
+                          size: selectedSize
+                        });
+                      }
                     }
                   }}
                   disabled={!selectedSize}
-                  price={compatibleProduct.price}
+                  price={compatibleProduct?.price || '0'}
                   className="rounded"
                 />
 
@@ -812,6 +885,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           </motion.div>
         </div>
       </section>
+
+      {/* Product Details and Technical Specifications */}
+      <ProductDetailsSection fullDescription={compatibleProduct.fullDescription || (typeof compatibleProduct.description === 'string' ? compatibleProduct.description : '') || ''} />
+      <ProductSpecifications fullDescription={typeof compatibleProduct.description === 'string' ? compatibleProduct.description : compatibleProduct.fullDescription || ''} />
 
       {/* Magazine-Style Back Design Section */}
       {selectedColor.images.back && selectedColor.images.back.trim() !== '' && (
@@ -871,7 +948,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       {/* Magazine-Style Lifestyle Photography Sections */}
       {selectedColor.images.lifestyle.length > 0 && (
         <>
-          {selectedColor.images.lifestyle.map((image, imageIndex) => {
+          {selectedColor.images.lifestyle.map((image: string, imageIndex: number) => {
             const contentData = [
               {
                 category: "DESIGN PHILOSOPHY",
@@ -1110,9 +1187,9 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   <Image
                     src={image}
                     alt={`${compatibleProduct.name} thumbnail ${index + 1}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="transform transition-transform duration-300 hover:scale-110"
+                    fill
+                    sizes="80px"
+                    className="object-cover transform transition-transform duration-300 hover:scale-110"
                   />
                 </div>
               ))}
@@ -1120,7 +1197,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           </div>
         </div>
       </section>
-{{ ... }}
+
       {/* Specifications Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
@@ -1128,43 +1205,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-6">
-              <div className="p-8 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 className="text-2xl font-semibold mb-6 text-black">Material & Construction</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between border-b border-gray-300 pb-2">
-                    <span className="text-gray-600">Material:</span>
-                    <span className="font-medium text-black">{compatibleProduct.specifications.material}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-gray-300 pb-2">
-                    <span className="text-gray-600">Weight:</span>
-                    <span className="font-medium text-black">{compatibleProduct.specifications.weight}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-gray-300 pb-2">
-                    <span className="text-gray-600">Fit:</span>
-                    <span className="font-medium text-black">{compatibleProduct.specifications.fit}</span>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <div className="space-y-6">
-              <div className="p-8 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 className="text-2xl font-semibold mb-6 text-black">Origin & Care</h3>
-                <div className="space-y-4">
-                  <div className="text-gray-700 mb-4">
-                    <p className="leading-relaxed">{compatibleProduct.specifications.origin}</p>
-                  </div>
-                  <div className="pt-4 border-t border-gray-300">
-                    <h4 className="font-semibold mb-3 text-black">Care Instructions:</h4>
-                    <ul className="text-gray-600 space-y-2">
-                      <li>• Machine wash cold with like colors</li>
-                      <li>• Do not bleach</li>
-                      <li>• Tumble dry low</li>
-                      <li>• Iron inside out on low heat</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+            <div className="flex justify-between border-b border-gray-300 pb-2">
+              <span className="text-gray-600">Fit:</span>
+              <p className="text-gray-600 text-lg">{(compatibleProduct?.specifications as any)?.fit || "Relaxed unisex fit"}</p>
             </div>
           </div>
         </div>
@@ -1182,7 +1226,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-black">Free Shipping</h3>
-              <p className="text-gray-600 text-lg">On orders over $50</p>
+              <p className="text-lg text-gray-600">On orders over $50</p>
             </div>
 
             <div className="text-center">
@@ -1192,7 +1236,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-black">30-Day Returns</h3>
-              <p className="text-gray-600 text-lg">Easy returns & exchanges</p>
+              <p className="text-lg text-gray-600">Easy returns & exchanges</p>
             </div>
 
             <div className="text-center">
@@ -1202,11 +1246,76 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 </svg>
               </div>
               <h3 className="text-2xl font-semibold mb-4 text-black">Premium Quality</h3>
-              <p className="text-gray-600 text-lg">Crafted with care in the USA</p>
+              <p className="text-lg text-gray-600">Crafted with care in the USA</p>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Size Guide Modal */}
+      <AnimatePresence>
+        {showSizeGuide && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+            onClick={() => setShowSizeGuide(false)}
+          >
+            <motion.div 
+              initial={{ scale: 0.95, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.95, y: 20 }}
+              className="bg-white p-8 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-2xl font-semibold mb-6 text-black">Size Guide</h3>
+              <div className="flex justify-center mb-6 border-b border-gray-300">
+                <button 
+                  className={`px-4 py-2 ${sizeUnit === 'inches' ? 'bg-gray-100 text-black border-b-2 border-black' : 'text-gray-600 hover:text-black'}`}
+                  onClick={() => setSizeUnit('inches')}
+                >
+                  Inches
+                </button>
+                <button 
+                  className={`px-4 py-2 ${sizeUnit === 'cm' ? 'bg-gray-100 text-black border-b-2 border-black' : 'text-gray-600 hover:text-black'}`}
+                  onClick={() => setSizeUnit('cm')}
+                >
+                  Centimeters
+                </button>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gray-100">
+                      <th className="border border-gray-300 px-4 py-2 text-left">Size</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Length</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Chest</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left">Sleeve</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {compatibleProduct?.sizeGuide?.map((row: SizeGuideItem) => (
+                      <tr key={row.size} className="hover:bg-gray-50">
+                        <td className="border border-gray-300 px-4 py-2 font-medium">{row.size}</td>
+                        <td className="border border-gray-300 px-4 py-2">{sizeUnit === 'inches' ? row.length : row.lengthCm}</td>
+                        <td className="border border-gray-300 px-4 py-2">{sizeUnit === 'inches' ? row.chest : row.chestCm}</td>
+                        <td className="border border-gray-300 px-4 py-2">{sizeUnit === 'inches' ? row.sleeve : row.sleeveCm}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <button 
+                className="mt-6 px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800"
+                onClick={() => setShowSizeGuide(false)}
+              >
+                Close
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </div>

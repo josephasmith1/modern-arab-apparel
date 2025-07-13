@@ -1,7 +1,8 @@
 "use client";
 
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import { type Product, type ProductColor, type CartItem } from '@/app/products/data';
+import { type Product, type ProductColor } from '@/app/products/data';
+import { type CartItem } from '@/app/products/types';
 import AddToCartButton from '@/components/cart/AddToCartButton';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';

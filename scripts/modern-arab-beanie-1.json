@@ -1,0 +1,142 @@
+{
+  "product": {
+    "id": 8430417707174,
+    "title": "Modern Arab Beanie",
+    "body_html": "<p>Stay warm in style with the Modern Arab Beanie in beige, a sleek and versatile essential that merges modern streetwear with cultural identity. Designed for both comfort and meaning, this snug, ribbed knit beanie features a soft gold “MA” embroidery on a Sudan Sand inspired fabric, symbolizing the Modern Arab identity in a way that’s subtle yet powerful.<br><br><strong>Design Inspiration:</strong><br><br>More than just a beanie, this piece reflects deep-rooted heritage, integrating into modern fashion. The minimalist branding keeps it clean and timeless, making it the perfect complement to any outfit while staying true to cultural pride and contemporary style.<br><br><strong>Features:</strong><br><br>• <strong>Premium Quality:</strong> Made from 100% acrylic, ensuring warmth, softness, and durability.<br>• <strong>Classic Fisherman Beanie Style: </strong>A snug, ribbed knit design for a timeless streetwear look.<br>• <strong>Snug, Comfortable Fit:</strong> Wide, ribbed knit design for a secure yet cozy feel.<br>• Subtle Branding: The soft gold “MA” logo represents Modern Arab’s vision—bold yet refined.<br>• <strong>Cultural Significance: </strong>Gold embroidery of the “MA” logo, a symbol of modern Arab identity.<br>• <strong>Versatile Style:</strong> A unisex design that effortlessly fits different looks.<br>•<strong> One Size Fits Most: </strong>Stretchable fabric designed to accommodate various head sizes.<br><br><strong>Why Choose the Modern Arab Beanie?</strong><br><br>This beanie isn’t just about warmth—it’s a statement of culture, heritage, and modernity. Perfect for those who appreciate minimalist streetwear with meaning, the Modern Arab Beanie allows you to carry your roots with pride, whether you’re navigating city streets or embracing the winter season in style.<br><br><strong>Perfect For:</strong><br><br>• Streetwear enthusiasts who love understated, cultural fashion.<br>• Those looking for a versatile, everyday beanie with a deeper message.<br>• Supporters of LA-based brands redefining Arab identity through fashion.<br><br><strong>Wrap yourself in culture. Wear the Modern Arab Beanie.</strong><br><br>• 100% acrylic<br>• Wide, ribbed knit<br>• Snug, comfortable fit<br>• Versatile style suitable for different outfits<br>• One size fits most<br>• Blank product sourced from China<br>• Final product designed and printed in USA</p>\n<p><strong class=\"size-guide-title\">Size guide</strong></p>\n<div class=\"table-responsive dynamic\" data-unit-system=\"imperial\">\n<table cellpadding=\"5\">\n<tbody>\n<tr>\n<td> </td>\n<td><strong>A (inches)</strong></td>\n<td><strong>B (inches)</strong></td>\n<td><strong>C (inches)</strong></td>\n<td><strong>D (inches)</strong></td>\n</tr>\n<tr>\n<td><strong>One size</strong></td>\n<td>19</td>\n<td>6 ¼</td>\n<td>2 ¾</td>\n<td>9</td>\n</tr>\n</tbody>\n</table>\n</div>\n<div class=\"table-responsive dynamic\" data-unit-system=\"metric\">\n<table cellpadding=\"5\">\n<tbody>\n<tr>\n<td> </td>\n<td><strong>A (cm)</strong></td>\n<td><strong>B (cm)</strong></td>\n<td><strong>C (cm)</strong></td>\n<td><strong>D (cm)</strong></td>\n</tr>\n<tr>\n<td><strong>One size</strong></td>\n<td>48.3</td>\n<td>16</td>\n<td>6.9</td>\n<td>22.9</td>\n</tr>\n</tbody>\n</table>\n</div>",
+    "vendor": "Modern Arab Apparel",
+    "product_type": "Headwear",
+    "created_at": "2025-03-11T23:19:29-07:00",
+    "handle": "modern-arab-beanie-1",
+    "updated_at": "2025-07-12T22:10:58-07:00",
+    "published_at": "2025-03-11T23:19:33-07:00",
+    "template_suffix": null,
+    "published_scope": "global",
+    "tags": "Arabic, Beanie, Headwear, Men, Minimalist, Modern, Streetwear, Women",
+    "variants": [
+      {
+        "id": 46340452679846,
+        "product_id": 8430417707174,
+        "title": "Beige",
+        "price": "25.00",
+        "sku": "7610455_20491",
+        "position": 2,
+        "compare_at_price": "",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Beige",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-05-04T01:38:39-07:00",
+        "updated_at": "2025-07-12T22:10:58-07:00",
+        "taxable": true,
+        "barcode": null,
+        "grams": 57,
+        "image_id": 41918355865766,
+        "weight": 2,
+        "weight_unit": "oz",
+        "requires_shipping": true,
+        "price_currency": "USD",
+        "compare_at_price_currency": ""
+      }
+    ],
+    "options": [
+      {
+        "id": 10769806524582,
+        "product_id": 8430417707174,
+        "name": "Beige",
+        "position": 1,
+        "values": [
+          "Beige"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 41825608499366,
+        "product_id": 8430417707174,
+        "position": 1,
+        "created_at": "2025-03-07T20:34:17-08:00",
+        "updated_at": "2025-06-20T03:53:23-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_2889_Facetune_05-03-2025-00-21-48.jpg?v=1750416803",
+        "variant_ids": []
+      },
+      {
+        "id": 41918355865766,
+        "product_id": 8430417707174,
+        "position": 2,
+        "created_at": "2025-03-11T23:19:29-07:00",
+        "updated_at": "2025-06-20T03:53:23-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-ecru-front-67d1276ae6133.jpg?v=1750416803",
+        "variant_ids": [
+          46340452679846
+        ]
+      },
+      {
+        "id": 41825605550246,
+        "product_id": 8430417707174,
+        "position": 3,
+        "created_at": "2025-03-07T20:34:00-08:00",
+        "updated_at": "2025-06-20T03:53:23-07:00",
+        "alt": null,
+        "width": 1366,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_1119.jpg?v=1750416803",
+        "variant_ids": []
+      },
+      {
+        "id": 41918355767462,
+        "product_id": 8430417707174,
+        "position": 4,
+        "created_at": "2025-03-11T23:19:29-07:00",
+        "updated_at": "2025-05-06T16:30:19-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-ecru-front-67d1276ae6d2a.jpg?v=1746574219",
+        "variant_ids": []
+      },
+      {
+        "id": 41918617157798,
+        "product_id": 8430417707174,
+        "position": 5,
+        "created_at": "2025-03-11T23:31:46-07:00",
+        "updated_at": "2025-05-06T16:30:19-07:00",
+        "alt": null,
+        "width": 1366,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_1113.jpg?v=1746574219",
+        "variant_ids": []
+      },
+      {
+        "id": 41825969668262,
+        "product_id": 8430417707174,
+        "position": 6,
+        "created_at": "2025-03-07T21:06:36-08:00",
+        "updated_at": "2025-05-06T16:30:15-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_2888_Facetune_05-03-2025-00-24-43.jpg?v=1746574215",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 41825608499366,
+      "product_id": 8430417707174,
+      "position": 1,
+      "created_at": "2025-03-07T20:34:17-08:00",
+      "updated_at": "2025-06-20T03:53:23-07:00",
+      "alt": null,
+      "width": 1536,
+      "height": 2302,
+      "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_2889_Facetune_05-03-2025-00-21-48.jpg?v=1750416803",
+      "variant_ids": []
+    }
+  }
+}

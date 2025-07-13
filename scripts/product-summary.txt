@@ -1,0 +1,291 @@
+MODERN ARAB APPAREL - PRODUCT DATA SUMMARY
+==========================================
+
+Total Products: 22
+
+Products:
+1. Modern Arab Faded Tee (modern-arab-faded-tee-black-print)
+   - Type: Upperwear
+   - Variants: 24
+   - Images: 20
+   - Colors: Faded Bone, Faded Green, Faded  Khaki, Faded Black
+
+2. Modern Arab Premium Tee (Faded Khaki) (modern-arab-premium-tee-faded-khaki)
+   - Type: Upperwear
+   - Variants: 6
+   - Images: 6
+   - Colors: S, M, L, XL, 2XL, 3XL
+
+3. Modern Arab Premium Tee (Faded Green) (modern-arab-premium-tee-faded-eucalyptus)
+   - Type: Upperwear
+   - Variants: 6
+   - Images: 5
+   - Colors: S, M, L, XL, 2XL, 3XL
+
+4. Modern Arab Premium Tee (modern-arab-premium-tee-1)
+   - Type: Upperwear
+   - Variants: 24
+   - Images: 12
+   - Colors: Faded Bone, Faded Green, Faded Sand, Faded Black
+
+5. Modern Arab Premium Tee (modern-arab-premium-tee)
+   - Type: Upperwear
+   - Variants: 24
+   - Images: 12
+   - Colors: Faded Black, Faded Sand, Faded Green, Faded Bone
+
+6. Modern Arab Beanie (fisherman-beanie)
+   - Type: Headwear
+   - Variants: 1
+   - Images: 5
+   - Colors: Blue
+
+7. Modern Arab Sweatpants (modern-arab-sweatpants)
+   - Type: Legwear
+   - Variants: 20
+   - Images: 22
+   - Colors: Light Green, Light Blue, Light Black, Dark Blue
+
+8. Modern Arab Beanie (modern-arab-beanie-1)
+   - Type: Headwear
+   - Variants: 1
+   - Images: 6
+   - Colors: Beige
+
+9. Modern Arab Bucket Hat (modern-arab-bucket-hat-1)
+   - Type: Headwear
+   - Variants: 1
+   - Images: 8
+   - Colors: White
+
+10. Modern Arab Cap (modern-arab-cap-1)
+   - Type: Headwear
+   - Variants: 1
+   - Images: 8
+   - Colors: White
+
+11. Modern Arab Hoodie (modern-arab-hoodie)
+   - Type: Layers
+   - Variants: 12
+   - Images: 16
+   - Colors: Bone, Blue
+
+12. Modern Arab Faded Tee (modernarab-tee)
+   - Type: Upperwear
+   - Variants: 24
+   - Images: 26
+   - Colors: Faded Bone, Faded Green, Faded Khaki, Faded Black
+
+13. Modern Arab Tee (modernarab-tee-white)
+   - Type: Upperwear
+   - Variants: 7
+   - Images: 8
+   - Colors: S, M, L, XL, 2XL, 3XL, 4XL
+
+14. Modern Arab Tee (modernarab-tee-black)
+   - Type: Upperwear
+   - Variants: 7
+   - Images: 10
+   - Colors: S, M, L, XL, 2XL, 3XL, 4XL
+
+15. Modern Arab Crewneck (modernarab-crewneck)
+   - Type: Layers
+   - Variants: 24
+   - Images: 24
+   - Colors: Green, Vintage Black, White, Black
+
+16. Modern Arab Crewneck (modernarab-crewneck-sand)
+   - Type: Layers
+   - Variants: 6
+   - Images: 6
+   - Colors: S, M, L, XL, 2XL, 3XL
+
+17. Modern Arab Cap (modern-arab-cap)
+   - Type: Headwear
+   - Variants: 4
+   - Images: 30
+   - Colors: Khaki, Blue, Green, Black
+
+18. Modern Arab Bucket Hat (modern-arab-bucket-hat)
+   - Type: Headwear
+   - Variants: 4
+   - Images: 28
+   - Colors: Olive, Blue, Black, Khaki
+
+19. Modern Arab Beanie (modernarab-beanie)
+   - Type: Headwear
+   - Variants: 2
+   - Images: 15
+   - Colors: Olive, Black
+
+20. Modern Arab Hoodie (modernarab-hoodie)
+   - Type: Layers
+   - Variants: 36
+   - Images: 36
+   - Colors: Maroon, Olive Green, Black, White, Green, Vintage Black
+
+21. Modern Arab Cropped Hoodie (modernarab-cropped-hoodie)
+   - Type: Layers
+   - Variants: 10
+   - Images: 8
+   - Colors: Black, Olive Green
+
+22. Modern Arab Joggers (modern-arab-joggers)
+   - Type: Legwear
+   - Variants: 24
+   - Images: 33
+   - Colors: Olive Green, Maroon, Black, White
+
+
+IMAGE ANALYSIS:
+---------------
+
+Modern Arab Faded Tee:
+  Faded Bone: 6 variant-specific images
+  Faded Black: 6 variant-specific images
+  Faded Green: 6 variant-specific images
+  Faded  Khaki: 6 variant-specific images
+  General: 16 product-wide images
+
+Modern Arab Premium Tee (Faded Khaki):
+  S: 1 variant-specific images
+  M: 1 variant-specific images
+  L: 1 variant-specific images
+  XL: 1 variant-specific images
+  2XL: 1 variant-specific images
+  3XL: 1 variant-specific images
+  General: 5 product-wide images
+
+Modern Arab Premium Tee (Faded Green):
+  S: 1 variant-specific images
+  M: 1 variant-specific images
+  L: 1 variant-specific images
+  XL: 1 variant-specific images
+  2XL: 1 variant-specific images
+  3XL: 1 variant-specific images
+  General: 4 product-wide images
+
+Modern Arab Premium Tee:
+  Faded Bone: 6 variant-specific images
+  Faded Black: 6 variant-specific images
+  Faded Green: 6 variant-specific images
+  Faded Sand: 6 variant-specific images
+  General: 8 product-wide images
+
+Modern Arab Premium Tee:
+  Faded Black: 6 variant-specific images
+  Faded Bone: 6 variant-specific images
+  Faded Green: 6 variant-specific images
+  Faded Sand: 6 variant-specific images
+  General: 8 product-wide images
+
+Modern Arab Beanie:
+  Blue: 1 variant-specific images
+  General: 4 product-wide images
+
+Modern Arab Sweatpants:
+  Light Blue: 5 variant-specific images
+  Light Green: 5 variant-specific images
+  Light Black: 5 variant-specific images
+  Dark Blue: 5 variant-specific images
+  General: 18 product-wide images
+
+Modern Arab Beanie:
+  Beige: 1 variant-specific images
+  General: 5 product-wide images
+
+Modern Arab Bucket Hat:
+  White: 1 variant-specific images
+  General: 7 product-wide images
+
+Modern Arab Cap:
+  White: 1 variant-specific images
+  General: 7 product-wide images
+
+Modern Arab Hoodie:
+  Blue: 6 variant-specific images
+  Bone: 6 variant-specific images
+  General: 14 product-wide images
+
+Modern Arab Faded Tee:
+  Faded Green: 6 variant-specific images
+  Faded Black: 6 variant-specific images
+  Faded Khaki: 6 variant-specific images
+  Faded Bone: 6 variant-specific images
+  General: 22 product-wide images
+
+Modern Arab Tee:
+  S: 1 variant-specific images
+  M: 1 variant-specific images
+  L: 1 variant-specific images
+  XL: 1 variant-specific images
+  2XL: 1 variant-specific images
+  3XL: 1 variant-specific images
+  4XL: 1 variant-specific images
+  General: 7 product-wide images
+
+Modern Arab Tee:
+  S: 1 variant-specific images
+  M: 1 variant-specific images
+  L: 1 variant-specific images
+  XL: 1 variant-specific images
+  2XL: 1 variant-specific images
+  3XL: 1 variant-specific images
+  4XL: 1 variant-specific images
+  General: 9 product-wide images
+
+Modern Arab Crewneck:
+  Green: 6 variant-specific images
+  Vintage Black: 6 variant-specific images
+  White: 6 variant-specific images
+  Black: 6 variant-specific images
+  General: 20 product-wide images
+
+Modern Arab Crewneck:
+  S: 1 variant-specific images
+  M: 1 variant-specific images
+  L: 1 variant-specific images
+  XL: 1 variant-specific images
+  2XL: 1 variant-specific images
+  3XL: 1 variant-specific images
+  General: 5 product-wide images
+
+Modern Arab Cap:
+  Khaki: 1 variant-specific images
+  Blue: 1 variant-specific images
+  Green: 1 variant-specific images
+  Black: 1 variant-specific images
+  General: 26 product-wide images
+
+Modern Arab Bucket Hat:
+  Olive: 1 variant-specific images
+  Blue: 1 variant-specific images
+  Black: 1 variant-specific images
+  Khaki: 1 variant-specific images
+  General: 24 product-wide images
+
+Modern Arab Beanie:
+  Olive: 1 variant-specific images
+  Black: 1 variant-specific images
+  General: 13 product-wide images
+
+Modern Arab Hoodie:
+  Maroon: 6 variant-specific images
+  Olive Green: 6 variant-specific images
+  Black: 6 variant-specific images
+  White: 6 variant-specific images
+  Green: 6 variant-specific images
+  Vintage Black: 6 variant-specific images
+  General: 30 product-wide images
+
+Modern Arab Cropped Hoodie:
+  Black: 5 variant-specific images
+  Olive Green: 5 variant-specific images
+  General: 6 product-wide images
+
+Modern Arab Joggers:
+  Olive Green: 6 variant-specific images
+  Maroon: 6 variant-specific images
+  Black: 6 variant-specific images
+  White: 6 variant-specific images
+  General: 29 product-wide images

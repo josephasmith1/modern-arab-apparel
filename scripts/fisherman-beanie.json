@@ -1,0 +1,130 @@
+{
+  "product": {
+    "id": 8430418329766,
+    "title": "Modern Arab Beanie",
+    "body_html": "<p>Stay warm in style with the Modern Arab Beanie in dark blue, a sleek and versatile essential that merges modern streetwear with cultural identity. Designed for both comfort and meaning, this snug, ribbed knit beanie features a soft white “MA” embroidery, symbolizing the Modern Arab identity in a way that’s subtle yet powerful.<br><br><strong>Design Inspiration:</strong><br><br>More than just a beanie, this piece reflects deep-rooted heritage, integrating into modern fashion. The minimalist branding keeps it clean and timeless, making it the perfect complement to any outfit while staying true to cultural pride and contemporary style.<br><br><strong>Features:</strong><br><br>• <strong>Premium Quality: </strong>Made from 100% acrylic, ensuring warmth, softness, and durability.<br>• <strong>Classic Fisherman Beanie Style: </strong>A snug, ribbed knit design for a timeless streetwear look.<br>• <strong>Snug, Comfortable Fit: </strong>Wide, ribbed knit design for a secure yet cozy feel.<br>• <strong>Subtle Branding: </strong>The soft white “MA” logo represents Modern Arab’s vision—bold yet refined.<br>• <strong>Cultural Significance:</strong> White embroidery of the “MA” logo, a symbol of modern Arab identity.<br>• <strong>Versatile Style: </strong>A unisex design that effortlessly fits different looks.<br>• <strong>One Size Fits Most: </strong>Stretchable fabric designed to accommodate various head sizes.<br><br><strong>Why Choose the Modern Arab Beanie?</strong><br><br>This beanie isn’t just about warmth—it’s a statement of culture, heritage, and modernity. Perfect for those who appreciate minimalist streetwear with meaning, the Modern Arab Beanie allows you to carry your roots with pride, whether you’re navigating city streets or embracing the winter season in style.<br><br><strong>Perfect For:</strong><br><br>• Streetwear enthusiasts who love understated, cultural fashion.<br>• Those looking for a versatile, everyday beanie with a deeper message.<br>• Supporters of LA-based brands redefining Arab identity through fashion.<br><br><strong>Wrap yourself in culture. Wear the Modern Arab Beanie.</strong><br><br>• 100% acrylic<br>• Wide, ribbed knit<br>• Snug, comfortable fit<br>• Versatile style suitable for different outfits<br>• One size fits most<br>• Blank product sourced from China<br>• Final product designed and printed in USA</p>\n<p><strong class=\"size-guide-title\">Size guide</strong></p>\n<div data-unit-system=\"imperial\" class=\"table-responsive dynamic\">\n<table cellpadding=\"5\">\n<tbody>\n<tr>\n<td> </td>\n<td><strong>A (inches)</strong></td>\n<td><strong>B (inches)</strong></td>\n<td><strong>C (inches)</strong></td>\n<td><strong>D (inches)</strong></td>\n</tr>\n<tr>\n<td><strong>One size</strong></td>\n<td>19</td>\n<td>6 ¼</td>\n<td>2 ¾</td>\n<td>9</td>\n</tr>\n</tbody>\n</table>\n</div>\n<div data-unit-system=\"metric\" class=\"table-responsive dynamic\">\n<table cellpadding=\"5\">\n<tbody>\n<tr>\n<td> </td>\n<td><strong>A (cm)</strong></td>\n<td><strong>B (cm)</strong></td>\n<td><strong>C (cm)</strong></td>\n<td><strong>D (cm)</strong></td>\n</tr>\n<tr>\n<td><strong>One size</strong></td>\n<td>48.3</td>\n<td>16</td>\n<td>6.9</td>\n<td>22.9</td>\n</tr>\n</tbody>\n</table>\n</div>",
+    "vendor": "Modern Arab Apparel",
+    "product_type": "Headwear",
+    "created_at": "2025-03-11T23:20:35-07:00",
+    "handle": "fisherman-beanie",
+    "updated_at": "2025-07-12T22:10:56-07:00",
+    "published_at": "2025-03-14T03:19:41-07:00",
+    "template_suffix": null,
+    "published_scope": "global",
+    "tags": "Arabic, Beanie, Headwear, Men, Minimalist, Modern, Streetwear, Women",
+    "variants": [
+      {
+        "id": 46212770267302,
+        "product_id": 8430418329766,
+        "title": "Blue",
+        "price": "25.00",
+        "sku": "3476950_20488",
+        "position": 1,
+        "compare_at_price": "",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Blue",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-03-11T23:35:24-07:00",
+        "updated_at": "2025-07-12T22:10:56-07:00",
+        "taxable": true,
+        "barcode": "",
+        "grams": 57,
+        "image_id": 41918379884710,
+        "weight": 2,
+        "weight_unit": "oz",
+        "requires_shipping": true,
+        "price_currency": "USD",
+        "compare_at_price_currency": ""
+      }
+    ],
+    "options": [
+      {
+        "id": 10716591095974,
+        "product_id": 8430418329766,
+        "name": "Blue",
+        "position": 1,
+        "values": [
+          "Blue"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 42496405110950,
+        "product_id": 8430418329766,
+        "position": 1,
+        "created_at": "2025-04-20T02:04:58-07:00",
+        "updated_at": "2025-06-20T03:54:05-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0491.jpg?v=1750416845",
+        "variant_ids": []
+      },
+      {
+        "id": 41918379884710,
+        "product_id": 8430418329766,
+        "position": 2,
+        "created_at": "2025-03-11T23:20:35-07:00",
+        "updated_at": "2025-06-20T03:54:05-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-petrol-blue-front-67d127ad708f6.jpg?v=1750416845",
+        "variant_ids": [
+          46212770267302
+        ]
+      },
+      {
+        "id": 42496405274790,
+        "product_id": 8430418329766,
+        "position": 3,
+        "created_at": "2025-04-20T02:04:59-07:00",
+        "updated_at": "2025-06-20T03:54:05-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0520.jpg?v=1750416845",
+        "variant_ids": []
+      },
+      {
+        "id": 41918379819174,
+        "product_id": 8430418329766,
+        "position": 4,
+        "created_at": "2025-03-11T23:20:36-07:00",
+        "updated_at": "2025-04-21T16:34:22-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-petrol-blue-front-67d127ad716af.jpg?v=1745278462",
+        "variant_ids": []
+      },
+      {
+        "id": 42496405405862,
+        "product_id": 8430418329766,
+        "position": 5,
+        "created_at": "2025-04-20T02:05:00-07:00",
+        "updated_at": "2025-04-21T16:34:22-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0495.jpg?v=1745278462",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 42496405110950,
+      "product_id": 8430418329766,
+      "position": 1,
+      "created_at": "2025-04-20T02:04:58-07:00",
+      "updated_at": "2025-06-20T03:54:05-07:00",
+      "alt": null,
+      "width": 1365,
+      "height": 2048,
+      "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0491.jpg?v=1750416845",
+      "variant_ids": []
+    }
+  }
+}
