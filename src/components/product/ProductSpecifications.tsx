@@ -142,6 +142,15 @@ export default function ProductSpecifications({ fullDescription }: ProductSpecif
 
   // Extract size guide from HTML
   const extractSizeGuide = (html: string) => {
+    // Skip parsing on server side
+    if (typeof window === 'undefined') {
+      return {
+        hasTable: false,
+        imperial: '',
+        metric: ''
+      };
+    }
+    
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;
     
@@ -158,6 +167,11 @@ export default function ProductSpecifications({ fullDescription }: ProductSpecif
 
   // Extract disclaimer
   const extractDisclaimer = (html: string): string => {
+    // Skip parsing on server side
+    if (typeof window === 'undefined') {
+      return '';
+    }
+    
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;
     
