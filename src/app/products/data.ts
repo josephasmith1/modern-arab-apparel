@@ -173,7 +173,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#808000",
         "images": {
-          "main": "/images/modern-arab-beanie/olive-1.jpg",
+          "main": "/images/modern-arab-beanie-1/beige-lifestyle-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -191,7 +191,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-beanie/black-1.jpg",
+          "main": "/images/modern-arab-beanie-1/beige-lifestyle-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -292,7 +292,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#808000",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/olive-1.jpg",
+          "main": "/images/modern-arab-bucket-hat/olive-lifestyle-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -310,7 +310,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#4169E1",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/blue-1.jpg",
+          "main": "/images/modern-arab-bucket-hat/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -328,7 +328,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/black-1.jpg",
+          "main": "/images/modern-arab-bucket-hat/faded-black-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -346,7 +346,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#C3B091",
         "images": {
-          "main": "/images/modern-arab-bucket-hat/khaki-1.jpg",
+          "main": "/images/modern-arab-bucket-hat/faded-khaki-lifestyle-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -447,7 +447,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#C3B091",
         "images": {
-          "main": "/images/modern-arab-cap/khaki-1.jpg",
+          "main": "/images/modern-arab-cap/faded-khaki-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -465,7 +465,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#4169E1",
         "images": {
-          "main": "/images/modern-arab-cap/blue-1.jpg",
+          "main": "/images/modern-arab-cap/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -483,7 +483,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#50C878",
         "images": {
-          "main": "/images/modern-arab-cap/green-1.jpg",
+          "main": "/images/modern-arab-cap/green-lifestyle-1.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -501,7 +501,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-cap/black-1.jpg",
+          "main": "/images/modern-arab-cap/faded-black-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -728,7 +728,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#50C878",
         "images": {
-          "main": "/images/modern-arab-crewneck/green-1.jpg",
+          "main": "/images/modernarab-crewneck/green-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -776,7 +776,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#2F2F2F",
         "images": {
-          "main": "/images/modern-arab-crewneck/vintage-black-1.jpg",
+          "main": "/images/modernarab-crewneck/faded-black-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -824,7 +824,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#FFFFFF",
         "images": {
-          "main": "/images/modern-arab-crewneck/white-1.jpg",
+          "main": "/images/modernarab-crewneck/white-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -872,7 +872,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-crewneck/black-1.jpg",
+          "main": "/images/modernarab-crewneck/faded-black-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -1708,7 +1708,7 @@ export const products: Product[] = [
         "hex": "#E8E4E0",
         "images": {
           "main": "/images/modern-arab-hoodie/bone-main.jpg",
-          "back": "/images/modern-arab-hoodie/bone-back.jpg",
+          "back": "/images/modern-arab-hoodie/faded-bone-back.jpg",
           "lifestyle": [
             "/images/modern-arab-hoodie/bone-lifestyle-1.jpg",
             "/images/modern-arab-hoodie/bone-lifestyle-2.jpg",
@@ -1869,7 +1869,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#800000",
         "images": {
-          "main": "/images/modern-arab-hoodie/maroon-1.jpg",
+          "main": "/images/modern-arab-hoodie/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -1965,7 +1965,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-hoodie/black-1.jpg",
+          "main": "/images/modern-arab-hoodie/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2013,7 +2013,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#FFFFFF",
         "images": {
-          "main": "/images/modern-arab-hoodie/white-1.jpg",
+          "main": "/images/modern-arab-hoodie/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2061,7 +2061,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#50C878",
         "images": {
-          "main": "/images/modern-arab-hoodie/green-1.jpg",
+          "main": "/images/modern-arab-hoodie/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2109,7 +2109,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#2F2F2F",
         "images": {
-          "main": "/images/modern-arab-hoodie/vintage-black-1.jpg",
+          "main": "/images/modern-arab-hoodie/blue-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2241,7 +2241,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#800000",
         "images": {
-          "main": "/images/modern-arab-joggers/maroon-1.jpg",
+          "main": "/images/modern-arab-joggers/maroon-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2289,7 +2289,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#000000",
         "images": {
-          "main": "/images/modern-arab-joggers/black-1.jpg",
+          "main": "/images/modern-arab-joggers/faded-black-main.jpg",
           "back": "",
           "lifestyle": []
         },
@@ -2337,7 +2337,7 @@ export const products: Product[] = [
         "swatch": "",
         "hex": "#FFFFFF",
         "images": {
-          "main": "/images/modern-arab-joggers/white-1.jpg",
+          "main": "/images/modern-arab-joggers/white-main.jpg",
           "back": "",
           "lifestyle": []
         },
