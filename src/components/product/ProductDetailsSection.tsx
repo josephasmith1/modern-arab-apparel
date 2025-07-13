@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shirt, Heart, Users, Package } from 'lucide-react';

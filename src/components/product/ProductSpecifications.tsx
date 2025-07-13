@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Ruler, Package2, MapPin, Info, Shirt, Droplets, Square, Tag } from 'lucide-react';
@@ -15,6 +17,10 @@ interface Specification {
 export default function ProductSpecifications({ fullDescription }: ProductSpecificationsProps) {
   // Parse technical specifications from the HTML description
   const parseSpecifications = (html: string): Specification[] => {
+    // Skip parsing on server side
+    if (typeof window === 'undefined') {
+      return [];
+    }
     const specs: Specification[] = [];
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;

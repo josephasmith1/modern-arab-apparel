@@ -1,0 +1,2679 @@
+{
+  "timestamp": "2025-07-13T20:33:22.029Z",
+  "totalProducts": 22,
+  "totalImagesDownloaded": 245,
+  "products": [
+    {
+      "handle": "modern-arab-faded-tee-black-print",
+      "title": "Modern Arab Faded Tee",
+      "imagesByColor": {
+        "faded-bone": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42186407182502,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 3,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [
+                  46258074353830,
+                  46258074386598,
+                  46258074419366,
+                  46258074452134,
+                  46258074484902,
+                  46258074517670
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg",
+              "color": "faded-bone",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42186407248038,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 5,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-67e7da7986b74.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-front-67e7da7986b74.jpg",
+              "color": "faded-bone",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42186407116966,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 10,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [
+                  46258073764006,
+                  46258073796774,
+                  46258073829542,
+                  46258073862310,
+                  46258073895078,
+                  46258073927846
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42186407149734,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 12,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-67e7da7982b19.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-front-67e7da7982b19.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42186407084198,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 17,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [
+                  46258074157222,
+                  46258074189990,
+                  46258074222758,
+                  46258074255526,
+                  46258074288294,
+                  46258074321062
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg",
+              "color": "faded-green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42186407051430,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 18,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-67e7da7984868.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-front-67e7da7984868.jpg",
+              "color": "faded-green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-khaki": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42186407215270,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 19,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [
+                  46258073960614,
+                  46258073993382,
+                  46258074026150,
+                  46258074058918,
+                  46258074091686,
+                  46258074124454
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg",
+              "color": "faded-khaki",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42186407018662,
+                "created_at": "2025-03-29T04:33:24-07:00",
+                "position": 20,
+                "updated_at": "2025-05-27T01:53:37-07:00",
+                "product_id": 8446180720806,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-67e7da798329f.jpg?v=1748336017",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-front-67e7da798329f.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 18
+    },
+    {
+      "handle": "modern-arab-premium-tee-faded-khaki",
+      "title": "Modern Arab Premium Tee (Faded Khaki)",
+      "imagesByColor": {
+        "faded-khaki": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671793930406,
+                "created_at": "2025-05-07T02:02:03-07:00",
+                "position": 4,
+                "updated_at": "2025-05-07T02:14:37-07:00",
+                "product_id": 8445080240294,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-681b218273328.jpg?v=1746609277",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-back-681b218273328.jpg",
+              "color": "faded-khaki",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671793864870,
+                "created_at": "2025-05-07T02:02:03-07:00",
+                "position": 2,
+                "updated_at": "2025-05-07T02:14:37-07:00",
+                "product_id": 8445080240294,
+                "variant_ids": [
+                  46254943830182,
+                  46254943862950,
+                  46254943895718,
+                  46254943928486,
+                  46254943961254,
+                  46254943994022
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b21827431a.jpg?v=1746609277",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-front-681b21827431a.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 6
+    },
+    {
+      "handle": "modern-arab-premium-tee-faded-eucalyptus",
+      "title": "Modern Arab Premium Tee (Faded Green)",
+      "imagesByColor": {
+        "faded-green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671801467046,
+                "created_at": "2025-05-07T02:03:53-07:00",
+                "position": 4,
+                "updated_at": "2025-05-07T02:16:37-07:00",
+                "product_id": 8445078634662,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-681b21efb002e.jpg?v=1746609397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-back-681b21efb002e.jpg",
+              "color": "faded-green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671801303206,
+                "created_at": "2025-05-07T02:03:52-07:00",
+                "position": 2,
+                "updated_at": "2025-05-07T02:16:37-07:00",
+                "product_id": 8445078634662,
+                "variant_ids": [
+                  46254932623526,
+                  46254932656294,
+                  46254932689062,
+                  46254932721830,
+                  46254932754598,
+                  46254932787366
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b21efb126e.jpg?v=1746609397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-front-681b21efb126e.jpg",
+              "color": "faded-green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 5
+    },
+    {
+      "handle": "modern-arab-premium-tee-1",
+      "title": "Modern Arab Premium Tee",
+      "imagesByColor": {
+        "faded-bone": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671810936998,
+                "created_at": "2025-05-07T02:05:34-07:00",
+                "position": 4,
+                "updated_at": "2025-05-07T02:18:59-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-681b2252c3d05.jpg?v=1746609539",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-back-681b2252c3d05.jpg",
+              "color": "faded-bone",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671811100838,
+                "created_at": "2025-05-07T02:05:34-07:00",
+                "position": 2,
+                "updated_at": "2025-05-07T02:18:59-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [
+                  46254925316262,
+                  46254925349030,
+                  46254925381798,
+                  46254925414566,
+                  46254925447334,
+                  46254925480102
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1746609539",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg",
+              "color": "faded-bone",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42173855170726,
+                "created_at": "2025-03-28T02:31:40-07:00",
+                "position": 8,
+                "updated_at": "2025-05-07T02:19:42-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e66c732e987.jpg?v=1746609582",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-back-67e66c732e987.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671815917734,
+                "created_at": "2025-05-07T02:06:50-07:00",
+                "position": 7,
+                "updated_at": "2025-05-07T02:19:42-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [
+                  46254924726438,
+                  46254924759206,
+                  46254924791974,
+                  46254924824742,
+                  46254924857510,
+                  46254924890278
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671811068070,
+                "created_at": "2025-05-07T02:05:34-07:00",
+                "position": 10,
+                "updated_at": "2025-05-07T02:19:42-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-681b2252c686e.jpg?v=1746609582",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-back-681b2252c686e.jpg",
+              "color": "faded-green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671811035302,
+                "created_at": "2025-05-07T02:05:34-07:00",
+                "position": 9,
+                "updated_at": "2025-05-07T02:19:42-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [
+                  46254925119654,
+                  46254925152422,
+                  46254925185190,
+                  46254925217958,
+                  46254925250726,
+                  46254925283494
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg",
+              "color": "faded-green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-khaki": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671811002534,
+                "created_at": "2025-05-07T02:05:34-07:00",
+                "position": 12,
+                "updated_at": "2025-05-07T02:19:42-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-681b2252c57a7.jpg?v=1746609582",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-back-681b2252c57a7.jpg",
+              "color": "faded-khaki",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671810969766,
+                "created_at": "2025-05-07T02:05:34-07:00",
+                "position": 11,
+                "updated_at": "2025-05-07T02:19:42-07:00",
+                "product_id": 8445077487782,
+                "variant_ids": [
+                  46254924923046,
+                  46254924955814,
+                  46254924988582,
+                  46254925021350,
+                  46254925054118,
+                  46254925086886
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 12
+    },
+    {
+      "handle": "modern-arab-premium-tee",
+      "title": "Modern Arab Premium Tee",
+      "imagesByColor": {
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42173833216166,
+                "created_at": "2025-03-28T02:29:43-07:00",
+                "position": 4,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e66bfcdd879.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-back-67e66bfcdd879.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671853371558,
+                "created_at": "2025-05-07T02:10:27-07:00",
+                "position": 2,
+                "updated_at": "2025-05-07T02:19:25-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [
+                  46254918992038,
+                  46254919024806,
+                  46254919057574,
+                  46254919090342,
+                  46254919123110,
+                  46254919155878
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1746609565",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-bone": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671840329894,
+                "created_at": "2025-05-07T02:08:36-07:00",
+                "position": 8,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-681b23085ebc4.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-back-681b23085ebc4.jpg",
+              "color": "faded-bone",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671840264358,
+                "created_at": "2025-05-07T02:08:36-07:00",
+                "position": 7,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [
+                  46254919581862,
+                  46254919614630,
+                  46254919647398,
+                  46254919680166,
+                  46254919712934,
+                  46254919745702
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg",
+              "color": "faded-bone",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671840395430,
+                "created_at": "2025-05-07T02:08:36-07:00",
+                "position": 10,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-681b230861a3e.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-back-681b230861a3e.jpg",
+              "color": "faded-green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671840362662,
+                "created_at": "2025-05-07T02:08:36-07:00",
+                "position": 9,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [
+                  46254919385254,
+                  46254919418022,
+                  46254919450790,
+                  46254919483558,
+                  46254919516326,
+                  46254919549094
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg",
+              "color": "faded-green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-khaki": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 42671840231590,
+                "created_at": "2025-05-07T02:08:36-07:00",
+                "position": 12,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-681b230860904.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-back-681b230860904.jpg",
+              "color": "faded-khaki",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671840297126,
+                "created_at": "2025-05-07T02:08:36-07:00",
+                "position": 11,
+                "updated_at": "2025-05-07T02:19:20-07:00",
+                "product_id": 8445076668582,
+                "variant_ids": [
+                  46254919188646,
+                  46254919221414,
+                  46254919254182,
+                  46254919286950,
+                  46254919319718,
+                  46254919352486
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 12
+    },
+    {
+      "handle": "fisherman-beanie",
+      "title": "Modern Arab Beanie",
+      "imagesByColor": {
+        "blue": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41918379884710,
+                "created_at": "2025-03-11T23:20:35-07:00",
+                "position": 2,
+                "updated_at": "2025-06-20T03:54:05-07:00",
+                "product_id": 8430418329766,
+                "variant_ids": [
+                  46212770267302
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-petrol-blue-front-67d127ad708f6.jpg?v=1750416845",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "fisherman-beanie-petrol-blue-front-67d127ad708f6.jpg",
+              "color": "blue",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41918379819174,
+                "created_at": "2025-03-11T23:20:36-07:00",
+                "position": 4,
+                "updated_at": "2025-04-21T16:34:22-07:00",
+                "product_id": 8430418329766,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-petrol-blue-front-67d127ad716af.jpg?v=1745278462",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "fisherman-beanie-petrol-blue-front-67d127ad716af.jpg",
+              "color": "blue",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 3
+    },
+    {
+      "handle": "modern-arab-sweatpants",
+      "title": "Modern Arab Sweatpants",
+      "imagesByColor": {
+        "blue": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41921944879270,
+                "created_at": "2025-03-12T02:39:31-07:00",
+                "position": 5,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-back-67d1564b050f0.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-light-blue-back-67d1564b050f0.jpg",
+              "color": "blue",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671378038950,
+                "created_at": "2025-05-07T00:27:33-07:00",
+                "position": 3,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [
+                  46212950786214,
+                  46212950818982,
+                  46212950851750,
+                  46212950884518,
+                  46212950917286
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg",
+              "color": "blue",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 42671378104486,
+                "created_at": "2025-05-07T00:27:33-07:00",
+                "position": 20,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [
+                  46214208422054,
+                  46214208454822,
+                  46214208487590,
+                  46214208520358,
+                  46214208553126
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg",
+              "color": "blue",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41921944748198,
+                "created_at": "2025-03-12T02:39:31-07:00",
+                "position": 11,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-back-67d1564b04e83.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-alpine-green-back-67d1564b04e83.jpg",
+              "color": "green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671378137254,
+                "created_at": "2025-05-07T00:27:33-07:00",
+                "position": 9,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [
+                  46212950622374,
+                  46212950655142,
+                  46212950687910,
+                  46212950720678,
+                  46212950753446
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg",
+              "color": "green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41921944944806,
+                "created_at": "2025-03-12T02:39:30-07:00",
+                "position": 16,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-back-67d1564b04d45.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-black-back-67d1564b04d45.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 42671377973414,
+                "created_at": "2025-05-07T00:27:33-07:00",
+                "position": 15,
+                "updated_at": "2025-05-07T00:36:47-07:00",
+                "product_id": 8430477836454,
+                "variant_ids": [
+                  46214208258214,
+                  46214208290982,
+                  46214208323750,
+                  46214208356518,
+                  46214208389286
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg?v=1746603407",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 16
+    },
+    {
+      "handle": "modern-arab-beanie-1",
+      "title": "Modern Arab Beanie",
+      "imagesByColor": {
+        "beige": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41918355865766,
+                "created_at": "2025-03-11T23:19:29-07:00",
+                "position": 2,
+                "updated_at": "2025-06-20T03:53:23-07:00",
+                "product_id": 8430417707174,
+                "variant_ids": [
+                  46340452679846
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-ecru-front-67d1276ae6133.jpg?v=1750416803",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "fisherman-beanie-ecru-front-67d1276ae6133.jpg",
+              "color": "beige",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 5
+    },
+    {
+      "handle": "modern-arab-bucket-hat-1",
+      "title": "Modern Arab Bucket Hat",
+      "imagesByColor": {
+        "white": {
+          "main": [
+            {
+              "image": {
+                "id": 41918310285478,
+                "created_at": "2025-03-11T23:17:08-07:00",
+                "position": 4,
+                "updated_at": "2025-06-20T03:56:50-07:00",
+                "product_id": 8430416560294,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-bio-white-product-details-67d126de44539.jpg?v=1750417010",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-bio-white-product-details-67d126de44539.jpg",
+              "color": "white",
+              "imageType": "main"
+            }
+          ],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41918310449318,
+                "created_at": "2025-03-11T23:17:08-07:00",
+                "position": 2,
+                "updated_at": "2025-06-20T03:56:50-07:00",
+                "product_id": 8430416560294,
+                "variant_ids": [
+                  46212763386022
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-bio-white-front-67d126de4355f.jpg?v=1750417010",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-bio-white-front-67d126de4355f.jpg",
+              "color": "white",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41918310187174,
+                "created_at": "2025-03-11T23:17:08-07:00",
+                "position": 6,
+                "updated_at": "2025-05-04T01:52:08-07:00",
+                "product_id": 8430416560294,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-bio-white-front-67d126de445bf.jpg?v=1746348728",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-bio-white-front-67d126de445bf.jpg",
+              "color": "white",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 6
+    },
+    {
+      "handle": "modern-arab-cap-1",
+      "title": "Modern Arab Cap",
+      "imagesByColor": {
+        "white": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41918250844326,
+                "created_at": "2025-03-11T23:13:50-07:00",
+                "position": 4,
+                "updated_at": "2025-05-04T01:53:57-07:00",
+                "product_id": 8430415249574,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-white-back-67d12617a9351.jpg?v=1746348837",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-white-back-67d12617a9351.jpg",
+              "color": "white",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41918250516646,
+                "created_at": "2025-03-11T23:13:50-07:00",
+                "position": 2,
+                "updated_at": "2025-05-04T01:53:57-07:00",
+                "product_id": 8430415249574,
+                "variant_ids": [
+                  46212760699046
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-white-front-67d12617a9fb4.jpg?v=1746348837",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-white-front-67d12617a9fb4.jpg",
+              "color": "white",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 8
+    },
+    {
+      "handle": "modern-arab-hoodie",
+      "title": "Modern Arab Hoodie",
+      "imagesByColor": {
+        "blue": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41896825127078,
+                "created_at": "2025-03-11T05:45:33-07:00",
+                "position": 2,
+                "updated_at": "2025-05-04T05:29:05-07:00",
+                "product_id": 8429688750246,
+                "variant_ids": [
+                  46210918580390,
+                  46210918613158,
+                  46210918645926,
+                  46210918678694,
+                  46210918711462,
+                  46210918744230
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1746361745",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg",
+              "color": "blue",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41896825094310,
+                "created_at": "2025-03-11T05:45:32-07:00",
+                "position": 4,
+                "updated_at": "2025-05-04T05:29:05-07:00",
+                "product_id": 8429688750246,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-front-67d030634979e.jpg?v=1746361745",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-sky-blue-front-67d030634979e.jpg",
+              "color": "blue",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-bone": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41896825192614,
+                "created_at": "2025-03-11T05:45:33-07:00",
+                "position": 9,
+                "updated_at": "2025-05-04T05:29:05-07:00",
+                "product_id": 8429688750246,
+                "variant_ids": [
+                  46210918776998,
+                  46210918809766,
+                  46210918842534,
+                  46210918875302,
+                  46210918908070,
+                  46210918940838
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-bone-back-67d030635132b.jpg",
+              "color": "faded-bone",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41896825061542,
+                "created_at": "2025-03-11T05:45:33-07:00",
+                "position": 11,
+                "updated_at": "2025-05-04T05:29:05-07:00",
+                "product_id": 8429688750246,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-front-67d030634e777.jpg?v=1746361745",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-bone-front-67d030634e777.jpg",
+              "color": "faded-bone",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 14
+    },
+    {
+      "handle": "modernarab-tee",
+      "title": "Modern Arab Faded Tee",
+      "imagesByColor": {
+        "faded-green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41785529368742,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 3,
+                "updated_at": "2025-05-27T01:54:43-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [
+                  46199686594726,
+                  46199686627494,
+                  46199686660262,
+                  46199686693030,
+                  46199686725798,
+                  46199686758566
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1748336083",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg",
+              "color": "faded-green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41785529532582,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 5,
+                "updated_at": "2025-05-27T01:54:43-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-67c8d9be1934e.jpg?v=1748336083",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-eucalyptus-front-67c8d9be1934e.jpg",
+              "color": "faded-green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41785529565350,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 9,
+                "updated_at": "2025-05-04T05:05:23-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [
+                  46199686201510,
+                  46199686234278,
+                  46199686267046,
+                  46199686299814,
+                  46199686332582,
+                  46199686365350
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41785529467046,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 12,
+                "updated_at": "2025-05-04T05:05:23-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-67c8d9be177ba.jpg?v=1746360323",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-black-front-67c8d9be177ba.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-khaki": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41785529598118,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 15,
+                "updated_at": "2025-05-04T05:05:23-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [
+                  46199686398118,
+                  46199686430886,
+                  46199686463654,
+                  46199686496422,
+                  46199686529190,
+                  46199686561958
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg",
+              "color": "faded-khaki",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41785529630886,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 18,
+                "updated_at": "2025-05-04T05:05:23-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-67c8d9be17e7b.jpg?v=1746360323",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-khaki-front-67c8d9be17e7b.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-bone": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41785529401510,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 21,
+                "updated_at": "2025-05-04T05:03:17-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [
+                  46199686791334,
+                  46199686824102,
+                  46199686856870,
+                  46199686889638,
+                  46199686922406,
+                  46199686955174
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg",
+              "color": "faded-bone",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41785529499814,
+                "created_at": "2025-03-05T15:10:00-08:00",
+                "position": 23,
+                "updated_at": "2025-05-04T05:03:17-07:00",
+                "product_id": 8425738109094,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-67c8d9be1af57.jpg?v=1746360197",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-faded-t-shirt-faded-bone-front-67c8d9be1af57.jpg",
+              "color": "faded-bone",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 18
+    },
+    {
+      "handle": "modernarab-tee-white",
+      "title": "Modern Arab Tee",
+      "imagesByColor": {
+        "white": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41792798556326,
+                "created_at": "2025-03-06T01:34:50-08:00",
+                "position": 4,
+                "updated_at": "2025-05-06T00:06:35-07:00",
+                "product_id": 8426043179174,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-heavyweight-t-shirt-white-back-67c96b59845da.jpg?v=1746515195",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-heavyweight-t-shirt-white-back-67c96b59845da.jpg",
+              "color": "white",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41792577896614,
+                "created_at": "2025-03-06T01:19:17-08:00",
+                "position": 2,
+                "updated_at": "2025-05-06T00:06:35-07:00",
+                "product_id": 8426043179174,
+                "variant_ids": [
+                  46200567988390,
+                  46200568021158,
+                  46200568053926,
+                  46200568086694,
+                  46200568119462,
+                  46200568152230,
+                  46200568184998
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-heavyweight-t-shirt-white-front-67c9688f8c07a.jpg?v=1746515195",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-heavyweight-t-shirt-white-front-67c9688f8c07a.jpg",
+              "color": "white",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 8
+    },
+    {
+      "handle": "modernarab-tee-black",
+      "title": "Modern Arab Tee",
+      "imagesByColor": {
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41792845840550,
+                "created_at": "2025-03-06T01:39:12-08:00",
+                "position": 4,
+                "updated_at": "2025-05-06T23:52:30-07:00",
+                "product_id": 8426044227750,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-heavyweight-t-shirt-black-back-67285e6e5d594.jpg?v=1746600750",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-heavyweight-t-shirt-black-back-67285e6e5d594.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41792627966118,
+                "created_at": "2025-03-06T01:22:46-08:00",
+                "position": 2,
+                "updated_at": "2025-05-06T23:52:30-07:00",
+                "product_id": 8426044227750,
+                "variant_ids": [
+                  46200570871974,
+                  46200570904742,
+                  46200570937510,
+                  46200570970278,
+                  46200571003046,
+                  46200571035814,
+                  46200571068582
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-heavyweight-t-shirt-black-front-67c9695f00b0c.jpg?v=1746600750",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "oversized-heavyweight-t-shirt-black-front-67c9695f00b0c.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 10
+    },
+    {
+      "handle": "modernarab-crewneck",
+      "title": "Modern Arab Crewneck",
+      "imagesByColor": {
+        "green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41793154154662,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 2,
+                "updated_at": "2025-03-13T03:40:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [
+                  46200616583334,
+                  46200616616102,
+                  46200616648870,
+                  46200616681638,
+                  46200616714406,
+                  46200616747174
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1741862415",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg",
+              "color": "green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41793153958054,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 4,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-front-67c971e613433.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-forest-green-front-67c971e613433.jpg",
+              "color": "green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41793154220198,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 8,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [
+                  46200616386726,
+                  46200616419494,
+                  46200616452262,
+                  46200616485030,
+                  46200616517798,
+                  46200616550566
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            },
+            {
+              "image": {
+                "id": 41793153925286,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 20,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [
+                  46200616190118,
+                  46200616222886,
+                  46200616255654,
+                  46200616288422,
+                  46200616321190,
+                  46200616353958
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41793154023590,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 10,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-front-67c971e6101d7.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-vintage-black-front-67c971e6101d7.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41793154187430,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 22,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-front-67c971e60f3ba.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-black-front-67c971e60f3ba.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "white": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41793154121894,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 15,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [
+                  46200616779942,
+                  46200616812710,
+                  46200616845478,
+                  46200616878246,
+                  46200616911014,
+                  46200616943782
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg",
+              "color": "white",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41793154285734,
+                "created_at": "2025-03-06T01:59:12-08:00",
+                "position": 13,
+                "updated_at": "2025-05-04T04:37:15-07:00",
+                "product_id": 8426057466022,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-front-67c971e61a508.jpg?v=1746358635",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-white-front-67c971e61a508.jpg",
+              "color": "white",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 16
+    },
+    {
+      "handle": "modernarab-crewneck-sand",
+      "title": "Modern Arab Crewneck",
+      "imagesByColor": {
+        "faded-bone": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41793215791270,
+                "created_at": "2025-03-06T02:02:40-08:00",
+                "position": 2,
+                "updated_at": "2025-03-11T21:32:14-07:00",
+                "product_id": 8426058678438,
+                "variant_ids": [
+                  46200619892902,
+                  46200619925670,
+                  46200619958438,
+                  46200619991206,
+                  46200620023974,
+                  46200620056742
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-bone-back-67c972b66f2f7.jpg?v=1741753934",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-bone-back-67c972b66f2f7.jpg",
+              "color": "faded-bone",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41793215889574,
+                "created_at": "2025-03-06T02:02:40-08:00",
+                "position": 4,
+                "updated_at": "2025-03-11T21:32:14-07:00",
+                "product_id": 8426058678438,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-bone-front-67c972b66de6d.jpg?v=1741753934",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-sweatshirt-bone-front-67c972b66de6d.jpg",
+              "color": "faded-bone",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 6
+    },
+    {
+      "handle": "modern-arab-cap",
+      "title": "Modern Arab Cap",
+      "imagesByColor": {
+        "faded-khaki": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41804227936422,
+                "created_at": "2025-03-06T15:10:16-08:00",
+                "position": 4,
+                "updated_at": "2025-06-27T23:49:56-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-khaki-back-67ca2b4ede475.jpg?v=1751093396",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-khaki-back-67ca2b4ede475.jpg",
+              "color": "faded-khaki",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41804228198566,
+                "created_at": "2025-03-06T15:10:16-08:00",
+                "position": 2,
+                "updated_at": "2025-06-27T23:49:56-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [
+                  46201880281254
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-khaki-front-67ca2b4eddf68.jpg?v=1751093396",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-khaki-front-67ca2b4eddf68.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "blue": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41804228001958,
+                "created_at": "2025-03-06T15:10:16-08:00",
+                "position": 11,
+                "updated_at": "2025-06-27T23:49:56-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-light-blue-back-67ca2b4edf0e7.jpg?v=1751093396",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-light-blue-back-67ca2b4edf0e7.jpg",
+              "color": "blue",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41804228231334,
+                "created_at": "2025-03-06T15:10:16-08:00",
+                "position": 9,
+                "updated_at": "2025-06-27T23:49:56-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [
+                  46201880314022
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-light-blue-front-67ca2b4edebff.jpg?v=1751093396",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-light-blue-front-67ca2b4edebff.jpg",
+              "color": "blue",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "green": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41804227969190,
+                "created_at": "2025-03-06T15:10:15-08:00",
+                "position": 15,
+                "updated_at": "2025-06-27T23:49:56-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [
+                  46201880248486
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-spruce-front-67ca2b4edd62d.jpg?v=1751093396",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-spruce-front-67ca2b4edd62d.jpg",
+              "color": "green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41804228165798,
+                "created_at": "2025-03-06T15:10:15-08:00",
+                "position": 24,
+                "updated_at": "2025-05-04T04:28:33-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-black-back-67ca2b4edd02e.jpg?v=1746358113",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-black-back-67ca2b4edd02e.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41804228460710,
+                "created_at": "2025-03-06T15:10:15-08:00",
+                "position": 20,
+                "updated_at": "2025-06-27T23:49:56-07:00",
+                "product_id": 8426374070438,
+                "variant_ids": [
+                  46201880215718
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/classic-dad-hat-black-front-67ca2b4edc0fe.jpg?v=1751093396",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "classic-dad-hat-black-front-67ca2b4edc0fe.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 16
+    },
+    {
+      "handle": "modern-arab-bucket-hat",
+      "title": "Modern Arab Bucket Hat",
+      "imagesByColor": {
+        "olive": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41804967313574,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 2,
+                "updated_at": "2025-06-20T04:38:21-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [
+                  46202115031206
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-dill-front-67ca39406a72d.jpg?v=1750419501",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-dill-front-67ca39406a72d.jpg",
+              "color": "olive",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "blue": {
+          "main": [
+            {
+              "image": {
+                "id": 41804967510182,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 13,
+                "updated_at": "2025-06-20T04:38:21-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-slate-blue-product-details-67ca39406a596.jpg?v=1750419501",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-slate-blue-product-details-67ca39406a596.jpg",
+              "color": "blue",
+              "imageType": "main"
+            }
+          ],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41804967379110,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 9,
+                "updated_at": "2025-06-20T04:38:21-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [
+                  46202115063974
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-slate-blue-front-67ca39406a7b4.jpg?v=1750419501",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-slate-blue-front-67ca39406a7b4.jpg",
+              "color": "blue",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41804967149734,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 11,
+                "updated_at": "2025-06-20T04:38:21-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-slate-blue-front-67ca39406a481.jpg?v=1750419501",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-slate-blue-front-67ca39406a481.jpg",
+              "color": "blue",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [
+            {
+              "image": {
+                "id": 41804967346342,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 21,
+                "updated_at": "2025-05-04T04:00:36-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-black-product-details-67ca39406a535.jpg?v=1746356436",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-black-product-details-67ca39406a535.jpg",
+              "color": "faded-black",
+              "imageType": "main"
+            }
+          ],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41804967444646,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 16,
+                "updated_at": "2025-05-04T04:00:36-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [
+                  46202114998438
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-black-front-67ca3940698a1.jpg?v=1746356436",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-black-front-67ca3940698a1.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41804967411878,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 18,
+                "updated_at": "2025-05-04T04:00:36-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-black-front-67ca39406a338.jpg?v=1746356436",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-black-front-67ca39406a338.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-khaki": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41804967542950,
+                "created_at": "2025-03-06T16:09:41-08:00",
+                "position": 24,
+                "updated_at": "2025-05-04T04:00:36-07:00",
+                "product_id": 8426453041318,
+                "variant_ids": [
+                  46202115096742
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/organic-bucket-hat-stone-front-67ca39406a81f.jpg?v=1746356436",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "organic-bucket-hat-stone-front-67ca39406a81f.jpg",
+              "color": "faded-khaki",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 12
+    },
+    {
+      "handle": "modernarab-beanie",
+      "title": "Modern Arab Beanie",
+      "imagesByColor": {
+        "olive": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41825078214822,
+                "created_at": "2025-03-07T19:53:05-08:00",
+                "position": 2,
+                "updated_at": "2025-05-04T02:56:36-07:00",
+                "product_id": 8427164041382,
+                "variant_ids": [
+                  46204395421862
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-cypress-front-67cbbf1c8eb88.jpg?v=1746352596",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "fisherman-beanie-cypress-front-67cbbf1c8eb88.jpg",
+              "color": "olive",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [],
+          "front": [
+            {
+              "image": {
+                "id": 41825078182054,
+                "created_at": "2025-03-07T19:53:05-08:00",
+                "position": 5,
+                "updated_at": "2025-05-04T02:56:36-07:00",
+                "product_id": 8427164041382,
+                "variant_ids": [
+                  46204395389094
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-black-front-67cbbf1c8de09.jpg?v=1746352596",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "fisherman-beanie-black-front-67cbbf1c8de09.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41825078345894,
+                "created_at": "2025-03-07T19:53:05-08:00",
+                "position": 7,
+                "updated_at": "2025-05-04T02:56:36-07:00",
+                "product_id": 8427164041382,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-black-front-67cbbf1c8ea4f.jpg?v=1746352596",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "fisherman-beanie-black-front-67cbbf1c8ea4f.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 10
+    },
+    {
+      "handle": "modernarab-hoodie",
+      "title": "Modern Arab Hoodie",
+      "imagesByColor": {
+        "maroon": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41825844527270,
+                "created_at": "2025-03-07T20:56:09-08:00",
+                "position": 2,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [
+                  46204441460902,
+                  46204441493670,
+                  46204441526438,
+                  46204441559206,
+                  46204441591974,
+                  46204441624742
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg",
+              "color": "maroon",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41825844297894,
+                "created_at": "2025-03-07T20:56:09-08:00",
+                "position": 4,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-front-67cbcddeb237d.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-maroon-front-67cbcddeb237d.jpg",
+              "color": "maroon",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41825844265126,
+                "created_at": "2025-03-07T20:56:10-08:00",
+                "position": 7,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [
+                  46204442050726,
+                  46204442083494,
+                  46204442116262,
+                  46204442149030,
+                  46204442181798,
+                  46204442214566
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg",
+              "color": "green",
+              "imageType": "back"
+            },
+            {
+              "image": {
+                "id": 41825844461734,
+                "created_at": "2025-03-07T20:56:10-08:00",
+                "position": 25,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [
+                  46204441854118,
+                  46204441886886,
+                  46204441919654,
+                  46204441952422,
+                  46204441985190,
+                  46204442017958
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg",
+              "color": "green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41825844592806,
+                "created_at": "2025-03-07T20:56:10-08:00",
+                "position": 9,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-front-67cbcddec3716.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-military-green-front-67cbcddec3716.jpg",
+              "color": "green",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41825843904678,
+                "created_at": "2025-03-07T20:56:10-08:00",
+                "position": 27,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-front-67cbcddebbd20.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-forest-green-front-67cbcddebbd20.jpg",
+              "color": "green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41825843839142,
+                "created_at": "2025-03-07T20:56:09-08:00",
+                "position": 13,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [
+                  46204441264294,
+                  46204441297062,
+                  46204441329830,
+                  46204441362598,
+                  46204441395366,
+                  46204441428134
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-black-back-67cbcddeb1073.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            },
+            {
+              "image": {
+                "id": 41825844330662,
+                "created_at": "2025-03-07T20:56:09-08:00",
+                "position": 31,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [
+                  46204441657510,
+                  46204441690278,
+                  46204441723046,
+                  46204441755814,
+                  46204441788582,
+                  46204441821350
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-vintage-black-back-67cbcddeb8d96.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-vintage-black-back-67cbcddeb8d96.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41825843871910,
+                "created_at": "2025-03-07T20:56:09-08:00",
+                "position": 15,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-front-67cbcdde72ba6.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-black-front-67cbcdde72ba6.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            },
+            {
+              "image": {
+                "id": 41825844494502,
+                "created_at": "2025-03-07T20:56:09-08:00",
+                "position": 33,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-vintage-black-front-67cbcddeb6359.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-vintage-black-front-67cbcddeb6359.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "white": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41825843970214,
+                "created_at": "2025-03-07T20:56:10-08:00",
+                "position": 19,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [
+                  46204442443942,
+                  46204442476710,
+                  46204442509478,
+                  46204442542246,
+                  46204442575014,
+                  46204442607782
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-white-back-67cbcddee9525.jpg",
+              "color": "white",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41825844396198,
+                "created_at": "2025-03-07T20:56:10-08:00",
+                "position": 21,
+                "updated_at": "2025-05-07T00:03:17-07:00",
+                "product_id": 8427189665958,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-front-67cbcddedfc67.jpg?v=1746601397",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-premium-hoodie-white-front-67cbcddedfc67.jpg",
+              "color": "white",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 18
+    },
+    {
+      "handle": "modernarab-cropped-hoodie",
+      "title": "Modern Arab Cropped Hoodie",
+      "imagesByColor": {
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41840226140326,
+                "created_at": "2025-03-08T15:41:53-08:00",
+                "position": 2,
+                "updated_at": "2025-03-12T22:24:30-07:00",
+                "product_id": 8427446108326,
+                "variant_ids": [
+                  46205426139302,
+                  46205426172070,
+                  46205426204838,
+                  46205426237606,
+                  46205426270374
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1741843470",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "womens-cropped-hoodie-black-back-67ccd5b891be4.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41840226107558,
+                "created_at": "2025-03-08T15:41:53-08:00",
+                "position": 4,
+                "updated_at": "2025-03-12T22:24:30-07:00",
+                "product_id": 8427446108326,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-front-67ccd5b892743.jpg?v=1741843470",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "womens-cropped-hoodie-black-front-67ccd5b892743.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41840226205862,
+                "created_at": "2025-03-08T15:41:53-08:00",
+                "position": 6,
+                "updated_at": "2025-03-12T22:24:30-07:00",
+                "product_id": 8427446108326,
+                "variant_ids": [
+                  46205426303142,
+                  46205426335910,
+                  46205426368678,
+                  46205426401446,
+                  46205426434214
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg?v=1741843470",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg",
+              "color": "green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41840226173094,
+                "created_at": "2025-03-08T15:41:53-08:00",
+                "position": 8,
+                "updated_at": "2025-03-12T22:24:30-07:00",
+                "product_id": 8427446108326,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-front-67ccd5b892a6f.jpg?v=1741843470",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "womens-cropped-hoodie-military-green-front-67ccd5b892a6f.jpg",
+              "color": "green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 8
+    },
+    {
+      "handle": "modern-arab-joggers",
+      "title": "Modern Arab Joggers",
+      "imagesByColor": {
+        "green": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41840733651110,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 4,
+                "updated_at": "2025-05-04T02:11:57-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-back-67cce68fe8e32.jpg?v=1746349917",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-military-green-back-67cce68fe8e32.jpg",
+              "color": "green",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41840733716646,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 2,
+                "updated_at": "2025-05-04T02:11:57-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [
+                  46205474046118,
+                  46205474078886,
+                  46205474111654,
+                  46205474144422,
+                  46205474177190,
+                  46205474209958
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1746349917",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg",
+              "color": "green",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "maroon": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41840733618342,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 13,
+                "updated_at": "2025-05-06T23:59:26-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-back-67cce68fe8d36.jpg?v=1746601166",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-maroon-back-67cce68fe8d36.jpg",
+              "color": "maroon",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41840733520038,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 10,
+                "updated_at": "2025-05-04T02:11:57-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [
+                  46205473849510,
+                  46205473882278,
+                  46205473915046,
+                  46205473947814,
+                  46205473980582,
+                  46205474013350
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg",
+              "color": "maroon",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "faded-black": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41840733552806,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 20,
+                "updated_at": "2025-05-06T23:59:26-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-back-67cce68fe8c0f.jpg?v=1746601166",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-black-back-67cce68fe8c0f.jpg",
+              "color": "faded-black",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41840733585574,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 18,
+                "updated_at": "2025-05-06T23:59:26-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [
+                  46205473652902,
+                  46205473685670,
+                  46205473718438,
+                  46205473751206,
+                  46205473783974,
+                  46205473816742
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg",
+              "color": "faded-black",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        },
+        "white": {
+          "main": [],
+          "back": [
+            {
+              "image": {
+                "id": 41840733683878,
+                "created_at": "2025-03-08T16:53:41-08:00",
+                "position": 28,
+                "updated_at": "2025-05-06T23:59:26-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-back-67cce68fe8f21.jpg?v=1746601166",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-white-back-67cce68fe8f21.jpg",
+              "color": "white",
+              "imageType": "back"
+            }
+          ],
+          "front": [
+            {
+              "image": {
+                "id": 41840733487270,
+                "created_at": "2025-03-08T16:53:40-08:00",
+                "position": 26,
+                "updated_at": "2025-05-06T23:59:26-07:00",
+                "product_id": 8427464786086,
+                "variant_ids": [
+                  46205474242726,
+                  46205474275494,
+                  46205474308262,
+                  46205474341030,
+                  46205474373798,
+                  46205474406566
+                ],
+                "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166",
+                "width": 2000,
+                "height": 2000
+              },
+              "originalFilename": "unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg",
+              "color": "white",
+              "imageType": "front"
+            }
+          ],
+          "lifestyle": []
+        }
+      },
+      "downloadCount": 18
+    }
+  ]
+}

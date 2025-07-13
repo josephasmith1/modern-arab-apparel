@@ -107,10 +107,16 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const currentImages = useMemo(() => {
     if (!selectedColor || !selectedColor.images) return [];
     const { main, back, lifestyle } = selectedColor.images;
-    const images = [main];
+    const images = [];
+    if (main) images.push(main);
     if (back) images.push(back);
     if (lifestyle && lifestyle.length > 0) images.push(...lifestyle);
     return images.filter(Boolean); // Filter out any empty strings
+  }, [selectedColor]);
+
+  // Reset selected image index when color changes
+  useEffect(() => {
+    setSelectedImageIndex(0);
   }, [selectedColor]);
 
   
