@@ -166,14 +166,14 @@ export const useColorExtractor = () => {
           callback(fallbackColor);
         }
       };
+      img.onerror = () => {
+        console.error(`Failed to load image for garment color extraction: ${imageSrc}`);
+        const fallbackColor = '#cccccc';
+        colorCache.set(cacheKey, fallbackColor);
+        ongoingExtractions.current.delete(cacheKey);
+        callback(fallbackColor);
+      };
     }, 10); // Small delay to batch requests
-    img.onerror = () => {
-      console.error(`Failed to load image for garment color extraction: ${imageSrc}`);
-      const fallbackColor = '#cccccc';
-      colorCache.set(cacheKey, fallbackColor);
-      ongoingExtractions.current.delete(cacheKey);
-      callback(fallbackColor);
-    };
   }, []);
 
   return { extractBackgroundColor, extractImageColor };
