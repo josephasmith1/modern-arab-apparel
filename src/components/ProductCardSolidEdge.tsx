@@ -21,8 +21,8 @@ const MAX_CONCURRENT_EXTRACTIONS = 3;
 export default function ProductCardSolidEdge({ product, index }: ProductCardProps) {
   const [bgColor, setBgColor] = useState('#f5f5f4'); // Default beige
   const [extractedColors, setExtractedColors] = useState<{ [key: string]: string }>({});
-  const timeoutRef = useRef<NodeJS.Timeout>();
-  const abortControllerRef = useRef<AbortController>();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const abortControllerRef = useRef<AbortController | null>(null);
   const { extractImageColor, extractBackgroundColor } = useColorExtractor();
   const { targetRef, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
