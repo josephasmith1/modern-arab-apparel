@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getCollectionBySlug, collections } from '@/data/collections';
-import { products } from '@/app/products/data';
+import { getProductsArray } from '@/data/products';
 import CollectionPageClient from './CollectionPageClient';
 
 interface CollectionPageProps {
@@ -16,6 +16,9 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
   if (!collection) {
     notFound();
   }
+
+  // Load products directly from JSON files
+  const products = await getProductsArray();
 
   const collectionProducts = products.filter((product) => {
     // For the frontpage collection, show all products

@@ -3,15 +3,14 @@
 import Image from 'next/image';
 import { useState, use, useEffect, useMemo } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Shirt, Feather, MapPin, Sparkles, PackageCheck, Droplets, Tag, Square, UserCircle } from "lucide-react";
+// import { Shirt, Feather, MapPin, Sparkles, PackageCheck, Droplets, Tag, Square, UserCircle } from "lucide-react";
 import ColorThief from 'colorthief';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Footer';
-import ProductDetailsSection from '@/components/product/ProductDetailsSection';
 import ProductSpecifications from '@/components/product/ProductSpecifications';
 import { useCart } from '@/context/CartContext';
 import AddToCartButton from '@/components/cart/AddToCartButton';
-import { products, ProductColor } from '../data';
+import { ProductColor, findProductBySlug } from '@/data/products/sync';
 
 // Size guide interface used with compatibleProduct.sizeGuide
 interface SizeGuideItem {
@@ -28,7 +27,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const resolvedParams = use(params);
   
   // Get product data
-  const productData = products.find((p) => p.slug === resolvedParams.slug);
+  const productData = findProductBySlug(resolvedParams.slug);
 
   // Initialize hooks before any early returns
   const { addItem } = useCart();
@@ -56,19 +55,19 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       hex: color.hex || getFallbackColor(color.name) // Use fallback if hex is empty
     })),
     description: productData.description && typeof productData.description === 'object' ? {
-      short: (productData.description as any).short || "",
-      inspiration: (productData.description as any).inspiration || "Crafted to embody Modern Arab's vision of redefining Arabic fashion.",
-      features: (productData.description as any).features || [],
-      perfectFor: (productData.description as any).perfectFor || [],
-      additionalSpecs: (productData.description as any).additionalSpecs || [],
-      fullDescription: (productData.description as any).fullDescription || ""
+      short: (productData.description as { short?: string; inspiration?: string; features?: string[]; perfectFor?: string[]; additionalSpecs?: string[]; fullDescription?: string }).short || "",
+      inspiration: (productData.description as { short?: string; inspiration?: string; features?: string[]; perfectFor?: string[]; additionalSpecs?: string[]; fullDescription?: string }).inspiration || "Crafted to embody Modern Arab's vision of redefining Arabic fashion.",
+      features: (productData.description as { short?: string; inspiration?: string; features?: string[]; perfectFor?: string[]; additionalSpecs?: string[]; fullDescription?: string }).features || [],
+      perfectFor: (productData.description as { short?: string; inspiration?: string; features?: string[]; perfectFor?: string[]; additionalSpecs?: string[]; fullDescription?: string }).perfectFor || [],
+      additionalSpecs: (productData.description as { short?: string; inspiration?: string; features?: string[]; perfectFor?: string[]; additionalSpecs?: string[]; fullDescription?: string }).additionalSpecs || [],
+      fullDescription: (productData.description as { short?: string; inspiration?: string; features?: string[]; perfectFor?: string[]; additionalSpecs?: string[]; fullDescription?: string }).fullDescription || ""
     } : {
-      short: productData.description || "",
+      short: typeof productData.description === 'string' ? productData.description.replace(/<[^>]+>/g, '').trim() : "",
       inspiration: "Crafted to embody Modern Arab's vision of redefining Arabic fashion.",
       features: [],
       perfectFor: [],
       additionalSpecs: [],
-      fullDescription: productData.description || ""
+      fullDescription: productData.fullDescription || productData.description || ""
     },
     sizeGuide: [
       { size: "S", length: "27¾\"", chest: "39\"", sleeve: "9\"", lengthCm: "70.5", chestCm: "99", sleeveCm: "23" },
@@ -79,10 +78,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       { size: "3XL", length: "34\"", chest: "59\"", sleeve: "11\"", lengthCm: "86.5", chestCm: "149.9", sleeveCm: "28" }
     ] as SizeGuideItem[],
     specifications: productData.specifications && typeof productData.specifications === 'object' ? {
-      material: (productData.specifications as any).material || "100% premium cotton",
-      weight: (productData.specifications as any).weight || "Medium weight",
-      fit: (productData.specifications as any).fit || "Relaxed unisex fit",
-      origin: (productData.specifications as any).origin || "Designed in Los Angeles, USA"
+      material: (productData.specifications as { material?: string; weight?: string; fit?: string; origin?: string }).material || "100% premium cotton",
+      weight: (productData.specifications as { material?: string; weight?: string; fit?: string; origin?: string }).weight || "Medium weight",
+      fit: (productData.specifications as { material?: string; weight?: string; fit?: string; origin?: string }).fit || "Relaxed unisex fit",
+      origin: (productData.specifications as { material?: string; weight?: string; fit?: string; origin?: string }).origin || "Designed in Los Angeles, USA"
     } : {
       material: "100% premium cotton",
       weight: "Medium weight",
@@ -419,10 +418,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="w-full h-full"
+              className="relative w-full h-full"
             >
               <Image
-                src={currentImages[selectedImageIndex] || selectedColor?.images?.main || '/placeholder.jpg'}
+                src={currentImages[selectedImageIndex] || selectedColor?.images?.main || '/images/placeholder.jpg'}
                 alt={`${compatibleProduct.name} - ${selectedColor.name}`}
                 fill
                 sizes="100vw"
@@ -468,22 +467,23 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         )}
       </motion.div>
 
-      {/* Color Selector Overlay - Fixed on Hero */}
-      <motion.div 
-        className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-20"
-        style={{ 
-          opacity: colorSelectorOpacity,
-          y: colorSelectorY 
-        }}
-      >
-        <div className="bg-black/70 backdrop-blur-md rounded-2xl p-6 border border-white/20">
-          <div className="text-center mb-4">
-            <h3 className="text-white font-semibold text-lg">Choose Your Color</h3>
-            <p className="text-gray-200 text-sm">{selectedColor.name}</p>
-          </div>
-          
-          <div className="flex justify-center space-x-4">
-            {compatibleProduct.colors.map((color) => (
+      {/* Color Selector Overlay - Fixed on Hero - Only show if more than one color */}
+      {compatibleProduct.colors.length > 1 && (
+        <motion.div 
+          className="fixed bottom-20 left-1/2 transform -translate-x-1/2 z-20"
+          style={{ 
+            opacity: colorSelectorOpacity,
+            y: colorSelectorY 
+          }}
+        >
+          <div className="bg-black/70 backdrop-blur-md rounded-2xl p-6 border border-white/20">
+            <div className="text-center mb-4">
+              <h3 className="text-white font-semibold text-lg">Choose Your Color</h3>
+              <p className="text-gray-200 text-sm">{selectedColor.name}</p>
+            </div>
+            
+            <div className="flex justify-center space-x-4">
+              {compatibleProduct.colors.map((color) => (
               <motion.button
                 key={color.name}
                 onClick={() => {
@@ -521,6 +521,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           </div>
         </div>
       </motion.div>
+      )}
         
       {/* Hero Text Overlay - Fixed Position */}
       <motion.div 
@@ -583,23 +584,29 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                     const htmlContent = compatibleProduct.fullDescription || compatibleProduct.description || '';
                     
                     // Use regex to extract the first paragraph that's not a special section
-                    const match = htmlContent.match(/<p>(?!.*<strong>)(?!.*•)(?!.*Disclaimer:)([^<]+(?:<[^>]+>[^<]+)*)<\/p>/);
-                    if (match && match[1]) {
-                      // Create a temporary element to strip HTML tags properly
-                      if (typeof window !== 'undefined') {
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = match[1];
-                        return tempDiv.textContent || '';
-                      } else {
-                        // Server-side: strip basic HTML tags
-                        return match[1].replace(/<[^>]+>/g, '');
+                    if (typeof htmlContent === 'string') {
+                      const match = htmlContent.match(/<p>(?!.*<strong>)(?!.*•)(?!.*Disclaimer:)([^<]+(?:<[^>]+>[^<]+)*)<\/p>/);
+                      if (match && match[1]) {
+                        // Create a temporary element to strip HTML tags properly
+                        if (typeof window !== 'undefined') {
+                          const tempDiv = document.createElement('div');
+                          tempDiv.innerHTML = match[1];
+                          return tempDiv.textContent || '';
+                        } else {
+                          // Server-side: strip basic HTML tags
+                          return match[1].replace(/<[^>]+>/g, '');
+                        }
                       }
+                      
+                      // Fallback: strip HTML tags from the content
+                      const strippedContent = htmlContent.replace(/<[^>]+>/g, '').trim();
+                      // Show first 500 characters or first few sentences
+                      const sentences = strippedContent.match(/[^.!?]+[.!?]+/g) || [];
+                      const firstFewSentences = sentences.slice(0, 3).join(' ');
+                      return firstFewSentences || strippedContent.substring(0, 500) + '...';
                     }
                     
-                    // Fallback: use description if available
-                    return typeof compatibleProduct.description === 'string' 
-                      ? compatibleProduct.description.substring(0, 200) + '...'
-                      : 'Experience premium quality and cultural pride with this thoughtfully designed piece.';
+                    return 'Experience premium quality and cultural pride with this thoughtfully designed piece.';
                   })()}
                 </div>
                 </div>
@@ -691,7 +698,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               >
                 <div className="relative h-96">
                   <Image
-                    src={currentImages[selectedImageIndex] || selectedColor?.images?.main || '/placeholder.jpg'}
+                    src={currentImages[selectedImageIndex] || selectedColor?.images?.main || '/images/placeholder.jpg'}
                     alt={`${compatibleProduct.name} - ${selectedColor.name}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -730,77 +737,92 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               <div className="bg-white rounded-lg shadow-xl p-4">
                 <h3 className="text-lg font-bold mb-3 text-black font-bodoni">Customize Order</h3>
                 
-                {/* Selected Color - Clickable */}
-                <div className="mb-3 relative">
-                  <motion.div 
-                    className="flex items-center justify-between cursor-pointer hover:bg-gray-50 rounded p-1 -m-1"
-                    onClick={() => setShowColorOptions(!showColorOptions)}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span className="text-xs font-medium text-gray-600">Color</span>
-                    <div className="flex items-center space-x-1">
-                      <div 
-                        className="w-4 h-4 rounded-full border border-gray-300 relative"
-                        style={{ backgroundColor: extractedProductColors[selectedColor.name] || selectedColor.hex }}
-                      >
-                        {/* Loading indicator */}
-                        {!extractedProductColors[selectedColor.name] && (
-                          <div className="absolute inset-0 rounded-full bg-gray-300 animate-pulse" />
-                        )}
-                      </div>
-                      <span className="text-xs text-gray-700">{selectedColor.name}</span>
-                      <motion.svg 
-                        className="w-3 h-3 text-gray-400 ml-1"
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24"
-                        animate={{ rotate: showColorOptions ? 180 : 0 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7-7 7-7" />
-                      </motion.svg>
-                    </div>
-                  </motion.div>
-
-                  {/* Color Options - Side Popup */}
-                  <AnimatePresence>
-                    {showColorOptions && (
-                      <motion.div
-                        className="absolute left-full ml-2 top-0 p-2 bg-white rounded-lg shadow-lg border z-50"
-                        initial={{ opacity: 0, scale: 0.8, x: -20 }}
-                        animate={{ opacity: 1, scale: 1, x: 0 }}
-                        exit={{ opacity: 0, scale: 0.8, x: -20 }}
-                        transition={{ 
-                          type: "spring", 
-                          duration: 0.4, 
-                          bounce: 0.3 
-                        }}
-                      >
-                        <div className="flex gap-1">
-                          {compatibleProduct.colors.map((color) => (
-                            <motion.button
-                              key={color.name}
-                              onClick={() => {
-                                setSelectedColor(color);
-                                setShowColorOptions(false);
-                              }}
-                              className={`w-8 h-8 rounded-full border-2 transition-all ${
-                                selectedColor?.name === color.name 
-                                  ? 'border-black scale-110' 
-                                  : 'border-gray-300 hover:border-gray-500'
-                              }`}
-                              whileHover={{ scale: 1.1 }}
-                              whileTap={{ scale: 0.95 }}
-                              style={{ backgroundColor: extractedProductColors[color.name] || color.hex || getFallbackColor(color.name) }}
-                              title={color.name}
-                            />
-                          ))}
+                {/* Selected Color - Only show if more than one color */}
+                {compatibleProduct.colors.length > 1 ? (
+                  <div className="mb-3 relative">
+                    <motion.div 
+                      className="flex items-center justify-between cursor-pointer hover:bg-gray-50 rounded p-1 -m-1"
+                      onClick={() => setShowColorOptions(!showColorOptions)}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <span className="text-xs font-medium text-gray-600">Color</span>
+                      <div className="flex items-center space-x-1">
+                        <div 
+                          className="w-4 h-4 rounded-full border border-gray-300 relative"
+                          style={{ backgroundColor: extractedProductColors[selectedColor.name] || selectedColor.hex }}
+                        >
+                          {/* Loading indicator */}
+                          {!extractedProductColors[selectedColor.name] && (
+                            <div className="absolute inset-0 rounded-full bg-gray-300 animate-pulse" />
+                          )}
                         </div>
-                      </motion.div>
-                      )}
-                    </AnimatePresence>
+                        <span className="text-xs text-gray-700">{selectedColor.name}</span>
+                        <motion.svg 
+                          className="w-3 h-3 text-gray-400 ml-1"
+                          fill="none" 
+                          stroke="currentColor" 
+                          viewBox="0 0 24 24"
+                          animate={{ rotate: showColorOptions ? 180 : 0 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7-7 7-7" />
+                        </motion.svg>
+                      </div>
+                    </motion.div>
+
+                    {/* Color Options - Side Popup */}
+                    <AnimatePresence>
+                      {showColorOptions && (
+                        <motion.div
+                          className="absolute left-full ml-2 top-0 p-2 bg-white rounded-lg shadow-lg border z-50"
+                          initial={{ opacity: 0, scale: 0.8, x: -20 }}
+                          animate={{ opacity: 1, scale: 1, x: 0 }}
+                          exit={{ opacity: 0, scale: 0.8, x: -20 }}
+                          transition={{ 
+                            type: "spring", 
+                            duration: 0.4, 
+                            bounce: 0.3 
+                          }}
+                        >
+                          <div className="flex gap-1">
+                            {compatibleProduct.colors.map((color) => (
+                              <motion.button
+                                key={color.name}
+                                onClick={() => {
+                                  setSelectedColor(color);
+                                  setShowColorOptions(false);
+                                }}
+                                className={`w-8 h-8 rounded-full border-2 transition-all ${
+                                  selectedColor?.name === color.name 
+                                    ? 'border-black scale-110' 
+                                    : 'border-gray-300 hover:border-gray-500'
+                                }`}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                                style={{ backgroundColor: extractedProductColors[color.name] || color.hex || getFallbackColor(color.name) }}
+                                title={color.name}
+                              />
+                            ))}
+                          </div>
+                        </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                ) : (
+                  <div className="mb-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-medium text-gray-600">Color</span>
+                      <div className="flex items-center space-x-1">
+                        <div 
+                          className="w-4 h-4 rounded-full border border-gray-300"
+                          style={{ backgroundColor: extractedProductColors[selectedColor.name] || selectedColor.hex }}
+                        />
+                        <span className="text-xs text-gray-700">{selectedColor.name}</span>
+                      </div>
+                    </div>
                   </div>
+                )}
 
                 {/* Size Selection */}
                 <div className="mb-3">
@@ -892,8 +914,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         </div>
       </section>
 
-      {/* Product Details and Technical Specifications */}
-      <ProductDetailsSection fullDescription={compatibleProduct.fullDescription || (typeof compatibleProduct.description === 'string' ? compatibleProduct.description : '') || ''} />
+      {/* Technical Specifications */}
       <ProductSpecifications fullDescription={typeof compatibleProduct.description === 'string' ? compatibleProduct.description : compatibleProduct.fullDescription || ''} />
 
       {/* Magazine-Style Back Design Section */}
@@ -1061,164 +1082,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         </>
       )}
 
-      {/* Product Features Section */}
-      <section className="py-20 relative overflow-hidden" style={{ backgroundColor: '#f0edec' }}>
-        {/* Subtle background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0)`,
-            backgroundSize: '20px 20px'
-          }}></div>
-        </div>
-        
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black font-bodoni">Craftsmanship Details</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Every piece is thoughtfully designed with attention to detail and authentic cultural elements
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {compatibleProduct.features.map((feature, index) => {
-              const getIcon = (featureText: string) => {
-                const lowerFeature = featureText.toLowerCase();
-                
-                // Unisex fit - UserCircle for all-gender wear
-                if (lowerFeature.includes('unisex')) {
-                  return <UserCircle className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // 100% premium carded cotton - Sparkles for premium cotton quality
-                if (lowerFeature.includes('100%') || lowerFeature.includes('premium') || lowerFeature.includes('carded') || lowerFeature.includes('cotton')) {
-                  return <Sparkles className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Arabic calligraphy by native speakers - Feather for calligraphy/language
-                if (lowerFeature.includes('arabic') || lowerFeature.includes('calligraphy') || lowerFeature.includes('first-generation') || lowerFeature.includes('native') || lowerFeature.includes('speakers')) {
-                  return <Feather className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Designed in Los Angeles - MapPin for location/origin
-                if (lowerFeature.includes('los angeles') || lowerFeature.includes('designed')) {
-                  return <MapPin className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Garment-dyed, pre-shrunk fabric - Droplets for dyeing process
-                if (lowerFeature.includes('garment') || lowerFeature.includes('dyed') || lowerFeature.includes('shrunk') || lowerFeature.includes('fabric')) {
-                  return <Droplets className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Boxy, oversized fit - Square for geometric wide fit
-                if (lowerFeature.includes('boxy') || lowerFeature.includes('oversized')) {
-                  return <Square className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Dropped shoulders - Shirt for garment structure
-                if (lowerFeature.includes('dropped') || lowerFeature.includes('shoulders')) {
-                  return <Shirt className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Wide neck ribbing - Shirt for neckline/garment edge
-                if (lowerFeature.includes('wide') || lowerFeature.includes('neck') || lowerFeature.includes('ribbing')) {
-                  return <Shirt className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Tear-away label - Tag for removable clothing tag
-                if (lowerFeature.includes('tear') || lowerFeature.includes('label')) {
-                  return <Tag className="w-8 h-8" strokeWidth={1} />;
-                }
-                
-                // Default - PackageCheck for quality
-                return <PackageCheck className="w-8 h-8" strokeWidth={1} />;
-              };
-              
-              
-              return (
-                <motion.div 
-                  key={index} 
-                  className="group relative"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -2 }}
-                >
-                  <div className="bg-white border border-gray-200 hover:border-black transition-all duration-300 p-8 text-left h-full relative">
-                    {/* Icon container - minimalist */}
-                    <div className="relative z-10 mb-6">
-                      <motion.div 
-                        className="w-16 h-16 border border-gray-300 group-hover:border-black rounded-full flex items-center justify-center transition-all duration-300"
-                        whileHover={{ scale: 1.05 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                      >
-                        <div className="text-black group-hover:text-black transition-colors duration-300">
-                          {getIcon(feature)}
-                        </div>
-                      </motion.div>
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="relative z-10">
-                      <h3 className="text-lg font-medium text-black group-hover:text-black transition-colors duration-300">
-                        {feature}
-                      </h3>
-                      
-                      {/* Accent line */}
-                      <div className="w-8 h-px bg-gray-300 group-hover:bg-black mt-3 transition-all duration-300"></div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
 
-            {/* Thumbnail Gallery */}
-            <div className="mt-4 flex justify-center space-x-2 p-2 overflow-x-auto">
-              {currentImages.map((image, index) => (
-                <div
-                  key={image} // Use image src for a stable key
-                  className={`w-16 h-16 md:w-20 md:h-20 flex-shrink-0 relative cursor-pointer rounded-md overflow-hidden border-2 transition-all duration-300 ${
-                    selectedImageIndex === index
-                      ? 'border-black scale-105'
-                      : 'border-gray-200 hover:border-gray-400'
-                  }`}
-                  onClick={() => setSelectedImageIndex(index)}
-                >
-                  <Image
-                    src={image}
-                    alt={`${compatibleProduct.name} thumbnail ${index + 1}`}
-                    fill
-                    sizes="80px"
-                    className="object-cover transform transition-transform duration-300 hover:scale-110"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Specifications Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-black font-bodoni">Technical Specifications</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-            </div>
-            <div className="flex justify-between border-b border-gray-300 pb-2">
-              <span className="text-gray-600">Fit:</span>
-              <p className="text-gray-600 text-lg">{(compatibleProduct?.specifications as any)?.fit || "Relaxed unisex fit"}</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Shipping & Returns */}
       <section className="py-20" style={{ backgroundColor: '#f0edec' }}>

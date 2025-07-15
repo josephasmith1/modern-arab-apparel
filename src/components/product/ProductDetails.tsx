@@ -1,7 +1,7 @@
 "use client";
 
 import { Sparkles } from 'lucide-react';
-import { products } from '@/app/products/data';
+import { products } from '@/data/products/sync';
 
 interface ProductDetailsProps {
   product: typeof products[0];

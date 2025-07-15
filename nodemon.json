@@ -1,0 +1,14 @@
+{
+  "watch": [
+    "src/",
+    "public/",
+    "next.config.js",
+    "package.json"
+  ],
+  "ext": "js,ts,jsx,tsx,json,css,mjs",
+  "ignore": [
+    ".next/",
+    "node_modules/"
+  ],
+  "exec": "kill -9 $(lsof -t -i:3000) 2>/dev/null || true && next dev --turbo -p 3000"
+}

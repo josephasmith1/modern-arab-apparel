@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Dispatch, SetStateAction } from 'react';
 import { motion, AnimatePresence, MotionValue } from 'framer-motion';
-import { ProductColor } from '@/app/products/data';
+import { ProductColor } from '@/data/products/sync';
 
 interface ProductImageProps {
   images: { url: string; type: string }[];
@@ -101,27 +101,29 @@ export default function ProductImage({
         ))}
       </div>
 
-      {/* Color Selector Overlay */}
-      <motion.div 
-        className="absolute top-24 right-8 bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg"
-        style={{ opacity: colorSelectorOpacity, y: colorSelectorY }}
-      >
-        <div className="flex flex-col space-y-3">
-          {productColors.map(color => (
-            <button 
-              key={color.name}
-              onClick={() => handleColorSelect(color)}
-              className={`w-10 h-10 rounded-full border-2 transition-all duration-300 ${selectedColor.name === color.name ? 'border-white scale-110' : 'border-transparent'}`}
-              style={{ 
-                backgroundColor: extractedProductColors[color.name] || '#ccc',
-                boxShadow: selectedColor.name === color.name ? `0 0 15px 2px ${extractedProductColors[color.name] || '#ccc'}` : 'none'
-              }}
-            >
-              {!extractedProductColors[color.name] && <div className="w-full h-full rounded-full bg-gray-200 animate-pulse"></div>}
-            </button>
-          ))}
-        </div>
-      </motion.div>
+      {/* Color Selector Overlay - Only show if more than one color */}
+      {productColors.length > 1 && (
+        <motion.div 
+          className="absolute top-24 right-8 bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg"
+          style={{ opacity: colorSelectorOpacity, y: colorSelectorY }}
+        >
+          <div className="flex flex-col space-y-3">
+            {productColors.map(color => (
+              <button 
+                key={color.name}
+                onClick={() => handleColorSelect(color)}
+                className={`w-10 h-10 rounded-full border-2 transition-all duration-300 ${selectedColor.name === color.name ? 'border-white scale-110' : 'border-transparent'}`}
+                style={{ 
+                  backgroundColor: extractedProductColors[color.name] || '#ccc',
+                  boxShadow: selectedColor.name === color.name ? `0 0 15px 2px ${extractedProductColors[color.name] || '#ccc'}` : 'none'
+                }}
+              >
+                {!extractedProductColors[color.name] && <div className="w-full h-full rounded-full bg-gray-200 animate-pulse"></div>}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   );
 }

@@ -1,0 +1,838 @@
+{
+  "summary": {
+    "totalProducts": 24,
+    "productsWithOnlyShopifyUrls": 24,
+    "productsWithLocalPaths": 0,
+    "productsWithMixedPaths": 0,
+    "totalImageReferences": 386,
+    "shopifyUrlCount": 386,
+    "localPathCount": 0
+  },
+  "productDetails": [
+    {
+      "filename": "modern-arab-beanie-1.json",
+      "productSlug": "modern-arab-beanie-1",
+      "title": "Modern Arab Beanie",
+      "handle": "modern-arab-beanie-1",
+      "shopifyUrls": 7,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-beanie-1/",
+        "exists": true,
+        "fileCount": 2,
+        "files": [
+          "beige-lifestyle-1.jpg",
+          "beige-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": false,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 7 Shopify CDN URLs to local paths",
+        "Add back/alternate view images"
+      ]
+    },
+    {
+      "filename": "modern-arab-beanie.json",
+      "productSlug": "modern-arab-beanie",
+      "title": "Modern Arab Beanie",
+      "handle": "fisherman-beanie",
+      "shopifyUrls": 6,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-beanie/",
+        "exists": false,
+        "fileCount": 0,
+        "files": []
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": false
+      },
+      "recommendations": [
+        "Create directory: /public/images/modern-arab-beanie/",
+        "Convert 6 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-bucket-hat-1.json",
+      "productSlug": "modern-arab-bucket-hat-1",
+      "title": "Modern Arab Bucket Hat",
+      "handle": "modern-arab-bucket-hat-1",
+      "shopifyUrls": 9,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-bucket-hat-1/",
+        "exists": true,
+        "fileCount": 2,
+        "files": [
+          "white-lifestyle-1.jpg",
+          "white-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": false,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 9 Shopify CDN URLs to local paths",
+        "Add back/alternate view images"
+      ]
+    },
+    {
+      "filename": "modern-arab-bucket-hat.json",
+      "productSlug": "modern-arab-bucket-hat",
+      "title": "Modern Arab Bucket Hat",
+      "handle": "modern-arab-bucket-hat",
+      "shopifyUrls": 29,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-bucket-hat/",
+        "exists": true,
+        "fileCount": 15,
+        "files": [
+          "black-back.jpg",
+          "black-lifestyle-1.jpg",
+          "black-main.jpg",
+          "blue-back.jpg",
+          "blue-lifestyle-1.jpg",
+          "blue-main.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "faded-khaki-lifestyle-1.jpg",
+          "khaki-back.jpg",
+          "khaki-lifestyle-1.jpg",
+          "khaki-main.jpg",
+          "olive-back.jpg",
+          "olive-lifestyle-1.jpg",
+          "olive-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 29 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-cap-1.json",
+      "productSlug": "modern-arab-cap-1",
+      "title": "Modern Arab Cap",
+      "handle": "modern-arab-cap-1",
+      "shopifyUrls": 9,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-cap-1/",
+        "exists": true,
+        "fileCount": 3,
+        "files": [
+          "white-back.jpg",
+          "white-lifestyle-1.jpg",
+          "white-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 9 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-cap.json",
+      "productSlug": "modern-arab-cap",
+      "title": "Modern Arab Cap",
+      "handle": "modern-arab-cap",
+      "shopifyUrls": 31,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-cap/",
+        "exists": true,
+        "fileCount": 16,
+        "files": [
+          "black-main.jpg",
+          "blue-back.jpg",
+          "blue-lifestyle-1.jpg",
+          "blue-main.jpg",
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "faded-khaki-back.jpg",
+          "faded-khaki-lifestyle-1.jpg",
+          "faded-khaki-main.jpg",
+          "green-lifestyle-1.jpg",
+          "green-main.jpg",
+          "khaki-back.jpg",
+          "khaki-lifestyle-1.jpg",
+          "khaki-lifestyle-2.jpg",
+          "khaki-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 31 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-crewneck.json",
+      "productSlug": "modern-arab-crewneck",
+      "title": "Modern Arab Crewneck",
+      "handle": "modernarab-crewneck",
+      "shopifyUrls": 25,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-crewneck/",
+        "exists": false,
+        "fileCount": 0,
+        "files": []
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": false
+      },
+      "recommendations": [
+        "Create directory: /public/images/modern-arab-crewneck/",
+        "Convert 25 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-cropped-hoodie.json",
+      "productSlug": "modern-arab-cropped-hoodie",
+      "title": "Modern Arab Cropped Hoodie",
+      "handle": "modernarab-cropped-hoodie",
+      "shopifyUrls": 9,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-cropped-hoodie/",
+        "exists": false,
+        "fileCount": 0,
+        "files": []
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": false
+      },
+      "recommendations": [
+        "Create directory: /public/images/modern-arab-cropped-hoodie/",
+        "Convert 9 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-faded-tee-black-print.json",
+      "productSlug": "modern-arab-faded-tee-black-print",
+      "title": "Modern Arab Faded Tee",
+      "handle": "modern-arab-faded-tee-black-print",
+      "shopifyUrls": 21,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-faded-tee-black-print/",
+        "exists": true,
+        "fileCount": 12,
+        "files": [
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "faded-bone-back.jpg",
+          "faded-bone-lifestyle-1.jpg",
+          "faded-bone-main.jpg",
+          "faded-green-back.jpg",
+          "faded-green-lifestyle-1.jpg",
+          "faded-green-main.jpg",
+          "faded-khaki-back.jpg",
+          "faded-khaki-lifestyle-1.jpg",
+          "faded-khaki-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 21 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-hoodie.json",
+      "productSlug": "modern-arab-hoodie",
+      "title": "Modern Arab Hoodie",
+      "handle": "modern-arab-hoodie",
+      "shopifyUrls": 17,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-hoodie/",
+        "exists": true,
+        "fileCount": 8,
+        "files": [
+          "blue-back.jpg",
+          "blue-lifestyle-1.jpg",
+          "blue-main.jpg",
+          "bone-back.jpg",
+          "bone-lifestyle-1.jpg",
+          "faded-bone-back.jpg",
+          "faded-bone-lifestyle-1.jpg",
+          "faded-bone-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 17 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-joggers.json",
+      "productSlug": "modern-arab-joggers",
+      "title": "Modern Arab Joggers",
+      "handle": "modern-arab-joggers",
+      "shopifyUrls": 34,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-joggers/",
+        "exists": true,
+        "fileCount": 16,
+        "files": [
+          "black-main.jpg",
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "green-back.jpg",
+          "green-lifestyle-1.jpg",
+          "green-main.jpg",
+          "maroon-back.jpg",
+          "maroon-lifestyle-1.jpg",
+          "maroon-main.jpg",
+          "olive-green-back.jpg",
+          "olive-green-lifestyle-1.jpg",
+          "olive-green-main.jpg",
+          "white-back.jpg",
+          "white-lifestyle-1.jpg",
+          "white-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 34 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-premium-tee-1.json",
+      "productSlug": "modern-arab-premium-tee-1",
+      "title": "Modern Arab Premium Tee",
+      "handle": "modern-arab-premium-tee-1",
+      "shopifyUrls": 13,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-premium-tee-1/",
+        "exists": true,
+        "fileCount": 13,
+        "files": [
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "faded-bone-back.jpg",
+          "faded-bone-lifestyle-1.jpg",
+          "faded-bone-main.jpg",
+          "faded-green-back.jpg",
+          "faded-green-lifestyle-1.jpg",
+          "faded-green-main.jpg",
+          "faded-khaki-back.jpg",
+          "faded-khaki-lifestyle-1.jpg",
+          "faded-khaki-main.jpg",
+          "faded-sand-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 13 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-premium-tee-faded-eucalyptus.json",
+      "productSlug": "modern-arab-premium-tee-faded-eucalyptus",
+      "title": "Modern Arab Premium Tee (Faded Green)",
+      "handle": "modern-arab-premium-tee-faded-eucalyptus",
+      "shopifyUrls": 6,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-premium-tee-faded-eucalyptus/",
+        "exists": true,
+        "fileCount": 11,
+        "files": [
+          "2xl-main.jpg",
+          "3xl-main.jpg",
+          "faded-green-back.jpg",
+          "faded-green-lifestyle-1.jpg",
+          "faded-green-main.jpg",
+          "l-main.jpg",
+          "m-main.jpg",
+          "s-back.jpg",
+          "s-lifestyle-1.jpg",
+          "s-main.jpg",
+          "xl-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 6 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-premium-tee-faded-khaki.json",
+      "productSlug": "modern-arab-premium-tee-faded-khaki",
+      "title": "Modern Arab Premium Tee (Faded Khaki)",
+      "handle": "modern-arab-premium-tee-faded-khaki",
+      "shopifyUrls": 7,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-premium-tee-faded-khaki/",
+        "exists": true,
+        "fileCount": 11,
+        "files": [
+          "2xl-main.jpg",
+          "3xl-main.jpg",
+          "faded-khaki-back.jpg",
+          "faded-khaki-lifestyle-1.jpg",
+          "faded-khaki-main.jpg",
+          "l-main.jpg",
+          "m-main.jpg",
+          "s-back.jpg",
+          "s-lifestyle-1.jpg",
+          "s-main.jpg",
+          "xl-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 7 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-premium-tee.json",
+      "productSlug": "modern-arab-premium-tee",
+      "title": "Modern Arab Premium Tee",
+      "handle": "modern-arab-premium-tee",
+      "shopifyUrls": 13,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-premium-tee/",
+        "exists": true,
+        "fileCount": 13,
+        "files": [
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "faded-bone-back.jpg",
+          "faded-bone-lifestyle-1.jpg",
+          "faded-bone-main.jpg",
+          "faded-green-back.jpg",
+          "faded-green-lifestyle-1.jpg",
+          "faded-green-main.jpg",
+          "faded-khaki-back.jpg",
+          "faded-khaki-lifestyle-1.jpg",
+          "faded-khaki-main.jpg",
+          "faded-sand-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 13 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-sweatpants.json",
+      "productSlug": "modern-arab-sweatpants",
+      "title": "Modern Arab Sweatpants",
+      "handle": "modern-arab-sweatpants",
+      "shopifyUrls": 23,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-sweatpants/",
+        "exists": true,
+        "fileCount": 15,
+        "files": [
+          "blue-back.jpg",
+          "blue-lifestyle-1.jpg",
+          "blue-main.jpg",
+          "dark-blue-main.jpg",
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "green-back.jpg",
+          "green-lifestyle-1.jpg",
+          "green-main.jpg",
+          "light-black-main.jpg",
+          "light-blue-main.jpg",
+          "light-green-back.jpg",
+          "light-green-lifestyle-1.jpg",
+          "light-green-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 23 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modern-arab-tee-black.json",
+      "productSlug": "modern-arab-tee-black",
+      "title": "Modern Arab Tee",
+      "handle": "modernarab-tee-black",
+      "shopifyUrls": 11,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-tee-black/",
+        "exists": true,
+        "fileCount": 0,
+        "files": []
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": false
+      },
+      "recommendations": [
+        "Directory exists but is empty: /public/images/modern-arab-tee-black/",
+        "Convert 11 Shopify CDN URLs to local paths",
+        "Add main product images for each variant",
+        "Add back/alternate view images",
+        "Add lifestyle/model images"
+      ]
+    },
+    {
+      "filename": "modern-arab-tee-white.json",
+      "productSlug": "modern-arab-tee-white",
+      "title": "Modern Arab Tee",
+      "handle": "modernarab-tee-white",
+      "shopifyUrls": 9,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-tee-white/",
+        "exists": true,
+        "fileCount": 0,
+        "files": []
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": false
+      },
+      "recommendations": [
+        "Directory exists but is empty: /public/images/modern-arab-tee-white/",
+        "Convert 9 Shopify CDN URLs to local paths",
+        "Add main product images for each variant",
+        "Add back/alternate view images",
+        "Add lifestyle/model images"
+      ]
+    },
+    {
+      "filename": "modern-arab-tee.json",
+      "productSlug": "modern-arab-tee",
+      "title": "Modern Arab Faded Tee",
+      "handle": "modernarab-tee",
+      "shopifyUrls": 27,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modern-arab-tee/",
+        "exists": false,
+        "fileCount": 0,
+        "files": []
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": false
+      },
+      "recommendations": [
+        "Create directory: /public/images/modern-arab-tee/",
+        "Convert 27 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modernarab-beanie.json",
+      "productSlug": "modernarab-beanie",
+      "title": "Modern Arab Beanie",
+      "handle": "modern-arab-beanie-2",
+      "shopifyUrls": 16,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modernarab-beanie/",
+        "exists": true,
+        "fileCount": 2,
+        "files": [
+          "faded-black-lifestyle-1.jpg",
+          "olive-lifestyle-1.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": false,
+        "back": false,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 16 Shopify CDN URLs to local paths",
+        "Add main product images for each variant",
+        "Add back/alternate view images"
+      ]
+    },
+    {
+      "filename": "modernarab-crewneck-sand.json",
+      "productSlug": "modernarab-crewneck-sand",
+      "title": "Modern Arab Crewneck",
+      "handle": "modern-arab-crewneck-sand",
+      "shopifyUrls": 7,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modernarab-crewneck-sand/",
+        "exists": true,
+        "fileCount": 3,
+        "files": [
+          "faded-bone-back.jpg",
+          "faded-bone-lifestyle-1.jpg",
+          "faded-bone-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 7 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modernarab-hoodie.json",
+      "productSlug": "modernarab-hoodie",
+      "title": "Modern Arab Hoodie",
+      "handle": "modern-arab-hoodie-2",
+      "shopifyUrls": 37,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modernarab-hoodie/",
+        "exists": true,
+        "fileCount": 12,
+        "files": [
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-main.jpg",
+          "green-back.jpg",
+          "green-lifestyle-1.jpg",
+          "green-main.jpg",
+          "maroon-back.jpg",
+          "maroon-lifestyle-1.jpg",
+          "maroon-main.jpg",
+          "white-back.jpg",
+          "white-lifestyle-1.jpg",
+          "white-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 37 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modernarab-tee-black.json",
+      "productSlug": "modernarab-tee-black",
+      "title": "Modern Arab Tee",
+      "handle": "modern-arab-tee-black",
+      "shopifyUrls": 11,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modernarab-tee-black/",
+        "exists": true,
+        "fileCount": 14,
+        "files": [
+          "2xl-main.jpg",
+          "3xl-main.jpg",
+          "4xl-main.jpg",
+          "faded-black-back.jpg",
+          "faded-black-lifestyle-1.jpg",
+          "faded-black-lifestyle-1.png",
+          "faded-black-main.jpg",
+          "l-main.jpg",
+          "m-main.jpg",
+          "s-back.jpg",
+          "s-lifestyle-1.jpg",
+          "s-lifestyle-1.png",
+          "s-main.jpg",
+          "xl-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 11 Shopify CDN URLs to local paths"
+      ]
+    },
+    {
+      "filename": "modernarab-tee-white.json",
+      "productSlug": "modernarab-tee-white",
+      "title": "Modern Arab Tee",
+      "handle": "modern-arab-tee-white",
+      "shopifyUrls": 9,
+      "localPaths": 0,
+      "missingImages": [],
+      "existingImages": [],
+      "imageDirectory": {
+        "expected": "/images/modernarab-tee-white/",
+        "exists": true,
+        "fileCount": 12,
+        "files": [
+          "2xl-main.jpg",
+          "3xl-main.jpg",
+          "4xl-main.jpg",
+          "l-main.jpg",
+          "m-main.jpg",
+          "s-back.jpg",
+          "s-lifestyle-1.jpg",
+          "s-main.jpg",
+          "white-back.jpg",
+          "white-lifestyle-1.jpg",
+          "white-main.jpg",
+          "xl-main.jpg"
+        ]
+      },
+      "requiredImageTypes": {
+        "main": true,
+        "back": true,
+        "lifestyle": true
+      },
+      "recommendations": [
+        "Convert 9 Shopify CDN URLs to local paths"
+      ]
+    }
+  ],
+  "missingImageDirectories": [
+    {
+      "directory": "fisherman-beanie",
+      "reason": "No matching product JSON file"
+    },
+    {
+      "directory": "modern-arab-beanie-2",
+      "reason": "No matching product JSON file"
+    },
+    {
+      "directory": "modern-arab-crewneck-sand",
+      "reason": "No matching product JSON file"
+    },
+    {
+      "directory": "modern-arab-hoodie-2",
+      "reason": "No matching product JSON file"
+    },
+    {
+      "directory": "modernarab-crewneck",
+      "reason": "No matching product JSON file"
+    },
+    {
+      "directory": "modernarab-cropped-hoodie",
+      "reason": "No matching product JSON file"
+    },
+    {
+      "directory": "modernarab-tee",
+      "reason": "No matching product JSON file"
+    }
+  ],
+  "emptyImageDirectories": [
+    "modern-arab-tee-black",
+    "modern-arab-tee-white"
+  ],
+  "recommendations": []
+}

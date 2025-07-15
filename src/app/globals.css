@@ -17,7 +17,8 @@
   --font-barlow-condensed: var(--font-barlow-condensed);
   --font-bodoni: var(--font-bodoni);
   --font-montserrat: var(--font-montserrat);
-  --font-arabic: 'Amiri', 'Scheherazade New', serif;
+  --font-noto-naskh-arabic: var(--font-noto-naskh-arabic);
+  --font-arabic: var(--font-noto-naskh-arabic), 'Amiri', 'Scheherazade New', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,5 +50,8 @@ body {
 }
 
 .font-arabic {
-  font-family: 'Amiri', 'Scheherazade New', serif;
+  font-family: var(--font-noto-naskh-arabic), 'Amiri', 'Scheherazade New', serif;
+  direction: rtl;
+  text-align: right;
 }
+

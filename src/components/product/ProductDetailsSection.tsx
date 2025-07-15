@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Shirt, Heart, Users, Package } from 'lucide-react';
 
@@ -9,19 +9,17 @@ interface ProductDetailsSectionProps {
 }
 
 export default function ProductDetailsSection({ fullDescription }: ProductDetailsSectionProps) {
+  const [sections, setSections] = useState({
+    mainDescription: '',
+    designInspiration: '',
+    features: [] as string[],
+    whyChoose: '',
+    perfectFor: [] as string[],
+    pairWith: ''
+  });
+
   // Parse the HTML description to extract sections
   const parseDescription = (html: string) => {
-    // Skip parsing on server side
-    if (typeof window === 'undefined') {
-      return {
-        mainDescription: '',
-        designInspiration: '',
-        features: [] as string[],
-        whyChoose: '',
-        perfectFor: [] as string[],
-        pairWith: ''
-      };
-    }
     const sections = {
       mainDescription: '',
       designInspiration: '',
@@ -38,6 +36,16 @@ export default function ProductDetailsSection({ fullDescription }: ProductDetail
     const paragraphs = tempDiv.querySelectorAll('p');
     const lists = tempDiv.querySelectorAll('ul');
     
+    // First, try to extract the main description - usually the first few paragraphs
+    const firstParagraphs = Array.from(paragraphs).slice(0, 5);
+    firstParagraphs.forEach((p) => {
+      const text = p.textContent || '';
+      // Skip if it's a header or contains bullet points
+      if (!text.includes(':') && !text.includes('•') && !text.includes('Disclaimer') && text.length > 50) {
+        sections.mainDescription += text + ' ';
+      }
+    });
+    
     let currentSection = 'main';
     
     paragraphs.forEach((p) => {
@@ -45,34 +53,26 @@ export default function ProductDetailsSection({ fullDescription }: ProductDetail
       const htmlContent = p.innerHTML || '';
       
       // Check if paragraph contains Design Inspiration header
-      if (htmlContent.includes('<strong>Design Inspiration:</strong>')) {
-        // Extract the content after the strong tag
-        const designMatch = htmlContent.match(/<strong>Design Inspiration:<\/strong>(.+)/);
-        if (designMatch) {
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = designMatch[1];
-          sections.designInspiration = tempDiv.textContent?.trim() || '';
+      if (htmlContent.includes('<strong>Design Inspiration:</strong>') || text.includes('Design Inspiration:')) {
+        currentSection = 'design';
+        const designText = text.replace('Design Inspiration:', '').trim();
+        if (designText) {
+          sections.designInspiration = designText;
         }
-        currentSection = 'design';
-      } else if (text.includes('Design Inspiration:')) {
-        currentSection = 'design';
-        sections.designInspiration = text.replace('Design Inspiration:', '').trim();
-      } else if (htmlContent.includes('<strong>Features:</strong>')) {
+      } else if (htmlContent.includes('<strong>Features:</strong>') || text.includes('Features:')) {
         currentSection = 'features';
-      } else if (text.includes('Features:')) {
-        currentSection = 'features';
-      } else if (htmlContent.includes('<strong>Why Choose')) {
+      } else if (htmlContent.includes('<strong>Why Choose') || text.includes('Why Choose')) {
         currentSection = 'why';
-        sections.whyChoose = text.trim();
-      } else if (text.includes('Why Choose')) {
-        currentSection = 'why';
-        sections.whyChoose = text.trim();
+        const whyText = text.replace(/Why Choose.*?:/, '').trim();
+        if (whyText) {
+          sections.whyChoose = whyText;
+        }
       } else if (text.includes('Perfect For:')) {
         currentSection = 'perfect';
       } else if (text.includes('Pair them with') || text.includes('Pair it with')) {
         sections.pairWith = text.trim();
-      } else if (currentSection === 'main' && !text.includes('•')) {
-        sections.mainDescription += text + ' ';
+      } else if (currentSection === 'design' && !text.includes(':')) {
+        sections.designInspiration += ' ' + text;
       } else if (currentSection === 'why' && !text.includes('Perfect For:')) {
         sections.whyChoose += ' ' + text;
       }
@@ -104,28 +104,45 @@ export default function ProductDetailsSection({ fullDescription }: ProductDetail
     paragraphs.forEach((p) => {
       const text = p.innerHTML;
       
-      // Check if this paragraph follows the Features header and contains bullet points
-      if (text.includes('•') && (currentSection === 'features' || text.includes('<strong>Features:</strong>'))) {
-        // Split by <br> first to handle multi-line bullet lists
-        const lines = text.split(/<br\s*\/?>/);
-        lines.forEach(line => {
-          if (line.includes('•')) {
-            const items = line.split('•').filter(item => item.trim());
-            items.forEach(item => {
-              const cleanItem = item.replace(/<[^>]*>/g, '').trim();
-              if (cleanItem && !cleanItem.includes('Features:') && cleanItem.length > 0) {
-                sections.features.push(cleanItem);
-              }
-            });
-          }
-        });
+      // Check if this paragraph contains bullet points
+      if (text.includes('•')) {
+        // Check if we should treat these as features
+        const isFeaturesList = text.includes('100%') || text.includes('cotton') || text.includes('Premium') || 
+                              text.includes('Quality') || text.includes('Fabric') || text.includes('weight');
+        
+        if (isFeaturesList || currentSection === 'features') {
+          // Split by <br> first to handle multi-line bullet lists
+          const lines = text.split(/<br\s*\/?>/);
+          lines.forEach(line => {
+            if (line.includes('•')) {
+              const items = line.split('•').filter(item => item.trim());
+              items.forEach(item => {
+                const cleanItem = item.replace(/<[^>]*>/g, '').trim();
+                if (cleanItem && !cleanItem.includes('Features:') && cleanItem.length > 0) {
+                  // Add to features if not already there
+                  if (!sections.features.includes(cleanItem)) {
+                    sections.features.push(cleanItem);
+                  }
+                }
+              });
+            }
+          });
+        }
       }
     });
     
     return sections;
   };
 
-  const sections = parseDescription(fullDescription);
+  // Parse description on client side only to avoid hydration mismatch
+  useEffect(() => {
+    if (fullDescription) {
+      console.log('ProductDetailsSection received fullDescription:', fullDescription.substring(0, 200) + '...');
+      const parsedSections = parseDescription(fullDescription);
+      console.log('Parsed sections:', parsedSections);
+      setSections(parsedSections);
+    }
+  }, [fullDescription]);
   
   // Count how many sections have content
   const sectionsWithContent = [
@@ -158,6 +175,21 @@ export default function ProductDetailsSection({ fullDescription }: ProductDetail
             Every piece tells a story of heritage reimagined through modern design
           </p>
         </motion.div>
+        
+        {/* Show message when no content is parsed */}
+        {sectionsWithContent === 0 && fullDescription && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-white p-8 rounded-lg shadow-xl border border-gray-100 max-w-4xl mx-auto"
+          >
+            <div className="prose prose-lg max-w-none">
+              <div dangerouslySetInnerHTML={{ __html: fullDescription }} />
+            </div>
+          </motion.div>
+        )}
         
         <div className={`grid ${sectionsWithContent === 1 ? 'grid-cols-1' : 'md:grid-cols-2'} gap-12`}>
           {/* Design Inspiration */}

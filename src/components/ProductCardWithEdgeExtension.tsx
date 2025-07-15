@@ -21,7 +21,10 @@ export default function ProductCardWithEdgeExtension({ product, index }: Product
       if (!product.colors[0]?.images?.main) return;
 
       const img = new window.Image();
-      img.crossOrigin = 'anonymous';
+      // Only set crossOrigin for remote images (Shopify CDN)
+      if (product.colors[0].images.main.startsWith('http')) {
+        img.crossOrigin = 'anonymous';
+      }
       
       img.onload = () => {
         if (!canvasRef.current || !patternCanvasRef.current) return;

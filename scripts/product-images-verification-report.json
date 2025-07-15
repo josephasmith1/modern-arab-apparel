@@ -1,0 +1,495 @@
+{
+  "totalProducts": 24,
+  "totalColors": 98,
+  "issues": [
+    {
+      "slug": "modern-arab-beanie-1",
+      "colorIssues": [
+        {
+          "color": "Beige",
+          "issues": [
+            "Main and back images are identical"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "fisherman-beanie",
+      "colorIssues": [
+        {
+          "color": "Blue",
+          "issues": [
+            "Main and back images are identical"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "modern-arab-beanie-2",
+      "colorIssues": [
+        {
+          "color": "Olive",
+          "issues": [
+            "Main and back images are identical"
+          ]
+        },
+        {
+          "color": "Black",
+          "issues": [
+            "Main and back images are identical"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "modern-arab-bucket-hat-1",
+      "colorIssues": [
+        {
+          "color": "White",
+          "issues": [
+            "Main and back images are identical"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "modern-arab-cap",
+      "colorIssues": [
+        {
+          "color": "Green",
+          "issues": [
+            "Main and back images are identical"
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "missingMain": 0,
+    "missingBack": 0,
+    "emptyLifestyle": 0,
+    "brokenImages": 0,
+    "suspiciouslySmall": 0,
+    "duplicateImages": 6
+  },
+  "duplicateImages": [
+    {
+      "image": "/images/fisherman-beanie/ecru-main.jpg",
+      "usage": [
+        "undefined - Beige (main)",
+        "undefined - Beige (back)"
+      ]
+    },
+    {
+      "image": "/images/fisherman-beanie/petrol-blue-main.jpg",
+      "usage": [
+        "undefined - Blue (main)",
+        "undefined - Blue (back)"
+      ]
+    },
+    {
+      "image": "/images/fisherman-beanie/cypress-main.jpg",
+      "usage": [
+        "undefined - Olive (main)",
+        "undefined - Olive (back)"
+      ]
+    },
+    {
+      "image": "/images/fisherman-beanie/black-main.jpg",
+      "usage": [
+        "undefined - Black (main)",
+        "undefined - Black (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-bucket-hat-1/white-main.jpg",
+      "usage": [
+        "undefined - White (main)",
+        "undefined - White (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-cap/green-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Green (main)",
+        "undefined - Green (back)",
+        "undefined - Green (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-crewneck/faded-black-main.jpg",
+      "usage": [
+        "undefined - Vintage Black (main)",
+        "undefined - Black (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-crewneck/faded-black-back.jpg",
+      "usage": [
+        "undefined - Vintage Black (back)",
+        "undefined - Black (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-crewneck/faded-black-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Vintage Black (lifestyle 1)",
+        "undefined - Black (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-crewneck-sand/faded-bone-main.jpg",
+      "usage": [
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-crewneck-sand/faded-bone-back.jpg",
+      "usage": [
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-crewneck-sand/faded-bone-lifestyle-1.jpg",
+      "usage": [
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee/faded-bone-main.jpg",
+      "usage": [
+        "undefined - Faded Bone (main)",
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)",
+        "undefined - 4XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee/faded-bone-back.jpg",
+      "usage": [
+        "undefined - Faded Bone (back)",
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)",
+        "undefined - 4XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee/faded-bone-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Faded Bone (lifestyle 1)",
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)",
+        "undefined - 4XL (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee/faded-black-main.jpg",
+      "usage": [
+        "undefined - Faded Black (main)",
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)",
+        "undefined - 4XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee/faded-black-back.jpg",
+      "usage": [
+        "undefined - Faded Black (back)",
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)",
+        "undefined - 4XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee/faded-black-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Faded Black (lifestyle 1)",
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)",
+        "undefined - 4XL (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-hoodie/green-main.jpg",
+      "usage": [
+        "undefined - Olive Green (main)",
+        "undefined - Green (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-hoodie/green-back.jpg",
+      "usage": [
+        "undefined - Olive Green (back)",
+        "undefined - Green (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-hoodie/green-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Olive Green (lifestyle 1)",
+        "undefined - Green (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-hoodie/faded-black-main.jpg",
+      "usage": [
+        "undefined - Black (main)",
+        "undefined - Vintage Black (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-hoodie/faded-black-back.jpg",
+      "usage": [
+        "undefined - Black (back)",
+        "undefined - Vintage Black (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-hoodie/faded-black-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Black (lifestyle 1)",
+        "undefined - Vintage Black (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-1/faded-bone-main.jpg",
+      "usage": [
+        "undefined - Faded Bone (main)",
+        "undefined - Faded Sand (main)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-1/faded-bone-back.jpg",
+      "usage": [
+        "undefined - Faded Bone (back)",
+        "undefined - Faded Sand (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Faded Bone (lifestyle 1)",
+        "undefined - Faded Sand (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee/faded-bone-main.jpg",
+      "usage": [
+        "undefined - Faded Sand (main)",
+        "undefined - Faded Bone (main)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee/faded-bone-back.jpg",
+      "usage": [
+        "undefined - Faded Sand (back)",
+        "undefined - Faded Bone (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee/faded-bone-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Faded Sand (lifestyle 1)",
+        "undefined - Faded Bone (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-main.jpg",
+      "usage": [
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-back.jpg",
+      "usage": [
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-lifestyle-1.jpg",
+      "usage": [
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-faded-khaki/faded-khaki-main.jpg",
+      "usage": [
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-faded-khaki/faded-khaki-back.jpg",
+      "usage": [
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-premium-tee-faded-khaki/faded-khaki-lifestyle-1.jpg",
+      "usage": [
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-sweatpants/blue-main.jpg",
+      "usage": [
+        "undefined - Light Blue (main)",
+        "undefined - Dark Blue (main)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-sweatpants/blue-back.jpg",
+      "usage": [
+        "undefined - Light Blue (back)",
+        "undefined - Dark Blue (back)"
+      ]
+    },
+    {
+      "image": "/images/modern-arab-sweatpants/blue-lifestyle-1.jpg",
+      "usage": [
+        "undefined - Light Blue (lifestyle 1)",
+        "undefined - Dark Blue (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee-black/faded-black-main.jpg",
+      "usage": [
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)",
+        "undefined - 4XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee-black/faded-black-back.jpg",
+      "usage": [
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)",
+        "undefined - 4XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee-black/faded-black-lifestyle-1.jpg",
+      "usage": [
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)",
+        "undefined - 4XL (lifestyle 1)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee-white/white-main.jpg",
+      "usage": [
+        "undefined - S (main)",
+        "undefined - M (main)",
+        "undefined - L (main)",
+        "undefined - XL (main)",
+        "undefined - 2XL (main)",
+        "undefined - 3XL (main)",
+        "undefined - 4XL (main)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee-white/white-back.jpg",
+      "usage": [
+        "undefined - S (back)",
+        "undefined - M (back)",
+        "undefined - L (back)",
+        "undefined - XL (back)",
+        "undefined - 2XL (back)",
+        "undefined - 3XL (back)",
+        "undefined - 4XL (back)"
+      ]
+    },
+    {
+      "image": "/images/modernarab-tee-white/white-lifestyle-1.jpg",
+      "usage": [
+        "undefined - S (lifestyle 1)",
+        "undefined - M (lifestyle 1)",
+        "undefined - L (lifestyle 1)",
+        "undefined - XL (lifestyle 1)",
+        "undefined - 2XL (lifestyle 1)",
+        "undefined - 3XL (lifestyle 1)",
+        "undefined - 4XL (lifestyle 1)"
+      ]
+    }
+  ]
+}

@@ -7,7 +7,30 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import ProductCardSimple from '@/components/ProductCardSimple';
 
-export default function CollectionPageClient({ collection, collectionProducts }: any) {
+interface CollectionPageClientProps {
+  collection: {
+    slug: string;
+    name: string;
+    description: string;
+    image: string;
+  };
+  collectionProducts: Array<{
+    slug: string;
+    name: string;
+    description: string;
+    price: string;
+    originalPrice?: string;
+    colors: Array<{
+      name: string;
+      hex: string;
+      images: {
+        main: string;
+      };
+    }>;
+  }>;
+}
+
+export default function CollectionPageClient({ collection, collectionProducts }: CollectionPageClientProps) {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -157,7 +180,7 @@ export default function CollectionPageClient({ collection, collectionProducts }:
                 }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-              {collectionProducts.map((product: any, index: number) => (
+              {collectionProducts.map((product, index) => (
                 <ProductCardSimple 
                   key={product.slug}
                   product={product}

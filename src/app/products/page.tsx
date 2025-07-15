@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { products as allProducts, Product } from './data';
+import { products as allProducts, Product } from '@/data/products/sync';
 import { collections, getCollectionBySlug } from '@/data/collections';
 import Footer from '@/components/Footer';
 

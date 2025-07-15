@@ -7,12 +7,13 @@ import { useState, useEffect } from 'react';
 
 import { collections } from '@/data/collections';
 import Footer from '@/components/Footer';
+import ArabicWritingText from '@/components/ArabicWritingText';
 
 const heroImages = [
-  'https://modernarabapparel.com/cdn/shop/files/IMG-3317_1800x1800.jpg',
-  'https://modernarabapparel.com/cdn/shop/files/MG_0159_1800x1800.jpg',
-  'https://modernarabapparel.com/cdn/shop/files/MG_0070_1800x1800.jpg',
-  'https://modernarabapparel.com/cdn/shop/files/IMG-3331_1800x1800.jpg'
+  '/images/hero-1.jpg',
+  '/images/hero-2.jpg',
+  '/images/hero-3.jpg',
+  '/images/hero-4.jpg'
 ];
 
 export default function Home() {
@@ -108,29 +109,29 @@ export default function Home() {
     {
       name: "Modern Arab Faded Tee",
       price: "from $45.00",
-      image: "https://modernarabapparel.com/cdn/shop/files/oversized-faded-t-shirt-faded-khaki-front-67e7da798329f_1800x1800.jpg",
-      hoverImage: "https://modernarabapparel.com/cdn/shop/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55_1800x1800.jpg",
-      href: "/products/modern-arab-faded-tee"
+      image: "/images/featured/faded-tee-main.jpg",
+      hoverImage: "/images/featured/faded-tee-hover.jpg",
+      href: "/products/modern-arab-faded-tee-black-print"
     },
     {
       name: "Modern Arab Hoodie", 
       price: "from $60.00",
-      image: "https://modernarabapparel.com/cdn/shop/files/unisex-premium-hoodie-black-front-67cbcdde72ba6_1400x.jpg",
-      hoverImage: "https://modernarabapparel.com/cdn/shop/files/unisex-premium-hoodie-black-back-67cbcddeb1073_1400x.jpg",
+      image: "/images/featured/hoodie-main.jpg",
+      hoverImage: "/images/featured/hoodie-hover.jpg",
       href: "/products/modern-arab-hoodie"
     },
     {
       name: "Modern Arab Joggers",
       price: "from $50.00", 
-      image: "https://modernarabapparel.com/cdn/shop/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3_1800x1800.jpg",
-      hoverImage: "https://modernarabapparel.com/cdn/shop/files/unisex-fleece-sweatpants-military-green-back-67cce68fe8e32_1800x1800.jpg",
+      image: "/images/featured/joggers-main.jpg",
+      hoverImage: "/images/featured/joggers-hover.jpg",
       href: "/products/modern-arab-joggers"
     },
     {
       name: "Modern Arab Cap",
       price: "$30.00",
-      image: "https://modernarabapparel.com/cdn/shop/files/classic-dad-hat-black-front-67ca2b4edc0fe_1800x1800.jpg",
-      hoverImage: "https://modernarabapparel.com/cdn/shop/files/classic-dad-hat-black-back-67ca2b4edd02e_1800x1800.jpg",
+      image: "/images/featured/cap-main.jpg",
+      hoverImage: "/images/featured/cap-hover.jpg",
       href: "/products/modern-arab-cap"
     }
   ];
@@ -184,7 +185,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
-                <motion.div 
+                <motion.div
                   className="mb-4"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -198,7 +199,20 @@ export default function Home() {
                   Modern<br />
                   <span className="italic">Arab</span>
                 </h1>
-                <motion.p 
+                <motion.div
+                  className="text-xl md:text-2xl text-white/90 font-barlow-condensed max-w-lg mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                >
+                  <ArabicWritingText
+                    text="ألآ تخافون من الله"
+                    className="text-white"
+                    duration={3}
+                    delay={1.5}
+                  />
+                </motion.div>
+                <motion.p
                   className="text-xl md:text-2xl text-white/90 font-barlow-condensed max-w-lg"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -422,8 +436,8 @@ export default function Home() {
             >
               <div className="absolute top-0 left-0 w-full h-full rounded">
                 <Image
-                  src="/images/modernarab-tee/faded-bone-main.jpg"
-                  alt="Modern Arab Faded Tee"
+                  src="/images/modernarab-cropped-hoodie/lifestyle-1-no-bg.png"
+                  alt="Modern Arab Cropped Hoodie"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain object-center rounded"
@@ -482,7 +496,7 @@ export default function Home() {
             >
               <div className="relative h-96 lg:h-[500px]">
                 <Image
-                  src="/images/modernarab-tee/faded-bone-main.jpg"
+                  src="/images/modernarab-tee/faded-bone-main-no-bg.png"
                   alt="Modern Arab Faded Tee"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"

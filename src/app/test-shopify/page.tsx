@@ -1,4 +1,4 @@
-import { products } from '../products/data';
+import { products } from '@/data/products/sync';
 import Image from 'next/image';
 
 export default function TestShopifyPage() {

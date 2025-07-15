@@ -1,0 +1,36 @@
+/**
+ * Bridge/wrapper file for the new product data system
+ * This file maintains backward compatibility with existing imports
+ * while using data from the new modular product system
+ */
+
+// Re-export types from the new system
+export type { Product, ProductColor, ProductVariant } from '@/data/products/types';
+
+// Import products from the sync system (for client-side usage)
+import { 
+  products as loadedProducts,
+  findProductBySlug,
+  getProductsByCollection,
+  getProductsByTag,
+  getCollections,
+  getTags
+} from '@/data/products/sync';
+
+// Export products array - this maintains backward compatibility
+// for any code that imports { products } from this file
+export const products = loadedProducts;
+
+// Re-export helper functions from the sync system for convenience
+export {
+  findProductBySlug,
+  getProductsByCollection,
+  getProductsByTag,
+  getCollections,
+  getTags
+};
+
+// For debugging in development
+if (process.env.NODE_ENV === 'development') {
+  console.log(`[data.ts wrapper] Successfully bridged to new product system with ${products.length} products`);
+}

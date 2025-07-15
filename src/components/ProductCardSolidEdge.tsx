@@ -21,7 +21,6 @@ const MAX_CONCURRENT_EXTRACTIONS = 3;
 export default function ProductCardSolidEdge({ product, index }: ProductCardProps) {
   const [bgColor, setBgColor] = useState('#f5f5f4'); // Default beige
   const [extractedColors, setExtractedColors] = useState<{ [key: string]: string }>({});
-  const [isExtracting, setIsExtracting] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>();
   const abortControllerRef = useRef<AbortController>();
   const { extractImageColor, extractBackgroundColor } = useColorExtractor();
@@ -56,14 +55,13 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
       );
       
       if (colorsToExtract.length === 0) {
-        setIsExtracting(false);
         return;
       }
       
       // Only extract colors for the first 3 color variants to improve performance
       const limitedColors = colorsToExtract.slice(0, 3);
       
-      setIsExtracting(true);
+      // Start extraction process
       
       // Queue the extraction to limit concurrent operations
       extractionQueue = extractionQueue.then(async () => {
@@ -102,9 +100,6 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
           }
         } finally {
           activeExtractions--;
-          if (!currentAbortController.signal.aborted) {
-            setIsExtracting(false);
-          }
         }
       });
     }
@@ -115,12 +110,12 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
       }
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
+      const currentTimeout = timeoutRef.current;
+      if (currentTimeout) {
+        clearTimeout(currentTimeout);
       }
-      setIsExtracting(false);
     };
-  }, [product.slug, extractImageColor, isIntersecting]); // Use product.slug instead of product to avoid infinite loops
+  }, [product.slug, product.colors, extractedColors, extractImageColor, isIntersecting]); // Use product.slug instead of product to avoid infinite loops
 
   return (
     <motion.div 

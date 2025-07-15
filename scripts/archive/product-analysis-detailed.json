@@ -1,0 +1,68 @@
+{
+  "totalFiles": 22,
+  "uniqueProducts": 13,
+  "productsWithMultipleFiles": [
+    {
+      "title": "Modern Arab Beanie",
+      "files": [
+        "fisherman-beanie.json",
+        "modern-arab-beanie-1.json",
+        "modernarab-beanie.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Bucket Hat",
+      "files": [
+        "modern-arab-bucket-hat.json",
+        "modern-arab-bucket-hat-1.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Cap",
+      "files": [
+        "modern-arab-cap.json",
+        "modern-arab-cap-1.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Faded Tee",
+      "files": [
+        "modern-arab-faded-tee-black-print.json",
+        "modernarab-tee.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Hoodie",
+      "files": [
+        "modern-arab-hoodie.json",
+        "modernarab-hoodie.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Premium Tee",
+      "files": [
+        "modern-arab-premium-tee.json",
+        "modern-arab-premium-tee-1.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Crewneck",
+      "files": [
+        "modernarab-crewneck.json",
+        "modernarab-crewneck-sand.json"
+      ]
+    },
+    {
+      "title": "Modern Arab Tee",
+      "files": [
+        "modernarab-tee-black.json",
+        "modernarab-tee-white.json"
+      ]
+    }
+  ],
+  "namingPatterns": {
+    "modern-arab-": 13,
+    "modernarab-": 8,
+    "other": 1
+  }
+}

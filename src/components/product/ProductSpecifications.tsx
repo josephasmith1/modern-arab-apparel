@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Ruler, Package2, MapPin, Info, Shirt, Droplets, Square, Tag } from 'lucide-react';
 
@@ -15,12 +15,16 @@ interface Specification {
 }
 
 export default function ProductSpecifications({ fullDescription }: ProductSpecificationsProps) {
+  const [specifications, setSpecifications] = useState<Specification[]>([]);
+  const [sizeGuide, setSizeGuide] = useState({
+    hasTable: false,
+    imperial: '',
+    metric: ''
+  });
+  const [disclaimer, setDisclaimer] = useState('');
+
   // Parse technical specifications from the HTML description
   const parseSpecifications = (html: string): Specification[] => {
-    // Skip parsing on server side
-    if (typeof window === 'undefined') {
-      return [];
-    }
     const specs: Specification[] = [];
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;
@@ -142,14 +146,6 @@ export default function ProductSpecifications({ fullDescription }: ProductSpecif
 
   // Extract size guide from HTML
   const extractSizeGuide = (html: string) => {
-    // Skip parsing on server side
-    if (typeof window === 'undefined') {
-      return {
-        hasTable: false,
-        imperial: '',
-        metric: ''
-      };
-    }
     
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;
@@ -167,10 +163,6 @@ export default function ProductSpecifications({ fullDescription }: ProductSpecif
 
   // Extract disclaimer
   const extractDisclaimer = (html: string): string => {
-    // Skip parsing on server side
-    if (typeof window === 'undefined') {
-      return '';
-    }
     
     const tempDiv = document.createElement('div');
     tempDiv.innerHTML = html;
@@ -188,9 +180,14 @@ export default function ProductSpecifications({ fullDescription }: ProductSpecif
     return disclaimer;
   };
 
-  const specifications = parseSpecifications(fullDescription);
-  const sizeGuide = extractSizeGuide(fullDescription);
-  const disclaimer = extractDisclaimer(fullDescription);
+  useEffect(() => {
+    // Only run parsing on client side
+    if (typeof window !== 'undefined') {
+      setSpecifications(parseSpecifications(fullDescription));
+      setSizeGuide(extractSizeGuide(fullDescription));
+      setDisclaimer(extractDisclaimer(fullDescription));
+    }
+  }, [fullDescription]);
 
   return (
     <section className="py-20 bg-white">
@@ -210,13 +207,13 @@ export default function ProductSpecifications({ fullDescription }: ProductSpecif
           </p>
         </motion.div>
         
-        {/* Specifications Grid */}
+        {/* Specifications Masonry */}
         {specifications.length > 0 && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="columns-1 md:columns-2 lg:columns-3 gap-6 mb-16 space-y-6">
             {specifications.map((spec, index) => (
               <motion.div 
                 key={index}
-                className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-black transition-all duration-300"
+                className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-black transition-all duration-300 break-inside-avoid mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}

@@ -4,7 +4,7 @@ import { useState, use, useEffect, useMemo, useCallback } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { products, type ProductColor } from '@/app/products/data';
+import { products, type ProductColor } from '@/data/products/sync';
 import { useColorExtractor } from '@/hooks/useColorExtractor';
 import ProductImage from '@/components/product/ProductImage';
 import ProductInfo from '@/components/product/ProductInfo';

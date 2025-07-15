@@ -1,0 +1,117 @@
+
+> modern-arab-apparel@0.1.0 dev
+> kill -9 $(lsof -t -i:3000) 2>/dev/null || true && next dev -p 3000
+
+   ▲ Next.js 15.3.5
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.169:3000
+
+ ✓ Starting...
+ ✓ Ready in 1279ms
+ ○ Compiling /collections ...
+ ✓ Compiled /collections in 2.1s (1635 modules)
+Successfully loaded 17 products from JSON files
+ GET /collections 200 in 2453ms
+ ✓ Compiled /favicon.ico in 280ms (889 modules)
+ GET /favicon.ico 200 in 351ms
+Successfully loaded 17 products from JSON files
+ GET /collections 200 in 160ms
+ ✓ Compiled /_not-found in 425ms (1655 modules)
+ ✓ Compiled in 0ms (890 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 679ms
+ ✓ Compiled in 1ms (890 modules)
+ ✓ Compiled in 0ms (890 modules)
+ GET /favicon.ico 200 in 549ms
+Successfully loaded 17 products from JSON files
+ GET /collections 200 in 556ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 68ms
+ ○ Compiling /collections/[slug] ...
+ ✓ Compiled /collections/[slug] in 836ms (1663 modules)
+Successfully loaded 17 products from JSON files
+ GET /collections/headwear 200 in 1450ms
+ GET /favicon.ico 200 in 25ms
+ ○ Compiling /products/[slug] ...
+ ✓ Compiled /products/[slug] in 809ms (1712 modules)
+ GET /products/modern-arab-cap 200 in 1480ms
+ GET /products/modern-arab-cap 200 in 11ms
+ GET /products/modern-arab-bucket-hat 200 in 357ms
+ GET /products/fisherman-beanie 200 in 356ms
+ GET /products/modern-arab-crewneck-sand 200 in 54ms
+ GET /favicon.ico 200 in 15ms
+ GET /favicon.ico 200 in 4ms
+ GET /favicon.ico 200 in 9ms
+ GET /favicon.ico 200 in 5ms
+ GET /products/modern-arab-cap 200 in 24ms
+ GET /favicon.ico 200 in 7ms
+ GET /favicon.ico 200 in 10ms
+Successfully loaded 17 products from JSON files
+ GET /collections 200 in 36ms
+ GET /favicon.ico 200 in 27ms
+ GET /collections/layers 200 in 49ms
+ GET /favicon.ico 200 in 5ms
+ ✓ Compiled in 768ms (1722 modules)
+ ✓ Compiled /_not-found in 185ms (1712 modules)
+ GET /images/modern-arab-hoodie/maroon-main.jpg 404 in 285ms
+ GET /images/modernarab-crewneck/vintage-black-main.jpg 404 in 347ms
+ GET /images/modern-arab-hoodie/green-main.jpg 404 in 53ms
+ GET /images/modernarab-hoodie/black-main.jpg 404 in 53ms
+ GET /images/modernarab-hoodie/black-main.jpg 404 in 60ms
+ GET /images/modern-arab-hoodie/green-main.jpg 404 in 61ms
+ GET /images/modern-arab-hoodie/black-main.jpg 404 in 132ms
+ GET /images/modernarab-crewneck/black-main.jpg 404 in 133ms
+ GET /images/modern-arab-hoodie/white-main.jpg 404 in 130ms
+ GET /images/modern-arab-hoodie/green-main.jpg 404 in 130ms
+ GET /images/modernarab-hoodie/vintage-black-main.jpg 404 in 38ms
+ GET /images/modern-arab-hoodie/maroon-main.jpg 404 in 51ms
+ GET /images/modernarab-crewneck/vintage-black-main.jpg 404 in 52ms
+ GET /images/modernarab-crewneck/black-main.jpg 404 in 110ms
+ GET /images/modern-arab-hoodie/green-main.jpg 404 in 111ms
+ GET /images/modernarab-hoodie/black-main.jpg 404 in 112ms
+ GET /images/modern-arab-hoodie/black-main.jpg 404 in 143ms
+ GET /images/modern-arab-hoodie/white-main.jpg 404 in 143ms
+ GET /images/modernarab-hoodie/vintage-black-main.jpg 404 in 27ms
+ GET /images/modernarab-crewneck/black-main.jpg 404 in 51ms
+ GET /images/modern-arab-hoodie/black-main.jpg 404 in 51ms
+ GET /images/modern-arab-hoodie/white-main.jpg 404 in 27ms
+ GET /images/modern-arab-hoodie/green-main.jpg 404 in 50ms
+ GET /images/modernarab-hoodie/vintage-black-main.jpg 404 in 49ms
+Successfully loaded 17 products from JSON files
+ ⨯ ReferenceError: collectionSlug is not defined
+    at eval (src/app/collections/page.tsx:122:22)
+    at eval (src/app/collections/page.tsx:198:20)
+    at Array.map (<anonymous>)
+    at CollectionsPage (src/app/collections/page.tsx:99:32)
+  120 |                       const productImages: { src: string; alt: string }[] = [];
+  121 |                       
+> 122 |                       if (collectionSlug === 'headwear' || collectionSlug === 'accessories') {
+      |                      ^
+  123 |                         // For headwear, show different color variants from each product
+  124 |                         collectionProducts.forEach((product) => {
+  125 |                           // Add up to 2 color variants per product to fill the 4 slots {
+  digest: '1343865672'
+}
+ GET /collections 500 in 154ms
+ ✓ Compiled in 715ms (1710 modules)
+Successfully loaded 17 products from JSON files
+ GET /collections 200 in 214ms
+ ✓ Compiled in 652ms (1706 modules)
+Successfully loaded 17 products from JSON files
+ GET /collections 200 in 161ms
+ GET /collections/layers 200 in 125ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 629ms (1696 modules)
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 710ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 3.3s (1712 modules)
+ GET /favicon.ico 200 in 3860ms
+ GET /images/modernarab-crewneck/vintage-black-main.jpg 404 in 2959ms
+ GET /images/modern-arab-hoodie/green-main.jpg 404 in 2857ms
+ GET /images/modernarab-hoodie/black-main.jpg 404 in 2849ms
+ GET /images/modern-arab-hoodie/maroon-main.jpg 404 in 2941ms
+ GET /images/modern-arab-hoodie/black-main.jpg 404 in 141ms
+ GET /images/modernarab-crewneck/black-main.jpg 404 in 156ms
+ GET /images/modern-arab-hoodie/white-main.jpg 404 in 58ms
+ GET /images/modernarab-hoodie/vintage-black-main.jpg 404 in 71ms
+ ✓ Compiled in 1444ms (1726 modules)
+Successfully loaded 17 products from JSON files
+ GET /collections/layers 200 in 121ms

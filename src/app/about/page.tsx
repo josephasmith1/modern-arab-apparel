@@ -133,14 +133,14 @@ export default function About() {
           className="absolute inset-0 flex items-center justify-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <div className="text-center max-w-4xl px-6">
             <motion.h1 
               className="text-7xl md:text-9xl font-extralight mb-8 text-white drop-shadow-2xl font-bodoni uppercase tracking-widest"
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0.1, ease: "easeOut" }}
             >
               The Story
             </motion.h1>
@@ -148,7 +148,7 @@ export default function About() {
               className="text-2xl md:text-3xl font-light text-gray-200 mb-12 drop-shadow-lg font-my-soul tracking-wide"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
             >
               We are Modern Arab, and this is the narrative.
             </motion.p>
@@ -162,7 +162,7 @@ export default function About() {
         style={{ backgroundColor: '#f0edec' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.2 }}
         viewport={{ once: true }}
       >
         {/* Background Decorative Elements */}
@@ -175,7 +175,7 @@ export default function About() {
             className="text-5xl md:text-6xl font-extralight mb-12 text-center font-bodoni uppercase text-black tracking-widest"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.1 }}
+            transition={{ duration: 0.2, delay: 0.05 }}
             viewport={{ once: true }}
           >
             About Modern Arab
@@ -186,7 +186,7 @@ export default function About() {
               className="lg:col-span-2"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
               viewport={{ once: true }}
             >
               <motion.p 
@@ -213,7 +213,7 @@ export default function About() {
               style={{ backgroundColor: imageBackgroundColors['/about-images/91E379F9-711A-4065-AE1F-92F98E3362E7-2_750x.webp'] || 'rgb(240, 237, 236)' }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: 0.2 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02, rotateY: 2 }}
             >
@@ -222,7 +222,7 @@ export default function About() {
                 alt="Modern Arab Fashion"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-contain object-center group-hover:scale-105 transition-transform duration-700"
+                className="object-contain object-center group-hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
           </div>
@@ -231,7 +231,7 @@ export default function About() {
             className="text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+            transition={{ duration: 0.2, delay: 0.15 }}
             viewport={{ once: true }}
           >
             <p className="text-xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto tracking-wide">

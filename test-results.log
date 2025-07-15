@@ -1,0 +1,1270 @@
+=== Testing Product Loading System ===
+
+✅ Loaded image mappings
+
+Found 28 JSON files in products directory
+
+
+Successfully loaded 28 products
+
+
+--- Testing: Modern Arab Beanie ---
+File: fisherman-beanie.json
+Slug: fisherman-beanie
+Collection: Headwear
+Price: $25.00
+Colors: 1
+Color names: Blue
+
+Checking images:
+❌ Missing main image: /images/fisherman-beanie/blue-main.jpg (Blue)
+❌ 1 images missing
+
+Color details:
+  Blue:
+    - Hex: #4169E1
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Beanie ---
+File: modern-arab-beanie-1.json
+Slug: modern-arab-beanie-1
+Collection: Headwear
+Price: $25.00
+Colors: 1
+Color names: Beige
+
+Checking images:
+❌ Missing main image: /images/modern-arab-beanie-1/beige-main.jpg (Beige)
+❌ 1 images missing
+
+Color details:
+  Beige:
+    - Hex: #F5F5DC
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Beanie ---
+File: modern-arab-beanie.json
+Slug: fisherman-beanie
+Collection: Headwear
+Price: $25.00
+Colors: 1
+Color names: Blue
+
+Checking images:
+❌ Missing main image: /images/fisherman-beanie/blue-main.jpg (Blue)
+❌ 1 images missing
+
+Color details:
+  Blue:
+    - Hex: #4169E1
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Beanie ---
+File: modernarab-beanie.json
+Slug: modernarab-beanie
+Collection: Headwear
+Price: $25.00
+Colors: 2
+Color names: Olive, Black
+
+Checking images:
+❌ Missing main image: /images/modernarab-beanie/olive-main.jpg (Olive)
+❌ Missing main image: /images/modernarab-beanie/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modernarab-beanie/black-lifestyle-1.jpg (Black)
+❌ 3 images missing
+
+Color details:
+  Olive:
+    - Hex: #808000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Bucket Hat ---
+File: modern-arab-bucket-hat-1.json
+Slug: modern-arab-bucket-hat-1
+Collection: Headwear
+Price: $30.00
+Colors: 1
+Color names: White
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  White:
+    - Hex: #FFFFFF
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Bucket Hat ---
+File: modern-arab-bucket-hat.json
+Slug: modern-arab-bucket-hat
+Collection: Headwear
+Price: $30.00
+Colors: 4
+Color names: Olive, Blue, Black, Khaki
+
+Checking images:
+❌ Missing main image: /images/modern-arab-bucket-hat/olive-main.jpg (Olive)
+❌ Missing main image: /images/modern-arab-bucket-hat/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modern-arab-bucket-hat/black-lifestyle-1.jpg (Black)
+❌ Missing main image: /images/modern-arab-bucket-hat/khaki-main.jpg (Khaki)
+❌ Missing lifestyle image: /images/modern-arab-bucket-hat/khaki-lifestyle-1.jpg (Khaki)
+❌ 5 images missing
+
+Color details:
+  Olive:
+    - Hex: #808000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  Blue:
+    - Hex: #4169E1
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  Khaki:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Cap ---
+File: modern-arab-cap-1.json
+Slug: modern-arab-cap-1
+Collection: Headwear
+Price: $30.00
+Colors: 1
+Color names: White
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  White:
+    - Hex: #FFFFFF
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Cap ---
+File: modern-arab-cap.json
+Slug: modern-arab-cap
+Collection: Headwear
+Price: $30.00
+Colors: 4
+Color names: Khaki, Blue, Green, Black
+
+Checking images:
+❌ Missing main image: /images/modern-arab-cap/khaki-main.jpg (Khaki)
+❌ Missing lifestyle image: /images/modern-arab-cap/khaki-lifestyle-1.jpg (Khaki)
+❌ Missing main image: /images/modern-arab-cap/green-main.jpg (Green)
+❌ Missing main image: /images/modern-arab-cap/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modern-arab-cap/black-lifestyle-1.jpg (Black)
+❌ 5 images missing
+
+Color details:
+  Khaki:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  Blue:
+    - Hex: #4169E1
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 1
+  Green:
+    - Hex: #008000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Crewneck ---
+File: modern-arab-crewneck.json
+Slug: modernarab-crewneck
+Collection: Layers
+Price: $45.00
+Colors: 4
+Color names: Green, Vintage Black, White, Black
+
+Checking images:
+❌ Missing main image: /images/modernarab-crewneck/vintage-black-main.jpg (Vintage Black)
+❌ Missing lifestyle image: /images/modernarab-crewneck/vintage-black-lifestyle-1.jpg (Vintage Black)
+❌ Missing main image: /images/modernarab-crewneck/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modernarab-crewneck/black-lifestyle-1.jpg (Black)
+❌ 4 images missing
+
+Color details:
+  Green:
+    - Hex: #008000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Vintage Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  White:
+    - Hex: #FFFFFF
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Crewneck ---
+File: modernarab-crewneck-sand.json
+Slug: modernarab-crewneck-sand
+Collection: Layers
+Price: $45.00
+Colors: 6
+Color names: S, M, L, XL, 2XL, 3XL
+
+Checking images:
+❌ Missing main image: /images/modernarab-crewneck-sand/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modernarab-crewneck-sand/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modernarab-crewneck-sand/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modernarab-crewneck-sand/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modernarab-crewneck-sand/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modernarab-crewneck-sand/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modernarab-crewneck-sand/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modernarab-crewneck-sand/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modernarab-crewneck-sand/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modernarab-crewneck-sand/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modernarab-crewneck-sand/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modernarab-crewneck-sand/3xl-lifestyle-1.jpg (3XL)
+❌ 12 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Crewneck ---
+File: modernarab-crewneck.json
+Slug: modernarab-crewneck
+Collection: Layers
+Price: $45.00
+Colors: 4
+Color names: Green, Vintage Black, White, Black
+
+Checking images:
+❌ Missing main image: /images/modernarab-crewneck/vintage-black-main.jpg (Vintage Black)
+❌ Missing lifestyle image: /images/modernarab-crewneck/vintage-black-lifestyle-1.jpg (Vintage Black)
+❌ Missing main image: /images/modernarab-crewneck/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modernarab-crewneck/black-lifestyle-1.jpg (Black)
+❌ 4 images missing
+
+Color details:
+  Green:
+    - Hex: #008000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Vintage Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  White:
+    - Hex: #FFFFFF
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Cropped Hoodie ---
+File: modern-arab-cropped-hoodie.json
+Slug: modernarab-cropped-hoodie
+Collection: Layers
+Price: $65.00
+Colors: 2
+Color names: Black, Olive Green
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 0
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+  Olive Green:
+    - Hex: #6B8E23
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 0
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+
+--- Testing: Modern Arab Cropped Hoodie ---
+File: modernarab-cropped-hoodie.json
+Slug: modernarab-cropped-hoodie
+Collection: Layers
+Price: $65.00
+Colors: 2
+Color names: Black, Olive Green
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 0
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+  Olive Green:
+    - Hex: #6B8E23
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 0
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+
+--- Testing: Modern Arab Faded Tee ---
+File: modern-arab-faded-tee-black-print.json
+Slug: modern-arab-faded-tee-black-print
+Collection: Upperwear
+Price: $45.00
+Colors: 4
+Color names: Faded Bone, Faded Green, Faded  Khaki, Faded Black
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  Faded Bone:
+    - Hex: #F5F5DC
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Green:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded  Khaki:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Faded Tee ---
+File: modern-arab-tee.json
+Slug: modernarab-tee
+Collection: Upperwear
+Price: $45.00
+Colors: 4
+Color names: Faded Bone, Faded Green, Faded Khaki, Faded Black
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  Faded Bone:
+    - Hex: #F5F5DC
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Green:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Khaki:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 2
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Faded Tee ---
+File: modernarab-tee.json
+Slug: modernarab-tee
+Collection: Upperwear
+Price: $45.00
+Colors: 4
+Color names: Faded Bone, Faded Green, Faded Khaki, Faded Black
+
+Checking images:
+✅ All specified images found
+
+Color details:
+  Faded Bone:
+    - Hex: #F5F5DC
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Green:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Khaki:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 2
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Hoodie ---
+File: modern-arab-hoodie.json
+Slug: modern-arab-hoodie
+Collection: Layers
+Price: $60.00
+Colors: 2
+Color names: Bone, Blue
+
+Checking images:
+❌ Missing main image: /images/modern-arab-hoodie/bone-main.jpg (Bone)
+❌ Missing lifestyle image: /images/modern-arab-hoodie/bone-lifestyle-1.jpg (Bone)
+❌ 2 images missing
+
+Color details:
+  Bone:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Blue:
+    - Hex: #4169E1
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Hoodie ---
+File: modernarab-hoodie.json
+Slug: modernarab-hoodie
+Collection: Layers
+Price: $60.00
+Colors: 6
+Color names: Maroon, Olive Green, Black, White, Green, Vintage Black
+
+Checking images:
+❌ Missing main image: /images/modernarab-hoodie/olive-green-main.jpg (Olive Green)
+❌ Missing lifestyle image: /images/modernarab-hoodie/olive-green-lifestyle-1.jpg (Olive Green)
+❌ Missing main image: /images/modernarab-hoodie/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modernarab-hoodie/black-lifestyle-1.jpg (Black)
+❌ Missing main image: /images/modernarab-hoodie/vintage-black-main.jpg (Vintage Black)
+❌ Missing lifestyle image: /images/modernarab-hoodie/vintage-black-lifestyle-1.jpg (Vintage Black)
+❌ 6 images missing
+
+Color details:
+  Maroon:
+    - Hex: #800000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Olive Green:
+    - Hex: #6B8E23
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  White:
+    - Hex: #FFFFFF
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Green:
+    - Hex: #008000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Vintage Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Joggers ---
+File: modern-arab-joggers.json
+Slug: modern-arab-joggers
+Collection: Legwear
+Price: $50.00
+Colors: 4
+Color names: Olive Green, Maroon, Black, White
+
+Checking images:
+❌ Missing main image: /images/modern-arab-joggers/olive-green-main.jpg (Olive Green)
+❌ Missing lifestyle image: /images/modern-arab-joggers/olive-green-lifestyle-1.jpg (Olive Green)
+❌ Missing main image: /images/modern-arab-joggers/black-main.jpg (Black)
+❌ Missing lifestyle image: /images/modern-arab-joggers/black-lifestyle-1.jpg (Black)
+❌ 4 images missing
+
+Color details:
+  Olive Green:
+    - Hex: #6B8E23
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: XS, S, M, L, XL, 2XL
+  Maroon:
+    - Hex: #800000
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: XS, S, M, L, XL, 2XL
+  Black:
+    - Hex: #000000
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: XS, S, M, L, XL, 2XL
+  White:
+    - Hex: #FFFFFF
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: XS, S, M, L, XL, 2XL
+
+--- Testing: Modern Arab Premium Tee ---
+File: modern-arab-premium-tee-1.json
+Slug: modern-arab-premium-tee-1
+Collection: Upperwear
+Price: $45.00
+Colors: 4
+Color names: Faded Bone, Faded Green, Faded Sand, Faded Black
+
+Checking images:
+❌ Missing main image: /images/modern-arab-premium-tee-1/faded-sand-main.jpg (Faded Sand)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-1/faded-sand-lifestyle-1.jpg (Faded Sand)
+❌ 2 images missing
+
+Color details:
+  Faded Bone:
+    - Hex: #F5F5DC
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Green:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Sand:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Premium Tee ---
+File: modern-arab-premium-tee.json
+Slug: modern-arab-premium-tee
+Collection: Upperwear
+Price: $45.00
+Colors: 4
+Color names: Faded Black, Faded Sand, Faded Green, Faded Bone
+
+Checking images:
+❌ Missing main image: /images/modern-arab-premium-tee/faded-sand-main.jpg (Faded Sand)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee/faded-sand-lifestyle-1.jpg (Faded Sand)
+❌ 2 images missing
+
+Color details:
+  Faded Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Sand:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Green:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+  Faded Bone:
+    - Hex: #F5F5DC
+    - Main image: Yes
+    - Back image: Yes
+    - Lifestyle images: 1
+    - Variants: 6
+    - Sizes: S, M, L, XL, 2XL, 3XL
+
+--- Testing: Modern Arab Premium Tee (Faded Green) ---
+File: modern-arab-premium-tee-faded-eucalyptus.json
+Slug: modern-arab-premium-tee-faded-eucalyptus
+Collection: Upperwear
+Price: $45.00
+Colors: 6
+Color names: S, M, L, XL, 2XL, 3XL
+
+Checking images:
+❌ Missing main image: /images/modern-arab-premium-tee-faded-eucalyptus/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-eucalyptus/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-eucalyptus/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-eucalyptus/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-eucalyptus/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-eucalyptus/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-eucalyptus/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-eucalyptus/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-eucalyptus/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-eucalyptus/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-eucalyptus/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-eucalyptus/3xl-lifestyle-1.jpg (3XL)
+❌ 12 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Premium Tee (Faded Khaki) ---
+File: modern-arab-premium-tee-faded-khaki.json
+Slug: modern-arab-premium-tee-faded-khaki
+Collection: Upperwear
+Price: $45.00
+Colors: 6
+Color names: S, M, L, XL, 2XL, 3XL
+
+Checking images:
+❌ Missing main image: /images/modern-arab-premium-tee-faded-khaki/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-khaki/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-khaki/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-khaki/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-khaki/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-khaki/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-khaki/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-khaki/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-khaki/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-khaki/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modern-arab-premium-tee-faded-khaki/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modern-arab-premium-tee-faded-khaki/3xl-lifestyle-1.jpg (3XL)
+❌ 12 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Sweatpants ---
+File: modern-arab-sweatpants.json
+Slug: modern-arab-sweatpants
+Collection: Legwear
+Price: $60.00
+Colors: 4
+Color names: Light Green, Light Blue, Light Black, Dark Blue
+
+Checking images:
+❌ Missing main image: /images/modern-arab-sweatpants/light-green-main.jpg (Light Green)
+❌ Missing lifestyle image: /images/modern-arab-sweatpants/light-green-lifestyle-1.jpg (Light Green)
+❌ Missing main image: /images/modern-arab-sweatpants/light-blue-main.jpg (Light Blue)
+❌ Missing lifestyle image: /images/modern-arab-sweatpants/light-blue-lifestyle-1.jpg (Light Blue)
+❌ Missing main image: /images/modern-arab-sweatpants/light-black-main.jpg (Light Black)
+❌ Missing lifestyle image: /images/modern-arab-sweatpants/light-black-lifestyle-1.jpg (Light Black)
+❌ Missing main image: /images/modern-arab-sweatpants/dark-blue-main.jpg (Dark Blue)
+❌ Missing lifestyle image: /images/modern-arab-sweatpants/dark-blue-lifestyle-1.jpg (Dark Blue)
+❌ 8 images missing
+
+Color details:
+  Light Green:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+  Light Blue:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+  Light Black:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+  Dark Blue:
+    - Hex: #00008B
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 5
+    - Sizes: S, M, L, XL, 2XL
+
+--- Testing: Modern Arab Tee ---
+File: modern-arab-tee-black.json
+Slug: modernarab-tee-black
+Collection: Upperwear
+Price: $40.00
+Colors: 7
+Color names: S, M, L, XL, 2XL, 3XL, 4XL
+
+Checking images:
+❌ Missing main image: /images/modernarab-tee-black/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modernarab-tee-black/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modernarab-tee-black/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modernarab-tee-black/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modernarab-tee-black/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modernarab-tee-black/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modernarab-tee-black/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modernarab-tee-black/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modernarab-tee-black/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/3xl-lifestyle-1.jpg (3XL)
+❌ Missing main image: /images/modernarab-tee-black/4xl-main.jpg (4XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/4xl-lifestyle-1.jpg (4XL)
+❌ 14 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  4XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Tee ---
+File: modern-arab-tee-white.json
+Slug: modernarab-tee-white
+Collection: Upperwear
+Price: $40.00
+Colors: 7
+Color names: S, M, L, XL, 2XL, 3XL, 4XL
+
+Checking images:
+❌ Missing main image: /images/modernarab-tee-white/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modernarab-tee-white/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modernarab-tee-white/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modernarab-tee-white/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modernarab-tee-white/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modernarab-tee-white/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modernarab-tee-white/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modernarab-tee-white/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modernarab-tee-white/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/3xl-lifestyle-1.jpg (3XL)
+❌ Missing main image: /images/modernarab-tee-white/4xl-main.jpg (4XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/4xl-lifestyle-1.jpg (4XL)
+❌ 14 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  4XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Tee ---
+File: modernarab-tee-black.json
+Slug: modernarab-tee-black
+Collection: Upperwear
+Price: $40.00
+Colors: 7
+Color names: S, M, L, XL, 2XL, 3XL, 4XL
+
+Checking images:
+❌ Missing main image: /images/modernarab-tee-black/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modernarab-tee-black/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modernarab-tee-black/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modernarab-tee-black/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modernarab-tee-black/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modernarab-tee-black/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modernarab-tee-black/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modernarab-tee-black/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modernarab-tee-black/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/3xl-lifestyle-1.jpg (3XL)
+❌ Missing main image: /images/modernarab-tee-black/4xl-main.jpg (4XL)
+❌ Missing lifestyle image: /images/modernarab-tee-black/4xl-lifestyle-1.jpg (4XL)
+❌ 14 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  4XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+--- Testing: Modern Arab Tee ---
+File: modernarab-tee-white.json
+Slug: modernarab-tee-white
+Collection: Upperwear
+Price: $40.00
+Colors: 7
+Color names: S, M, L, XL, 2XL, 3XL, 4XL
+
+Checking images:
+❌ Missing main image: /images/modernarab-tee-white/s-main.jpg (S)
+❌ Missing lifestyle image: /images/modernarab-tee-white/s-lifestyle-1.jpg (S)
+❌ Missing main image: /images/modernarab-tee-white/m-main.jpg (M)
+❌ Missing lifestyle image: /images/modernarab-tee-white/m-lifestyle-1.jpg (M)
+❌ Missing main image: /images/modernarab-tee-white/l-main.jpg (L)
+❌ Missing lifestyle image: /images/modernarab-tee-white/l-lifestyle-1.jpg (L)
+❌ Missing main image: /images/modernarab-tee-white/xl-main.jpg (XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/xl-lifestyle-1.jpg (XL)
+❌ Missing main image: /images/modernarab-tee-white/2xl-main.jpg (2XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/2xl-lifestyle-1.jpg (2XL)
+❌ Missing main image: /images/modernarab-tee-white/3xl-main.jpg (3XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/3xl-lifestyle-1.jpg (3XL)
+❌ Missing main image: /images/modernarab-tee-white/4xl-main.jpg (4XL)
+❌ Missing lifestyle image: /images/modernarab-tee-white/4xl-lifestyle-1.jpg (4XL)
+❌ 14 images missing
+
+Color details:
+  S:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  M:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  L:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  2XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  3XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+  4XL:
+    - Hex: #808080
+    - Main image: Yes
+    - Back image: No
+    - Lifestyle images: 1
+    - Variants: 1
+
+=== Checking for Duplicate Slugs ===
+❌ Duplicate slug found: "fisherman-beanie" appears 2 times
+❌ Duplicate slug found: "modernarab-crewneck" appears 2 times
+❌ Duplicate slug found: "modernarab-cropped-hoodie" appears 2 times
+❌ Duplicate slug found: "modernarab-tee" appears 2 times
+❌ Duplicate slug found: "modernarab-tee-black" appears 2 times
+❌ Duplicate slug found: "modernarab-tee-white" appears 2 times
+
+=== SUMMARY ===
+Total products: 28
+Total colors: 109
+Total variants: 341
+Total errors: 146
+Total warnings: 0
+
+❌ Found 146 errors. Please fix before proceeding.
+
+=== Products by Collection ===
+
+Headwear:
+  - Modern Arab Beanie
+  - Modern Arab Beanie
+  - Modern Arab Beanie
+  - Modern Arab Beanie
+  - Modern Arab Bucket Hat
+  - Modern Arab Bucket Hat
+  - Modern Arab Cap
+  - Modern Arab Cap
+
+Layers:
+  - Modern Arab Crewneck
+  - Modern Arab Crewneck
+  - Modern Arab Crewneck
+  - Modern Arab Cropped Hoodie
+  - Modern Arab Cropped Hoodie
+  - Modern Arab Hoodie
+  - Modern Arab Hoodie
+
+Upperwear:
+  - Modern Arab Faded Tee
+  - Modern Arab Faded Tee
+  - Modern Arab Faded Tee
+  - Modern Arab Premium Tee
+  - Modern Arab Premium Tee
+  - Modern Arab Premium Tee (Faded Green)
+  - Modern Arab Premium Tee (Faded Khaki)
+  - Modern Arab Tee
+  - Modern Arab Tee
+  - Modern Arab Tee
+  - Modern Arab Tee
+
+Legwear:
+  - Modern Arab Joggers
+  - Modern Arab Sweatpants

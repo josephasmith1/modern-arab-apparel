@@ -1,7 +1,7 @@
 "use client";
 
 import { Dispatch, SetStateAction, useEffect } from 'react';
-import { type Product, type ProductColor } from '@/app/products/data';
+import { type Product, type ProductColor } from '@/data/products/sync';
 import { type CartItem } from '@/app/products/types';
 import AddToCartButton from '@/components/cart/AddToCartButton';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -64,24 +64,30 @@ export default function ProductInfo({
       )}
       <div className="prose prose-lg max-w-none text-gray-600 mb-8" dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br />') }}></div>
 
-      {/* Color Selector */}
-      <div className="mb-8">
-        <h3 className="text-lg font-semibold mb-4 text-black">Color: <span className="font-normal text-gray-600">{selectedColor.name}</span></h3>
-        <div className="flex space-x-3">
-          {product.colors.map((color) => (
-            <button
-              key={color.name}
-              onClick={() => onColorSelect(color)}
-              className={`w-10 h-10 rounded-full border-2 transition-transform transform hover:scale-110 ${selectedColor.name === color.name ? 'border-black' : 'border-gray-300'}`}
-              style={{ backgroundColor: (extractedProductColors && extractedProductColors[color.name]) || color.hex || '#ccc' }}
-            >
-              {selectedColor.name === color.name && (
-                <div className="w-full h-full rounded-full border-2 border-white"></div>
-              )}
-            </button>
-          ))}
+      {/* Color Selector - Only show if more than one color */}
+      {product.colors.length > 1 ? (
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold mb-4 text-black">Color: <span className="font-normal text-gray-600">{selectedColor.name}</span></h3>
+          <div className="flex space-x-3">
+            {product.colors.map((color) => (
+              <button
+                key={color.name}
+                onClick={() => onColorSelect(color)}
+                className={`w-10 h-10 rounded-full border-2 transition-transform transform hover:scale-110 ${selectedColor.name === color.name ? 'border-black' : 'border-gray-300'}`}
+                style={{ backgroundColor: (extractedProductColors && extractedProductColors[color.name]) || color.hex || '#ccc' }}
+              >
+                {selectedColor.name === color.name && (
+                  <div className="w-full h-full rounded-full border-2 border-white"></div>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="mb-8">
+          <h3 className="text-lg font-semibold text-black">Color: <span className="font-normal text-gray-600">{selectedColor.name}</span></h3>
+        </div>
+      )}
 
       {/* Size Selector */}
       <div className="mb-8">

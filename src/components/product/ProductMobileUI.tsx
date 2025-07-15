@@ -3,7 +3,7 @@
 import { useState, Dispatch, SetStateAction } from 'react';
 import { motion, AnimatePresence, MotionValue } from 'framer-motion';
 import AddToCartButton from '@/components/cart/AddToCartButton';
-import { type Product, type ProductColor } from '@/app/products/data';
+import { type Product, type ProductColor } from '@/data/products/sync';
 import { type CartItem } from '@/app/products/types';
 
 

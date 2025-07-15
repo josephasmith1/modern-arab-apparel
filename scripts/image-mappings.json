@@ -1,0 +1,439 @@
+{
+  "fisherman-beanie": {
+    "Blue": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/fisherman-beanie/blue-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-beanie-1": {
+    "Beige": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-beanie-1/beige-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-bucket-hat": {
+    "Blue": {
+      "main": "/images/modern-arab-bucket-hat/blue-main.jpg",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-bucket-hat/blue-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Black": {
+      "main": "/images/modern-arab-bucket-hat/faded-black-main.jpg",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-bucket-hat/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Khaki": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-bucket-hat/faded-khaki-lifestyle-1.jpg"
+      ]
+    },
+    "Olive": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-bucket-hat/olive-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-bucket-hat-1": {
+    "White": {
+      "main": "/images/modern-arab-bucket-hat-1/white-main.jpg",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-bucket-hat-1/white-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-cap": {
+    "Blue": {
+      "main": "/images/modern-arab-cap/blue-main.jpg",
+      "back": "/images/modern-arab-cap/blue-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-cap/blue-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Black": {
+      "main": "/images/modern-arab-cap/faded-black-main.jpg",
+      "back": "/images/modern-arab-cap/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-cap/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Khaki": {
+      "main": "/images/modern-arab-cap/faded-khaki-main.jpg",
+      "back": "/images/modern-arab-cap/faded-khaki-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-cap/faded-khaki-lifestyle-1.jpg"
+      ]
+    },
+    "Green": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/modern-arab-cap/green-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-cap-1": {
+    "White": {
+      "main": "/images/modern-arab-cap-1/white-main.jpg",
+      "back": "/images/modern-arab-cap-1/white-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-cap-1/white-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-faded-tee-black-print": {
+    "Faded Black": {
+      "main": "/images/modern-arab-faded-tee-black-print/faded-black-main.jpg",
+      "back": "/images/modern-arab-faded-tee-black-print/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-faded-tee-black-print/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Bone": {
+      "main": "/images/modern-arab-faded-tee-black-print/faded-bone-main.jpg",
+      "back": "/images/modern-arab-faded-tee-black-print/faded-bone-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-faded-tee-black-print/faded-bone-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Green": {
+      "main": "/images/modern-arab-faded-tee-black-print/faded-green-main.jpg",
+      "back": "/images/modern-arab-faded-tee-black-print/faded-green-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-faded-tee-black-print/faded-green-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Khaki": {
+      "main": "/images/modern-arab-faded-tee-black-print/faded-khaki-main.jpg",
+      "back": "/images/modern-arab-faded-tee-black-print/faded-khaki-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-faded-tee-black-print/faded-khaki-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-hoodie": {
+    "Blue": {
+      "main": "/images/modern-arab-hoodie/blue-main.jpg",
+      "back": "/images/modern-arab-hoodie/blue-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-hoodie/blue-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Bone": {
+      "main": "/images/modern-arab-hoodie/faded-bone-main.jpg",
+      "back": "/images/modern-arab-hoodie/faded-bone-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-hoodie/faded-bone-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-joggers": {
+    "Faded Black": {
+      "main": "/images/modern-arab-joggers/faded-black-main.jpg",
+      "back": "/images/modern-arab-joggers/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-joggers/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Green": {
+      "main": "/images/modern-arab-joggers/green-main.jpg",
+      "back": "/images/modern-arab-joggers/green-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-joggers/green-lifestyle-1.jpg"
+      ]
+    },
+    "Maroon": {
+      "main": "/images/modern-arab-joggers/maroon-main.jpg",
+      "back": "/images/modern-arab-joggers/maroon-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-joggers/maroon-lifestyle-1.jpg"
+      ]
+    },
+    "White": {
+      "main": "/images/modern-arab-joggers/white-main.jpg",
+      "back": "/images/modern-arab-joggers/white-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-joggers/white-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-premium-tee": {
+    "Faded Black": {
+      "main": "/images/modern-arab-premium-tee/faded-black-main.jpg",
+      "back": "/images/modern-arab-premium-tee/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Bone": {
+      "main": "/images/modern-arab-premium-tee/faded-bone-main.jpg",
+      "back": "/images/modern-arab-premium-tee/faded-bone-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee/faded-bone-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Green": {
+      "main": "/images/modern-arab-premium-tee/faded-green-main.jpg",
+      "back": "/images/modern-arab-premium-tee/faded-green-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee/faded-green-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Khaki": {
+      "main": "/images/modern-arab-premium-tee/faded-khaki-main.jpg",
+      "back": "/images/modern-arab-premium-tee/faded-khaki-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee/faded-khaki-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-premium-tee-1": {
+    "Faded Black": {
+      "main": "/images/modern-arab-premium-tee-1/faded-black-main.jpg",
+      "back": "/images/modern-arab-premium-tee-1/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee-1/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Bone": {
+      "main": "/images/modern-arab-premium-tee-1/faded-bone-main.jpg",
+      "back": "/images/modern-arab-premium-tee-1/faded-bone-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee-1/faded-bone-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Green": {
+      "main": "/images/modern-arab-premium-tee-1/faded-green-main.jpg",
+      "back": "/images/modern-arab-premium-tee-1/faded-green-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee-1/faded-green-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Khaki": {
+      "main": "/images/modern-arab-premium-tee-1/faded-khaki-main.jpg",
+      "back": "/images/modern-arab-premium-tee-1/faded-khaki-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee-1/faded-khaki-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-premium-tee-faded-eucalyptus": {
+    "Faded Green": {
+      "main": "/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-main.jpg",
+      "back": "/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-premium-tee-faded-khaki": {
+    "Faded Khaki": {
+      "main": "/images/modern-arab-premium-tee-faded-khaki/faded-khaki-main.jpg",
+      "back": "/images/modern-arab-premium-tee-faded-khaki/faded-khaki-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-premium-tee-faded-khaki/faded-khaki-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modern-arab-sweatpants": {
+    "Blue": {
+      "main": "/images/modern-arab-sweatpants/blue-main.jpg",
+      "back": "/images/modern-arab-sweatpants/blue-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-sweatpants/blue-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Black": {
+      "main": "/images/modern-arab-sweatpants/faded-black-main.jpg",
+      "back": "/images/modern-arab-sweatpants/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-sweatpants/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Green": {
+      "main": "/images/modern-arab-sweatpants/green-main.jpg",
+      "back": "/images/modern-arab-sweatpants/green-back.jpg",
+      "lifestyle": [
+        "/images/modern-arab-sweatpants/green-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modernarab-beanie": {
+    "Faded Black": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/modernarab-beanie/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Olive": {
+      "main": "",
+      "back": "",
+      "lifestyle": [
+        "/images/modernarab-beanie/olive-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modernarab-crewneck": {
+    "Faded Black": {
+      "main": "/images/modernarab-crewneck/faded-black-main.jpg",
+      "back": "/images/modernarab-crewneck/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-crewneck/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Green": {
+      "main": "/images/modernarab-crewneck/green-main.jpg",
+      "back": "/images/modernarab-crewneck/green-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-crewneck/green-lifestyle-1.jpg"
+      ]
+    },
+    "White": {
+      "main": "/images/modernarab-crewneck/white-main.jpg",
+      "back": "/images/modernarab-crewneck/white-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-crewneck/white-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modernarab-crewneck-sand": {
+    "Faded Bone": {
+      "main": "/images/modernarab-crewneck-sand/faded-bone-main.jpg",
+      "back": "/images/modernarab-crewneck-sand/faded-bone-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-crewneck-sand/faded-bone-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modernarab-cropped-hoodie": {
+    "Black": {
+      "main": "/images/modernarab-cropped-hoodie/black-main.jpg",
+      "back": "/images/modernarab-cropped-hoodie/black-back.jpg",
+      "lifestyle": []
+    },
+    "Faded Black": {
+      "main": "/images/modernarab-cropped-hoodie/faded-black-main.jpg",
+      "back": "/images/modernarab-cropped-hoodie/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-cropped-hoodie/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Green": {
+      "main": "/images/modernarab-cropped-hoodie/green-main.jpg",
+      "back": "/images/modernarab-cropped-hoodie/green-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-cropped-hoodie/green-lifestyle-1.jpg"
+      ]
+    },
+    "Lifestyle": {
+      "main": "",
+      "back": "",
+      "lifestyle": []
+    },
+    "Olive Green": {
+      "main": "/images/modernarab-cropped-hoodie/olive-green-main.jpg",
+      "back": "/images/modernarab-cropped-hoodie/olive-green-back.jpg",
+      "lifestyle": []
+    }
+  },
+  "modernarab-hoodie": {
+    "Faded Black": {
+      "main": "/images/modernarab-hoodie/faded-black-main.jpg",
+      "back": "/images/modernarab-hoodie/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-hoodie/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Green": {
+      "main": "/images/modernarab-hoodie/green-main.jpg",
+      "back": "/images/modernarab-hoodie/green-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-hoodie/green-lifestyle-1.jpg"
+      ]
+    },
+    "Maroon": {
+      "main": "/images/modernarab-hoodie/maroon-main.jpg",
+      "back": "/images/modernarab-hoodie/maroon-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-hoodie/maroon-lifestyle-1.jpg"
+      ]
+    },
+    "White": {
+      "main": "/images/modernarab-hoodie/white-main.jpg",
+      "back": "/images/modernarab-hoodie/white-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-hoodie/white-lifestyle-1.jpg"
+      ]
+    }
+  },
+  "modernarab-tee": {
+    "Faded Black": {
+      "main": "/images/modernarab-tee/faded-black-main.jpg",
+      "back": "/images/modernarab-tee/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-tee/faded-black-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Bone": {
+      "main": "/images/modernarab-tee/faded-bone-main.jpg",
+      "back": "/images/modernarab-tee/faded-bone-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-tee/faded-bone-lifestyle-1.jpg"
+      ]
+    },
+    "Faded": {
+      "main": "",
+      "back": "",
+      "lifestyle": []
+    },
+    "Faded Green": {
+      "main": "/images/modernarab-tee/faded-green-main.jpg",
+      "back": "/images/modernarab-tee/faded-green-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-tee/faded-green-lifestyle-1.jpg"
+      ]
+    },
+    "Faded Khaki": {
+      "main": "/images/modernarab-tee/faded-khaki-main.jpg",
+      "back": "/images/modernarab-tee/faded-khaki-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-tee/faded-khaki-lifestyle-1.jpg",
+        "/images/modernarab-tee/faded-khaki-lifestyle-1.png"
+      ]
+    }
+  },
+  "modernarab-tee-black": {
+    "Faded Black": {
+      "main": "/images/modernarab-tee-black/faded-black-main.jpg",
+      "back": "/images/modernarab-tee-black/faded-black-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-tee-black/faded-black-lifestyle-1.jpg",
+        "/images/modernarab-tee-black/faded-black-lifestyle-1.png"
+      ]
+    }
+  },
+  "modernarab-tee-white": {
+    "White": {
+      "main": "/images/modernarab-tee-white/white-main.jpg",
+      "back": "/images/modernarab-tee-white/white-back.jpg",
+      "lifestyle": [
+        "/images/modernarab-tee-white/white-lifestyle-1.jpg"
+      ]
+    }
+  }
+}
