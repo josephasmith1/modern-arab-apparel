@@ -10,7 +10,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "dev:watch": "nodemon",
-    "regenerate-products": "node scripts/regenerate-products-data.js"
+    "regenerate-products": "node scripts/regenerate-products-data.js",
+    "prebuild:check": "node scripts/prebuild-check.js",
+    "build:safe": "npm run prebuild:check && npm run build"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
