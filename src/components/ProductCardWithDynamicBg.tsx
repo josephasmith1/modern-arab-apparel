@@ -39,14 +39,14 @@ export default function ProductCardWithDynamicBg({ product, index }: ProductCard
           
           // Try to find an edge color by getting colors from the palette
           // Often edge colors are lighter/neutral, so we'll pick the lightest color
-          let edgeColor = dominantColor;
+          let edgeColor: number[] = dominantColor;
           let maxBrightness = 0;
           
           palette.forEach((color: number[]) => {
             const brightness = (color[0] * 299 + color[1] * 587 + color[2] * 114) / 1000;
             if (brightness > maxBrightness && brightness > 200) { // Prefer lighter colors
               maxBrightness = brightness;
-              edgeColor = color;
+              edgeColor = [...color]; // Create a copy of the array
             }
           });
           
