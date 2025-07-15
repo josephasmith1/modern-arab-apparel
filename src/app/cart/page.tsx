@@ -130,7 +130,7 @@ export default function CartPage() {
           </motion.div>
           <h2 className="text-3xl font-light text-black mb-4 font-bodoni">Your cart is empty</h2>
           <p className="text-gray-500 mb-8 text-center max-w-md font-barlow-condensed">
-            Looks like you haven't added anything to your cart yet. 
+            Looks like you haven&apos;t added anything to your cart yet. 
             Discover our collection of modern Arabic apparel.
           </p>
           <Link href="/products">

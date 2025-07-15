@@ -148,7 +148,7 @@ export default function FAQsPage() {
           <div className="bg-white p-8 rounded shadow-sm max-w-4xl mx-auto">
             <div className="mb-6">
               <h3 className="text-lg font-light font-bodoni text-black mb-2">Browse by Category</h3>
-              <p className="text-sm text-gray-600 font-barlow-condensed">Filter questions by topic to find what you're looking for</p>
+              <p className="text-sm text-gray-600 font-barlow-condensed">Filter questions by topic to find what you&apos;re looking for</p>
             </div>
             <div className="flex flex-wrap gap-3">
               {categories.map((category, index) => (
@@ -263,7 +263,7 @@ export default function FAQsPage() {
               </div>
               <h2 className="text-3xl md:text-4xl font-light font-bodoni mb-6 text-white">Still Have Questions?</h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed font-barlow-condensed">
-                Can't find the answer you're looking for? Our team is here to help with any 
+                Can&apos;t find the answer you&apos;re looking for? Our team is here to help with any 
                 questions about our products, culture, or brand story.
               </p>
               <div className="flex flex-col lg:flex-row gap-6 justify-center max-w-md mx-auto lg:max-w-none">
