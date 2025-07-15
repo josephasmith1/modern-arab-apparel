@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import MiniCart from '@/components/cart/MiniCart';
-import ArabicHandwritingText from '@/components/ArabicHandwritingText';
+
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
@@ -14,14 +14,9 @@ const Header = () => {
     <>
       <header className="h-16 px-8 flex items-center justify-between backdrop-blur-sm shadow-2xl border-b border-gray-300 sticky top-0 z-50" style={{ backgroundColor: 'rgba(240, 237, 236, 0.95)' }}>
     <div className="flex items-center">
-      <ArabicHandwritingText 
-        text="ألا تخافون من الله"
-        className="text-lg text-gray-700 font-normal font-arabic"
-        duration={2.5}
-        delay={0.5}
-        fontSize={18}
-        strokeColor="rgb(55, 65, 81)"
-      />
+      <div className="text-lg text-gray-700 font-normal font-arabic" dir="rtl">
+        ألا تخافون من الله
+      </div>
     </div>
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <Link href="/" className="flex items-center hover:opacity-80 transition-opacity pointer-events-auto">

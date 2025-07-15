@@ -24,7 +24,7 @@
 ### Components (`/src/components`)
 - `Header.tsx` - Navigation header
 - `Footer.tsx` - Site footer
-- `ArabicWritingText.tsx` - Arabic text animation
+- `ArabicHandwritingText.tsx` - Arabic handwriting animation
 - `ProductCard*.tsx` - Various product card designs
 - `/cart` - Cart-related components
 - `/product` - Product-specific components

@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 import { collections } from '@/data/collections';
 import Footer from '@/components/Footer';
-import ArabicWritingText from '@/components/ArabicWritingText';
+
 
 const heroImages = [
   '/images/hero-1.jpg',
@@ -200,17 +200,13 @@ export default function Home() {
                   <span className="italic">Arab</span>
                 </h1>
                 <motion.div
-                  className="text-xl md:text-2xl text-white/90 font-barlow-condensed max-w-lg mb-6"
+                  className="text-xl md:text-2xl text-white/90 max-w-lg mb-6 font-arabic"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
+                  dir="rtl"
                 >
-                  <ArabicWritingText
-                    text="ألآ تخافون من الله"
-                    className="text-white"
-                    duration={3}
-                    delay={1.5}
-                  />
+                  ألآ تخافون من الله
                 </motion.div>
                 <motion.p
                   className="text-xl md:text-2xl text-white/90 font-barlow-condensed max-w-lg"
