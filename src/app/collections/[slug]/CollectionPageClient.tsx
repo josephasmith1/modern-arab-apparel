@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import ProductCardSolidEdge from '@/components/ProductCardSolidEdge';
+import ProductCardSimple from '@/components/ProductCardSimple';
 
 export default function CollectionPageClient({ collection, collectionProducts }: any) {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -56,7 +56,7 @@ export default function CollectionPageClient({ collection, collectionProducts }:
         </motion.nav>
 
         {/* Hero Section - 2 Column Layout */}
-        <div ref={heroRef} className="relative h-screen overflow-hidden">
+        <div ref={heroRef} className="relative h-screen overflow-hidden" style={{ position: 'relative' }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
             {/* Left Column - Full Height Image with Parallax */}
             <motion.div 
@@ -158,7 +158,7 @@ export default function CollectionPageClient({ collection, collectionProducts }:
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
               {collectionProducts.map((product: any, index: number) => (
-                <ProductCardSolidEdge 
+                <ProductCardSimple 
                   key={product.slug}
                   product={product}
                   index={index}

@@ -1,125 +1,130 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useColorExtractor } from '@/hooks/useColorExtractor';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import { Product, Color } from '@/types';
 
 interface ProductCardProps {
-  product: any;
+  product: Product;
   index: number;
 }
 
+// Global queue for managing concurrent color extractions
+let extractionQueue: Promise<void> = Promise.resolve();
+let activeExtractions = 0;
+const MAX_CONCURRENT_EXTRACTIONS = 3;
+
 export default function ProductCardSolidEdge({ product, index }: ProductCardProps) {
   const [bgColor, setBgColor] = useState('#f5f5f4'); // Default beige
+  const [extractedColors, setExtractedColors] = useState<{ [key: string]: string }>({});
+  const [isExtracting, setIsExtracting] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout>();
+  const abortControllerRef = useRef<AbortController>();
+  const { extractImageColor, extractBackgroundColor } = useColorExtractor();
+  const { targetRef, isIntersecting } = useIntersectionObserver({
+    threshold: 0.1,
+    rootMargin: '100px',
+    triggerOnce: true
+  });
 
   useEffect(() => {
-    const extractEdgeColor = () => {
-      if (!product.colors[0]?.images?.main) return;
+    // Extract background color only when visible and not too many extractions are happening
+    if (isIntersecting && product.colors && product.colors.length > 0 && product.colors[0]?.images?.main) {
+      // Skip background extraction if we already have many active extractions
+      if (activeExtractions < MAX_CONCURRENT_EXTRACTIONS) {
+        extractBackgroundColor(product.colors[0].images.main, (extractedBgColor: string) => {
+          setBgColor(extractedBgColor);
+        });
+      }
+    }
+  }, [product, extractBackgroundColor, isIntersecting]);
 
-      const img = new window.Image();
-      img.crossOrigin = 'anonymous';
+  // Extract colors from images for accurate swatches only when visible
+  useEffect(() => {
+    if (isIntersecting && product.colors && product.colors.length > 0) {
+      // Create new abort controller for this extraction
+      abortControllerRef.current = new AbortController();
+      const currentAbortController = abortControllerRef.current;
       
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        // Use smaller size for faster processing
-        const size = 100;
-        canvas.width = size;
-        canvas.height = size;
+      // Check if we need to extract any colors
+      const colorsToExtract = product.colors.filter((color: Color) => 
+        color.images?.main && !extractedColors[color.name]
+      );
+      
+      if (colorsToExtract.length === 0) {
+        setIsExtracting(false);
+        return;
+      }
+      
+      // Only extract colors for the first 3 color variants to improve performance
+      const limitedColors = colorsToExtract.slice(0, 3);
+      
+      setIsExtracting(true);
+      
+      // Queue the extraction to limit concurrent operations
+      extractionQueue = extractionQueue.then(async () => {
+        // Check if this extraction was aborted
+        if (currentAbortController.signal.aborted) return;
         
-        // Draw scaled image
-        ctx.drawImage(img, 0, 0, size, size);
+        // Wait if too many extractions are active
+        while (activeExtractions >= MAX_CONCURRENT_EXTRACTIONS) {
+          await new Promise(resolve => setTimeout(resolve, 50));
+          if (currentAbortController.signal.aborted) return;
+        }
         
-        // Sample pixels from all edges
-        const edgePixels: number[][] = [];
-        const sampleDepth = 5; // How many pixels deep to sample
+        activeExtractions++;
         
-        // Top edge
-        for (let x = 0; x < size; x += 2) {
-          for (let y = 0; y < sampleDepth; y++) {
-            try {
-              const pixel = ctx.getImageData(x, y, 1, 1).data;
-              if (pixel[3] > 0) { // Only if not transparent
-                edgePixels.push([pixel[0], pixel[1], pixel[2]]);
-              }
-            } catch (e) {}
+        try {
+          // Extract colors with staggered delays
+          for (let i = 0; i < limitedColors.length; i++) {
+            if (currentAbortController.signal.aborted) break;
+            
+            const color = limitedColors[i];
+            // Add delay between extractions to prevent blocking
+            if (i > 0) {
+              await new Promise(resolve => setTimeout(resolve, 30));
+            }
+            
+            if (!currentAbortController.signal.aborted) {
+              await new Promise<void>((resolve) => {
+                extractImageColor(color.images.main, (extractedColor: string) => {
+                  if (!currentAbortController.signal.aborted) {
+                    setExtractedColors((prev) => ({ ...prev, [color.name]: extractedColor }));
+                  }
+                  resolve();
+                });
+              });
+            }
+          }
+        } finally {
+          activeExtractions--;
+          if (!currentAbortController.signal.aborted) {
+            setIsExtracting(false);
           }
         }
-        
-        // Bottom edge
-        for (let x = 0; x < size; x += 2) {
-          for (let y = size - sampleDepth; y < size; y++) {
-            try {
-              const pixel = ctx.getImageData(x, y, 1, 1).data;
-              if (pixel[3] > 0) {
-                edgePixels.push([pixel[0], pixel[1], pixel[2]]);
-              }
-            } catch (e) {}
-          }
-        }
-        
-        // Left edge
-        for (let y = 0; y < size; y += 2) {
-          for (let x = 0; x < sampleDepth; x++) {
-            try {
-              const pixel = ctx.getImageData(x, y, 1, 1).data;
-              if (pixel[3] > 0) {
-                edgePixels.push([pixel[0], pixel[1], pixel[2]]);
-              }
-            } catch (e) {}
-          }
-        }
-        
-        // Right edge
-        for (let y = 0; y < size; y += 2) {
-          for (let x = size - sampleDepth; x < size; x++) {
-            try {
-              const pixel = ctx.getImageData(x, y, 1, 1).data;
-              if (pixel[3] > 0) {
-                edgePixels.push([pixel[0], pixel[1], pixel[2]]);
-              }
-            } catch (e) {}
-          }
-        }
-        
-        if (edgePixels.length > 0) {
-          // Calculate average color
-          let r = 0, g = 0, b = 0;
-          edgePixels.forEach(pixel => {
-            r += pixel[0];
-            g += pixel[1];
-            b += pixel[2];
-          });
-          
-          r = Math.round(r / edgePixels.length);
-          g = Math.round(g / edgePixels.length);
-          b = Math.round(b / edgePixels.length);
-          
-          // Lighten the color for a softer background
-          const lighten = (value: number) => Math.min(255, Math.round(value + (255 - value) * 0.5));
-          r = lighten(r);
-          g = lighten(g);
-          b = lighten(b);
-          
-          setBgColor(`rgb(${r}, ${g}, ${b})`);
-        }
-      };
-
-      img.onerror = () => {
-        console.error('Error loading image:', product.colors[0].images.main);
-      };
-
-      img.src = product.colors[0].images.main;
+      });
+    }
+    
+    // Cleanup on unmount or when dependencies change
+    return () => {
+      // Abort any ongoing extractions
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setIsExtracting(false);
     };
-
-    extractEdgeColor();
-  }, [product]);
+  }, [product.slug, extractImageColor, isIntersecting]); // Use product.slug instead of product to avoid infinite loops
 
   return (
     <motion.div 
+      ref={targetRef}
       variants={{
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0 }
@@ -127,7 +132,7 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
       transition={{ duration: 0.5 }}
       className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
     >
-      <Link href={`/products/${product.slug}`}>
+                  <Link href={`/products/${product.slug}`}>
         <div 
           className="relative h-96 overflow-hidden transition-colors duration-700"
           style={{ backgroundColor: bgColor }}
@@ -151,7 +156,7 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
             <div className="flex space-x-2">
               {(() => {
                 // Filter out duplicate colors by hex value
-                const uniqueColors = product.colors.filter((color: any, index: number, self: any[]) => 
+                const uniqueColors = product.colors.filter((color: Color, index: number, self: Color[]) => 
                   self.findIndex(c => c.hex === color.hex) === index
                 );
                 
@@ -161,13 +166,20 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
                   </span>
                 ) : (
                   <>
-                    {uniqueColors.slice(0, 5).map((color: any) => (
-                      <span
+                    {uniqueColors.slice(0, 5).map((color: Color, colorIndex: number) => (
+                      <div
                         key={color.hex}
-                        className="block w-5 h-5 rounded-full border border-gray-300"
-                        style={{ backgroundColor: color.hex }}
+                        className="relative w-5 h-5 rounded-full border border-gray-300 transition-all duration-300"
                         title={color.name}
-                      />
+                      >
+                        <span
+                          className="absolute inset-0 rounded-full transition-colors duration-500"
+                          style={{ 
+                            backgroundColor: colorIndex < 3 ? (extractedColors[color.name] || color.hex) : color.hex 
+                          }}
+                        />
+                        {/* Only extract colors for first 3 swatches for performance */}
+                      </div>
                     ))}
                     {uniqueColors.length > 5 && (
                       <span className="text-xs text-gray-500">+{uniqueColors.length - 5}</span>
