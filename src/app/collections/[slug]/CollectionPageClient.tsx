@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import ProductCardSimple from '@/components/ProductCardSimple';
-import { Product } from '@/types';
+import { Product } from '@/data/products/types';
 
 interface CollectionPageClientProps {
   collection: {

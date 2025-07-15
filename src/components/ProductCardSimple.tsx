@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useColorExtractor } from '@/hooks/useColorExtractor';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
-import { Product, Color } from '@/types';
+import { Product, ProductColor as Color } from '@/data/products/types';
 
 interface ProductCardProps {
   product: Product;
