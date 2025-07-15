@@ -132,7 +132,7 @@ export default function ProductInfo({
                 name: product.name,
                 vendor: product.vendor,
                 tags: product.tags,
-                price: variant ? variant.price : 0,
+                price: variant ? `$${variant.price.toFixed(2)}` : '$0.00',
                 image: selectedColor.images.main,
                 color: selectedColor.name,
                 size: selectedSize,
