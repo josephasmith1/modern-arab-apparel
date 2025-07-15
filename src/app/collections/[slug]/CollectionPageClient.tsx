@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import ProductCardSimple from '@/components/ProductCardSimple';
+import { Product } from '@/types';
 
 interface CollectionPageClientProps {
   collection: {
@@ -14,20 +15,7 @@ interface CollectionPageClientProps {
     description: string;
     image: string;
   };
-  collectionProducts: Array<{
-    slug: string;
-    name: string;
-    description: string;
-    price: string;
-    originalPrice?: string;
-    colors: Array<{
-      name: string;
-      hex: string;
-      images: {
-        main: string;
-      };
-    }>;
-  }>;
+  collectionProducts: Product[];
 }
 
 export default function CollectionPageClient({ collection, collectionProducts }: CollectionPageClientProps) {
