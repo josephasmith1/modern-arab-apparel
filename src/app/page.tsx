@@ -291,12 +291,9 @@ export default function Home() {
                   className="text-6xl md:text-8xl lg:text-9xl font-light text-white leading-none font-bodoni mb-6"
                   style={{
                     textShadow: `
-                      1px 1px 0 rgba(0,0,0,0.4),
-                      2px 2px 0 rgba(0,0,0,0.35),
-                      3px 3px 0 rgba(0,0,0,0.3),
-                      4px 4px 0 rgba(0,0,0,0.25),
-                      5px 5px 0 rgba(0,0,0,0.2),
-                      6px 6px 3px rgba(0,0,0,0.15)
+                      1px 1px 0 rgba(0,0,0,0.25),
+                      2px 2px 0 rgba(0,0,0,0.2),
+                      3px 3px 2px rgba(0,0,0,0.15)
                     `
                   }}
                 >

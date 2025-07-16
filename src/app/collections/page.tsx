@@ -213,8 +213,7 @@ export default async function CollectionsPage() {
                       {collection.description}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500 font-barlow-condensed">Updated {new Date(collection.lastmod).toLocaleDateString()}</span>
+                    <div className="flex items-center justify-end">
                       <div className="flex items-center text-black group-hover:text-gray-700 transition-colors">
                         <span className="text-sm font-medium mr-2">Explore</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -350,8 +349,7 @@ export default async function CollectionsPage() {
                       {collection.description}
                     </p>
                     
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-500 font-barlow-condensed">Updated {new Date(collection.lastmod).toLocaleDateString()}</span>
+                    <div className="flex items-center justify-end">
                       <div className="flex items-center text-black group-hover:text-gray-700 transition-colors">
                         <span className="text-sm font-medium mr-2">Explore</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

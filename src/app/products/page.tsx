@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
@@ -8,6 +7,8 @@ import { motion } from 'framer-motion';
 import { products as allProducts, Product } from '@/data/products/sync';
 import { collections, getCollectionBySlug } from '@/data/collections';
 import Footer from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { ProductCardSimple } from '@/components/ProductCardSimple';
 
 function ProductsContent() {
   const searchParams = useSearchParams();
@@ -49,6 +50,7 @@ function ProductsContent() {
 
   return (
     <div className="bg-[#f0edec] min-h-screen">
+      <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -89,36 +91,13 @@ function ProductsContent() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product: Product) => (
-            <motion.div
+          {filteredProducts.map((product: Product, index: number) => (
+            <ProductCardSimple
               key={product.slug}
-              className="group bg-white rounded-lg shadow-lg overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              whileHover={{ y: -5, boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' }}
-            >
-              <Link href={`/products/${product.slug}`}>
-                <div className="relative h-80 overflow-hidden">
-                  <Image
-                    src={product.colors[0].images.main}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-contain object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {product.tags.includes('New Arrival') && (
-                    <div className="absolute top-4 left-4 bg-black text-white text-xs font-semibold px-3 py-1 rounded-full">
-                      NEW
-                    </div>
-                  )}
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-lg font-light text-black font-bodoni mb-2 truncate">{product.name}</h3>
-                  <p className="text-gray-600 font-barlow-condensed">{product.price}</p>
-                </div>
-              </Link>
-            </motion.div>
+              product={product}
+              index={index}
+              priority={index < 6}
+            />
           ))}
         </div>
 
