@@ -4,18 +4,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import MiniCart from '@/components/cart/MiniCart';
+import { useState } from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const { itemCount, openCart, isOpen, closeCart, items, updateQuantity, removeItem } = useCart();
+  const [isArabic, setIsArabic] = useState(true);
 
   return (
     <>
       <header className="h-16 px-8 flex items-center justify-between backdrop-blur-sm shadow-2xl border-b border-gray-300 sticky top-0 z-50" style={{ backgroundColor: 'rgba(240, 237, 236, 0.95)' }}>
     <div className="flex items-center">
-      <div className="text-lg text-gray-700 font-normal font-arabic" dir="rtl">
-        ألا تخافون من الله
+      <div 
+        className={`cursor-pointer transition-colors ${isArabic ? "text-lg text-gray-700 font-normal font-arabic hover:text-gray-900" : "text-black hover:text-gray-600 font-medium font-my-soul"}`}
+        style={!isArabic ? { fontSize: '30px' } : {}}
+        dir={isArabic ? "rtl" : "ltr"}
+        onClick={() => setIsArabic(!isArabic)}
+      >
+        {isArabic ? "ألا تخافون من الله" : "Do You Not Fear Allah?"}
       </div>
     </div>
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
