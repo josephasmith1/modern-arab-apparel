@@ -94,7 +94,6 @@ function ProductsContent() {
               key={product.slug}
               product={product}
               index={index}
-              priority={index < 6}
             />
           ))}
         </div>
