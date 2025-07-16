@@ -158,7 +158,7 @@ export default function About() {
 
       {/* About Modern Arab Section */}
       <motion.section 
-        className="py-20 relative overflow-hidden" 
+        className="py-32 relative overflow-hidden" 
         style={{ backgroundColor: '#f0edec' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -170,7 +170,7 @@ export default function About() {
           <div className="absolute top-20 left-10 w-64 h-64 bg-black rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-48 h-48 bg-black rounded-full blur-3xl"></div>
         </div>
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.h2 
             className="text-4xl md:text-5xl font-light mb-6 text-center font-bodoni uppercase text-black tracking-wider"
             initial={{ opacity: 0, y: 50 }}
@@ -190,9 +190,9 @@ export default function About() {
             What does Modern Arab stand for?
           </motion.p>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
             <motion.div 
-              className="lg:col-span-2"
+              className="order-2 lg:order-1"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.1, delay: 0.05 }}
@@ -227,7 +227,7 @@ export default function About() {
               </motion.p>
             </motion.div>
             <motion.div 
-              className="relative h-[800px] lg:h-[900px] rounded-2xl shadow-2xl overflow-hidden group backdrop-blur-sm border border-white/10"
+              className="order-1 lg:order-2 relative h-[600px] lg:h-[800px] rounded-2xl shadow-2xl overflow-hidden group backdrop-blur-sm border border-white/10"
               style={{ backgroundColor: imageBackgroundColors['/about-images/91E379F9-711A-4065-AE1F-92F98E3362E7-2_750x.webp'] || 'rgb(240, 237, 236)' }}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -264,17 +264,17 @@ export default function About() {
 
       {/* Our Mission Section */}
       <motion.section 
-        className="py-20" 
+        className="py-32" 
         style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.25 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div 
-              className="relative h-[800px] lg:h-[900px] rounded-lg shadow-2xl overflow-hidden group"
+              className="relative h-[600px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden group"
               style={{ 
                 backgroundColor: imageBackgroundColors['/about-images/9D0D7091-2A2E-4DFE-932A-2B0524728C37-2_750x.webp'] || 'rgb(240, 237, 236)',
                 y: y2 
@@ -295,7 +295,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </motion.div>
             <motion.div 
-              className="lg:col-span-2"
+              className=""
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
@@ -371,12 +371,12 @@ export default function About() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-32" style={{ backgroundColor: '#f0edec' }}>
+        <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-light mb-12 text-center font-bodoni uppercase text-black tracking-wider">About Us</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
               <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 Modern Arab Apparel isn&apos;t just a brand—it&apos;s a movement. Born from the experiences of first-generation Arab Americans, our roots stretch across the diverse landscapes of the Arab world and the dynamic pulse of the West.
               </p>
@@ -388,7 +388,7 @@ export default function About() {
               </p>
             </div>
             <div 
-              className="relative h-[800px] lg:h-[900px] rounded-lg shadow-2xl overflow-hidden"
+              className="order-1 lg:order-2 relative h-[600px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden"
               style={{ backgroundColor: imageBackgroundColors['/about-images/MG_0610_e8ce70c1-9773-420d-8417-8c0bf67d38d9_750x.webp'] || 'rgb(240, 237, 236)' }}
             >
               <Image
@@ -404,11 +404,11 @@ export default function About() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-20" style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+      <section className="py-32" style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div 
-              className="relative h-[700px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden"
+              className="relative h-[600px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden"
               style={{ backgroundColor: imageBackgroundColors['/about-images/IMG_3488_36377c4b-1872-4460-9967-6b9e8d413185_750x.webp'] || 'rgb(240, 237, 236)' }}
             >
               <Image
@@ -419,7 +419,7 @@ export default function About() {
                 className="object-contain object-center"
               />
             </div>
-            <div className="lg:col-span-2">
+            <div className="">
               <h2 className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase text-black tracking-wider">Our Story</h2>
               <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 Our mission is bold and clear: to redefine Arab identity in today&apos;s world through culture and fashion. Every piece we create tells a story—of heritage, creativity, and unapologetic style.
@@ -436,7 +436,7 @@ export default function About() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
+      <section className="py-32" style={{ backgroundColor: '#f0edec' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-light mb-12 font-bodoni uppercase text-black tracking-wider">Our Values</h2>
           
@@ -614,7 +614,7 @@ export default function About() {
               </motion.div>
             </motion.div>
             <motion.div 
-              className="relative h-[800px] lg:h-[900px] rounded-lg shadow-2xl overflow-hidden group"
+              className="relative h-[600px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden group"
               style={{ backgroundColor: imageBackgroundColors['/about-images/IMG_3492_750x.webp'] || 'rgb(240, 237, 236)' }}
               initial={{ opacity: 0, scale: 0.8, rotateY: 45 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -673,12 +673,12 @@ export default function About() {
       </motion.section>
 
       {/* Our Collections Section */}
-      <section className="py-20" style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}>
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-32" style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}>
+        <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-light mb-12 text-center font-bodoni uppercase text-black tracking-wider">Our Collections</h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="order-2 lg:order-1">
               <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 Our collections celebrate Arab culture, blending classic and contemporary styles inspired by the diverse heritage of every Arab country. Each piece is thoughtfully curated by our team of fashion experts, ensuring a perfect balance between tradition and modern expression.
               </p>
@@ -690,7 +690,7 @@ export default function About() {
               </p>
             </div>
             <div 
-              className="relative h-[700px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden"
+              className="order-1 lg:order-2 relative h-[600px] lg:h-[800px] rounded-lg shadow-2xl overflow-hidden"
               style={{ backgroundColor: imageBackgroundColors['/about-images/5BBA9EAF-DA9E-4904-B901-8A1E5CF2FE55-3_750x.webp'] || 'rgb(240, 237, 236)' }}
             >
               <Image
@@ -740,7 +740,7 @@ export default function About() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
+      <section className="py-32" style={{ backgroundColor: '#f0edec' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase tracking-wider">Join the Movement</h2>
           <p className="text-lg md:text-xl font-normal leading-relaxed mb-12 text-gray-700">
