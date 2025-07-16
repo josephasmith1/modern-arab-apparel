@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { products as allProducts, Product } from '@/data/products/sync';
 import { collections, getCollectionBySlug } from '@/data/collections';
 import Footer from '@/components/Footer';
-import { Header } from '@/components/Header';
+import Header from '@/components/Header';
 import { ProductCardSimple } from '@/components/ProductCardSimple';
 
 function ProductsContent() {
