@@ -96,7 +96,18 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const [showSizeGuide, setShowSizeGuide] = useState(false);
   const [sizeUnit, setSizeUnit] = useState<'inches' | 'cm'>('inches');
   const [quantity, setQuantity] = useState(1);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  // Initialize with lifestyle image index if available
+  const getInitialImageIndex = () => {
+    if (compatibleProduct?.colors[0]?.images?.lifestyle?.length > 0) {
+      // Since currentImages has main first, then back, then lifestyle
+      // We need to calculate where lifestyle images start
+      const hasMain = compatibleProduct.colors[0].images.main ? 1 : 0;
+      const hasBack = compatibleProduct.colors[0].images.back ? 1 : 0;
+      return hasMain + hasBack; // This is where lifestyle images start
+    }
+    return 0;
+  };
+  const [selectedImageIndex, setSelectedImageIndex] = useState(getInitialImageIndex());
   const [isScrolled, setIsScrolled] = useState(false);
   const [showColorOptions, setShowColorOptions] = useState(false);
   const [imageBackgroundColors, setImageBackgroundColors] = useState<{ [key: string]: string }>({});
@@ -125,10 +136,17 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     return images.filter(Boolean); // Filter out any empty strings
   }, [selectedColor]);
 
-  // Reset selected image index when color changes
+  // Reset selected image index when color changes - select first lifestyle image if available
   useEffect(() => {
-    setSelectedImageIndex(0);
-  }, [selectedColor]);
+    if (selectedColor && selectedColor.images && selectedColor.images.lifestyle && selectedColor.images.lifestyle.length > 0) {
+      // Find the index of the first lifestyle image in currentImages
+      const firstLifestyleImage = selectedColor.images.lifestyle[0];
+      const lifestyleIndex = currentImages.indexOf(firstLifestyleImage);
+      setSelectedImageIndex(lifestyleIndex !== -1 ? lifestyleIndex : 0);
+    } else {
+      setSelectedImageIndex(0);
+    }
+  }, [selectedColor, currentImages]);
 
   
   // Scroll tracking
