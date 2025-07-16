@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 import { collections } from '@/data/collections';
 import Footer from '@/components/Footer';
+import ProductCarousel from '@/components/ProductCarousel';
 
 
 const heroImages = [
@@ -14,6 +15,40 @@ const heroImages = [
   '/images/hero-2.jpg',
   '/images/hero-3.jpg',
   '/images/hero-4.jpg'
+];
+
+// Premium Tees carousel images
+const premiumTeesImages = [
+  {
+    src: '/images/modernarab-tee/faded-bone-main-no-bg.png',
+    alt: 'Modern Arab Tee - Faded Bone',
+    productName: 'Modern Arab Tee - Faded Bone',
+    price: '$30.00'
+  },
+  {
+    src: '/images/modern-arab-premium-tee-faded-eucalyptus/s-main.jpg',
+    alt: 'Premium Tee - Faded Eucalyptus',
+    productName: 'Premium Tee - Faded Eucalyptus',
+    price: '$35.00'
+  },
+  {
+    src: '/images/modern-arab-premium-tee-faded-khaki/s-main.jpg',
+    alt: 'Premium Tee - Faded Khaki',
+    productName: 'Premium Tee - Faded Khaki',
+    price: '$35.00'
+  },
+  {
+    src: '/images/modern-arab-faded-tee-black-print/faded-black-main.jpg',
+    alt: 'Faded Tee - Black Print',
+    productName: 'Faded Tee - Black Print',
+    price: '$30.00'
+  },
+  {
+    src: '/images/modern-arab-faded-tee-black-print/faded-green-main.jpg',
+    alt: 'Faded Tee - Green',
+    productName: 'Faded Tee - Green',
+    price: '$30.00'
+  }
 ];
 
 export default function Home() {
@@ -482,7 +517,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right: Image */}
+            {/* Right: Carousel */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, x: 50 }}
@@ -490,15 +525,11 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-96 lg:h-[500px]">
-                <Image
-                  src="/images/modernarab-tee/faded-bone-main-no-bg.png"
-                  alt="Modern Arab Faded Tee"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain object-center rounded"
-                />
-              </div>
+              <ProductCarousel 
+                images={premiumTeesImages} 
+                autoPlay={true}
+                interval={4000}
+              />
             </motion.div>
           </div>
         </div>
