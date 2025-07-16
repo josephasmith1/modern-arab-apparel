@@ -7,7 +7,6 @@ import { motion } from 'framer-motion';
 import { products as allProducts, Product } from '@/data/products/sync';
 import { collections, getCollectionBySlug } from '@/data/collections';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 import ProductCardSimple from '@/components/ProductCardSimple';
 
 function ProductsContent() {
@@ -50,7 +49,6 @@ function ProductsContent() {
 
   return (
     <div className="bg-[#f0edec] min-h-screen">
-      <Header />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
