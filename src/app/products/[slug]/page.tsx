@@ -107,9 +107,10 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     if (!selectedColor || !selectedColor.images) return [];
     const { main, back, lifestyle } = selectedColor.images;
     const images = [];
+    // Put lifestyle images first
+    if (lifestyle && lifestyle.length > 0) images.push(...lifestyle);
     if (main) images.push(main);
     if (back) images.push(back);
-    if (lifestyle && lifestyle.length > 0) images.push(...lifestyle);
     return images.filter(Boolean); // Filter out any empty strings
   }, [selectedColor]);
 
