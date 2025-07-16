@@ -172,7 +172,7 @@ export default function About() {
         </div>
         <div className="max-w-4xl mx-auto px-6">
           <motion.h2 
-            className="text-5xl md:text-6xl font-extralight mb-12 text-center font-bodoni uppercase text-black tracking-widest"
+            className="text-4xl md:text-5xl font-light mb-6 text-center font-bodoni uppercase text-black tracking-wider"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.1, delay: 0.025 }}
@@ -180,6 +180,15 @@ export default function About() {
           >
             About Modern Arab
           </motion.h2>
+          <motion.p
+            className="text-lg md:text-xl font-normal text-gray-600 text-center mb-12 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.1, delay: 0.05 }}
+            viewport={{ once: true }}
+          >
+            What does Modern Arab stand for?
+          </motion.p>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
             <motion.div 
@@ -190,7 +199,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <motion.p 
-                className="text-2xl font-light leading-relaxed mb-8 text-black tracking-wide"
+                className="text-2xl md:text-3xl font-light leading-relaxed mb-6 text-black italic"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
@@ -199,13 +208,22 @@ export default function About() {
                 Los Angeles original, Arab American Premium Wear Apparel Brand.
               </motion.p>
               <motion.p 
-                className="text-xl font-light text-gray-700 leading-relaxed"
+                className="text-lg md:text-xl font-normal text-gray-700 leading-relaxed mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                A one hundred percent original brand, Modern Arab is determined to change the narrative about Arabs today through western style premium wear. We believe in cultural pride, inclusion, and storytelling through fashion. Every piece we create is designed to inspire conversation, challenge outdated narratives, and empower individuals to wear their Arabic heritage with confidence.
+                A one hundred percent original brand, Modern Arab is determined to change the narrative about Arabs today through western style premium wear. We believe in cultural pride, inclusion, and storytelling through fashion.
+              </motion.p>
+              <motion.p 
+                className="text-lg md:text-xl font-medium text-black leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.45 }}
+                viewport={{ once: true }}
+              >
+                Every piece we create is designed to inspire conversation, challenge outdated narratives, and empower individuals to wear their Arabic heritage with confidence.
               </motion.p>
             </motion.div>
             <motion.div 
@@ -234,8 +252,11 @@ export default function About() {
             transition={{ duration: 0.1, delay: 0.075 }}
             viewport={{ once: true }}
           >
-            <p className="text-xl font-light text-gray-700 leading-relaxed max-w-3xl mx-auto tracking-wide">
-              Modern Arab&apos;s commitment is to define Arab identity through fashion. As we remove radical stereotypes with Arabic inspired apparel, we change the narrative about Arabic speaking people on the global scale. We are bridging cultures by encouraging the right conversations and invite dialogue for inclusion, culture, and belonging.
+            <p className="text-lg md:text-xl font-normal text-gray-700 leading-relaxed max-w-3xl mx-auto">
+              Modern Arab&apos;s commitment is to define Arab identity through fashion. As we remove radical stereotypes with Arabic inspired apparel, we change the narrative about Arabic speaking people on the global scale.
+            </p>
+            <p className="text-lg md:text-xl font-medium text-black leading-relaxed max-w-3xl mx-auto mt-4">
+              We are bridging cultures by encouraging the right conversations and invite dialogue for inclusion, culture, and belonging.
             </p>
           </motion.div>
         </div>
@@ -281,7 +302,7 @@ export default function About() {
               viewport={{ once: true }}
             >
               <motion.h2 
-                className="text-5xl md:text-6xl font-extralight mb-8 font-bodoni uppercase text-black tracking-widest"
+                className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase text-black tracking-wider"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
@@ -290,7 +311,7 @@ export default function About() {
                 Our Mission
               </motion.h2>
               <motion.p 
-                className="text-xl font-light leading-relaxed mb-6 text-black tracking-wide"
+                className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.4 }}
@@ -299,7 +320,7 @@ export default function About() {
                 At Modern Arab, we believe that everyone who embraces Arab culture deserves to look their best and feel their safest—unapologetically proud and authentically themselves. That belief sparked our journey to challenge misconceptions and create a space where modern fashion meets cultural heritage.
               </motion.p>
               <motion.p 
-                className="text-xl font-medium leading-relaxed mb-6 text-black"
+                className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.15, delay: 0.25 }}
@@ -308,7 +329,7 @@ export default function About() {
                 By blending style with purpose, we reveal the true essence of Arab identity—one of peace, faith, and cultural richness—while breaking harmful stereotypes along the way.
               </motion.p>
               <motion.p 
-                className="text-xl font-medium leading-relaxed text-black"
+                className="text-lg md:text-xl font-medium leading-relaxed text-black"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.15, delay: 0.3 }}
@@ -339,10 +360,10 @@ export default function About() {
         
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-4xl px-6">
-            <h2 className="text-5xl md:text-7xl font-medium mb-8 text-white drop-shadow-2xl font-bodoni uppercase">
+            <h2 className="text-4xl md:text-6xl font-light mb-8 text-white drop-shadow-2xl font-bodoni uppercase tracking-wider">
               Not Just Clothing
             </h2>
-            <p className="text-2xl md:text-3xl font-medium text-gray-200 drop-shadow-lg max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl font-normal text-gray-200 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
               This isn&apos;t just clothing—it&apos;s a statement of identity, confidence, and connection. Welcome to Modern Arab—where culture meets modernity in every stitch.
             </p>
           </div>
@@ -352,14 +373,17 @@ export default function About() {
       {/* About Us Section */}
       <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl md:text-6xl font-medium mb-12 text-center font-bodoni uppercase text-black">About Us</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center font-bodoni uppercase text-black tracking-wider">About Us</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div className="lg:col-span-2">
-              <p className="text-xl font-medium leading-relaxed mb-6 text-black">
-                Modern Arab Apparel isn&apos;t just a brand—it&apos;s a movement. Born from the experiences of first-generation Arab Americans, our roots stretch across the diverse landscapes of the Arab world and the dynamic pulse of the West. Through education, work, and travel, we&apos;ve lived the intersection of these cultures, shaping a vision that redefines Arab identity.
+              <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
+                Modern Arab Apparel isn&apos;t just a brand—it&apos;s a movement. Born from the experiences of first-generation Arab Americans, our roots stretch across the diverse landscapes of the Arab world and the dynamic pulse of the West.
               </p>
-              <p className="text-xl font-medium leading-relaxed text-black">
+              <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
+                Through education, work, and travel, we&apos;ve lived the intersection of these cultures, shaping a vision that redefines Arab identity.
+              </p>
+              <p className="text-lg md:text-xl font-medium leading-relaxed text-black">
                 At Modern Arab, we challenge outdated narratives that misrepresent Arabic-speaking communities. Our mission is to highlight the beauty, depth, and pride of Arab heritage—bridging the gap between tradition and modernity. This is more than fashion; it&apos;s a statement. Every design tells a story of culture, resilience, and unity. Join us in rewriting the script and celebrating what it truly means to be Modern Arab.
               </p>
             </div>
@@ -396,14 +420,14 @@ export default function About() {
               />
             </div>
             <div className="lg:col-span-2">
-              <h2 className="text-5xl md:text-6xl font-medium mb-8 font-bodoni uppercase text-black">Our Story</h2>
-              <p className="text-xl font-medium leading-relaxed mb-6 text-black">
+              <h2 className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase text-black tracking-wider">Our Story</h2>
+              <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 Our mission is bold and clear: to redefine Arab identity in today&apos;s world through culture and fashion. Every piece we create tells a story—of heritage, creativity, and unapologetic style.
               </p>
-              <p className="text-xl font-medium leading-relaxed mb-6 text-black">
+              <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 At Modern Arab, we challenge stereotypes and shift perspectives, celebrating the beauty, depth, and peaceful presence of Arabic-speaking communities worldwide. To us, being Arab is more than a label—it&apos;s a legacy of resilience, pride, and artistry that deserves to be shared.
               </p>
-              <p className="text-xl font-medium leading-relaxed text-black">
+              <p className="text-lg md:text-xl font-medium leading-relaxed text-black">
                 This is Modern Arab. A movement, a statement, a celebration—one story, one piece at a time.
               </p>
             </div>
@@ -414,7 +438,7 @@ export default function About() {
       {/* Our Values Section */}
       <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-5xl md:text-6xl font-medium mb-12 font-bodoni uppercase text-black">Our Values</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-12 font-bodoni uppercase text-black tracking-wider">Our Values</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
             <div className="p-6 bg-white rounded-lg shadow-lg">
@@ -454,11 +478,14 @@ export default function About() {
             </div>
           </div>
 
-          <p className="text-2xl font-bold leading-relaxed mb-12 text-black">
+          <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700 text-left max-w-3xl mx-auto">
             At Modern Arab, we embody the spirit of a blended Arab identity in today&apos;s modern world. Our values are rooted in diversity, inclusion, sustainability, and ethical practices—pillars that guide everything we do.
           </p>
-          <p className="text-2xl font-bold leading-relaxed text-black">
-            We partner with reliable suppliers who share our commitment to transparency and integrity, ensuring every piece reflects our shared values. Beyond fashion, we&apos;re dedicated to reducing our environmental footprint and creating a positive impact within our communities. Most importantly, we hold our customers at the heart of everything we do, striving to meet their needs with care, quality, and a deep appreciation for their support.
+          <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700 text-left max-w-3xl mx-auto">
+            We partner with reliable suppliers who share our commitment to transparency and integrity, ensuring every piece reflects our shared values. Beyond fashion, we&apos;re dedicated to reducing our environmental footprint and creating a positive impact within our communities.
+          </p>
+          <p className="text-lg md:text-xl font-medium leading-relaxed text-black text-left max-w-3xl mx-auto">
+            Most importantly, we hold our customers at the heart of everything we do, striving to meet their needs with care, quality, and a deep appreciation for their support. This is the foundation of Modern Arab—a brand driven by purpose, for people, and for the planet.
           </p>
         </div>
       </section>
@@ -481,7 +508,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-5xl md:text-6xl font-extralight mb-8 font-bodoni uppercase text-black tracking-widest"
+              className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase text-black tracking-wider"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.2 }}
@@ -648,17 +675,17 @@ export default function About() {
       {/* Our Collections Section */}
       <section className="py-20" style={{ backgroundColor: 'rgba(240, 237, 236, 0.5)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-5xl md:text-6xl font-medium mb-12 text-center font-bodoni uppercase text-black">Our Collections</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center font-bodoni uppercase text-black tracking-wider">Our Collections</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center mb-16">
             <div className="lg:col-span-2">
-              <p className="text-2xl font-bold leading-relaxed mb-10 text-black">
+              <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 Our collections celebrate Arab culture, blending classic and contemporary styles inspired by the diverse heritage of every Arab country. Each piece is thoughtfully curated by our team of fashion experts, ensuring a perfect balance between tradition and modern expression.
               </p>
-              <p className="text-2xl font-bold leading-relaxed mb-10 text-black">
+              <p className="text-lg md:text-xl font-normal leading-relaxed mb-6 text-gray-700">
                 From laid-back casual wear to bold street fashion, we design for everyone across the Arab world. As we grow, we&apos;ll introduce personalized styling services—helping you represent your roots with pride and authenticity.
               </p>
-              <p className="text-2xl font-black leading-relaxed text-black">
+              <p className="text-lg md:text-xl font-medium leading-relaxed text-black">
                 This isn&apos;t just a collection—it&apos;s a tribute to the unity and individuality of Arab identity. Explore the stories where heritage threads into modern style.
               </p>
             </div>
@@ -696,13 +723,16 @@ export default function About() {
         
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-4xl px-6">
-            <h2 className="text-4xl md:text-6xl font-light mb-6 text-white drop-shadow-2xl font-bodoni uppercase">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 text-white drop-shadow-2xl font-bodoni uppercase tracking-wider">
               Tradition Meets Trend
             </h2>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 drop-shadow-lg max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl font-normal text-gray-200 mb-6 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
               At Modern Arab, we redefine the ordinary—seamlessly blending Arab heritage with modern style. Every printed design and intricately embroidered piece tells a story, honoring the beauty of Arab culture while embracing contemporary fashion.
             </p>
-            <p className="text-lg md:text-xl text-gray-300 drop-shadow-lg max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl font-normal text-gray-200 drop-shadow-lg max-w-3xl mx-auto leading-relaxed">
+              With a deep eye for detail and a passion for innovation, our designers masterfully fuse timeless traditions with bold modernity. Whether you&apos;re dressing for effortless everyday wear or making a statement for a special occasion, our garments embody elegance, individuality, and cultural pride.
+            </p>
+            <p className="text-lg md:text-xl font-medium text-white drop-shadow-lg max-w-3xl mx-auto mt-6">
               Step into a world where heritage evolves into modern expression. Experience the artistry, culture, and craftsmanship woven into every piece.
             </p>
           </div>
@@ -712,8 +742,8 @@ export default function About() {
       {/* Call to Action Section */}
       <section className="py-20" style={{ backgroundColor: '#f0edec' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase">Join the Movement</h2>
-          <p className="text-xl leading-relaxed mb-12">
+          <h2 className="text-4xl md:text-5xl font-light mb-8 font-bodoni uppercase tracking-wider">Join the Movement</h2>
+          <p className="text-lg md:text-xl font-normal leading-relaxed mb-12 text-gray-700">
             Be part of a community that celebrates authentic Arab culture and challenges misconceptions 
             through powerful, meaningful fashion.
           </p>

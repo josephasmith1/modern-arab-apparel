@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -10,6 +11,7 @@ interface CarouselImage {
   alt: string;
   productName: string;
   price: string;
+  href?: string;
 }
 
 interface ProductCarouselProps {
@@ -67,14 +69,27 @@ export default function ProductCarousel({
             transition={{ duration: 0.5 }}
             className="absolute inset-0"
           >
-            <Image
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-contain object-center"
-              priority
-            />
+            {images[currentIndex].href ? (
+              <Link href={images[currentIndex].href} className="block relative w-full h-full">
+                <Image
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain object-center cursor-pointer"
+                  priority
+                />
+              </Link>
+            ) : (
+              <Image
+                src={images[currentIndex].src}
+                alt={images[currentIndex].alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-contain object-center"
+                priority
+              />
+            )}
             
             {/* Product Info Overlay */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">

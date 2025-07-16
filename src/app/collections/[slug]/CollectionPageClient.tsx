@@ -67,7 +67,7 @@ export default function CollectionPageClient({ collection, collectionProducts }:
         </motion.nav>
 
         {/* Hero Section - 2 Column Layout */}
-        <div ref={heroRef} className="relative h-screen overflow-hidden" style={{ position: 'relative' }}>
+        <div ref={heroRef} className="relative h-[90vh] overflow-hidden" style={{ position: 'relative' }}>
           <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
             {/* Left Column - Full Height Image with Parallax */}
             <motion.div 

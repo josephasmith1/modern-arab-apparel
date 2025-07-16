@@ -14,8 +14,33 @@ function ProductsContent() {
   const category = searchParams.get('category');
 
   const filteredProducts = category
-    ? allProducts.filter((p: Product) => p.collection === category)
+    ? allProducts.filter((p: Product) => {
+        const collection = collections.find(c => c.slug === category);
+        if (!collection) return false;
+        
+        // Special mapping for bottoms -> legwear
+        if (collection.slug === 'bottoms') {
+          return p.collection.toLowerCase() === 'legwear';
+        }
+        
+        return p.collection.toLowerCase() === collection.name.toLowerCase();
+      })
     : allProducts;
+  
+  // Get only collections that have products
+  const collectionsWithProducts = collections.filter(collection => {
+    if (collection.slug === 'frontpage' || collection.slug === 'coming-soon') {
+      return false; // Skip these special collections
+    }
+    
+    // Check if any product belongs to this collection
+    return allProducts.some((p: Product) => {
+      if (collection.slug === 'bottoms') {
+        return p.collection.toLowerCase() === 'legwear';
+      }
+      return p.collection.toLowerCase() === collection.name.toLowerCase();
+    });
+  });
 
   const getCategoryDisplayName = (slug: string) => {
     const collection = getCollectionBySlug(slug);
@@ -49,7 +74,7 @@ function ProductsContent() {
             >
               All
             </Link>
-            {collections.map((collection) => (
+            {collectionsWithProducts.map((collection) => (
               <Link
                 key={collection.slug}
                 href={`/products?category=${collection.slug}`}

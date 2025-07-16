@@ -44,7 +44,7 @@ const Footer = () => {
                   ألآ تخافون من الله
                 </div>
                 <p className="text-sm text-stone-600 font-barlow-condensed mt-1">
-                  &quot;Don&apos;t you fear God?&quot; - Our flagship message
+                  &quot;Don&apos;t you fear God?&quot;
                 </p>
               </div>
             </div>

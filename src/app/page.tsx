@@ -17,31 +17,94 @@ const heroImages = [
   '/images/hero-4.jpg'
 ];
 
-// Premium Tees carousel images
+// Premium Tees carousel images - showing back images with prints (printed tees first)
 const premiumTeesImages = [
+  // Faded Tees with Black Print (these have visible prints)
   {
-    src: '/images/modern-arab-premium-tee-faded-eucalyptus/s-main.jpg',
-    alt: 'Premium Tee - Faded Eucalyptus',
-    productName: 'Premium Tee - Faded Eucalyptus',
-    price: '$35.00'
-  },
-  {
-    src: '/images/modern-arab-premium-tee-faded-khaki/s-main.jpg',
-    alt: 'Premium Tee - Faded Khaki',
-    productName: 'Premium Tee - Faded Khaki',
-    price: '$35.00'
-  },
-  {
-    src: '/images/modern-arab-faded-tee-black-print/faded-black-main.jpg',
-    alt: 'Faded Tee - Black Print',
+    src: '/images/modern-arab-faded-tee-black-print/faded-black-back.jpg',
+    alt: 'Faded Tee - Black Print (Back)',
     productName: 'Faded Tee - Black Print',
-    price: '$30.00'
+    price: '$45.00',
+    href: '/products/modern-arab-faded-tee-black-print'
   },
   {
-    src: '/images/modern-arab-faded-tee-black-print/faded-green-main.jpg',
-    alt: 'Faded Tee - Green',
-    productName: 'Faded Tee - Green',
-    price: '$30.00'
+    src: '/images/modern-arab-faded-tee-black-print/faded-bone-back.jpg',
+    alt: 'Faded Tee - Bone Print (Back)',
+    productName: 'Faded Tee - Bone Print',
+    price: '$45.00',
+    href: '/products/modern-arab-faded-tee-black-print'
+  },
+  {
+    src: '/images/modern-arab-faded-tee-black-print/faded-green-back.jpg',
+    alt: 'Faded Tee - Green Print (Back)',
+    productName: 'Faded Tee - Green Print',
+    price: '$45.00',
+    href: '/products/modern-arab-faded-tee-black-print'
+  },
+  {
+    src: '/images/modern-arab-faded-tee-black-print/faded-khaki-back.jpg',
+    alt: 'Faded Tee - Khaki Print (Back)',
+    productName: 'Faded Tee - Khaki Print',
+    price: '$45.00',
+    href: '/products/modern-arab-faded-tee-black-print'
+  },
+  // Modern Arab Tees (these have prints)
+  {
+    src: '/images/modern-arab-tee-black/black-back.jpg',
+    alt: 'Modern Arab Tee - Black (Back)',
+    productName: 'Modern Arab Tee - Black',
+    price: '$30.00',
+    href: '/products/modern-arab-tee-black'
+  },
+  {
+    src: '/images/modern-arab-tee-white/white-back.jpg',
+    alt: 'Modern Arab Tee - White (Back)',
+    productName: 'Modern Arab Tee - White',
+    price: '$30.00',
+    href: '/products/modern-arab-tee-white'
+  },
+  // Premium Tees (moved to the end)
+  {
+    src: '/images/modern-arab-premium-tee-faded-eucalyptus/faded-green-back.jpg',
+    alt: 'Premium Tee - Faded Eucalyptus (Back)',
+    productName: 'Premium Tee - Faded Eucalyptus',
+    price: '$35.00',
+    href: '/products/modern-arab-premium-tee-faded-eucalyptus'
+  },
+  {
+    src: '/images/modern-arab-premium-tee-faded-khaki/faded-khaki-back.jpg',
+    alt: 'Premium Tee - Faded Khaki (Back)',
+    productName: 'Premium Tee - Faded Khaki',
+    price: '$35.00',
+    href: '/products/modern-arab-premium-tee-faded-khaki'
+  },
+  {
+    src: '/images/modern-arab-premium-tee/faded-black-back.jpg',
+    alt: 'Premium Tee - Faded Black (Back)',
+    productName: 'Premium Tee - Faded Black',
+    price: '$35.00',
+    href: '/products/modern-arab-premium-tee'
+  },
+  {
+    src: '/images/modern-arab-premium-tee/faded-bone-back.jpg',
+    alt: 'Premium Tee - Faded Bone (Back)',
+    productName: 'Premium Tee - Faded Bone',
+    price: '$35.00',
+    href: '/products/modern-arab-premium-tee'
+  },
+  {
+    src: '/images/modern-arab-premium-tee/faded-green-back.jpg',
+    alt: 'Premium Tee - Faded Green (Back)',
+    productName: 'Premium Tee - Faded Green',
+    price: '$35.00',
+    href: '/products/modern-arab-premium-tee'
+  },
+  {
+    src: '/images/modern-arab-premium-tee/faded-khaki-back.jpg',
+    alt: 'Premium Tee - Faded Khaki (Back)',
+    productName: 'Premium Tee - Faded Khaki',
+    price: '$35.00',
+    href: '/products/modern-arab-premium-tee'
   }
 ];
 
@@ -224,7 +287,19 @@ export default function Home() {
                     Modern Arab Apparel
                   </span>
                 </motion.div>
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-white leading-none font-bodoni mb-6">
+                <h1 
+                  className="text-6xl md:text-8xl lg:text-9xl font-light text-white leading-none font-bodoni mb-6"
+                  style={{
+                    textShadow: `
+                      1px 1px 0 rgba(0,0,0,0.4),
+                      2px 2px 0 rgba(0,0,0,0.35),
+                      3px 3px 0 rgba(0,0,0,0.3),
+                      4px 4px 0 rgba(0,0,0,0.25),
+                      5px 5px 0 rgba(0,0,0,0.2),
+                      6px 6px 3px rgba(0,0,0,0.15)
+                    `
+                  }}
+                >
                   Modern<br />
                   <span className="italic">Arab</span>
                 </h1>
@@ -503,7 +578,7 @@ export default function Home() {
                 whileTap={{ scale: 0.98 }}
               >
                 <Link 
-                  href="/products?category=tees"
+                  href="/collections/upperwear"
                   className="inline-block bg-black text-white px-8 py-3 font-semibold tracking-wide hover:bg-gray-800 transition-colors duration-300 font-barlow-condensed"
                 >
                   SHOP TEES
