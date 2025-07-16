@@ -125,17 +125,24 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     return images.filter(Boolean); // Filter out any empty strings
   }, [selectedColor]);
 
-  // Initialize and reset selected image index - select first thumbnail (which is lifestyle if available)
+  // Initialize and reset selected image index - select first lifestyle image if available
   useEffect(() => {
-    if (thumbnailImages.length > 0) {
-      // Get the first thumbnail image and find its index in currentImages
-      const firstThumbnail = thumbnailImages[0];
-      const indexInCurrent = currentImages.indexOf(firstThumbnail);
-      setSelectedImageIndex(indexInCurrent !== -1 ? indexInCurrent : 0);
-    } else {
-      setSelectedImageIndex(0);
+    if (selectedColor && selectedColor.images) {
+      if (selectedColor.images.lifestyle && selectedColor.images.lifestyle.length > 0) {
+        // Find the index of the first lifestyle image in currentImages
+        const firstLifestyleImage = selectedColor.images.lifestyle[0];
+        const indexInCurrent = currentImages.findIndex(img => img === firstLifestyleImage);
+        if (indexInCurrent !== -1) {
+          setSelectedImageIndex(indexInCurrent);
+        } else {
+          setSelectedImageIndex(0);
+        }
+      } else {
+        // No lifestyle images, default to first image
+        setSelectedImageIndex(0);
+      }
     }
-  }, [selectedColor]); // Only depend on selectedColor to avoid infinite loops
+  }, [selectedColor, currentImages]);
 
   
   // Scroll tracking
