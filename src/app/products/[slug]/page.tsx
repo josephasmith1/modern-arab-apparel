@@ -864,19 +864,19 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         <section className="relative h-screen overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src={selectedColor.images.back}
+              src={selectedColor.images.lifestyle?.[0] || selectedColor.images.back}
               alt={`${compatibleProduct.name} - Back Design`}
               fill
               sizes="100vw"
               className="object-contain object-left"
-              style={{ backgroundColor: imageBackgroundColors[selectedColor.images.back] || 'rgb(0, 0, 0)' }}
+              style={{ backgroundColor: imageBackgroundColors[selectedColor.images.lifestyle?.[0] || selectedColor.images.back] || 'rgb(0, 0, 0)' }}
             />
           <div 
             className="absolute inset-0"
             style={{
-              background: imageBackgroundColors[selectedColor.images.back] 
+              background: imageBackgroundColors[selectedColor.images.lifestyle?.[0] || selectedColor.images.back] 
                 ? (() => {
-                    const color = imageBackgroundColors[selectedColor.images.back];
+                    const color = imageBackgroundColors[selectedColor.images.lifestyle?.[0] || selectedColor.images.back];
                     const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
                     if (!rgbMatch) return 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, transparent 50%, rgba(0,0,0,0.6) 100%)';
                     
