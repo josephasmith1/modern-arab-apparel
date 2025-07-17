@@ -133,7 +133,7 @@ export default function ProductCardSolidEdge({ product, index, showLifestyleImag
     >
                   <Link href={`/products/${product.slug}`}>
         <div 
-          className="relative h-96 overflow-hidden transition-colors duration-700"
+          className="relative h-[500px] overflow-hidden transition-colors duration-700"
           style={{ backgroundColor: bgColor }}
         >
           <Image
@@ -157,7 +157,8 @@ export default function ProductCardSolidEdge({ product, index, showLifestyleImag
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover object-center group-hover:scale-105 transition-transform duration-500 relative z-10"
+            className="object-cover group-hover:scale-105 transition-transform duration-500 relative z-10"
+            style={{ objectPosition: 'top 20%' }}
             priority={index < 6}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-20"></div>

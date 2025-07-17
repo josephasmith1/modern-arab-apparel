@@ -9,9 +9,12 @@ export default async function LifestylePage() {
   const products: Product[] = await getProductsArray();
 
   // Filter for products that have at least one lifestyle image across all color variants
-  const lifestyleProducts = products.filter(product => 
-    product.colors.some(color => color.images.lifestyle && color.images.lifestyle.length > 0)
-  );
+  const lifestyleProducts = products
+    .filter(product => 
+      product.colors.some(color => color.images.lifestyle && color.images.lifestyle.length > 0)
+    )
+    // Hide the problematic hoodie from the lifestyle page for now
+    .filter(product => !product.slug.includes('modern-arab-hoodie'));
 
   return <LifestylePageClient allProducts={lifestyleProducts} />;
 }

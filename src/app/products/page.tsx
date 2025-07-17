@@ -22,6 +22,11 @@ function ProductsContent() {
         if (collection.slug === 'bottoms') {
           return p.collection.toLowerCase() === 'legwear';
         }
+
+        // Special mapping for tops -> upperwear
+        if (collection.slug === 'upperwear') {
+          return p.collection.toLowerCase() === 'upperwear';
+        }
         
         return p.collection.toLowerCase() === collection.name.toLowerCase();
       })
@@ -37,6 +42,9 @@ function ProductsContent() {
     return allProducts.some((p: Product) => {
       if (collection.slug === 'bottoms') {
         return p.collection.toLowerCase() === 'legwear';
+      }
+      if (collection.slug === 'upperwear') {
+        return p.collection.toLowerCase() === 'upperwear';
       }
       return p.collection.toLowerCase() === collection.name.toLowerCase();
     });
