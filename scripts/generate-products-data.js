@@ -38,7 +38,12 @@ function getImagesForColor(color, productData) {
 
   // Determine main and back images based on alt tags or position
   let mainImage = images.find(img => /main/i.test(img.alt)) || images.find(img => /front/i.test(img.alt)) || images[0] || null;
-  let backImage = images.find(img => /back/i.test(img.alt)) || null;
+  let backImage = images.find(img => /back/i.test(img.alt));
+
+  // If no explicit back image, use the second image if available and not the main one
+  if (!backImage && images.length > 1 && images[1] !== mainImage) {
+    backImage = images[1];
+  }
 
   const usedImageIds = new Set();
   if (mainImage) usedImageIds.add(mainImage.id);

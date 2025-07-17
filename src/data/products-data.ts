@@ -434,9 +434,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1752628909",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017"
           ]
@@ -474,9 +473,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1752628909",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017"
           ]
@@ -514,9 +512,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1752628909",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017"
           ]
@@ -554,9 +551,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1752628909",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017"
           ]
@@ -594,9 +590,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1752628909",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017"
           ]
@@ -634,9 +629,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg?v=1752628909",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg?v=1748336017",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg?v=1748336017"
           ]
@@ -710,10 +704,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -736,10 +728,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -762,10 +752,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -788,10 +776,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -814,10 +800,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -840,10 +824,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-bone-back-67d030635132b.jpg?v=1746361745",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-sky-blue-back-67d030634d225.jpg?v=1752629818",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -902,9 +884,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1752629885",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166"
           ]
@@ -942,9 +923,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1752629885",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166"
           ]
@@ -982,9 +962,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1752629885",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166"
           ]
@@ -1022,9 +1001,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1752629885",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166"
           ]
@@ -1062,9 +1040,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1752629885",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166"
           ]
@@ -1102,9 +1079,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg?v=1752629885",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg?v=1746349917",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg?v=1746601166",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg?v=1746601166"
           ]
@@ -1181,9 +1157,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1752629213",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582"
           ]
@@ -1221,9 +1196,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1752629213",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582"
           ]
@@ -1261,9 +1235,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1752629213",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582"
           ]
@@ -1301,9 +1274,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1752629213",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582"
           ]
@@ -1341,9 +1313,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1752629213",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582"
           ]
@@ -1381,9 +1352,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b2252c73a1.jpg?v=1752629213",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b2252c5e61.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b2252c50ba.jpg?v=1746609582",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b22a19ee8b.jpg?v=1746609582"
           ]
@@ -1748,9 +1718,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1752629230",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560"
           ]
@@ -1788,9 +1757,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1752629230",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560"
           ]
@@ -1828,9 +1796,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1752629230",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560"
           ]
@@ -1868,9 +1835,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1752629230",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560"
           ]
@@ -1908,9 +1874,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1752629230",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560"
           ]
@@ -1948,9 +1913,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg?v=1752629230",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg?v=1746609560",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg?v=1746609560"
           ]
@@ -2024,9 +1988,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg?v=1752629302",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg?v=1746603407"
           ]
@@ -2064,9 +2027,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg?v=1752629302",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg?v=1746603407"
           ]
@@ -2104,9 +2066,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg?v=1752629302",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg?v=1746603407"
           ]
@@ -2144,9 +2105,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg?v=1752629302",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg?v=1746603407"
           ]
@@ -2184,9 +2144,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg?v=1752629302",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg?v=1746603407",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg?v=1746603407"
           ]
@@ -2463,9 +2422,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1752630819",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635"
           ]
@@ -2503,9 +2461,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1752630819",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635"
           ]
@@ -2543,9 +2500,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1752630819",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635"
           ]
@@ -2583,9 +2539,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1752630819",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635"
           ]
@@ -2623,9 +2578,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1752630819",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635"
           ]
@@ -2663,9 +2617,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg?v=1752630819",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg?v=1752630819",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg?v=1746358635",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg?v=1746358635"
           ]
@@ -2740,10 +2693,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg?v=1752629922",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -2766,10 +2717,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg?v=1752629922",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -2792,10 +2741,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg?v=1752629922",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -2818,10 +2765,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg?v=1752629922",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -2844,10 +2789,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg?v=1752629922",
-          "back": "",
-          "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922"
-          ]
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/womens-cropped-hoodie-black-back-67ccd5b891be4.jpg?v=1752629922",
+          "lifestyle": []
         },
         "variants": [
           {
@@ -2906,9 +2849,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
@@ -2960,9 +2902,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
@@ -3014,9 +2955,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
@@ -3068,9 +3008,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
@@ -3122,9 +3061,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
@@ -3176,9 +3114,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-black-back-67cbcddeb1073.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
@@ -3584,9 +3521,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1752631034",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197"
           ]
@@ -3624,9 +3560,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1752631034",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197"
           ]
@@ -3664,9 +3599,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1752631034",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197"
           ]
@@ -3704,9 +3638,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1752631034",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197"
           ]
@@ -3744,9 +3677,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1752631034",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197"
           ]
@@ -3784,9 +3716,8 @@ export const productsData: Product[] = [
         "hex": "",
         "images": {
           "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-eucalyptus-back-67c8d9be1a0f1.jpg?v=1752631034",
-          "back": "",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
           "lifestyle": [
-            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-black-back-67c8d9be16a8f.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-khaki-back-67c8d9be18869.jpg?v=1746360323",
             "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/oversized-faded-t-shirt-faded-bone-back-67c8d9be1c073.jpg?v=1746360197"
           ]
