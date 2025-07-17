@@ -636,30 +636,34 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                 </div>
               </motion.div>
 
-              {/* Thumbnail Gallery */}
+              {/* Thumbnail Gallery - Show in reverse order */}
               {currentImages.length > 1 && (
                 <div className="flex justify-center gap-2 overflow-x-auto">
-                  {currentImages.map((image, index) => (
-                    <motion.button
-                      key={index}
-                      onClick={() => setSelectedImageIndex(index)}
-                      className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                        selectedImageIndex === index 
-                          ? 'border-black' 
-                          : 'border-gray-300 hover:border-gray-400'
-                      }`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Image
-                        src={image}
-                        alt={`${compatibleProduct.name} - View ${index + 1}`}
-                        fill
-                        sizes="64px"
-                        className="object-cover object-center"
-                      />
-                    </motion.button>
-                  ))}
+                  {[...currentImages].reverse().map((image, reversedIndex) => {
+                    // Get the actual index in the original array
+                    const actualIndex = currentImages.length - 1 - reversedIndex;
+                    return (
+                      <motion.button
+                        key={actualIndex}
+                        onClick={() => setSelectedImageIndex(actualIndex)}
+                        className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                          selectedImageIndex === actualIndex 
+                            ? 'border-black' 
+                            : 'border-gray-300 hover:border-gray-400'
+                        }`}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Image
+                          src={image}
+                          alt={`${compatibleProduct.name} - View ${actualIndex + 1}`}
+                          fill
+                          sizes="64px"
+                          className="object-cover object-center"
+                        />
+                      </motion.button>
+                    );
+                  })}
                 </div>
               )}
 
