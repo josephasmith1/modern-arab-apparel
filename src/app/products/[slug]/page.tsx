@@ -108,22 +108,12 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     if (!selectedColor || !selectedColor.images) return [];
     const { main, back, lifestyle } = selectedColor.images;
     const images = [];
+    // Start with main product image
     if (main) images.push(main);
     if (back) images.push(back);
     if (lifestyle && lifestyle.length > 0) images.push(...lifestyle);
-    return images.filter(Boolean); // Filter out any empty strings
-  }, [selectedColor]);
-
-  // Create a separate array for thumbnails with lifestyle images first
-  const thumbnailImages = useMemo(() => {
-    if (!selectedColor || !selectedColor.images) return [];
-    const { main, back, lifestyle } = selectedColor.images;
-    const images = [];
-    // Put lifestyle images first for thumbnails
-    if (lifestyle && lifestyle.length > 0) images.push(...lifestyle);
-    if (main) images.push(main);
-    if (back) images.push(back);
-    return images.filter(Boolean); // Filter out any empty strings
+    // Remove duplicates while preserving order
+    return [...new Set(images)].filter(Boolean);
   }, [selectedColor]);
 
   // Initialize and reset selected image index - always start with main product image (index 0)
@@ -647,33 +637,29 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               </motion.div>
 
               {/* Thumbnail Gallery */}
-              {thumbnailImages.length > 1 && (
+              {currentImages.length > 1 && (
                 <div className="flex justify-center gap-2 overflow-x-auto">
-                  {thumbnailImages.map((image, thumbnailIndex) => {
-                    // Find the actual index of this image in currentImages
-                    const actualIndex = currentImages.indexOf(image);
-                    return (
-                      <motion.button
-                        key={thumbnailIndex}
-                        onClick={() => setSelectedImageIndex(actualIndex)}
-                        className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                          selectedImageIndex === actualIndex 
-                            ? 'border-black' 
-                            : 'border-gray-300 hover:border-gray-400'
-                        }`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Image
-                          src={image}
-                          alt={`${compatibleProduct.name} - View ${thumbnailIndex + 1}`}
-                          fill
-                          sizes="64px"
-                          className="object-cover object-center"
-                        />
-                      </motion.button>
-                    );
-                  })}
+                  {currentImages.map((image, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => setSelectedImageIndex(index)}
+                      className={`relative flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                        selectedImageIndex === index 
+                          ? 'border-black' 
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Image
+                        src={image}
+                        alt={`${compatibleProduct.name} - View ${index + 1}`}
+                        fill
+                        sizes="64px"
+                        className="object-cover object-center"
+                      />
+                    </motion.button>
+                  ))}
                 </div>
               )}
 
@@ -864,19 +850,32 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         <section className="relative h-screen overflow-hidden">
           <div className="absolute inset-0">
             <Image
-              src={selectedColor.images.lifestyle?.[0] || selectedColor.images.back}
+              src={(() => {
+                // Use a lifestyle image that hasn't been shown yet in the main gallery
+                const lifestyleImages = selectedColor.images.lifestyle || [];
+                // Try to use the second lifestyle image if available, otherwise use back
+                return lifestyleImages[1] || selectedColor.images.back;
+              })()}
               alt={`${compatibleProduct.name} - Back Design`}
               fill
               sizes="100vw"
               className="object-contain object-left"
-              style={{ backgroundColor: imageBackgroundColors[selectedColor.images.lifestyle?.[0] || selectedColor.images.back] || 'rgb(0, 0, 0)' }}
+              style={{ backgroundColor: imageBackgroundColors[(() => {
+                const lifestyleImages = selectedColor.images.lifestyle || [];
+                return lifestyleImages[1] || selectedColor.images.back;
+              })()] || 'rgb(0, 0, 0)' }}
             />
           <div 
             className="absolute inset-0"
             style={{
-              background: imageBackgroundColors[selectedColor.images.lifestyle?.[0] || selectedColor.images.back] 
+              background: imageBackgroundColors[(() => {
+                const lifestyleImages = selectedColor.images.lifestyle || [];
+                return lifestyleImages[1] || selectedColor.images.back;
+              })()] 
                 ? (() => {
-                    const color = imageBackgroundColors[selectedColor.images.lifestyle?.[0] || selectedColor.images.back];
+                    const lifestyleImages = selectedColor.images.lifestyle || [];
+                    const imageKey = lifestyleImages[1] || selectedColor.images.back;
+                    const color = imageBackgroundColors[imageKey];
                     const rgbMatch = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
                     if (!rgbMatch) return 'linear-gradient(to right, rgba(0,0,0,0.1) 0%, transparent 50%, rgba(0,0,0,0.6) 100%)';
                     

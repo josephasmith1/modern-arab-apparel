@@ -173,6 +173,8 @@ export default function CollectionPageClient({ collection, collectionProducts }:
                   key={product.slug}
                   product={product}
                   index={index}
+                  cardHeight="h-[400px]"
+                  imageObjectFit="cover"
                 />
                 ))}
               </motion.div>

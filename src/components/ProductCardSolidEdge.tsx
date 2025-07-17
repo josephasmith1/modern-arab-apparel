@@ -12,6 +12,8 @@ interface ProductCardProps {
   product: Product;
   index: number;
   showLifestyleImage?: boolean;
+  cardHeight?: string;
+  imageObjectFit?: 'contain' | 'cover';
 }
 
 // Global queue for managing concurrent color extractions
@@ -19,7 +21,7 @@ let extractionQueue: Promise<void> = Promise.resolve();
 let activeExtractions = 0;
 const MAX_CONCURRENT_EXTRACTIONS = 3;
 
-export default function ProductCardSolidEdge({ product, index, showLifestyleImage = false }: ProductCardProps) {
+export default function ProductCardSolidEdge({ product, index, showLifestyleImage = false, cardHeight = 'h-[500px]', imageObjectFit = 'contain' }: ProductCardProps) {
   const [bgColor, setBgColor] = useState('#f5f5f4'); // Default beige
   const [extractedColors, setExtractedColors] = useState<{ [key: string]: string }>({});
   const [isHovered, setIsHovered] = useState(false);
@@ -133,7 +135,7 @@ export default function ProductCardSolidEdge({ product, index, showLifestyleImag
     >
                   <Link href={`/products/${product.slug}`}>
         <div 
-          className="relative h-[600px] overflow-hidden transition-colors duration-700"
+          className={`relative ${cardHeight} overflow-hidden transition-colors duration-700`}
           style={{ backgroundColor: bgColor }}
         >
           <Image
@@ -157,7 +159,7 @@ export default function ProductCardSolidEdge({ product, index, showLifestyleImag
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain group-hover:scale-105 transition-transform duration-500 relative z-10"
+            className={`${imageObjectFit === 'cover' ? 'object-cover' : 'object-contain'} group-hover:scale-105 transition-transform duration-500 relative z-10`}
             priority={index < 6}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-20"></div>
