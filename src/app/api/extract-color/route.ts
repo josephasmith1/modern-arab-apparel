@@ -30,7 +30,9 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    let { imageUrl, extractBackground = false } = await request.json();
+    const body = await request.json();
+    let imageUrl = body.imageUrl;
+    const extractBackground = body.extractBackground ?? false;
 
     if (!imageUrl) {
       return NextResponse.json(

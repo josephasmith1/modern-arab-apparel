@@ -16,7 +16,7 @@ interface ColorExtractionJob {
   reject: (error: any) => void;
 }
 
-let extractionQueue: ColorExtractionJob[] = [];
+const extractionQueue: ColorExtractionJob[] = [];
 let isProcessing = false;
 
 /**

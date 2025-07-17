@@ -322,7 +322,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         });
       }, 100);
     }
-  }, [selectedColor, imageBackgroundColors]);
+  }, [selectedColor, imageBackgroundColors, extractBackgroundColor]);
 
 
   // Reset image index when color changes
@@ -917,7 +917,18 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       {/* Magazine-Style Content Sections including Specs, Size Guide, and Lifestyle Photography */}
       {(() => {
         // Create an array of all content sections including specs and size guide
-        const allSections = [];
+        type ContentSection = {
+          type: 'specifications' | 'sizeguide';
+          image: string;
+          isFirst: boolean;
+        } | {
+          type: 'lifestyle';
+          image: string;
+          imageIndex: number;
+          isFirst: boolean;
+        };
+
+        const allSections: ContentSection[] = [];
         
         // Add technical specifications as first section
         allSections.push({
@@ -953,7 +964,16 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             // Extract maximum dynamic content from all available product data
             const extractDynamicContent = (index: number) => {
               const htmlContent = compatibleProduct.fullDescription || '';
-              const contentData = [];
+
+              interface DynamicContent {
+                category: string;
+                title: string;
+                text: string;
+                accent: string;
+                customContent?: React.ReactNode;
+              }
+
+              const contentData: DynamicContent[] = [];
               
               // Helper to clean HTML
               const cleanHtml = (text: string) => text.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim();
@@ -1172,7 +1192,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
               }
               
               // Remove duplicates based on text similarity
-              const uniqueContent = [];
+              const uniqueContent: DynamicContent[] = [];
               const seenTexts = new Set();
               contentData.forEach(item => {
                 const textKey = item.text.toLowerCase().substring(0, 50);
@@ -1270,6 +1290,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             
             // Helper function to render size guide
             function renderSizeGuide() {
+              if (!compatibleProduct) return null;
               // Extract size guide table from HTML
               const extractSizeTable = (html: string) => {
                 // Look for the imperial table first

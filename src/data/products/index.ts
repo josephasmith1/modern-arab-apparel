@@ -9,6 +9,8 @@
 import { Product } from './types';
 import { products } from './products-data';
 
+let productsCache: Product[] | null = null;
+
 // Re-export types for convenience
 export type { Product, ProductColor, ProductVariant } from './types';
 
@@ -17,13 +19,18 @@ export type { Product, ProductColor, ProductVariant } from './types';
  * This function now uses the pre-generated products-data.ts file
  */
 async function getProducts(): Promise<Product[]> {
+  if (productsCache) {
+    return productsCache;
+  }
+
   if (products.length === 0) {
     console.warn('No products found in products-data.ts. Run generate-products-data.js to regenerate.');
   } else {
     console.log(`Successfully loaded ${products.length} products from static data`);
   }
   
-  return products;
+  productsCache = products;
+  return productsCache;
 }
 
 /**
