@@ -5,61 +5,17 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Minus, Plus, X, ShoppingBag, Truck, Shield, RotateCcw, CreditCard } from 'lucide-react';
-
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  color: string;
-  size: string;
-  quantity: number;
-}
-
-// Mock cart data
-const initialCartItems: CartItem[] = [
-  {
-    id: '1',
-    name: 'Modern Arab Faded Tee',
-    price: 35.00,
-    image: '/images/modern-arab-faded-tee-faded-khaki-front.jpg',
-    color: 'Faded Khaki',
-    size: 'L',
-    quantity: 2
-  },
-  {
-    id: '2',
-    name: 'Arabic Heritage Hoodie',
-    price: 65.00,
-    image: '/images/modern-arab-faded-tee-faded-khaki-front.jpg',
-    color: 'Black',
-    size: 'M',
-    quantity: 1
-  }
-];
+import { useCart } from '@/context/CartContext';
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState<CartItem[]>(initialCartItems);
+  const { items: cartItems, updateQuantity, removeItem, total: cartTotal } = useCart();
   const [promoCode, setPromoCode] = useState('');
   const [promoApplied, setPromoApplied] = useState(false);
 
-  const updateQuantity = (id: string, newQuantity: number) => {
-    if (newQuantity === 0) {
-      removeItem(id);
-      return;
-    }
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    );
-  };
-
-  const removeItem = (id: string) => {
-    setCartItems(items => items.filter(item => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const subtotal = cartItems.reduce((sum, item) => {
+    const price = parseFloat(item.price.replace('$', ''));
+    return sum + (price * item.quantity);
+  }, 0);
   const shipping = subtotal > 50 ? 0 : 8.99;
   const discount = promoApplied ? subtotal * 0.1 : 0;
   const total = subtotal + shipping - discount;
@@ -194,7 +150,7 @@ export default function CartPage() {
                             <span>Size: {item.size}</span>
                           </div>
                           <p className="text-lg font-semibold text-black font-montserrat">
-                            ${item.price.toFixed(2)}
+                            {item.price}
                           </p>
                         </div>
 
@@ -248,7 +204,7 @@ export default function CartPage() {
                             animate={{ scale: 1 }}
                             className="text-lg font-semibold text-black font-montserrat"
                           >
-                            ${(item.quantity * item.price).toFixed(2)}
+                            ${(item.quantity * parseFloat(item.price.replace('$', ''))).toFixed(2)}
                           </motion.p>
                         </div>
                       </motion.div>
