@@ -419,7 +419,7 @@ export default function Home() {
                       alt={collection.name}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-contain object-center group-hover:scale-105 transition-all duration-700"
+                      className="object-cover object-center group-hover:scale-105 transition-all duration-700"
                     />
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                   </div>

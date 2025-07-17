@@ -1578,13 +1578,16 @@ export const products: Product[] = [
     "colors": [
       {
         "name": "Maroon",
-        "swatch": "#800000",
+        "swatch": "",
         "hex": "#800000",
         "images": {
-          "main": "/images/modernarab-hoodie/maroon-main.jpg",
-          "back": "/images/modernarab-hoodie/maroon-back.jpg",
+          "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-maroon-back-67cbcddeb416f.jpg?v=1752629960",
           "lifestyle": [
-            "/images/modernarab-hoodie/maroon-lifestyle-1.jpg"
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0503.jpg?v=1752629960",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0504.jpg?v=1752630014",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3499.jpg?v=1752630014",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/19A5AE90-2434-4FAF-9CD2-D6F41A7CC8D5-2.jpg?v=1752630014"
           ]
         },
         "variants": [
@@ -1627,14 +1630,16 @@ export const products: Product[] = [
         ]
       },
       {
-        "name": "Olive Green",
-        "swatch": "#6B8E23",
-        "hex": "#6B8E23",
+        "name": "Military Green",
+        "swatch": "",
+        "hex": "#4B5320",
         "images": {
-          "main": "/images/modernarab-hoodie/green-main.jpg",
-          "back": "/images/modernarab-hoodie/green-back.jpg",
+          "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-front-67cbcddec3716.jpg?v=1746601397",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-military-green-back-67cbcddeca53d.jpg?v=1746601397",
           "lifestyle": [
-            "/images/modernarab-hoodie/green-lifestyle-1.jpg"
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0208.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0179.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0186.jpg?v=1746601397"
           ]
         },
         "variants": [
@@ -1728,13 +1733,16 @@ export const products: Product[] = [
       },
       {
         "name": "White",
-        "swatch": "#FFFFFF",
+        "swatch": "",
         "hex": "#FFFFFF",
         "images": {
-          "main": "/images/modernarab-hoodie/white-main.jpg",
-          "back": "/images/modernarab-hoodie/white-back.jpg",
+          "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-front-67cbcddedfc67.jpg?v=1746601397",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-white-back-67cbcddee9525.jpg?v=1746601397",
           "lifestyle": [
-            "/images/modernarab-hoodie/white-lifestyle-1.jpg"
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0156.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0109.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0158.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0122.jpg?v=1746601397"
           ]
         },
         "variants": [
@@ -1777,14 +1785,15 @@ export const products: Product[] = [
         ]
       },
       {
-        "name": "Green",
-        "swatch": "#008000",
-        "hex": "#008000",
+        "name": "Forest Green",
+        "swatch": "",
+        "hex": "#228B22",
         "images": {
-          "main": "/images/modernarab-hoodie/green-main.jpg",
-          "back": "/images/modernarab-hoodie/green-back.jpg",
+          "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-front-67cbcddebbd20.jpg?v=1746601397",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-forest-green-back-67cbcddebf7ab.jpg?v=1746601397",
           "lifestyle": [
-            "/images/modernarab-hoodie/green-lifestyle-1.jpg"
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0856.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/4D2C1099-5259-42D2-84EF-168C05A08F4C.jpg?v=1746601397"
           ]
         },
         "variants": [
@@ -1828,13 +1837,16 @@ export const products: Product[] = [
       },
       {
         "name": "Vintage Black",
-        "swatch": "#808080",
-        "hex": "#808080",
+        "swatch": "",
+        "hex": "#2C2C2C",
         "images": {
-          "main": "/images/modernarab-hoodie/faded-black-main.jpg",
-          "back": "/images/modernarab-hoodie/faded-black-back.jpg",
+          "main": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-vintage-black-front-67cbcddeb6359.jpg?v=1746601397",
+          "back": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/unisex-premium-hoodie-vintage-black-back-67cbcddeb8d96.jpg?v=1746601397",
           "lifestyle": [
-            "/images/modernarab-hoodie/faded-black-lifestyle-1.jpg"
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/7F9449A2-392F-4C0F-8000-B8C7E2FA7890.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0951_copy.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/20ACCA5F-5104-4650-BCDC-74B198308120-2.jpg?v=1746601397",
+            "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/E0F8C90E-42F3-4432-9521-2862087D5B1D-2.jpg?v=1746601397"
           ]
         },
         "variants": [

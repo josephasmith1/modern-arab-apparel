@@ -15,6 +15,7 @@ interface ProductCardProps {
 
 export default function ProductCardSimple({ product, index }: ProductCardProps) {
   const [bgColor, setBgColor] = useState('#f5f5f4'); // Default beige
+  const [isHovered, setIsHovered] = useState(false);
   const { extractBackgroundColor } = useColorExtractor();
   const { targetRef, isIntersecting } = useIntersectionObserver({
     threshold: 0.1,
@@ -40,6 +41,8 @@ export default function ProductCardSimple({ product, index }: ProductCardProps) 
       }}
       transition={{ duration: 0.5 }}
       className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <Link href={`/products/${product.slug}`}>
         <div 
@@ -47,7 +50,19 @@ export default function ProductCardSimple({ product, index }: ProductCardProps) 
           style={{ backgroundColor: bgColor }}
         >
           <Image
-            src={product.colors[0]?.images?.main || '/images/placeholder.jpg'}
+            src={(() => {
+              const color = product.colors[0];
+              if (!isHovered) return color?.images?.main || '/images/placeholder.jpg';
+              
+              // Try back image first
+              if (color?.images?.back) return color.images.back;
+              
+              // Then try first lifestyle image
+              if (color?.images?.lifestyle?.[0]) return color.images.lifestyle[0];
+              
+              // Fallback to main image
+              return color?.images?.main || '/images/placeholder.jpg';
+            })()}
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

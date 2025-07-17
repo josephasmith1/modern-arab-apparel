@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Footer from '@/components/Footer';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import ProductCardSimple from '@/components/ProductCardSimple';
+import ProductCardSolidEdge from '@/components/ProductCardSolidEdge';
 import { Product } from '@/data/products/types';
 
 interface CollectionPageClientProps {
@@ -169,7 +169,7 @@ export default function CollectionPageClient({ collection, collectionProducts }:
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
               {collectionProducts.map((product, index) => (
-                <ProductCardSimple 
+                <ProductCardSolidEdge 
                   key={product.slug}
                   product={product}
                   index={index}

@@ -1,4 +1,4 @@
-'use client';
+
 
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
@@ -11,6 +11,7 @@ import { Product, ProductColor as Color } from '@/data/products/types';
 interface ProductCardProps {
   product: Product;
   index: number;
+  showLifestyleImage?: boolean;
 }
 
 // Global queue for managing concurrent color extractions
@@ -18,9 +19,10 @@ let extractionQueue: Promise<void> = Promise.resolve();
 let activeExtractions = 0;
 const MAX_CONCURRENT_EXTRACTIONS = 3;
 
-export default function ProductCardSolidEdge({ product, index }: ProductCardProps) {
+export default function ProductCardSolidEdge({ product, index, showLifestyleImage = false }: ProductCardProps) {
   const [bgColor, setBgColor] = useState('#f5f5f4'); // Default beige
   const [extractedColors, setExtractedColors] = useState<{ [key: string]: string }>({});
+  const [isHovered, setIsHovered] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
   const { extractImageColor, extractBackgroundColor } = useColorExtractor();
@@ -105,17 +107,17 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
     }
     
     // Cleanup on unmount or when dependencies change
+    const timerId = timeoutRef.current;
     return () => {
       // Abort any ongoing extractions
       if (abortControllerRef.current) {
         abortControllerRef.current.abort();
       }
-      const currentTimeout = timeoutRef.current;
-      if (currentTimeout) {
-        clearTimeout(currentTimeout);
+      if (timerId) {
+        clearTimeout(timerId);
       }
     };
-  }, [product.slug, product.colors, extractedColors, extractImageColor, isIntersecting]); // Use product.slug instead of product to avoid infinite loops
+  }, [product.slug, product.colors, extractedColors, extractImageColor, isIntersecting]);
 
   return (
     <motion.div 
@@ -126,6 +128,8 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
       }}
       transition={{ duration: 0.5 }}
       className="bg-white rounded-lg shadow-xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
                   <Link href={`/products/${product.slug}`}>
         <div 
@@ -133,11 +137,27 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
           style={{ backgroundColor: bgColor }}
         >
           <Image
-            src={product.colors[0]?.images?.main || '/images/placeholder.jpg'}
+            src={(() => {
+              const color = product.colors[0];
+              if (showLifestyleImage) {
+                return color?.images?.lifestyle?.[0] || color?.images?.main || '/images/placeholder.jpg';
+              }
+
+              if (!isHovered) return color?.images?.main || '/images/placeholder.jpg';
+              
+              // Try back image first
+              if (color?.images?.back) return color.images.back;
+              
+              // Then try first lifestyle image
+              if (color?.images?.lifestyle?.[0]) return color.images.lifestyle[0];
+              
+              // Fallback to main image
+              return color?.images?.main || '/images/placeholder.jpg';
+            })()}
             alt={product.name}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain object-center group-hover:scale-105 transition-transform duration-500 relative z-10"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-500 relative z-10"
             priority={index < 6}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 z-20"></div>
@@ -150,20 +170,18 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
           <div className="flex items-center mt-2 mb-2">
             <div className="flex space-x-2">
               {(() => {
-                // Filter out duplicate colors by hex value
-                const uniqueColors = product.colors.filter((color: Color, index: number, self: Color[]) => 
-                  self.findIndex(c => c.hex === color.hex) === index
-                );
+                // Don't filter by hex - show all color variants
+                const allColors = product.colors;
                 
-                return uniqueColors.length === 1 ? (
+                return allColors.length === 1 ? (
                   <span className="text-sm text-gray-600 font-barlow-condensed">
-                    {uniqueColors[0].name}
+                    {allColors[0].name}
                   </span>
                 ) : (
                   <>
-                    {uniqueColors.slice(0, 5).map((color: Color, colorIndex: number) => (
+                    {allColors.slice(0, 5).map((color: Color, colorIndex: number) => (
                       <div
-                        key={color.hex}
+                        key={`${color.name}-${colorIndex}`}
                         className="relative w-5 h-5 rounded-full border border-gray-300 transition-all duration-300"
                         title={color.name}
                       >
@@ -176,8 +194,8 @@ export default function ProductCardSolidEdge({ product, index }: ProductCardProp
                         {/* Only extract colors for first 3 swatches for performance */}
                       </div>
                     ))}
-                    {uniqueColors.length > 5 && (
-                      <span className="text-xs text-gray-500">+{uniqueColors.length - 5}</span>
+                    {allColors.length > 5 && (
+                      <span className="text-xs text-gray-500">+{allColors.length - 5}</span>
                     )}
                   </>
                 );

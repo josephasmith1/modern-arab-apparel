@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Header = () => {
   const { itemCount, openCart, isOpen, closeCart, items, updateQuantity, removeItem } = useCart();
   const [isArabic, setIsArabic] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -41,6 +42,7 @@ const Header = () => {
     <div className="flex items-center space-x-6">
       <nav className="hidden md:flex items-center space-x-6">
         <Link href="/products" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul" style={{ fontSize: '30px' }}>Shop</Link>
+        <Link href="/lifestyle" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul" style={{ fontSize: '30px' }}>Lifestyle</Link>
         <div className="relative group">
           <Link href="/collections" className="text-black hover:text-gray-600 transition-colors font-medium font-my-soul flex items-center" style={{ fontSize: '30px' }}>
             Collections
@@ -83,9 +85,12 @@ const Header = () => {
             )}
           </AnimatePresence>
         </motion.button>
-        <button className="md:hidden p-2 hover:bg-gray-200 rounded-full transition-colors">
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden p-2 hover:bg-gray-200 rounded-full transition-colors"
+        >
           <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
         </button>
       </div>
@@ -99,6 +104,154 @@ const Header = () => {
     onUpdateQuantity={updateQuantity}
     onRemoveItem={removeItem}
   />
+
+  {/* Mobile Menu Slideout Panel */}
+  <AnimatePresence>
+    {isMobileMenuOpen && (
+      <>
+        {/* Backdrop */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
+        />
+        
+        {/* Menu Panel */}
+        <motion.div
+          initial={{ x: "-100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100%" }}
+          transition={{ type: "spring", damping: 30, stiffness: 300 }}
+          className="fixed top-0 left-0 w-4/5 max-w-sm h-full bg-white shadow-xl z-50 md:hidden"
+          style={{ backgroundColor: '#f0edec' }}
+        >
+          {/* Menu Header */}
+          <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <h2 className="text-2xl font-bold font-bodoni">Menu</h2>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 hover:bg-gray-200 rounded-full transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          {/* Menu Links */}
+          <nav className="p-6">
+            <Link 
+              href="/products" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-xl font-medium text-black hover:text-gray-600 transition-colors font-my-soul"
+              style={{ fontSize: '28px' }}
+            >
+              Shop
+            </Link>
+            
+            <Link 
+              href="/lifestyle" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-xl font-medium text-black hover:text-gray-600 transition-colors font-my-soul"
+              style={{ fontSize: '28px' }}
+            >
+              Lifestyle
+            </Link>
+            
+            <div className="border-t border-gray-200 my-2"></div>
+            
+            <Link 
+              href="/collections" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-xl font-medium text-black hover:text-gray-600 transition-colors font-my-soul"
+              style={{ fontSize: '28px' }}
+            >
+              All Collections
+            </Link>
+            
+            <Link 
+              href="/collections/upperwear" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-2 pl-4 text-lg text-gray-700 hover:text-black transition-colors font-my-soul"
+              style={{ fontSize: '24px' }}
+            >
+              → Tops
+            </Link>
+            
+            <Link 
+              href="/collections/layers" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-2 pl-4 text-lg text-gray-700 hover:text-black transition-colors font-my-soul"
+              style={{ fontSize: '24px' }}
+            >
+              → Layers
+            </Link>
+            
+            <Link 
+              href="/collections/headwear" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-2 pl-4 text-lg text-gray-700 hover:text-black transition-colors font-my-soul"
+              style={{ fontSize: '24px' }}
+            >
+              → Headwear
+            </Link>
+            
+            <Link 
+              href="/collections/bottoms" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-2 pl-4 text-lg text-gray-700 hover:text-black transition-colors font-my-soul"
+              style={{ fontSize: '24px' }}
+            >
+              → Bottoms
+            </Link>
+            
+            <div className="border-t border-gray-200 my-2"></div>
+            
+            <Link 
+              href="/about" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-xl font-medium text-black hover:text-gray-600 transition-colors font-my-soul"
+              style={{ fontSize: '28px' }}
+            >
+              About
+            </Link>
+            
+            <Link 
+              href="/faqs" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-xl font-medium text-black hover:text-gray-600 transition-colors font-my-soul"
+              style={{ fontSize: '28px' }}
+            >
+              FAQs
+            </Link>
+            
+            <Link 
+              href="/contact" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="block py-3 text-xl font-medium text-black hover:text-gray-600 transition-colors font-my-soul"
+              style={{ fontSize: '28px' }}
+            >
+              Contact
+            </Link>
+          </nav>
+          
+          {/* Footer */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-gray-200">
+            <div 
+              className={`text-center cursor-pointer transition-colors ${isArabic ? "text-lg text-gray-700 font-normal font-arabic hover:text-gray-900" : "text-black hover:text-gray-600 font-medium font-my-soul"}`}
+              style={!isArabic ? { fontSize: '24px' } : {}}
+              dir={isArabic ? "rtl" : "ltr"}
+              onClick={() => setIsArabic(!isArabic)}
+            >
+              {isArabic ? "ألا تخافون من الله" : "Do You Not Fear Allah?"}
+            </div>
+          </div>
+        </motion.div>
+      </>
+    )}
+  </AnimatePresence>
 </>
   );
 };

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { findProductBySlug } from '@/data/products/sync';
+import { loadProductBySlug } from '@/lib/product-loader';
 
 export async function GET(
   request: NextRequest,
@@ -15,7 +15,7 @@ export async function GET(
       );
     }
     
-    const product = findProductBySlug(slug);
+    const product = await loadProductBySlug(slug);
     
     if (!product) {
       return NextResponse.json(

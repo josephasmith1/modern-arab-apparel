@@ -7,36 +7,23 @@
  */
 
 import { Product } from './types';
-import { loadAllProducts } from '@/lib/product-loader';
+import { products } from './products-data';
 
 // Re-export types for convenience
 export type { Product, ProductColor, ProductVariant } from './types';
 
-// Cache products in module scope for server-side usage
-let productsCache: Product[] | null = null;
-
 /**
- * Get all products with server-side caching
- * This function is called on the server and caches results across requests
+ * Get all products from static generated data
+ * This function now uses the pre-generated products-data.ts file
  */
 async function getProducts(): Promise<Product[]> {
-  if (productsCache === null) {
-    try {
-      productsCache = await loadAllProducts();
-      
-      if (productsCache.length === 0) {
-        console.warn('No products loaded from JSON files. Check that product JSON files exist in src/data/products/');
-      } else {
-        console.log(`Successfully loaded ${productsCache.length} products from JSON files`);
-      }
-    } catch (error) {
-      console.error('Failed to load products:', error);
-      // Return empty array on error to maintain backward compatibility
-      productsCache = [];
-    }
+  if (products.length === 0) {
+    console.warn('No products found in products-data.ts. Run generate-products-data.js to regenerate.');
+  } else {
+    console.log(`Successfully loaded ${products.length} products from static data`);
   }
   
-  return productsCache;
+  return products;
 }
 
 /**

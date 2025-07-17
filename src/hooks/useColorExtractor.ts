@@ -112,7 +112,7 @@ export const useColorExtractor = () => {
     };
   }, []);
 
-  const extractImageColor = useCallback((imageSrc: string, callback: (color: string) => void) => {
+  const extractImageColor = useCallback(async (imageSrc: string, callback: (color: string) => void) => {
     const cacheKey = `img_${imageSrc}`;
     
     // Check cache first
@@ -134,46 +134,44 @@ export const useColorExtractor = () => {
 
     ongoingExtractions.current.add(cacheKey);
 
-    // Add small delay to batch multiple requests
-    setTimeout(() => {
-      // Re-check cache in case another extraction completed
-      if (colorCache.has(cacheKey)) {
-        callback(colorCache.get(cacheKey)!);
-        return;
+    try {
+      // Use the server-side API to avoid CORS issues
+      const response = await fetch('/api/extract-color', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ imageUrl: imageSrc }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`API responded with status: ${response.status}`);
       }
       
-      if (ongoingExtractions.current.has(cacheKey)) {
-        return;
-      }
+      const data = await response.json();
       
-      const img = new window.Image();
-      img.crossOrigin = 'Anonymous';
-      img.src = imageSrc;
-      img.onload = () => {
-        try {
-          const colorThief = new ColorThief();
-          const dominantColor = colorThief.getColor(img);
-          const color = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-          colorCache.set(cacheKey, color);
-          cleanupCache();
-          ongoingExtractions.current.delete(cacheKey);
-          callback(color);
-        } catch (error) {
-          console.error('ColorThief error:', error);
-          const fallbackColor = '#cccccc';
-          colorCache.set(cacheKey, fallbackColor);
-          ongoingExtractions.current.delete(cacheKey);
-          callback(fallbackColor);
-        }
-      };
-      img.onerror = () => {
-        console.error(`Failed to load image for garment color extraction: ${imageSrc}`);
-        const fallbackColor = '#cccccc';
-        colorCache.set(cacheKey, fallbackColor);
+      if (data.color) {
+        colorCache.set(cacheKey, data.color);
+        cleanupCache();
         ongoingExtractions.current.delete(cacheKey);
-        callback(fallbackColor);
-      };
-    }, 10); // Small delay to batch requests
+        callback(data.color);
+      } else {
+        throw new Error('No color returned from API');
+      }
+    } catch (error) {
+      console.error('Color extraction API error:', error);
+      // Try fallback color based on URL or default
+      const fallbackColor = imageSrc.includes('black') ? 'rgb(0, 0, 0)' :
+                           imageSrc.includes('white') ? 'rgb(255, 255, 255)' :
+                           imageSrc.includes('bone') ? 'rgb(245, 245, 220)' :
+                           imageSrc.includes('khaki') ? 'rgb(195, 176, 145)' :
+                           imageSrc.includes('green') ? 'rgb(34, 139, 34)' :
+                           imageSrc.includes('blue') ? 'rgb(70, 130, 180)' :
+                           'rgb(128, 128, 128)';
+      colorCache.set(cacheKey, fallbackColor);
+      ongoingExtractions.current.delete(cacheKey);
+      callback(fallbackColor);
+    }
   }, []);
 
   return { extractBackgroundColor, extractImageColor };

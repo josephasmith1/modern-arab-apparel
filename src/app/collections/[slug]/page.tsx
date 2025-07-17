@@ -26,10 +26,20 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
       return true;
     }
     
-    // Direct mapping using Shopify product_type
+    // Direct mapping using Shopify product_type with proper case handling
     const productType = product.collection.toLowerCase();
-    return productType === collection.slug.toLowerCase() || 
-           (collection.slug === 'bottoms' && productType === 'legwear');
+    const slug = collection.slug.toLowerCase();
+    
+    // Map collection slugs to product types
+    const collectionMap: { [key: string]: string[] } = {
+      'upperwear': ['upperwear'],
+      'layers': ['layers'],
+      'headwear': ['headwear'],
+      'bottoms': ['legwear', 'bottoms'], // Include both legwear and bottoms
+    };
+    
+    const validTypes = collectionMap[slug] || [slug];
+    return validTypes.includes(productType);
   });
 
   return <CollectionPageClient collection={collection} collectionProducts={collectionProducts} />;

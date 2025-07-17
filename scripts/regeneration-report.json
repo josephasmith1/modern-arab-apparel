@@ -1,0 +1,100 @@
+{
+  "totalProducts": 17,
+  "totalColors": 79,
+  "collections": [
+    "Headwear",
+    "Upperwear"
+  ],
+  "productsByCollection": {
+    "Headwear": [
+      {
+        "name": "Modern Arab Beanie",
+        "slug": "fisherman-beanie",
+        "colors": 1
+      },
+      {
+        "name": "Modern Arab Bucket Hat",
+        "slug": "modern-arab-bucket-hat",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Cap",
+        "slug": "modern-arab-cap",
+        "colors": 4
+      }
+    ],
+    "Upperwear": [
+      {
+        "name": "Modern Arab Crewneck",
+        "slug": "modernarab-crewneck",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Cropped Hoodie",
+        "slug": "modernarab-cropped-hoodie",
+        "colors": 2
+      },
+      {
+        "name": "Modern Arab Faded Tee",
+        "slug": "modern-arab-faded-tee-black-print",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Hoodie",
+        "slug": "modern-arab-hoodie",
+        "colors": 6
+      },
+      {
+        "name": "Modern Arab Joggers",
+        "slug": "modern-arab-joggers",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Premium Tee (Faded Green)",
+        "slug": "modern-arab-premium-tee-faded-eucalyptus",
+        "colors": 6
+      },
+      {
+        "name": "Modern Arab Premium Tee (Faded Khaki)",
+        "slug": "modern-arab-premium-tee-faded-khaki",
+        "colors": 6
+      },
+      {
+        "name": "Modern Arab Premium Tee",
+        "slug": "modern-arab-premium-tee",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Sweatpants",
+        "slug": "modern-arab-sweatpants",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Tee",
+        "slug": "modernarab-tee-black",
+        "colors": 7
+      },
+      {
+        "name": "Modern Arab Tee",
+        "slug": "modernarab-tee-white",
+        "colors": 7
+      },
+      {
+        "name": "Modern Arab Faded Tee",
+        "slug": "modernarab-tee",
+        "colors": 4
+      },
+      {
+        "name": "Modern Arab Crewneck",
+        "slug": "modern-arab-crewneck-sand",
+        "colors": 6
+      },
+      {
+        "name": "Modern Arab Hoodie",
+        "slug": "modern-arab-hoodie-2",
+        "colors": 6
+      }
+    ]
+  },
+  "generatedAt": "2025-07-16T01:50:33.217Z"
+}

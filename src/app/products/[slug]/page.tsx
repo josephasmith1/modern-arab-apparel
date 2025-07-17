@@ -1,13 +1,12 @@
 "use client";
 
 import Image from 'next/image';
-import { useState, use, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef, use } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 // import { Shirt, Feather, MapPin, Sparkles, PackageCheck, Droplets, Tag, Square, UserCircle } from "lucide-react";
 import ColorThief from 'colorthief';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Footer';
-import ProductSpecifications from '@/components/product/ProductSpecifications';
 import { useCart } from '@/context/CartContext';
 import AddToCartButton from '@/components/cart/AddToCartButton';
 import { ProductColor, findProductBySlug } from '@/data/products/sync';
@@ -24,10 +23,11 @@ interface SizeGuideItem {
 }
 
 export default function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = use(params);
+  // Unwrap params with React.use()
+  const { slug } = use(params);
   
   // Get product data
-  const productData = findProductBySlug(resolvedParams.slug);
+  const productData = findProductBySlug(slug);
 
   // Initialize hooks before any early returns
   const { addItem } = useCart();
@@ -100,7 +100,8 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   const [isScrolled, setIsScrolled] = useState(false);
   const [showColorOptions, setShowColorOptions] = useState(false);
   const [imageBackgroundColors, setImageBackgroundColors] = useState<{ [key: string]: string }>({});
-  const [extractedProductColors, setExtractedProductColors] = useState<{ [key: string]: string }>({});
+  const [extractedProductColors, setExtractedProductColors] = useState<{ [key: string]: string; }>({});
+  const fetchedColorsRef = useRef<{ [key: string]: boolean }>({});
 
   // Create a memoized array of all images for the selected color
   const currentImages = useMemo(() => {
@@ -125,24 +126,93 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     return images.filter(Boolean); // Filter out any empty strings
   }, [selectedColor]);
 
-  // Initialize and reset selected image index - select first lifestyle image if available
+  // Initialize and reset selected image index - always start with main product image (index 0)
   useEffect(() => {
-    if (selectedColor && selectedColor.images) {
-      if (selectedColor.images.lifestyle && selectedColor.images.lifestyle.length > 0) {
-        // Find the index of the first lifestyle image in currentImages
-        const firstLifestyleImage = selectedColor.images.lifestyle[0];
-        const indexInCurrent = currentImages.findIndex(img => img === firstLifestyleImage);
-        if (indexInCurrent !== -1) {
-          setSelectedImageIndex(indexInCurrent);
-        } else {
-          setSelectedImageIndex(0);
-        }
-      } else {
-        // No lifestyle images, default to first image
-        setSelectedImageIndex(0);
-      }
+    if (selectedColor && selectedColor.images && currentImages.length > 0) {
+      // Always start with the first image (main product image)
+      setSelectedImageIndex(0);
     }
   }, [selectedColor, currentImages]);
+
+  // Extract dominant garment color using server-side API to avoid CORS issues
+  const extractImageColor = useCallback(async (imageSrc: string, callback: (color: string) => void) => {
+    try {
+      console.log('Extracting color for:', imageSrc);
+      
+      // Use server-side API for all images (both external and local)
+      const response = await fetch('/api/extract-color', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ imageUrl: imageSrc }),
+      });
+      
+      if (!response.ok) {
+        console.error(`API responded with status: ${response.status}`);
+        // Try again after a short delay
+        setTimeout(async () => {
+          try {
+            const retryResponse = await fetch('/api/extract-color', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ imageUrl: imageSrc }),
+            });
+            
+            if (retryResponse.ok) {
+              const data = await retryResponse.json();
+              if (data.color) {
+                console.log(`Color extracted on retry for ${imageSrc}:`, data.color);
+                callback(data.color);
+                return;
+              }
+            }
+          } catch (retryError) {
+            console.error('Retry failed:', retryError);
+          }
+          // Only use fallback if retry also fails
+          const colorName = compatibleProduct?.colors.find(c => c.images.main === imageSrc)?.name || '';
+          callback(getFallbackColor(colorName));
+        }, 1000);
+        return;
+      }
+      
+      const data = await response.json();
+      
+      if (data.color) {
+        console.log(`Color extracted for ${imageSrc}:`, data.color);
+        callback(data.color);
+      } else {
+        throw new Error('No color returned from API');
+      }
+    } catch (error) {
+      console.error('Color extraction failed:', error);
+      // Fallback to a default color based on color name
+      const colorName = compatibleProduct?.colors.find(c => c.images.main === imageSrc)?.name || '';
+      callback(getFallbackColor(colorName));
+    }
+  }, [compatibleProduct?.colors]);
+
+  // Extract colors for all product colors when component mounts or product changes
+  useEffect(() => {
+    if (!compatibleProduct?.colors) return;
+
+    compatibleProduct.colors.forEach((color, index) => {
+      if (color.images.main && !fetchedColorsRef.current[color.name]) {
+        fetchedColorsRef.current[color.name] = true; // Mark as fetched
+        console.log(`Extracting color for ${color.name} from ${color.images.main}`);
+        const delay = index * 200; // Stagger API calls
+        setTimeout(() => {
+          extractImageColor(color.images.main, (extractedColor: string) => {
+            console.log(`Color extracted for ${color.name}:`, extractedColor);
+            setExtractedProductColors(prev => ({ ...prev, [color.name]: extractedColor }));
+          });
+        }, delay);
+      }
+    });
+  }, [compatibleProduct?.colors, extractImageColor, fetchedColorsRef]);
 
   
   // Scroll tracking
@@ -185,161 +255,41 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
   };
 
   // Extract background color from image edges (not garment)
-  const extractBackgroundColor = (imageSrc: string, callback: (color: string) => void) => {
-    const img = document.createElement('img');
-    // Remove crossOrigin for local images to avoid CORS issues
-    // img.crossOrigin = 'anonymous';
-    
-    // Set a timeout to prevent hanging
-    const timeout = setTimeout(() => {
-      callback('rgb(240, 237, 236)'); // fallback to page background color
-    }, 5000);
-    
-    img.onload = () => {
-      clearTimeout(timeout);
-      try {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        
-        if (!ctx) {
-          callback('rgb(240, 237, 236)');
-          return;
-        }
-        
-        // Scale down for performance
-        const scale = Math.min(50 / img.width, 50 / img.height);
-        canvas.width = img.width * scale;
-        canvas.height = img.height * scale;
-        
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        
-        // Get the exact background color from corners (most likely to be pure background)
-        const corners = [
-          { x: 0, y: 0 }, // top-left
-          { x: canvas.width - 1, y: 0 }, // top-right
-          { x: 0, y: canvas.height - 1 }, // bottom-left
-          { x: canvas.width - 1, y: canvas.height - 1 }, // bottom-right
-        ];
-        
-        // Get the most common color from corners
-        const cornerColors = corners.map(({ x, y }) => {
-          const index = (y * canvas.width + x) * 4;
-          return {
-            r: data[index],
-            g: data[index + 1],
-            b: data[index + 2]
-          };
-        });
-        
-        // Use the first corner's color as it's most likely to be the pure background
-        const { r, g, b } = cornerColors[0];
-        
-        const rgbColor = `rgb(${r}, ${g}, ${b})`;
-        callback(rgbColor);
-      } catch (error) {
-        console.error('Error extracting background color:', error);
-        callback('rgb(240, 237, 236)'); // fallback to page background color
+  const extractBackgroundColor = useCallback(async (imageSrc: string, callback: (color: string) => void) => {
+    try {
+      console.log('Extracting background color for:', imageSrc);
+      
+      // Use server-side API for all images (both external and local) to avoid CORS
+      const response = await fetch('/api/extract-color', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          imageUrl: imageSrc,
+          extractBackground: true // Add flag to extract background instead of dominant color
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error(`API responded with status: ${response.status}`);
       }
-    };
-    img.onerror = () => {
-      clearTimeout(timeout);
-      // Silently fail and use page background color
-      callback('rgb(240, 237, 236)'); // fallback to page background color
-    };
-    img.src = imageSrc;
-  };
+      
+      const data = await response.json();
+      
+      if (data.color) {
+        console.log(`Background color extracted for ${imageSrc}:`, data.color);
+        callback(data.color);
+      } else {
+        throw new Error('No color returned from API');
+      }
+    } catch (error) {
+      console.error('Background color extraction failed:', error);
+      // Fallback to page background color
+      callback('rgb(240, 237, 236)');
+    }
+  }, []);
 
-  // Extract dominant garment color from CENTER of image using ColorThief
-  const extractImageColor = (imageSrc: string, callback: (color: string) => void) => {
-    const img = document.createElement('img');
-    const colorThief = new ColorThief();
-    
-    // Set a timeout to prevent hanging
-    const timeout = setTimeout(() => {
-      callback('rgb(120, 120, 120)'); // fallback to gray
-    }, 5000);
-    
-    img.onload = () => {
-      clearTimeout(timeout);
-      try {
-        // Create a canvas to extract color from center region (garment area)
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        
-        if (!ctx) {
-          callback('rgb(120, 120, 120)');
-          return;
-        }
-        
-        // Scale down for performance but maintain aspect ratio
-        const scale = Math.min(200 / img.width, 200 / img.height);
-        canvas.width = img.width * scale;
-        canvas.height = img.height * scale;
-        
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        
-        // Extract from center region (where garment typically is)
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const regionSize = Math.min(canvas.width, canvas.height) * 0.3; // 30% of smaller dimension
-        
-        const imageData = ctx.getImageData(
-          centerX - regionSize/2, 
-          centerY - regionSize/2, 
-          regionSize, 
-          regionSize
-        );
-        
-        // Create temporary canvas for ColorThief
-        const tempCanvas = document.createElement('canvas');
-        const tempCtx = tempCanvas.getContext('2d');
-        tempCanvas.width = regionSize;
-        tempCanvas.height = regionSize;
-        tempCtx?.putImageData(imageData, 0, 0);
-        
-        // Create temporary image element for ColorThief
-        const tempImg = document.createElement('img');
-        tempImg.src = tempCanvas.toDataURL();
-        tempImg.onload = () => {
-          try {
-            // Extract dominant color from center region
-            const dominantColor = colorThief.getColor(tempImg);
-            const rgbColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-            console.log(`Extracted center color for ${imageSrc}:`, rgbColor);
-            callback(rgbColor);
-          } catch (error) {
-            console.error('Error extracting color from temp image:', error);
-            callback('rgb(120, 120, 120)');
-          }
-        };
-        
-      } catch (error) {
-        console.error('Error extracting color with ColorThief:', error);
-        // Fallback to simple dominant color extraction
-        try {
-          const dominantColor = colorThief.getColor(img);
-          const rgbColor = `rgb(${dominantColor[0]}, ${dominantColor[1]}, ${dominantColor[2]})`;
-          console.log(`Extracted fallback color for ${imageSrc}:`, rgbColor);
-          callback(rgbColor);
-        } catch (fallbackError) {
-          console.error('Fallback color extraction failed:', fallbackError);
-          callback('rgb(120, 120, 120)'); // final fallback
-        }
-      }
-    };
-    
-    img.onerror = () => {
-      clearTimeout(timeout);
-      console.error('Error loading image for color extraction:', imageSrc);
-      callback('rgb(120, 120, 120)'); // fallback to gray
-    };
-    
-    // Don't set crossOrigin for local images to avoid CORS issues
-    img.src = imageSrc;
-  };
 
   // Extract background colors for all lifestyle images and back image
   useEffect(() => {
@@ -374,37 +324,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
     }
   }, [selectedColor, imageBackgroundColors]);
 
-  // Extract colors from main product images for accurate color swatches
-  useEffect(() => {
-    if (!compatibleProduct || !compatibleProduct.colors || !selectedColor) return;
-    console.log('Starting color extraction for', compatibleProduct.colors.length, 'colors');
-    
-    // Extract colors for all variants, prioritizing the selected color first
-    const colorsToExtract = [...compatibleProduct.colors];
-    const selectedIndex = colorsToExtract.findIndex(c => c.name === selectedColor.name);
-    if (selectedIndex > 0) {
-      // Move selected color to front for priority extraction
-      const selected = colorsToExtract.splice(selectedIndex, 1)[0];
-      colorsToExtract.unshift(selected);
-    }
-    
-    colorsToExtract.forEach((color: ProductColor, index: number) => {
-      if (color.images.main && !extractedProductColors[color.name]) {
-        console.log(`Extracting color for ${color.name} from ${color.images.main}`);
-        // Reduced delay and prioritize selected color (index 0)
-        const delay = index === 0 ? 50 : 100 + index * 150;
-        setTimeout(() => {
-          extractImageColor(color.images.main, (extractedColor: string) => {
-            console.log(`Color extracted for ${color.name}:`, extractedColor);
-            setExtractedProductColors((prev: { [key: string]: string }) => ({ 
-              ...prev, 
-              [color.name]: extractedColor 
-            }));
-          });
-        }, delay);
-      }
-    });
-  }, [compatibleProduct, extractedProductColors, selectedColor]); // Include all dependencies
 
   // Reset image index when color changes
   useEffect(() => {
@@ -485,12 +404,6 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
           </>
         )}
 
-        {/* Image Counter */}
-        {currentImages.length > 1 && (
-          <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-20">
-            {selectedImageIndex + 1} / {currentImages.length}
-          </div>
-        )}
       </motion.div>
 
       {/* Color Selector Overlay - Fixed on Hero - Only show if more than one color */}
@@ -516,7 +429,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   console.log('Color swatch clicked:', color.name);
                   console.log('Color images:', color.images);
                   setSelectedColor(color);
-                  setSelectedImageIndex(0); // Always reset to first image for new color
+                  // Don't manually set selectedImageIndex here - let the useEffect handle it
                   // Extract color if not already done
                   if (!extractedProductColors[color.name]) {
                     extractImageColor(color.images.main, (extractedColor) => {
@@ -686,7 +599,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         viewport={{ once: true }}
                       >
-                        <div className="w-2 h-2 bg-black rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-black"></div>
                         {feature}
                       </motion.li>
                     )) : (
@@ -944,8 +857,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
         </div>
       </section>
 
-      {/* Technical Specifications */}
-      <ProductSpecifications fullDescription={typeof compatibleProduct.description === 'string' ? compatibleProduct.description : compatibleProduct.fullDescription || ''} />
+      {/* Technical Specifications and Size Guide are now integrated into the magazine sections below */}
 
       {/* Magazine-Style Back Design Section */}
       {selectedColor.images.back && selectedColor.images.back.trim() !== '' && (
@@ -1002,39 +914,416 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
       </section>
       )}
 
-      {/* Magazine-Style Lifestyle Photography Sections */}
-      {selectedColor.images.lifestyle.length > 0 && (
+      {/* Magazine-Style Content Sections including Specs, Size Guide, and Lifestyle Photography */}
+      {(() => {
+        // Create an array of all content sections including specs and size guide
+        const allSections = [];
+        
+        // Add technical specifications as first section
+        allSections.push({
+          type: 'specifications',
+          image: selectedColor.images.main, // Use main product image
+          isFirst: true
+        });
+        
+        // Add size guide as second section if product has sizes
+        if (compatibleProduct.sizes && compatibleProduct.sizes.length > 0) {
+          allSections.push({
+            type: 'sizeguide',
+            image: selectedColor.images.back || selectedColor.images.main, // Use back or main image
+            isFirst: false
+          });
+        }
+        
+        // Add lifestyle images
+        selectedColor.images.lifestyle.forEach((image, idx) => {
+          allSections.push({
+            type: 'lifestyle',
+            image: image,
+            imageIndex: idx,
+            isFirst: false
+          });
+        });
+        
+        return allSections.length > 0 && (
         <>
-          {selectedColor.images.lifestyle.map((image: string, imageIndex: number) => {
-            const contentData = [
-              {
-                category: "DESIGN PHILOSOPHY",
-                title: "Modern Heritage",
-                text: "Where tradition meets contemporary style. Designed in Los Angeles, rooted in authentic Arabic culture.",
-                accent: "LOS ANGELES"
-              },
-              {
-                category: "CRAFTSMANSHIP",
-                title: "Crafted with Purpose",
-                text: "Premium heavyweight carded cotton with a boxy, oversized fit. Garment-dyed and pre-shrunk for lasting comfort.",
-                accent: "PREMIUM COTTON"
-              },
-              {
-                category: "AUTHENTICITY",
-                title: "Authentic Expression",
-                text: "Arabic calligraphy designed by first-generation and native speakers. Every detail honors the language and culture.",
-                accent: "CULTURAL RESPECT"
-              },
-              {
-                category: "MISSION",
-                title: "Reclaiming the Narrative",
-                text: "Arabs are not what the world thinks they are—they are better. This design bridges heritage with hometown identity.",
-                accent: "BREAKING STEREOTYPES"
+          {allSections.map((section, sectionIndex) => {
+            const imageIndex = section.type === 'lifestyle' ? section.imageIndex : sectionIndex;
+            const image = section.image;
+            // Extract maximum dynamic content from all available product data
+            const extractDynamicContent = (index: number) => {
+              const htmlContent = compatibleProduct.fullDescription || '';
+              const contentData = [];
+              
+              // Helper to clean HTML
+              const cleanHtml = (text: string) => text.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim();
+              
+              // 1. Extract ALL features with creative categorization
+              const featuresMatch = htmlContent.match(/<strong>Features:<\/strong>([\s\S]*?)(?=<strong>|<p><strong class=|$)/i);
+              if (featuresMatch) {
+                const allFeatures = featuresMatch[1].split(/•/).filter(f => cleanHtml(f).length > 10);
+                allFeatures.forEach((feature, idx) => {
+                  const cleanFeature = cleanHtml(feature);
+                  let category = "FEATURES";
+                  let title = "Premium Details";
+                  let accent = "QUALITY FIRST";
+                  
+                  // Categorize features creatively based on content
+                  if (cleanFeature.toLowerCase().includes('embroid') || cleanFeature.toLowerCase().includes('logo')) {
+                    category = "BRANDING";
+                    title = "Signature Elements";
+                    accent = "ICONIC DESIGN";
+                  } else if (cleanFeature.toLowerCase().includes('fit') || cleanFeature.toLowerCase().includes('size')) {
+                    category = "FIT & COMFORT";
+                    title = "Perfect Fit";
+                    accent = "TAILORED FOR YOU";
+                  } else if (cleanFeature.toLowerCase().includes('pocket') || cleanFeature.toLowerCase().includes('functional')) {
+                    category = "FUNCTIONALITY";
+                    title = "Smart Design";
+                    accent = "PRACTICAL STYLE";
+                  } else if (cleanFeature.toLowerCase().includes('fabric') || cleanFeature.toLowerCase().includes('material')) {
+                    category = "MATERIALS";
+                    title = "Premium Fabric";
+                    accent = "QUALITY TEXTILES";
+                  } else if (cleanFeature.toLowerCase().includes('cultural') || cleanFeature.toLowerCase().includes('arabic')) {
+                    category = "HERITAGE";
+                    title = "Cultural Essence";
+                    accent = "AUTHENTIC ROOTS";
+                  }
+                  
+                  contentData.push({
+                    category,
+                    title,
+                    text: cleanFeature,
+                    accent
+                  });
+                });
               }
-            ];
+              
+              // 2. Extract design inspiration with multiple angles
+              const inspirationMatch = htmlContent.match(/<strong>Design Inspiration:<\/strong>([\s\S]*?)(?=<strong>|<p><strong|$)/i);
+              if (inspirationMatch) {
+                const inspiration = cleanHtml(inspirationMatch[1]);
+                // Split inspiration into multiple insights if it's long
+                const sentences = inspiration.match(/[^.!?]+[.!?]+/g) || [inspiration];
+                sentences.forEach((sentence, idx) => {
+                  if (sentence.trim()) {
+                    contentData.push({
+                      category: idx === 0 ? "DESIGN STORY" : "INSPIRATION",
+                      title: idx === 0 ? "The Vision" : "Creative Process",
+                      text: sentence.trim(),
+                      accent: idx === 0 ? "ARTIST'S INTENT" : "THOUGHTFUL DESIGN"
+                    });
+                  }
+                });
+              }
+              
+              // 3. Extract "Why Choose" section
+              const whyMatch = htmlContent.match(/<strong>Why Choose[^<]*<\/strong>([\s\S]*?)(?=<strong>|<p><strong|$)/i);
+              if (whyMatch) {
+                const whyText = cleanHtml(whyMatch[1]);
+                contentData.push({
+                  category: "WHY US",
+                  title: "The Difference",
+                  text: whyText.substring(0, 200) + (whyText.length > 200 ? '...' : ''),
+                  accent: "CHOOSE QUALITY"
+                });
+              }
+              
+              // 4. Extract Perfect For with each point as separate content
+              const perfectMatch = htmlContent.match(/<strong>Perfect For:<\/strong>([\s\S]*?)(?=<strong>|<p><strong|$)/i);
+              if (perfectMatch) {
+                const perfectItems = perfectMatch[1].split(/•/).filter(f => cleanHtml(f).length > 10);
+                perfectItems.forEach((item, idx) => {
+                  contentData.push({
+                    category: "LIFESTYLE",
+                    title: idx === 0 ? "Made For You" : "Your Style",
+                    text: cleanHtml(item),
+                    accent: "PERFECT MATCH"
+                  });
+                });
+              }
+              
+              // 5. Extract technical specifications creatively
+              const specsMatches = htmlContent.match(/•\s*([^•]*\d+(?:%|oz|g\/m²|singles)[^•<]*)/gi);
+              if (specsMatches) {
+                specsMatches.forEach((spec, idx) => {
+                  const cleanSpec = cleanHtml(spec);
+                  if (cleanSpec && !cleanSpec.includes('Model wears')) {
+                    contentData.push({
+                      category: "SPECIFICATIONS",
+                      title: "Technical Details",
+                      text: cleanSpec,
+                      accent: "PRECISION CRAFTED"
+                    });
+                  }
+                });
+              }
+              
+              // 6. Extract care instructions as lifestyle tips
+              if (htmlContent.includes('Machine wash') || htmlContent.includes('wash')) {
+                const washMatch = htmlContent.match(/(?:Machine wash[^<.]*|Hand wash[^<.]*)/i);
+                if (washMatch) {
+                  contentData.push({
+                    category: "CARE GUIDE",
+                    title: "Easy Maintenance",
+                    text: "Designed for real life - " + washMatch[0] + ". Built to last through countless wears and washes.",
+                    accent: "HASSLE-FREE"
+                  });
+                }
+              }
+              
+              // 7. Extract origin and production info
+              const originMatches = [
+                htmlContent.match(/Designed (?:in|and)[^<.]+/i),
+                htmlContent.match(/(?:Blank product )?sourced from[^<.]+/i),
+                htmlContent.match(/Final product[^<.]+/i)
+              ];
+              originMatches.forEach((match, idx) => {
+                if (match) {
+                  const categories = ["ORIGIN STORY", "PRODUCTION", "CRAFTED WITH CARE"];
+                  const titles = ["Where It Begins", "Global Sourcing", "Final Touch"];
+                  contentData.push({
+                    category: categories[idx],
+                    title: titles[idx],
+                    text: cleanHtml(match[0]),
+                    accent: "QUALITY JOURNEY"
+                  });
+                }
+              });
+              
+              // 8. Create content from product tags
+              if (compatibleProduct.tags && compatibleProduct.tags.length > 0) {
+                const tagGroups = {
+                  style: compatibleProduct.tags.filter(t => ['Streetwear', 'Minimalist', 'Modern', 'Premium'].includes(t)),
+                  demographic: compatibleProduct.tags.filter(t => ['Men', 'Women', 'Unisex'].includes(t)),
+                  cultural: compatibleProduct.tags.filter(t => ['Arabic', 'Western Apparel'].includes(t)),
+                  product: compatibleProduct.tags.filter(t => ['Hoodie', 'Tee', 'Sweatpants', 'Cap', 'Beanie'].includes(t))
+                };
+                
+                if (tagGroups.style.length > 0) {
+                  contentData.push({
+                    category: "STYLE PROFILE",
+                    title: tagGroups.style[0] + " Aesthetic",
+                    text: `Embodying ${tagGroups.style.join(' and ').toLowerCase()} design principles, this piece represents the evolution of contemporary fashion.`,
+                    accent: "STYLE DEFINED"
+                  });
+                }
+                
+                if (tagGroups.demographic.length > 1) {
+                  contentData.push({
+                    category: "INCLUSIVE DESIGN",
+                    title: "For Everyone",
+                    text: `Thoughtfully designed to be truly ${tagGroups.demographic.join(' and ').toLowerCase()}, breaking boundaries in fashion.`,
+                    accent: "NO LIMITS"
+                  });
+                }
+              }
+              
+              // 9. Extract pricing philosophy if there's a sale
+              if (compatibleProduct.originalPrice && compatibleProduct.originalPrice !== compatibleProduct.price) {
+                contentData.push({
+                  category: "VALUE",
+                  title: "Investment Piece",
+                  text: "Premium quality at an accessible price point. True value that goes beyond the price tag.",
+                  accent: "SMART CHOICE"
+                });
+              }
+              
+              // 10. Create seasonal/contextual content based on product type
+              const productType = compatibleProduct.collection?.toLowerCase() || '';
+              if (productType.includes('layer') || productType.includes('hoodie')) {
+                contentData.push({
+                  category: "VERSATILITY",
+                  title: "Year-Round Essential",
+                  text: "From cool morning runs to late night sessions, this piece adapts to your life and climate.",
+                  accent: "ALL SEASONS"
+                });
+              } else if (productType.includes('headwear')) {
+                contentData.push({
+                  category: "ACCESSORIES",
+                  title: "Complete The Look",
+                  text: "The perfect finishing touch that elevates any outfit while making a subtle statement.",
+                  accent: "STYLE ESSENTIAL"
+                });
+              }
+              
+              // 11. Add product-specific insights based on name
+              if (compatibleProduct.name.toLowerCase().includes('faded')) {
+                contentData.push({
+                  category: "AESTHETIC",
+                  title: "Vintage Appeal",
+                  text: "Pre-faded for that perfectly worn-in look. Each piece tells its own story from day one.",
+                  accent: "TIMELESS STYLE"
+                });
+              }
+              
+              // 12. Mission-driven content
+              if (htmlContent.includes('Arabs are not what')) {
+                const missionMatch = htmlContent.match(/Arabs are not[^.]+\./i);
+                if (missionMatch) {
+                  contentData.push({
+                    category: "OUR MISSION",
+                    title: "Changing Narratives",
+                    text: cleanHtml(missionMatch[0]),
+                    accent: "REDEFINING CULTURE"
+                  });
+                }
+              }
+              
+              // Remove duplicates based on text similarity
+              const uniqueContent = [];
+              const seenTexts = new Set();
+              contentData.forEach(item => {
+                const textKey = item.text.toLowerCase().substring(0, 50);
+                if (!seenTexts.has(textKey)) {
+                  seenTexts.add(textKey);
+                  uniqueContent.push(item);
+                }
+              });
+              
+              // If we have more content than images, great! If not, we'll cycle through
+              return uniqueContent[index % uniqueContent.length] || {
+                category: "MODERN ARAB",
+                title: "Timeless Design",
+                text: "Where heritage meets contemporary style, creating pieces that transcend trends.",
+                accent: "AUTHENTIC STYLE"
+              };
+            };
             
-            const content = contentData[imageIndex] || contentData[0];
-            const isEven = imageIndex % 2 === 0;
+            const isEven = sectionIndex % 2 === 0;
+            
+            // Get content based on section type
+            let content;
+            if (section.type === 'specifications') {
+              // Extract technical specifications
+              const specs = extractTechnicalSpecs(compatibleProduct.fullDescription || '');
+              content = {
+                category: "TECHNICAL DETAILS",
+                title: "Premium Specifications",
+                text: specs.length > 0 ? specs.join(' • ') : "Crafted with the finest materials and attention to detail.",
+                accent: "QUALITY ASSURED",
+                customContent: renderSpecificationsGrid(specs)
+              };
+            } else if (section.type === 'sizeguide') {
+              content = {
+                category: "FIT GUIDE",
+                title: "Find Your Perfect Size",
+                text: extractDisclaimer(compatibleProduct.fullDescription || '') || "Designed for a comfortable, true-to-size fit. When in doubt, size up for a relaxed look.",
+                accent: "SIZE MATTERS",
+                customContent: renderSizeGuide()
+              };
+            } else {
+              content = extractDynamicContent(imageIndex);
+            }
+            
+            // Helper function to extract disclaimer
+            function extractDisclaimer(html: string): string {
+              const disclaimerMatch = html.match(/(?:Disclaimer:|Note:)([^<]+)/i);
+              if (disclaimerMatch) {
+                return disclaimerMatch[1].trim();
+              }
+              
+              // Look for sizing notes
+              const sizeMatch = html.match(/(?:runs? (?:small|large|big)|recommend ordering|size up|size down)([^<.]*)/i);
+              if (sizeMatch) {
+                return sizeMatch[0].trim();
+              }
+              
+              return '';
+            }
+            
+            // Helper function to extract technical specs
+            function extractTechnicalSpecs(html: string): string[] {
+              const specs: string[] = [];
+              const cleanHtml = (text: string) => text.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim();
+              
+              // Find bullet points with technical info
+              const matches = html.match(/•\s*([^•<]+(cotton|polyester|oz\.|weight|fit|sourced|printed)[^•<]*)/gi);
+              if (matches) {
+                matches.forEach(match => {
+                  const clean = cleanHtml(match).replace(/^•\s*/, '');
+                  if (clean && clean.length < 100 && !clean.includes('Model wears')) {
+                    specs.push(clean);
+                  }
+                });
+              }
+              
+              return specs.slice(0, 5); // Limit to 5 specs
+            }
+            
+            // Helper function to render specifications grid
+            function renderSpecificationsGrid(specs: string[]) {
+              if (specs.length === 0) return null;
+              
+              return (
+                <div className="mt-6 grid grid-cols-1 gap-3">
+                  {specs.map((spec, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <div className="w-2 h-2 bg-black rounded-full mr-3 mt-1.5 flex-shrink-0"></div>
+                      <p className="text-sm text-gray-700 leading-relaxed">{spec}</p>
+                    </div>
+                  ))}
+                </div>
+              );
+            }
+            
+            // Helper function to render size guide
+            function renderSizeGuide() {
+              // Extract size guide table from HTML
+              const extractSizeTable = (html: string) => {
+                // Look for the imperial table first
+                const imperialMatch = html.match(/<div[^>]*data-unit-system="imperial"[^>]*>([\s\S]*?)<\/div>/i);
+                if (imperialMatch) {
+                  const tableMatch = imperialMatch[1].match(/<table[^>]*>([\s\S]*?)<\/table>/i);
+                  if (tableMatch) {
+                    return `<table class="w-full text-xs border-collapse">${tableMatch[1]}</table>`;
+                  }
+                }
+                
+                // Fallback to any table in the content
+                const anyTableMatch = html.match(/<table[^>]*>([\s\S]*?)<\/table>/i);
+                if (anyTableMatch) {
+                  return `<table class="w-full text-xs border-collapse">${anyTableMatch[1]}</table>`;
+                }
+                
+                return null;
+              };
+              
+              const sizeTableHtml = extractSizeTable(compatibleProduct.fullDescription || '');
+              
+              if (sizeTableHtml) {
+                return (
+                  <div className="mt-6 overflow-x-auto">
+                    <h4 className="text-sm font-medium mb-3 text-gray-800">Size Chart (Inches)</h4>
+                    <div 
+                      className="size-table-content [&>table>tbody>tr>td]:border [&>table>tbody>tr>td]:border-gray-300 [&>table>tbody>tr>td]:p-2 [&>table>tbody>tr>td]:text-center [&>table>tbody>tr:first-child>td]:bg-gray-100 [&>table>tbody>tr:first-child>td]:font-semibold [&>table>tbody>tr>td:first-child]:font-semibold [&>table>tbody>tr>td:first-child]:bg-gray-50"
+                      dangerouslySetInnerHTML={{ __html: sizeTableHtml }}
+                    />
+                  </div>
+                );
+              }
+              
+              // Fallback to size bubbles if no table found
+              const sizes = compatibleProduct.sizes || [];
+              return (
+                <div className="mt-6">
+                  <div className="flex flex-wrap gap-2">
+                    {sizes.map((size) => (
+                      <div 
+                        key={size}
+                        className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center text-xs font-medium"
+                      >
+                        {size}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs text-gray-600 italic mt-2">
+                    Available sizes - see product details for full measurements
+                  </p>
+                </div>
+              );
+            }
             
             // Get the background color for this image
             const backgroundColor = imageBackgroundColors[image] || 'rgb(0, 0, 0)';
@@ -1059,7 +1348,7 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
             };
             
             return (
-              <section key={imageIndex} className="relative h-screen overflow-hidden">
+              <section key={sectionIndex} className="relative h-screen overflow-hidden">
                 <div className="absolute inset-0">
                   <Image
                     src={image}
@@ -1075,42 +1364,62 @@ export default function ProductPage({ params }: { params: Promise<{ slug: string
                   ></div>
                 </div>
                 
-                {/* Alternating magazine-style text blocks */}
-                <div className={`absolute bottom-16 ${isEven ? 'right-8 md:right-16' : 'left-8 md:left-16'} max-w-md md:max-w-lg`}>
+                {/* Alternating magazine-style text blocks with condensed layout after 8 sections */}
+                <div className={`absolute ${sectionIndex >= 8 ? 'bottom-8' : 'bottom-16'} ${isEven ? 'right-8 md:right-16' : 'left-8 md:left-16'} ${sectionIndex >= 8 ? 'max-w-sm' : 'max-w-md md:max-w-lg'}`}>
                   <motion.div 
-                    className="bg-white/95 backdrop-blur-sm p-8 md:p-10 shadow-2xl border-l-4 border-black"
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className={`bg-white/95 backdrop-blur-sm ${sectionIndex >= 8 ? 'p-6' : 'p-8 md:p-10'} shadow-2xl ${sectionIndex % 4 === 0 ? 'border-l-4 border-black' : sectionIndex % 4 === 1 ? 'border-t-4 border-black' : sectionIndex % 4 === 2 ? 'border-r-4 border-black' : 'border-b-4 border-black'}`}
+                    initial={{ opacity: 0, y: sectionIndex % 2 === 0 ? 50 : -50, x: sectionIndex % 2 === 0 ? 20 : -20 }}
+                    whileInView={{ opacity: 1, y: 0, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2, type: "spring", damping: 20 }}
                     viewport={{ once: true }}
                   >
                     <div className="mb-4">
                       <span className="text-xs font-bold tracking-widest text-gray-500 uppercase">{content.category}</span>
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-light mb-4 text-black font-bodoni leading-tight">
+                    <h2 className={`${sectionIndex >= 8 ? 'text-2xl md:text-3xl' : 'text-3xl md:text-4xl'} font-light mb-4 text-black font-bodoni leading-tight`}>
                       {content.title}
                     </h2>
-                    <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
-                      {content.text}
+                    <p className={`${sectionIndex >= 8 ? 'text-sm md:text-base' : 'text-base md:text-lg'} text-gray-700 leading-relaxed ${sectionIndex >= 8 ? 'mb-4' : 'mb-6'}`}>
+                      {sectionIndex >= 8 && content.text.length > 100 ? content.text.substring(0, 100) + '...' : content.text}
                     </p>
+                    {content.customContent && content.customContent}
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-0.5 bg-black"></div>
-                      <span className="text-xs font-medium text-gray-600 tracking-wide">{content.accent}</span>
+                      {sectionIndex % 3 === 0 && <div className="w-8 h-0.5 bg-black"></div>}
+                      {sectionIndex % 3 === 1 && (
+                        <svg className="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>
+                      )}
+                      {sectionIndex % 3 === 2 && <div className="w-2 h-2 bg-black rounded-full"></div>}
+                      <span className={`${sectionIndex >= 8 ? 'text-xs' : 'text-xs'} font-medium text-gray-600 tracking-wide`}>{content.accent}</span>
                     </div>
                   </motion.div>
                 </div>
                 
-                {/* Page number indicator */}
-                <div className={`absolute top-8 ${isEven ? 'left-8' : 'right-8'}`}>
-                  <div className="bg-black/70 text-white px-3 py-1 rounded text-sm font-medium">
-                    0{imageIndex + 1}
+                {/* Visual accent elements for variety */}
+                {sectionIndex < 8 && (
+                  <div className={`absolute ${sectionIndex % 3 === 0 ? 'top-8' : sectionIndex % 3 === 1 ? 'bottom-8' : 'top-1/2 -translate-y-1/2'} ${isEven ? 'left-8' : 'right-8'}`}>
+                    {sectionIndex % 3 === 0 && (
+                      <div className="w-20 h-0.5 bg-white/70"></div>
+                    )}
+                    {sectionIndex % 3 === 1 && (
+                      <div className="flex space-x-2">
+                        <div className="w-2 h-2 bg-white/70 rounded-full"></div>
+                        <div className="w-2 h-2 bg-white/50 rounded-full"></div>
+                        <div className="w-2 h-2 bg-white/30 rounded-full"></div>
+                      </div>
+                    )}
+                    {sectionIndex % 3 === 2 && (
+                      <div className="w-12 h-12 border border-white/50 rounded-full"></div>
+                    )}
                   </div>
-                </div>
+                )}
               </section>
             );
           })}
         </>
-      )}
+      );
+      })()}
 
 
 

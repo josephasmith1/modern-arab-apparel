@@ -1,0 +1,278 @@
+{
+  "product": {
+    "id": 8427164041382,
+    "title": "Modern Arab Beanie",
+    "body_html": "<p>Stay warm in style with the Modern Arab Beanie, a sleek and versatile essential that merges modern streetwear with cultural identity. Designed for both comfort and meaning, this snug, ribbed knit beanie features a soft grey “MA” embroidery, symbolizing the Modern Arab identity in a way that’s subtle yet powerful.<br><br><strong>Design Inspiration:</strong><br><br>More than just a beanie, this piece reflects deep-rooted heritage, integrating into modern fashion. The minimalist branding keeps it clean and timeless, making it the perfect complement to any outfit while staying true to cultural pride and contemporary style.<br><br><strong>Features</strong>:<br><br>•<strong> Premium Quality: </strong>Made from 100% acrylic, ensuring warmth, softness, and durability.<br>• C<strong>lassic Fisherman Beanie Style: </strong>A snug, ribbed knit design for a timeless streetwear look.<br>•<strong> Snug, Comfortable Fit:</strong> Wide, ribbed knit design for a secure yet cozy feel.<br>• Subtle Branding: The soft grey “MA” logo represents Modern Arab’s vision—bold yet refined.<br>• <strong>Cultural Significance:</strong> Grey embroidery of the “MA” logo, a symbol of modern Arab identity.<br>• <strong>Versatile Style: </strong>A unisex design that effortlessly fits different looks.<br>• <strong>One Size Fits Most: </strong>Stretchable fabric designed to accommodate various head sizes.<br><br><strong>Why Choose the Modern Arab Beanie?</strong><br><br>This beanie isn’t just about warmth—it’s a statement of culture, heritage, and modernity. Perfect for those who appreciate minimalist streetwear with meaning, the Modern Arab Beanie allows you to carry your roots with pride, whether you’re navigating city streets or embracing the winter season in style.<br><br><strong>Perfect For:</strong><br><br>• Streetwear enthusiasts who love understated, cultural fashion.<br>• Those looking for a versatile, everyday beanie with a deeper message.<br>• Supporters of LA-based brands redefining Arab identity through fashion.<br><br><strong>Wrap yourself in culture. Wear the Modern Arab Beanie.</strong><br><br>• 100% acrylic<br>• Wide, ribbed knit<br>• Snug, comfortable fit<br>• Versatile style suitable for different outfits<br>• One size fits most<br>• Blank product sourced from China<br>• Final product designed and printed in USA</p>\n<p><strong class=\"size-guide-title\">Size guide</strong></p>\n<div class=\"table-responsive dynamic\" data-unit-system=\"imperial\">\n<table cellpadding=\"5\">\n<tbody>\n<tr>\n<td> </td>\n<td><strong>A (inches)</strong></td>\n<td><strong>B (inches)</strong></td>\n<td><strong>C (inches)</strong></td>\n<td><strong>D (inches)</strong></td>\n</tr>\n<tr>\n<td><strong>One size</strong></td>\n<td>19</td>\n<td>6 ¼</td>\n<td>2 ¾</td>\n<td>9</td>\n</tr>\n</tbody>\n</table>\n</div>\n<div class=\"table-responsive dynamic\" data-unit-system=\"metric\">\n<table cellpadding=\"5\">\n<tbody>\n<tr>\n<td> </td>\n<td><strong>A (cm)</strong></td>\n<td><strong>B (cm)</strong></td>\n<td><strong>C (cm)</strong></td>\n<td><strong>D (cm)</strong></td>\n</tr>\n<tr>\n<td><strong>One size</strong></td>\n<td>48.3</td>\n<td>16</td>\n<td>6.9</td>\n<td>22.9</td>\n</tr>\n</tbody>\n</table>\n</div>",
+    "vendor": "Modern Arab Apparel",
+    "product_type": "Headwear",
+    "created_at": "2025-03-07T19:53:04-08:00",
+    "handle": "modernarab-beanie",
+    "updated_at": "2025-07-15T19:01:31-07:00",
+    "published_at": "2025-03-11T05:00:09-07:00",
+    "template_suffix": null,
+    "published_scope": "global",
+    "tags": "Beanie, Fisherman beanie, love !, Men, Minimalist, Modern, Premium, Streetwear, Unisex, Western Apparel, Women",
+    "variants": [
+      {
+        "id": 46204395421862,
+        "product_id": 8427164041382,
+        "title": "Olive",
+        "price": "25.00",
+        "sku": "9663739_20491",
+        "position": 1,
+        "compare_at_price": "",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Olive",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-03-07T19:53:08-08:00",
+        "updated_at": "2025-07-15T19:01:31-07:00",
+        "taxable": true,
+        "barcode": "",
+        "grams": 57,
+        "image_id": 41825078214822,
+        "weight": 2,
+        "weight_unit": "oz",
+        "requires_shipping": true,
+        "price_currency": "USD",
+        "compare_at_price_currency": ""
+      },
+      {
+        "id": 46204395389094,
+        "product_id": 8427164041382,
+        "title": "Black",
+        "price": "25.00",
+        "sku": "9663739_20487",
+        "position": 2,
+        "compare_at_price": "",
+        "fulfillment_service": "manual",
+        "inventory_management": "shopify",
+        "option1": "Black",
+        "option2": null,
+        "option3": null,
+        "created_at": "2025-03-07T19:53:08-08:00",
+        "updated_at": "2025-07-15T19:01:31-07:00",
+        "taxable": true,
+        "barcode": "",
+        "grams": 57,
+        "image_id": 41825078182054,
+        "weight": 2,
+        "weight_unit": "oz",
+        "requires_shipping": true,
+        "price_currency": "USD",
+        "compare_at_price_currency": ""
+      }
+    ],
+    "options": [
+      {
+        "id": 10713009389734,
+        "product_id": 8427164041382,
+        "name": "Color",
+        "position": 1,
+        "values": [
+          "Olive",
+          "Black"
+        ]
+      }
+    ],
+    "images": [
+      {
+        "id": 41940490158246,
+        "product_id": 8427164041382,
+        "position": 1,
+        "created_at": "2025-03-13T03:55:40-07:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3516.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 42496405438630,
+        "product_id": 8427164041382,
+        "position": 2,
+        "created_at": "2025-04-20T02:05:00-07:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0523_6c1379c5-b517-4469-b81a-17884368c97d.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 41825078214822,
+        "product_id": 8427164041382,
+        "position": 3,
+        "created_at": "2025-03-07T19:53:05-08:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-cypress-front-67cbbf1c8eb88.jpg?v=1752630128",
+        "variant_ids": [
+          46204395421862
+        ]
+      },
+      {
+        "id": 41825484079270,
+        "product_id": 8427164041382,
+        "position": 4,
+        "created_at": "2025-03-07T20:25:20-08:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": null,
+        "width": 1366,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_1107.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 42496405536934,
+        "product_id": 8427164041382,
+        "position": 5,
+        "created_at": "2025-04-20T02:05:00-07:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0489.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 41825078247590,
+        "product_id": 8427164041382,
+        "position": 6,
+        "created_at": "2025-03-07T19:53:05-08:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-cypress-front-67cbbf1c8eae5.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 41825078182054,
+        "product_id": 8427164041382,
+        "position": 7,
+        "created_at": "2025-03-07T19:53:05-08:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-black-front-67cbbf1c8de09.jpg?v=1752630128",
+        "variant_ids": [
+          46204395389094
+        ]
+      },
+      {
+        "id": 42496405340326,
+        "product_id": 8427164041382,
+        "position": 8,
+        "created_at": "2025-04-20T02:04:59-07:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0517.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 41825078345894,
+        "product_id": 8427164041382,
+        "position": 9,
+        "created_at": "2025-03-07T19:53:05-08:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": "Product mockup",
+        "width": 2000,
+        "height": 2000,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/fisherman-beanie-black-front-67cbbf1c8ea4f.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 42496405569702,
+        "product_id": 8427164041382,
+        "position": 10,
+        "created_at": "2025-04-20T02:05:00-07:00",
+        "updated_at": "2025-07-15T18:42:08-07:00",
+        "alt": null,
+        "width": 1365,
+        "height": 2048,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/MG_0498.jpg?v=1752630128",
+        "variant_ids": []
+      },
+      {
+        "id": 41940490191014,
+        "product_id": 8427164041382,
+        "position": 11,
+        "created_at": "2025-03-13T03:55:40-07:00",
+        "updated_at": "2025-05-04T02:56:36-07:00",
+        "alt": null,
+        "width": 1535,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3504.jpg?v=1746352596",
+        "variant_ids": []
+      },
+      {
+        "id": 41940495827110,
+        "product_id": 8427164041382,
+        "position": 12,
+        "created_at": "2025-03-13T03:56:23-07:00",
+        "updated_at": "2025-05-04T02:56:36-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3507.jpg?v=1746352596",
+        "variant_ids": []
+      },
+      {
+        "id": 42174162796710,
+        "product_id": 8427164041382,
+        "position": 13,
+        "created_at": "2025-03-28T03:18:00-07:00",
+        "updated_at": "2025-05-04T02:56:36-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2304,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_2885_Facetune_05-03-2025-00-26-18_47425dba-b7e4-4ef4-a996-eaeb0cef8a38.jpg?v=1746352596",
+        "variant_ids": []
+      },
+      {
+        "id": 42174162829478,
+        "product_id": 8427164041382,
+        "position": 14,
+        "created_at": "2025-03-28T03:18:00-07:00",
+        "updated_at": "2025-05-04T02:56:36-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3503_Facetune_15-03-2025-14-47-49.jpg?v=1746352596",
+        "variant_ids": []
+      },
+      {
+        "id": 41940490059942,
+        "product_id": 8427164041382,
+        "position": 15,
+        "created_at": "2025-03-13T03:55:40-07:00",
+        "updated_at": "2025-05-04T02:56:36-07:00",
+        "alt": null,
+        "width": 1536,
+        "height": 2302,
+        "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3509.jpg?v=1746352596",
+        "variant_ids": []
+      }
+    ],
+    "image": {
+      "id": 41940490158246,
+      "product_id": 8427164041382,
+      "position": 1,
+      "created_at": "2025-03-13T03:55:40-07:00",
+      "updated_at": "2025-07-15T18:42:08-07:00",
+      "alt": null,
+      "width": 1536,
+      "height": 2302,
+      "src": "https://cdn.shopify.com/s/files/1/0656/3512/3366/files/IMG_3516.jpg?v=1752630128",
+      "variant_ids": []
+    }
+  }
+}

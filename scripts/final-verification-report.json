@@ -1,0 +1,1347 @@
+{
+  "totalProducts": 17,
+  "totalImages": 279,
+  "missingImages": 203,
+  "existingImages": 76,
+  "brokenReferences": [
+    {
+      "product": "fisherman-beanie",
+      "issue": "missing_file",
+      "path": "/images/products/fisherman-beanie_1_MG_0491.jpg",
+      "position": 1
+    },
+    {
+      "product": "fisherman-beanie",
+      "issue": "missing_file",
+      "path": "/images/products/fisherman-beanie_2_fisherman-beanie-petrol-blue-front-67d127ad708f6.jpg",
+      "position": 2
+    },
+    {
+      "product": "fisherman-beanie",
+      "issue": "missing_file",
+      "path": "/images/products/fisherman-beanie_3_MG_0520.jpg",
+      "position": 3
+    },
+    {
+      "product": "fisherman-beanie",
+      "issue": "missing_file",
+      "path": "/images/products/fisherman-beanie_4_fisherman-beanie-petrol-blue-front-67d127ad716af.jpg",
+      "position": 4
+    },
+    {
+      "product": "fisherman-beanie",
+      "issue": "missing_file",
+      "path": "/images/products/fisherman-beanie_5_MG_0495.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_1_IMG_3491.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_2_organic-bucket-hat-dill-front-67ca39406a72d.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_3_IMG-1414.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_4_organic-bucket-hat-dill-front-67ca39406a405.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_5_IMG-1396.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_6_organic-bucket-hat-dill-product-details-67ca39406a66d.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_7_MG_0767.jpg",
+      "position": 7
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_8_MG_0366.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_9_organic-bucket-hat-slate-blue-front-67ca39406a7b4.jpg",
+      "position": 9
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_10_MG_0472.jpg",
+      "position": 10
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_11_organic-bucket-hat-slate-blue-front-67ca39406a481.jpg",
+      "position": 11
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_12_MG_0369.jpg",
+      "position": 12
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_13_organic-bucket-hat-slate-blue-product-details-67ca39406a596.jpg",
+      "position": 13
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_14_MG_0473.jpg",
+      "position": 14
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_15_MG_0375.jpg",
+      "position": 15
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_16_organic-bucket-hat-black-front-67ca3940698a1.jpg",
+      "position": 16
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_17_MG_0468.jpg",
+      "position": 17
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_18_organic-bucket-hat-black-front-67ca39406a338.jpg",
+      "position": 18
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_19_MG_0378.jpg",
+      "position": 19
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_20_MG_0461.jpg",
+      "position": 20
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_21_organic-bucket-hat-black-product-details-67ca39406a535.jpg",
+      "position": 21
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_22_3-_DSC9216.jpg",
+      "position": 22
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_23_10-_DSC9278.jpg",
+      "position": 23
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_24_organic-bucket-hat-stone-front-67ca39406a81f.jpg",
+      "position": 24
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_25_2-_DSC9208_705adecc-e80a-46f9-be74-7ccdf0e48a57.jpg",
+      "position": 25
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_26_organic-bucket-hat-stone-front-67ca39406a4dc.jpg",
+      "position": 26
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_27_12-_DSC9298.jpg",
+      "position": 27
+    },
+    {
+      "product": "modern-arab-bucket-hat",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-bucket-hat_28_organic-bucket-hat-stone-product-details-67ca39406a5f0.jpg",
+      "position": 28
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_1_MG_0417.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_2_classic-dad-hat-khaki-front-67ca2b4eddf68.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_3_MG_0328_copy.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_4_classic-dad-hat-khaki-back-67ca2b4ede475.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_5_MG_0324.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_6_MG_0413.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_7_4-_DSC9223.jpg",
+      "position": 7
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_8_MG_0397.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_9_classic-dad-hat-light-blue-front-67ca2b4edebff.jpg",
+      "position": 9
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_10_MG_0347.jpg",
+      "position": 10
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_11_classic-dad-hat-light-blue-back-67ca2b4edf0e7.jpg",
+      "position": 11
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_12_MG_0396.jpg",
+      "position": 12
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_13_MG_0350.jpg",
+      "position": 13
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_14_MG_0392.jpg",
+      "position": 14
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_15_classic-dad-hat-spruce-front-67ca2b4edd62d.jpg",
+      "position": 15
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_16_IMG_3513.jpg",
+      "position": 16
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_17_classic-dad-hat-spruce-back-67ca2b4edd9a1.jpg",
+      "position": 17
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_18_IMG_3501.jpg",
+      "position": 18
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_19_IMG-1405.jpg",
+      "position": 19
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_20_classic-dad-hat-black-front-67ca2b4edc0fe.jpg",
+      "position": 20
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_21_MG_0321.jpg",
+      "position": 21
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_22_9-_DSC9271.jpg",
+      "position": 22
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_23_MG_0405.jpg",
+      "position": 23
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_24_classic-dad-hat-black-back-67ca2b4edd02e.jpg",
+      "position": 24
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_25_MG_0147.jpg",
+      "position": 25
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_26_MG_0402.jpg",
+      "position": 26
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_27_MG_0322.jpg",
+      "position": 27
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_28_5-_DSC9228.jpg",
+      "position": 28
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_29_MG_0316.jpg",
+      "position": 29
+    },
+    {
+      "product": "modern-arab-cap",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-cap_30_7-_DSC9249.jpg",
+      "position": 30
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_1_IMG_3486.jpg",
+      "position": 1
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_2_unisex-premium-sweatshirt-forest-green-back-67c971e616764.jpg",
+      "position": 2
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_3_MG_0123.jpg",
+      "position": 3
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_4_unisex-premium-sweatshirt-forest-green-front-67c971e613433.jpg",
+      "position": 4
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_5_5C9BECFD-70E1-4E6F-8B14-4E568D6B0589-2.jpg",
+      "position": 5
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_6_MG_0136.jpg",
+      "position": 6
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_7_MG_0943_4a130f87-afd2-4c72-8d96-0558c79b26e6.jpg",
+      "position": 7
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_8_unisex-premium-sweatshirt-vintage-black-back-67c971e6117fd.jpg",
+      "position": 8
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_9_MG_1010.jpg",
+      "position": 9
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_10_unisex-premium-sweatshirt-vintage-black-front-67c971e6101d7.jpg",
+      "position": 10
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_11_9BC917D2-EA7B-4440-95C8-ECBC913DA59C-2.jpg",
+      "position": 11
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_12_E9A22D14-3367-4570-B861-FE53CF8391A9.jpg",
+      "position": 12
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_13_unisex-premium-sweatshirt-white-front-67c971e61a508.jpg",
+      "position": 13
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_14_1-_DSC6872_b11ace78-0102-4799-befb-ad1c7203e737.jpg",
+      "position": 14
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_15_unisex-premium-sweatshirt-white-back-67c971e61f02c.jpg",
+      "position": 15
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_16_3-_DSC6939_01198e91-537a-4d6c-b3c8-d02c717dd820.jpg",
+      "position": 16
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_17_AA1F010E-3C7D-4045-8B88-B90650755E07.jpg",
+      "position": 17
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_18_6AAE7937-C96A-4388-948B-09C52661C839.jpg",
+      "position": 18
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_19_IMG-1397.jpg",
+      "position": 19
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_20_unisex-premium-sweatshirt-black-back-67c971e60e0d2.jpg",
+      "position": 20
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_21_MG_0038_copy.jpg",
+      "position": 21
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_22_unisex-premium-sweatshirt-black-front-67c971e60f3ba.jpg",
+      "position": 22
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_23_057B2C94-3C3F-43D8-BCEB-A102710E0A5E-2.jpg",
+      "position": 23
+    },
+    {
+      "product": "modernarab-crewneck",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-crewneck_24_MG_0044_copy.jpg",
+      "position": 24
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_1_D88F4DDC-89C5-45BA-8EC4-0D8EC6B763CD-2.jpg",
+      "position": 1
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_2_womens-cropped-hoodie-black-back-67ccd5b891be4.jpg",
+      "position": 2
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_3_MG_0895.jpg",
+      "position": 3
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_4_womens-cropped-hoodie-black-front-67ccd5b892743.jpg",
+      "position": 4
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_5_MG_0929.jpg",
+      "position": 5
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_6_womens-cropped-hoodie-military-green-back-67ccd5b892e57.jpg",
+      "position": 6
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_7_9888AEE2-C510-46B7-AB5E-C950C5461B1C.jpg",
+      "position": 7
+    },
+    {
+      "product": "modernarab-cropped-hoodie",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-cropped-hoodie_8_womens-cropped-hoodie-military-green-front-67ccd5b892a6f.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_1_IMG-3317.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_2_IMG-3331.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_3_oversized-faded-t-shirt-faded-bone-back-67e7da798836b.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_4_2171EA9A-09AE-4694-B647-2BE5474FE33C-2.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_5_oversized-faded-t-shirt-faded-bone-front-67e7da7986b74.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_6_A1A88436-9771-410D-9662-33C0E503738D.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_7_IMG-3340.jpg",
+      "position": 7
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_8_IMG-3330.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_9_IMG-3339.jpg",
+      "position": 9
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_10_oversized-faded-t-shirt-faded-black-back-67e7da7981a64.jpg",
+      "position": 10
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_11_6-_DSC8627_e4cbde5a-2701-40b3-b2df-1a41d186eece.jpg",
+      "position": 11
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_12_oversized-faded-t-shirt-faded-black-front-67e7da7982b19.jpg",
+      "position": 12
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_13_5-_DSC8618_7a2d84bc-12ae-4c87-bbda-264c4577c7c6.jpg",
+      "position": 13
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_14_16-_DSC8743.jpg",
+      "position": 14
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_15_17-_DSC8749.jpg",
+      "position": 15
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_16_1-_DSC9018.jpg",
+      "position": 16
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_17_oversized-faded-t-shirt-faded-eucalyptus-back-67e7da79856a3.jpg",
+      "position": 17
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_18_oversized-faded-t-shirt-faded-eucalyptus-front-67e7da7984868.jpg",
+      "position": 18
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_19_oversized-faded-t-shirt-faded-khaki-back-67e7da7983d55.jpg",
+      "position": 19
+    },
+    {
+      "product": "modern-arab-faded-tee-black-print",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-faded-tee-black-print_20_oversized-faded-t-shirt-faded-khaki-front-67e7da798329f.jpg",
+      "position": 20
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_1_MG_0205_copy_1.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_2_unisex-fleece-sweatpants-military-green-front-67cce68fe8dd3.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_3_MG_0610_e8ce70c1-9773-420d-8417-8c0bf67d38d9.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_4_unisex-fleece-sweatpants-military-green-back-67cce68fe8e32.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_5_MG_0627.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_6_MG_0633.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_7_MG_0213.jpg",
+      "position": 7
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_8_MG_0220.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_9_MG_1055_a65f75ef-aa6e-432a-9f7e-a6fdcf1a37f6.jpg",
+      "position": 9
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_10_unisex-fleece-sweatpants-maroon-front-67cce68fe8cce.jpg",
+      "position": 10
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_11_91E379F9-711A-4065-AE1F-92F98E3362E7-2.jpg",
+      "position": 11
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_12_MG_0652.jpg",
+      "position": 12
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_13_unisex-fleece-sweatpants-maroon-back-67cce68fe8d36.jpg",
+      "position": 13
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_14_MG_0261.jpg",
+      "position": 14
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_15_MG_0265.jpg",
+      "position": 15
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_16_MG_0263.jpg",
+      "position": 16
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_17_MG_0257.jpg",
+      "position": 17
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_18_unisex-fleece-sweatpants-black-front-67cce68fe7e46.jpg",
+      "position": 18
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_19_MG_0231_copy.jpg",
+      "position": 19
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_20_unisex-fleece-sweatpants-black-back-67cce68fe8c0f.jpg",
+      "position": 20
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_21_IMG_3492.jpg",
+      "position": 21
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_22_MG_0834.jpg",
+      "position": 22
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_23_0BE49A45-21E8-42B6-AC8B-B0B274B86D15-2.jpg",
+      "position": 23
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_24_MG_0250.jpg",
+      "position": 24
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_25_MG_0251.jpg",
+      "position": 25
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_26_unisex-fleece-sweatpants-white-front-67cce68fe8ec8.jpg",
+      "position": 26
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_27_MG_0109.jpg",
+      "position": 27
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_28_unisex-fleece-sweatpants-white-back-67cce68fe8f21.jpg",
+      "position": 28
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_29_MG_0122_fe08f1a2-3a98-48e5-914c-89e6c094eac9.jpg",
+      "position": 29
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_30_MG_0675-2.jpg",
+      "position": 30
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_31_MG_0683.jpg",
+      "position": 31
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_32_MG_0116_copy.jpg",
+      "position": 32
+    },
+    {
+      "product": "modern-arab-joggers",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-joggers_33_MG_0854.jpg",
+      "position": 33
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-eucalyptus",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-eucalyptus_1_MG_0069.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-eucalyptus",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-eucalyptus_2_oversized-faded-t-shirt-faded-eucalyptus-front-681b21efb126e.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-eucalyptus",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-eucalyptus_3_IMG_0008_2.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-eucalyptus",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-eucalyptus_4_oversized-faded-t-shirt-faded-eucalyptus-back-681b21efb002e.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-eucalyptus",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-eucalyptus_5_MG_0066.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-khaki",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-khaki_1_MG_0049.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-khaki",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-khaki_2_oversized-faded-t-shirt-faded-khaki-front-681b21827431a.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-khaki",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-khaki_3_MG_0465.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-khaki",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-khaki_4_oversized-faded-t-shirt-faded-khaki-back-681b218273328.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-khaki",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-khaki_5_MG_0047.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-premium-tee-faded-khaki",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee-faded-khaki_6_IMG_3488_36377c4b-1872-4460-9967-6b9e8d413185.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_1_IMG_0011.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_2_oversized-faded-t-shirt-faded-black-front-681b237ad24fa.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_3_IMG_1400.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_4_oversized-faded-t-shirt-faded-black-back-67e66bfcdd879.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_5_IMG_0023_ee98f61b-268b-4e86-b544-ad130e2ca6fc.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_6_IMG_3324_Facetune_08-03-2025-22-31-19.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_7_oversized-faded-t-shirt-faded-bone-front-681b230862578.jpg",
+      "position": 7
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_8_oversized-faded-t-shirt-faded-bone-back-681b23085ebc4.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_9_oversized-faded-t-shirt-faded-eucalyptus-front-681b230861025.jpg",
+      "position": 9
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_10_oversized-faded-t-shirt-faded-eucalyptus-back-681b230861a3e.jpg",
+      "position": 10
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_11_oversized-faded-t-shirt-faded-khaki-front-681b230860269.jpg",
+      "position": 11
+    },
+    {
+      "product": "modern-arab-premium-tee",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-premium-tee_12_oversized-faded-t-shirt-faded-khaki-back-681b230860904.jpg",
+      "position": 12
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_1_MG_0435.jpg",
+      "position": 1
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_2_MG_0357.jpg",
+      "position": 2
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_3_unisex-pigment-dyed-sweatpants-pigment-light-blue-front-681b0b62cd073.jpg",
+      "position": 3
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_4_MG_0358.jpg",
+      "position": 4
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_5_unisex-pigment-dyed-sweatpants-pigment-light-blue-back-67d1564b050f0.jpg",
+      "position": 5
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_6_MG_0227.jpg",
+      "position": 6
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_7_MG_0229.jpg",
+      "position": 7
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_8_MG_0275.jpg",
+      "position": 8
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_9_unisex-pigment-dyed-sweatpants-pigment-alpine-green-front-681b0b62cc397.jpg",
+      "position": 9
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_10_MG_0285.jpg",
+      "position": 10
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_11_unisex-pigment-dyed-sweatpants-pigment-alpine-green-back-67d1564b04e83.jpg",
+      "position": 11
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_12_MG_0292.jpg",
+      "position": 12
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_13_MG_0294.jpg",
+      "position": 13
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_14_MG_0301.jpg",
+      "position": 14
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_15_unisex-pigment-dyed-sweatpants-pigment-black-front-681b0b62ccd78.jpg",
+      "position": 15
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_16_unisex-pigment-dyed-sweatpants-pigment-black-back-67d1564b04d45.jpg",
+      "position": 16
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_17_MG_0304.jpg",
+      "position": 17
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_18_MG_0271_copy_2.jpg",
+      "position": 18
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_19_MG_0274_copy_2.jpg",
+      "position": 19
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_20_unisex-pigment-dyed-sweatpants-pigment-slate-blue-front-681b0b62ccf6a.jpg",
+      "position": 20
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_21_MG_0286.jpg",
+      "position": 21
+    },
+    {
+      "product": "modern-arab-sweatpants",
+      "issue": "missing_file",
+      "path": "/images/products/modern-arab-sweatpants_22_MG_0289.jpg",
+      "position": 22
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_1_F9684D9D-96F7-439C-8C3C-40FA26257CDD.png",
+      "position": 1
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_2_oversized-heavyweight-t-shirt-black-front-67c9695f00b0c.jpg",
+      "position": 2
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_3_55BD988A-A7A7-47DA-92CD-D4051D38AA77-2.jpg",
+      "position": 3
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_4_oversized-heavyweight-t-shirt-black-back-67285e6e5d594.jpg",
+      "position": 4
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_5_96357C52-7556-42F5-83FF-18AD6AE5A815.jpg",
+      "position": 5
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_6_4C76DBC4-D8E9-4CA1-8333-31909AAA4D18-2.jpg",
+      "position": 6
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_7_5BBA9EAF-DA9E-4904-B901-8A1E5CF2FE55-3.jpg",
+      "position": 7
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_8_9D0D7091-2A2E-4DFE-932A-2B0524728C37-2.jpg",
+      "position": 8
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_9_E825F596-F659-492B-B7B0-91E9F2A41B60.jpg",
+      "position": 9
+    },
+    {
+      "product": "modernarab-tee-black",
+      "issue": "missing_file",
+      "path": "/images/products/modernarab-tee-black_10_F98756FE-0BB5-4485-9159-C12B5C03717B-2_d6e4ef41-e5fe-4619-a41d-3b09fd49aafa.jpg",
+      "position": 10
+    }
+  ],
+  "summary": {
+    "fisherman-beanie": {
+      "name": "Modern Arab Beanie",
+      "total": 5,
+      "existing": 0,
+      "missing": 5,
+      "complete": false
+    },
+    "modern-arab-bucket-hat": {
+      "name": "Modern Arab Bucket Hat",
+      "total": 28,
+      "existing": 0,
+      "missing": 28,
+      "complete": false
+    },
+    "modern-arab-cap": {
+      "name": "Modern Arab Cap",
+      "total": 30,
+      "existing": 0,
+      "missing": 30,
+      "complete": false
+    },
+    "modernarab-crewneck": {
+      "name": "Modern Arab Crewneck",
+      "total": 24,
+      "existing": 0,
+      "missing": 24,
+      "complete": false
+    },
+    "modernarab-cropped-hoodie": {
+      "name": "Modern Arab Cropped Hoodie",
+      "total": 8,
+      "existing": 0,
+      "missing": 8,
+      "complete": false
+    },
+    "modern-arab-faded-tee-black-print": {
+      "name": "Modern Arab Faded Tee",
+      "total": 20,
+      "existing": 0,
+      "missing": 20,
+      "complete": false
+    },
+    "modern-arab-hoodie": {
+      "name": "Modern Arab Hoodie",
+      "total": 0,
+      "existing": 0,
+      "missing": 0,
+      "complete": true
+    },
+    "modern-arab-joggers": {
+      "name": "Modern Arab Joggers",
+      "total": 33,
+      "existing": 0,
+      "missing": 33,
+      "complete": false
+    },
+    "modern-arab-premium-tee-faded-eucalyptus": {
+      "name": "Modern Arab Premium Tee (Faded Green)",
+      "total": 5,
+      "existing": 0,
+      "missing": 5,
+      "complete": false
+    },
+    "modern-arab-premium-tee-faded-khaki": {
+      "name": "Modern Arab Premium Tee (Faded Khaki)",
+      "total": 6,
+      "existing": 0,
+      "missing": 6,
+      "complete": false
+    },
+    "modern-arab-premium-tee": {
+      "name": "Modern Arab Premium Tee",
+      "total": 12,
+      "existing": 0,
+      "missing": 12,
+      "complete": false
+    },
+    "modern-arab-sweatpants": {
+      "name": "Modern Arab Sweatpants",
+      "total": 22,
+      "existing": 0,
+      "missing": 22,
+      "complete": false
+    },
+    "modernarab-tee-black": {
+      "name": "Modern Arab Tee",
+      "total": 10,
+      "existing": 0,
+      "missing": 10,
+      "complete": false
+    },
+    "modernarab-tee-white": {
+      "name": "Modern Arab Tee",
+      "total": 8,
+      "existing": 8,
+      "missing": 0,
+      "complete": true
+    },
+    "modernarab-tee": {
+      "name": "Modern Arab Faded Tee",
+      "total": 26,
+      "existing": 26,
+      "missing": 0,
+      "complete": true
+    },
+    "modern-arab-crewneck-sand": {
+      "name": "Modern Arab Crewneck",
+      "total": 6,
+      "existing": 6,
+      "missing": 0,
+      "complete": true
+    },
+    "modern-arab-hoodie-2": {
+      "name": "Modern Arab Hoodie",
+      "total": 36,
+      "existing": 36,
+      "missing": 0,
+      "complete": true
+    }
+  }
+}

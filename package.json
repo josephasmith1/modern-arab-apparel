@@ -28,7 +28,8 @@
     "next-auth": "^5.0.0-beta.29",
     "puppeteer": "^24.12.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
